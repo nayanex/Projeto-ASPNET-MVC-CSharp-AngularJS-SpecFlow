@@ -1,0 +1,14 @@
+{
+  "name": "wex",
+  "version": "0.0.0",
+  "authors": [
+    "Ayrton Araújo <ayrton.junior@fpf.br>",
+    "Thiago Dourado <thiago.andrade@fpf.br>"
+  ],
+  "main": "WexProjec.HttpViews.csproj",
+  "license": "Copyright",
+  "private": true,
+  "dependencies": {
+    "angular-ui-date": "0.0.3"
+  }
+}

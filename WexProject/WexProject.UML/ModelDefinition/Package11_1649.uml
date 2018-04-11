@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="94db58d6-15bf-4061-888e-14cd69f896f6"
+  name="Geral"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="99df0857-4f7d-41f4-ac3b-52b31a5c6f4e"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Shared.Domains.Geral"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="3d8ecb12-d992-483a-b4c0-3533d9337d14">
+      <profileInstance
+        Id="a3127096-d0e6-44ce-89f6-fd0c454ec766"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="9775bed5-16bb-4b86-a76d-e5b84069f868"
+        name="CsMesDomain"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="6b3f4d89-7074-4b62-849d-4e4a24688b77"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL.Shared%2Fbin%2FDebug%2FWexProject.BLL.Shared.dll&quot; Namespace%3DWexProject.BLL.Shared.Domains.Geral Type%3DCsMesDomain"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="630b1a8f-5d23-4a52-b921-46b8e9f4f73e"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3b89f829-193b-4ebb-9251-8731cb0759b2">
+                <propertyInstance
+                  Id="60f5efa8-335f-48ce-952d-1f20da529827"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="67b0dc6d-b4c6-4506-b0f3-3921f3385cf7">
+                <propertyInstance
+                  Id="310a2eb6-65fc-4efd-8be7-8d6f864f72df"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ae66def-a9fc-4b08-8a4d-082685a721b7">
+                <propertyInstance
+                  Id="d18c71a2-cd42-4e67-a78f-28c0f3972efb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="14693d08-cd29-4af8-a872-2494752ad624"
+        name="CsProjetoSituacaoDomain"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="7aed87d4-5e50-4879-9a1c-0aceb093c3c3"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL.Shared%2Fbin%2FDebug%2FWexProject.BLL.Shared.dll&quot; Namespace%3DWexProject.BLL.Shared.Domains.Geral Type%3DCsProjetoSituacaoDomain"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="33158bf0-a1d7-4b0d-ac79-3d519b813fab"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1aa518e9-8fcd-4132-97d5-e448babac305">
+                <propertyInstance
+                  Id="20e81539-d1ef-4417-a856-6169024db862"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f5f06477-992a-47d2-bf8d-6bec4a4f5591">
+                <propertyInstance
+                  Id="2e80743e-f0c0-4720-a3ee-7eeaff8fd440"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="95434add-bb86-49ca-b0c4-c6bd180d5a85">
+                <propertyInstance
+                  Id="4c10dcf3-cbb8-4197-a617-d69c2eec188c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

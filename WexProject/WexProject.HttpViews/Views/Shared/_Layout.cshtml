@@ -1,0 +1,109 @@
+﻿@{
+	ViewBag.AngularModule = ViewBag.AngularModule ?? "wex.common";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Wex - @ViewBag.Title</title>
+    <script>
+            var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+            if (!is_chrome) {
+                window.location = 'https://www.google.com/intl/pt-BR/chrome/browser/';
+            }
+    </script>
+	@Styles.Render("~/Content/styles")
+	@Scripts.Render("~/bundles/libs")
+    @Scripts.Render("~/bundles/app")
+</head>
+
+<body ng-app="@ViewBag.AngularModule">
+    <header>
+        <div id="feedback" class="feedbackGeral" style="display:none;">
+			<div id="msg"></div>
+			<button id="btnFecharFeedback">X</button>
+        </div>
+        <div id="headerInfos">
+            <div id="areaLogo">
+                <span><img src="~/Images/logoWex.png" /></span>
+                <!--<time datetime="@DateTime.Now.ToString("dd/MM/yyyy")">@DateTime.Now.ToString("dd/MM/yyyy - HH'h'mm")</time>-->
+            </div>
+
+            <!--<div id="areaPesquisa">
+                <div class="campoPesquisa">
+                    <input type="text" placeholder="Pesquisar (Não implementado ainda)" readonly="readonly" />
+                    <div class="icoInputLupa"></div>
+                </div>
+            </div>-->
+            <div id="areaUsuario">
+
+                <div class="infoUsuario">
+                    <div class="fotoUsuario"></div>
+                    <div class="dadosUsuario">
+                        <h1 id="nomeCompleto">@User.Identity.Name</h1>
+                        <span id="cargo"></span>
+                    </div>
+                </div>
+
+                <nav class="opcoesUsuario">
+                    <ul>
+                        <li id="notificacoes" title="Notificações" class="iconeNotificacoes"></li>
+                        <li id="meusDashboards" title="Meus Dashboards" class="iconeMeusDashboards"></li>
+                        <li id="configUsuario" title="Configurações" class="iconeConfiguracoes"></li>
+                        <li id="logout" title="Logout" class="iconeLogout"></li>
+                    </ul>
+
+                    <div id="listMeusDashboard" style="display: none">
+                        <h1>Dashboards</h1>
+                        <div id="novoDashboard">
+                            <a id="addDashboard">
+                                <div class="iconeNovoDashboard"></div>
+                                <span>Nova Dashboard</span>
+                            </a></div>
+                        <ul id="dashesFavoritas"></ul>
+                        <ul id="dashesNaoFavoritas"></ul>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="menuPrincipal" class="menuAberto">
+        <nav id="menuDefault">
+                <ul>
+                    @*<li><a href="#">Dashboard</a></li>*@
+                    <li wex-dropdown>
+                        <ul wex-dropdown-conteudo>
+                            <li>@Html.ActionLink("Projeto", "Index", "Custos", null, new { target = "_top" })</li>
+                            <li>@Html.ActionLink("Administrativos", "index", "CustosRubricasAdministrativas", null, new { target = "_top" })</li>
+                        </ul>
+                        <a wex-dropdown-cabecalho>Custos</a>
+                    </li>
+					<li wex-dropdown>
+						<ul wex-dropdown-conteudo>
+						    <li>@Html.ActionLink("Projetos", "Custos", "Analise", null, new { target = "_top" })</li>
+							<li>@Html.ActionLink("Geral", "Geral", "Analise", null, new { target = "_top" })</li>
+						</ul>
+                        <a wex-dropdown-cabecalho>Análise Crítica</a>
+                    </li>
+                    <li>@Html.ActionLink("Projetos", "Projetos", "Projetos", null, new { target = "_top" })</li>
+                </ul>
+        </nav>
+
+        <div id="menuPersonalizado" class="menuFechado">
+            <div class="bgSetaMenu"></div>
+            <button class="btnMenuDefault iconeMenuDefault" title="Menu Principal"></button>
+            <button class="btnMenuFavoritos iconeFavoritos" title="Menu Personalizado"></button>
+            <nav id="menuPessoal">
+                <ul>
+                    <li>@Html.ActionLink("Custos", "Index", "Custos", null, new { target = "_top" })</li>
+                </ul>
+            </nav>
+        </div>
+     </div>
+	
+	@RenderBody()
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

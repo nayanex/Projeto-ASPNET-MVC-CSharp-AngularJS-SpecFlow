@@ -1,0 +1,491 @@
+/*=================== RESOLUÇÃO 1280x ===================*/
+@media only screen and (min-width : 1240px) {
+
+/*Menu Geral*/
+div.menuAberto{width:96% !important; }
+
+/* UI Autocomplete */
+section#wexCusto + ul.ui-autocomplete{width:43.8% !important;}
+
+/*Aditivos*/
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:122px;}
+
+/*Custos*/
+  #patrocinadores, #centroCusto{width: 47.7% !important;}
+  div#detalhamentoAbas > .tabs{width:46.9%;}
+
+  /*Tabela orçamento aprovado*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div{width:100%;}      
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:1.06% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado{width:15.4% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado input{ width:90% !important}     
+    
+      /*Campo Total*/      
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2),
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{width: 15.44% !important}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:88% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{right:3px; top:50%; margin-top:6px;}
+
+      /*Campo Meses*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width: 91px !important;}
+
+      /*Depesas Reais*/
+      div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes > .meses{margin-left:33px !important; margin-right:32px !important;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{max-width:55px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td > input{width:55px;}
+
+       /*Analise Crítica*/
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{width:97.35% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .tabs{width:48.27% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{width:98.3% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial,
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{right:88% !important;}
+
+      /*Análise Crítica Geral*/
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > span{width:81px;}
+      #wexAnaliseCriticaGeral table tbody:last-child tr:last-child td:first-child > span{width:auto;}
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > button{width:17px !important; height:17px !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td{width:89px; max-width:89px; min-width:72px; font-size:10px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(1){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2){width:112px; min-width:85px; max-width:112px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2) > span{margin-right:5px; }
+      #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.rubricas td span{width:108px;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo{font-size:10px !important; font-weight:normal !important;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo span{font-family:"Conv_Frutiger" !important;}
+
+/*Termo Aditivo*/
+    /* TA Descritivo*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{width:70%}
+
+/*Projetos*/
+#wexProjetos > div#projetosArea .projetos .projetoTitulo{width:500px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.periodo{width:135px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.gerenteProjeto, #wexProjetos > div#projetosArea .projetos .projetoDados > div.centroCusto{width:233px;}
+    /*Editando Projeto*/
+    .editandoProjeto > .campoInformacoes > input{width:87.3%;}
+    .editandoProjeto > .campoInformacoes > select{width:88.3%;}
+    .editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+    .editandoProjeto > .gerenteProjeto > select {width:74%;}
+    .editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+    .editandoProjeto > .centroCusto > select{width:77.8%;}
+    .editandoProjeto > .tresColunas input{width:62%}
+    .editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+    .editandoProjeto > .inicioReal.tresColunas input{width:68%;}
+    .editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+    .editandoProjeto > .terminoReal.tresColunas input{width:69%;}
+
+/*Associação Notas Fiscais*/
+.AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{width:44.3%;}
+.accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{width:45.4% !important;}
+
+}
+/*=================== RESOLUÇÃO 1366px ==================*/
+@media only screen and (min-width : 1326px) {
+/*Menu Geral*/
+div.menuAberto{width:96.7% !important; }
+
+/* UI Autocomplete */
+section#wexCusto ~ ul.ui-autocomplete{width:44.3% !important;}
+
+/*Aditivos*/
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:136px;}
+
+/*Custos*/
+  #patrocinadores, #centroCusto{width: 47.93% !important;}
+  div#detalhamentoAbas > .tabs{width:47.1%;}
+
+  /*Tabela orçamento aprovado*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div{width:100%;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:1.26% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado{width:15.4% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado input{ width:90% !important}     
+    
+      /*Campo Total*/      
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2),
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{width: 15.35% !important}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:89% !important; margin-right:0px;}
+      div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{right:13px; top:50%; margin-top:6px;}
+
+      /*Campo Meses*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width: 104px !important;}
+
+       /*Depesas Reais*/
+      div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes > .meses{margin-left:36px !important; margin-right:36px !important;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{max-width:63px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child > input{width:53px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td > input{width:63px;}
+
+       /*Analise Crítica*/
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{width:97.5% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .tabs{width:48.32% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{width:98.5% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial,
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{right:88% !important;}
+
+      /*Análise Crítica Geral*/
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > span{width:81px;}
+      #wexAnaliseCriticaGeral table tbody:last-child tr:last-child td:first-child > span{width:auto;}
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > button{width:17px !important; height:17px !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td{width:88px; max-width:88px; min-width:72px; font-size:10px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(1){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2){width:102px; min-width:102px; max-width:102px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2) > span{margin-right:5px; }
+      #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.rubricas td span{width:108px;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo{font-size:10px !important; font-weight:normal !important;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo span{font-family:"Conv_Frutiger" !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise  tr td{width:68px; max-width:68px; min-width:68px;}
+
+/*Termo Aditivo*/
+    /* TA Descritivo*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{width:71%}
+
+/*Projetos*/
+#wexProjetos > div#projetosArea .projetos .projetoTitulo{width:500px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.periodo{width:135px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.gerenteProjeto, #wexProjetos > div#projetosArea .projetos .projetoDados > div.centroCusto{width:233px;}
+    /*Editando Projeto*/
+    .editandoProjeto > .campoInformacoes > input{width:88.2%;}
+    .editandoProjeto > .campoInformacoes > select{width:89.15%;}
+    .editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+    .editandoProjeto > .gerenteProjeto > select {width:76%;}
+    .editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+    .editandoProjeto > .centroCusto > select{width:79.5%;}
+    .editandoProjeto > .tresColunas input{width:62%}
+    .editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+    .editandoProjeto > .inicioReal.tresColunas input{width:68%;}
+    .editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+    .editandoProjeto > .terminoReal.tresColunas input{width:70.95%;}
+
+/*Associação Notas Fiscais*/
+.AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{width:44.8%;}
+.accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{width:45.6% !important;}
+}
+
+
+/*=================== RESOLUÇÃO 1440px ===================*/
+@media only screen and (min-width : 1400px) {
+/*Custos*/
+  #patrocinadores, #centroCusto{width: 48.05% !important;}
+  div#detalhamentoAbas > .tabs{width:47.3%;}
+
+  /* UI Autocomplete */
+    section#wexCusto ~ ul.ui-autocomplete{width:44.6% !important;}
+
+    /*Aditivos*/
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:146px;}
+
+  /*Tabela orçamento aprovado*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div{width:100%;}
+
+      /*Campo Ano*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:1.44% !important;}
+
+    
+      /*Campo Total*/      
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2),
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{width: 15.4% !important}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:90% !important; }
+      div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{right:3px; top:50%; margin-top:6px; width:121px;}
+
+      /*Campo Meses*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width: 114px !important;}
+
+  /*Depesas Reais*/
+    div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes > .meses{margin-left:40px !important; margin-right:38px !important;}
+    div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{max-width:69px;}
+    div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child > input{width:59px;}
+    div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td > input{width:69px;}
+
+       /*Analise Crítica*/
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{width:97.6% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .detalhesProjetoGeral > .tabs{width:48.4% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial,
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{right:89% !important;}
+
+      /*Análise Crítica Geral*/
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > span{width:81px;}
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > button{width:17px !important; height:17px !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td{width:96px; max-width:96px; min-width:94px; font-size:11px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(1){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2){width:102px; min-width:102px; max-width:102px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2) > span{margin-right:5px; }
+      #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.rubricas td span{width:108px;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo{font-size:11px !important; font-weight:normal !important;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo span{font-family:"Conv_Frutiger" !important;}
+/*Termo Aditivo (TA)*/
+    /* TA Descritivo*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{width:73%}
+
+/*Projetos*/
+#wexProjetos > div#projetosArea .projetos .projetoTitulo{width:auto;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.periodo{width:110px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.gerenteProjeto, #wexProjetos > div#projetosArea .projetos .projetoDados > div.centroCusto{width:125px;}
+
+    /*Editando Projeto*/
+    .editandoProjeto > .campoInformacoes > input{width:88.9%;}
+    .editandoProjeto > .campoInformacoes > select{width:89.8%;}
+    .editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+    .editandoProjeto > .gerenteProjeto > select {width:77%;}
+    .editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+    .editandoProjeto > .centroCusto > select{width:80.6%;}
+    .editandoProjeto > .tresColunas input{width:66%}
+    .editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+    .editandoProjeto > .inicioReal.tresColunas input{width:77%;}
+    .editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+    .editandoProjeto > .terminoReal.tresColunas input{width:72.8%;}
+
+/*Associação Notas Fiscais*/
+.AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{width:44.8%;}
+.accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{width:45.6% !important;}
+}
+
+/*=================== RESOLUÇÃO 1600px ===================*/
+@media only screen and (min-width : 1560px) {
+
+/*Menu Geral*/
+div.menuAberto{width:96.9% !important; }
+
+/* UI Autocomplete */
+section#wexCusto ~ ul.ui-autocomplete{width:45.1% !important;}
+
+/*Aditivos*/
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:169px;}
+
+/*Custos*/
+  #patrocinadores, #centroCusto{width: 48.24% !important;}
+  div#detalhamentoAbas > .tabs{width:47.6%;}
+
+    /*Tabela orçamento aprovado*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div{width:100%;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado{width:21% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado input{ width:90% !important}     
+
+      /*Campo Ano*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:1.7% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.anoPlanejado {width:70% !important;}
+    
+      /*Campo Total*/      
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2),
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{width: 15.3% !important}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:92% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{right:6px; top:50%; margin-top:6px; width:140px;}
+
+      /*Campo Meses*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width: 57px !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes{margin-top:9px;}
+
+    /*Depesas Reais*/
+     div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes > .meses{margin-left:46px !important; margin-right:46px !important;}
+     div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{max-width:82px;}
+     div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child > input{width:72px;}
+     div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td > input{width:82px;}
+
+      /*Analise Crítica*/
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{width:97.9% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .tabs{width:48.6% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{width:98.6% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial,
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{right:90% !important;}
+
+
+      /*Análise Crítica Geral*/
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > span{width:81px;}
+      #wexAnaliseCriticaGeral table tbody:last-child tr:last-child td:first-child > span{width:auto;}
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > button{width:17px !important; height:17px !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td{width:106px; max-width:106px; min-width:104px; font-size:12px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(1){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2) > span{margin-right:5px; }
+      #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.rubricas td span{width:108px;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo{font-size:12px !important; font-weight:normal !important;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo span{font-family:"Conv_Frutiger" !important;}
+
+/*Termo Aditivo*/
+    /* TA Descritivo*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{width:76%}
+
+/*Projetos*/
+#wexProjetos > div#projetosArea .projetos .projetoTitulo{width:auto;}
+
+    /*Editando Projeto*/
+    .editandoProjeto > .campoInformacoes > input{width:89.9%;}
+    .editandoProjeto > .campoInformacoes > select{width:90.7%;}
+    .editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+    .editandoProjeto > .gerenteProjeto > select {width:79.9%;}
+    .editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+    .editandoProjeto > .centroCusto > select{width:82.5%;}
+    .editandoProjeto > .tresColunas input{width:66%}
+    .editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+    .editandoProjeto > .inicioReal.tresColunas input{width:77%;}
+    .editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+    .editandoProjeto > .terminoReal.tresColunas input{width:75.2%;}
+
+/*Associação Notas Fiscais*/
+.AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{width:46.7%;}
+.accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{width:45.9% !important;}
+}
+
+
+/*=================== RESOLUÇÃO 1680px ===================*/
+
+
+@media only screen and (min-width : 1640px) {
+/*Menu Geral*/
+div.menuAberto{width:97.1% !important; }
+    /*Custos*/
+      #patrocinadores, #centroCusto{width: 48.35% !important;}
+      div#detalhamentoAbas > .tabs{width:47.7%;}
+
+    /* UI Autocomplete */
+    section#wexCusto ~ ul.ui-autocomplete{width:45.4% !important;}
+
+    /*Aditivos*/
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:180px;}
+
+      /*Tabela orçamento aprovado*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div{width:100%;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:0.87% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado{width:12.3% !important;}
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado input{ width:90% !important}     
+
+        
+          /*Campo Total*/      
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2),
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{width: 12.35% !important}
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:90% !important;}
+          div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{right:3px; top:50%; margin-top:6px; width:121px;}
+
+          /*Campo Meses*/
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width: 67px !important;}
+
+      /*Depesas Reais*/
+      div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes > .meses{margin-left:50px !important; margin-right:50px !important;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{max-width:90px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child > input{width:80px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td > input{width:90px;}
+
+    /*Analise Crítica*/
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{width:98.01% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .tabs{width:48.69% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{width:98.75% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial,
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{right:90% !important;}
+
+      /*Análise Crítica Geral*/
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > span{width:120px;}
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > button{width:19px !important; height:19px !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td{width:111px; max-width:111px; min-width:109px; font-size:13px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(1){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2) > span{margin-right:5px; }
+      #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.rubricas td span{width:108px;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo{font-size:13px !important; font-weight:normal !important;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo span{font-family:"Conv_Frutiger" !important;}
+/*Termo Aditivo*/
+    /* TA Descritivo*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{width:77%}
+
+/*Projetos*/
+#wexProjetos > div#projetosArea .projetos .projetoTitulo{width:auto;}
+
+    /*Editando Projeto*/
+    .editandoProjeto > .campoInformacoes > input{width:90.6%;}
+    .editandoProjeto > .campoInformacoes > select{width:91.4%;}
+    .editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+    .editandoProjeto > .gerenteProjeto > select {width:80.6%;}
+    .editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+    .editandoProjeto > .centroCusto > select{width:83.6%;}
+    .editandoProjeto > .tresColunas input{width:66%}
+    .editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+    .editandoProjeto > .inicioReal.tresColunas input{width:77%;}
+    .editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+    .editandoProjeto > .terminoReal.tresColunas input{width:76.9%;}
+
+/*Associação Notas Fiscais*/
+.AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{width:46%;}
+.accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{width:46% !important;}
+}
+
+/*=================== RESOLUÇÃO 1920px ++ ===================*/
+@media only screen and (min-width : 1880px) {
+    /*Custos*/
+  #patrocinadores, #centroCusto{width:48.5% !important;}
+  div#detalhamentoAbas > .tabs{width:48%;}
+
+   /* UI Autocomplete */
+   section#wexCusto ~ ul.ui-autocomplete{width:45.8% !important;}
+
+   /*Aditivos*/
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:208px;}
+
+  /*Tabela orçamento aprovado*/
+      div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div{width:100%;}
+
+          /*Campo Ano*/
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:2.06% !important;}
+        
+          /*Campo Total*/      
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2),
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{width: 15.36% !important}
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:94% !important;}
+          div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{right:3px; top:50%; margin-top:6px; width:84%;}
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado{width:25.4% !important;}
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div:first-child > div:nth-of-type(2), div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr.rubricaPai > td:nth-of-type(3) > div.totalPlanejado input{ width:90% !important}     
+
+          /*Campo Meses*/
+          div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width: 80px !important;}
+
+
+  /*Depesas Reais*/
+      div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes > .meses{margin-left:59px !important; margin-right:59px !important;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{max-width:109px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child > input{width:99px;}
+      div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td > input{width:109px;}
+
+      /*Analise Crítica*/
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{width:98.25% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .detalhesProjetoGeral > .tabs{width:98.25% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{width:98.9% !important;}
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial,
+      section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{right:91% !important;}
+
+      /*Análise Crítica Geral*/
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > span{width:122px;}
+      #wexAnaliseCriticaGeral table tbody tr td:first-child > button{width:19px !important; height:19px !important;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td{width:128px; max-width:128px; min-width:126px; font-size:13px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(1){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2){width:120px; min-width:120px; max-width:120px;}
+      #wexAnaliseCriticaGeral table.tabelaAnalise tbody tr td:nth-of-type(2) > span{margin-right:5px; }
+      #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.rubricas td span{width:108px;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo{font-size:13px !important; font-weight:normal !important;}
+      #wexAnaliseCriticaGeral table > tbody > tr > td.negativo span{font-family:"Conv_Frutiger" !important;}
+/*Termo Aditivo*/
+    /* TA Descritivo*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{width:80%}
+
+/*Projetos*/
+#wexProjetos > div#projetosArea .projetos .projetoTitulo{width:auto;}
+
+   /*Editando Projeto*/
+    .editandoProjeto > .campoInformacoes > input{width:91.7%;}
+    .editandoProjeto > .campoInformacoes > select{width:92.4%;}
+    .editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+    .editandoProjeto > .gerenteProjeto > select {width:82%;}
+    .editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+    .editandoProjeto > .centroCusto > select{width:85.6%;}
+    .editandoProjeto > .tresColunas input{width:66%}
+    .editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+    .editandoProjeto > .inicioReal.tresColunas input{width:77%;}
+    .editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+    .editandoProjeto > .terminoReal.tresColunas input{width:79.6%;}
+
+/*Associação Notas Fiscais*/
+.AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{width:46.5%;}
+.accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{width:46.3% !important;}
+}

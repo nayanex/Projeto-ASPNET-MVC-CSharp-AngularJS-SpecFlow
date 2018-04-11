@@ -1,0 +1,108 @@
+﻿﻿@{
+	ViewBag.Title = "Custos Administrativos";
+	ViewBag.AngularModule = "wex.custos.administrativos";
+}
+
+<section id="wexCustoAdministrativoPorRubricas" ng-controller="CustosAdministrativosCtrl">
+
+	<header>
+		<h1>Custos Administrativos por Rubricas</h1>
+	</header>
+
+	<div id="rubricaArea" class="blocoInfoAreaPrimario">
+
+		<div class="areaInteracao">
+			<div class="filtroMes">
+				<div class="campoInformacoes textInfo mesRubrica">
+					<label>Mes</label>
+                    <input type="text" show-button-bar=false
+                           ng-model="viewModel.dataConsulta"
+                           datepicker-popup="MMMM / yyyy"
+                           datepicker-options="{'mode': 'month'}" 
+						   show-weeks="false" />
+				</div>
+			</div>
+		</div>
+
+        <div ng-if="!carregandoCustosRubricas() && !contemCustosRubricas()">
+            Nenhum custo administrativo encontrado
+        </div>
+
+		<table class="tabelaCustoRubrica" border="0" cellpadding="0" cellspacing="0" ng-if="contemCustosRubricas()">
+
+            <colgroup>
+                <col />
+                <col width="200" />
+                <col width="200" />
+                <col width="200" />
+            </colgroup>
+
+			<thead>
+				<tr>
+					<td>Rubricas</td>
+					<td>Orçamento Aprovado</td>
+					<td>Saldo Disponível no Mes</td>
+					<td>Despesa Real no Mes</td>
+				</tr>
+			</thead>
+
+			<tbody ng-repeat="custosRubricaDto in viewModel.custosRubricas">
+
+				<tr class="geral" ng-class="{'listaProjetos': mostrandoCustosProjetos(custosRubricaDto) || carregandoCustosProjetos(custosRubricaDto)}">
+                    <td><a href="javascript:;" ng-click="alternarCustosProjetos(custosRubricaDto)"><i ng-class="{
+                                      'iconeExpandir2': !mostrandoCustosProjetos(custosRubricaDto) && !carregandoCustosProjetos(custosRubricaDto) && !carregandoCustosRubricas(),
+                                      'iconeRecuar': mostrandoCustosProjetos(custosRubricaDto) && !carregandoCustosProjetos(custosRubricaDto) && !carregandoCustosRubricas(),
+                                      'iconeCarregando': carregandoCustosProjetos(custosRubricaDto) || carregandoCustosRubricas()}"></i></a>
+						{{custosRubricaDto.Nome}}</td>
+					<td>{{custosRubricaDto.OrcamentoAprovado | monetario}}</td>
+					<td ng-class="{negativo: decorarValorNegativo(custosRubricaDto.SaldoDisponivel) }">
+                        {{custosRubricaDto.SaldoDisponivel | monetario}}
+                        <button class="icoRepetirValor iconeRepetirValor" 
+		                        style="display: none;" 
+		                        title="Transferir o valor para Despesa Real" 
+		                        ng-click="copiarSaldosDisponiveisProjetos(custosRubricaDto.TipoRubricaId)">
+                        </button>
+					</td>
+					<td>{{custosRubricaDto.DespesaReal | monetario}}</td>
+				</tr>
+
+				<tr class="projetosListados" ng-repeat="custosProjetoDto in viewModel.custosProjetos.get(custosRubricaDto.TipoRubricaId)">
+					<td>{{custosProjetoDto.NomeProjeto}}</td>
+                    <td>{{custosProjetoDto.OrcamentoAprovado | monetario}}</td>
+                    <td ng-class="{negativo: decorarValorNegativo(custosProjetoDto.SaldoDisponivel) }">
+                        {{custosProjetoDto.SaldoDisponivel | monetario}}
+                        <button class="icoRepetirValor iconeRepetirValor" 
+		                        style="display: none;" 
+		                        title="Transferir o valor para Despesa Real" 
+		                        ng-click="copiarSaldoDisponivelProjeto(custosProjetoDto)">
+                        </button>
+
+                    </td>
+                    <td><i ng-class="{'iconeCarregandoAzulDark': salvandoDespesaReal(custosRubricaDto, custosProjetoDto)}"></i>
+                        <input type="text" data-valor="true" ng-model="custosProjetoDto.DespesaReal" wex-debounce="salvarDespesaReal(custosRubricaDto, custosProjetoDto)" /></td>
+				</tr>
+
+                <tr class="projetosListados" ng-if="!mostrandoCustosProjetos(custosRubricaDto) && carregandoCustosProjetos(custosRubricaDto)">
+					<td colspan="4">Carregando custos de projetos</td>
+				</tr>
+
+				<tr class="projetosListados" ng-if="mostrandoCustosProjetos(custosRubricaDto) && !carregandoCustosProjetos(custosRubricaDto) && !contemCustosProjetos(custosRubricaDto)">
+					<td colspan="4">Nenhum projeto com custos encontrado na data informada</td>
+				</tr>
+
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td>Total</td>
+					<td>{{viewModel.total.OrcamentoAprovado | monetario}}</td>
+					<td ng-class="{negativo: viewModel.total.SaldoDisponivel < 0}">{{viewModel.total.SaldoDisponivel | monetario}}</td>
+					<td>{{viewModel.total.DespesaReal | monetario}}</td>
+				</tr>
+			</tfoot>
+
+		</table>
+
+	</div>
+
+</section>

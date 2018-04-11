@@ -1,0 +1,1911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Company="FPF" Description="WexProject" Logo="wex-logo">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Close" Caption="Fechar" />
+      <Action Id="CloseAllMdiChildWindowsAction" Caption="Fechar Janelas" />
+      <Action Id="FullTextSearch" ToolTip="Objeto Filtrado Por Texto" />
+      <Action Id="NextObject" Caption="Próximo " />
+      <Action Id="PreviousObject" Caption=" Anterior" />
+      <Action Id="ShowAllContexts" Caption="Validar" ToolTip="validar objeto selecionado(s) em todos os contextos apresentados." />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Editors.CriteriaProvider">
+      <OwnMembers>
+        <Member Name="FilteredObjectsType" Caption="Filtered Objects Type" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ObjectAccessPermission">
+      <OwnMembers>
+        <Member Name="CreateAccess" Caption="Inclusão" />
+        <Member Name="ObjectType" DataSourceCriteria="!= this.Address &amp;&amp; !=this.&quot;&quot;" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.Address" Caption="Meus Dados &gt; Endereço" />
+    <Class Name="DevExpress.Persistent.BaseImpl.Country" Caption="Meus Dados &gt; País" />
+    <Class Name="DevExpress.Persistent.BaseImpl.FileData" Caption="Meus Dados &gt; Arquivos de Dados" />
+    <Class Name="DevExpress.Persistent.BaseImpl.Note" Caption="Controle de Acesso &gt; Nota" />
+    <Class Name="DevExpress.Persistent.BaseImpl.Party" Caption="Controle de Acesso &gt; Dados" />
+    <Class Name="DevExpress.Persistent.BaseImpl.PersistentPermission" Caption="Controle de Acesso &gt; Permições" />
+    <Class Name="DevExpress.Persistent.BaseImpl.Person" Caption="Meus Dados &gt; Perfil" />
+    <Class Name="DevExpress.Persistent.BaseImpl.PhoneNumber" Caption="Meus Dados &gt; Telefone" />
+    <Class Name="DevExpress.Persistent.BaseImpl.Role" Caption="Controle de Acesso &gt; Regras" />
+    <Class Name="DevExpress.Persistent.BaseImpl.RoleBase" Caption="Controle de Acesso &gt; Base de Ragras" />
+    <Class Name="DevExpress.Persistent.BaseImpl.User" Caption="Meus Dados &gt; Usuario">
+      <OwnMembers>
+        <Member Name="IsActive" CaptionForTrue="" Caption="Está Ativo" />
+      </OwnMembers>
+    </Class>
+    <Class Name="WexProject.BLL.Models.Escopo.Estoria" Caption="Projetos &gt; Escopo &gt; Estória">
+      <OwnMembers>
+        <Member Name="_NbTamanho" PredefinedValues="0;0.5;1;2;3;5;8;13;20;40;100" Type="System.String" />
+        <Member Name="ComoUmBeneficiado" Caption="Como um" LookupProperty="TxDescricao" />
+      </OwnMembers>
+    </Class>
+    <Class Name="WexProject.BLL.Models.Escopo.Modulo" Caption="Projetos &gt; Escopo &gt;  Módulo">
+      <OwnMembers>
+        <Member Name="_NbPercEmAnalise" DisplayFormat="{0} %" />
+        <Member Name="_NbPercEmDesenv" DisplayFormat="{0} %" />
+        <Member Name="_NbPercNaoIniciado" DisplayFormat="{0} %" />
+        <Member Name="_NbPercPronto" DisplayFormat="{0} %" />
+        <Member Name="NbEsforcoPlanejado" DisplayFormat="{0} %" />
+      </OwnMembers>
+    </Class>
+    <Class Name="WexProject.BLL.Models.Execucao.CicloDesenv" Caption="Projetos &gt; Execução &gt; Ciclos de Desenvolvimento" />
+    <Class Name="WexProject.BLL.Models.Execucao.CicloDesenvEstoria" Caption="Projeto &gt; Execução &gt;Ciclo &gt; Estoria" />
+    <Class Name="WexProject.BLL.Models.Execucao.MotivoCancelamento" ImageName="Action_LinkUnlink_Unlink" />
+    <Class Name="WexProject.BLL.Models.Geral.Calendario" Caption="Institucional &gt; Calendario" />
+    <Class Name="WexProject.BLL.Models.Geral.Cargo" DefaultListViewAllowEdit="False" Caption="Projeto &gt; Planejamento &gt; Comunicação &gt; Empresa/Instituição &gt; Cargo" />
+    <Class Name="WexProject.BLL.Models.Geral.ConfiguracaoDocumento" Caption="Novos Negocios &gt; Basicos &gt; Configuração de Documento" />
+    <Class Name="WexProject.BLL.Models.Geral.Pais" ImageName="BO_Country_v92" />
+    <Class Name="WexProject.BLL.Models.Geral.Papel" Caption="Projeto &gt; Planejamento &gt; Comunicação &gt; Empresa/Instituição &gt; Papéis" />
+    <Class Name="WexProject.BLL.Models.Geral.Projeto" Caption="Projeto &gt; Projeto">
+      <OwnMembers>
+        <Member Name="NbTamanhoTotal" DisplayFormat="{0}" />
+      </OwnMembers>
+    </Class>
+    <Class Name="WexProject.BLL.Models.Geral.ProjetoCliente" Caption="Projeto &gt; Projeto Cliente" />
+    <Class Name="WexProject.BLL.Models.Geral.ProjetoParteInteressada">
+      <OwnMembers>
+        <Member Name="TxParteInteressada" Caption="Nome" LookupProperty="ParteInteressadaNome" />
+      </OwnMembers>
+    </Class>
+    <Class Name="WexProject.BLL.Entities.Planejamento.Cronograma" DefaultDetailViewImage="cronograma" DefaultListViewImage="cronograma" ImageName="cronograma" />
+    <Class Name="WexProject.BLL.Models.Planejamento.SituacaoPlanejamento" DefaultDetailViewImage="situacao_do_planejamento" DefaultListViewImage="situacao_do_planejamento" ImageName="situacao_do_planejamento" />
+    <Class Name="WexProject.BLL.Models.Qualidade.CasoTeste" DefaultListViewNewItemRowPosition="Top" />
+    <Class Name="WexProject.BLL.Models.Qualidade.CasoTestePasso" DefaultListViewNewItemRowPosition="Top" />
+    <Class Name="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperado" DefaultListViewNewItemRowPosition="Top" />
+    <Class Name="WexProject.BLL.Models.Qualidade.CasoTestePreCondicao" DefaultListViewNewItemRowPosition="Bottom" />
+    <Class Name="WexProject.BLL.Models.Rh.Colaborador" Caption="RH &gt; Ferias &gt; Colaborador" />
+    <Class Name="WexProject.BLL.Models.Rh.ColaboradorAfastamento">
+      <OwnMembers>
+        <Member Name="IsCriadoAutomaticamente" IsCustom="True" Type="System.Boolean" IsNewNode="True" />
+        <Member Name="TipoAfastamento" LookupEditorMode="AllItemsWithSearch" DataSourceCriteria="[CsSituacao] = ##Enum#WexProject.BLL.Shared.Domains.Geral.CsSituacao,Ativo#" />
+        <Member Name="TxObservacao" Caption="Referência" />
+      </OwnMembers>
+    </Class>
+    <Class Name="WexProject.BLL.Models.Rh.FeriasPlanejamento" Caption="RH &gt; Ferias &gt;  Planejamento de Férias">
+      <AppearanceRules>
+        <AppearanceRule Id="BackTermino" Criteria="[Realizadas] Is Not Null" BackColor="LightCyan" FontColor="Black" TargetItems="_DtRetorno" IsNewNode="True" />
+        <AppearanceRule Id="FeriasPlanejamento_DtRetorno_Appearance" AppearanceItemType="ViewItem" Context="Any" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="WexProject.BLL.Models.Rh.ModalidadeFerias" Caption="RH &gt; Ferias &gt;  Modalidade de Férias" />
+  </BOModel>
+  <ConditionalEditorState>
+    <Rules>
+      <EditorStateRule Id="@b2bdee64-e8df-4863-b964-abff6d15b968" TypeInfo="WexProject.BLL.Models.Rh.ColaboradorAfastamento" Properties="DtInicio" Criteria="[IsCriadoAutomaticamente] = True" EditorState="Hidden" IsNewNode="True" />
+    </Rules>
+  </ConditionalEditorState>
+  <CreatableItems>
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Beneficiado" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Estoria" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Modulo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Requisito" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Solicitante" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.CicloDesenv" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.CicloDesenvEstoria" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.LicaoAprendida" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.TipoEscopo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Calendario" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Cargo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumento" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumentoSituacao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumentoSituacaoEmail" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumentoSituacaoEmailCc" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumentoSituacaoEmailCco" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.EmpresaInstituicao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Papel" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ParteInteressada" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Projeto" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ProjetoCliente" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ProjetoParteInteressada" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.NovosNegocios.SolicitacaoOrcamento" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.NovosNegocios.SolicitacaoOrcamentoHistorico" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.NovosNegocios.TipoSolicitacao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Entities.Planejamento.Cronograma" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.CronogramaTarefa" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.CronogramaUltimaSelecao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.SituacaoPlanejamento" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.TarefaHistorico" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTeste" IsNewNode="True" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePasso" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperado" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperadoAnexo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperadoInformacaoAdicional" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePreCondicao" IsNewNode="True" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePreCondicaoAnexo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePreCondicaoInformacaoAdicional" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Rh.Colaborador" Caption="Colaborador" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Rh.Ferias" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Rh.FeriasPlanejamento" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Rh.ModalidadeFerias" Removed="True" />
+    <CreatableItem ClassName="WexProject.Module.Lib.Util.UserDao" Removed="True" />
+  </CreatableItems>
+  <Localization>
+    <LocalizationGroup Name="Confirmations">
+      <LocalizationItem Name="Cancel" Value="Você deseja cancelar as alterações?" />
+      <LocalizationItem Name="Save" Value="Você deseja salvar as alterações?" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="DialogButtons">
+      <LocalizationItem Name="Abort" Value="&amp;Abordar" />
+      <LocalizationItem Name="Add" Value="Adicionar" />
+      <LocalizationItem Name="Apply" Value="Aplicar" />
+      <LocalizationItem Name="Back" Value="&lt; Voltar" />
+      <LocalizationItem Name="Cancel" Value="&amp;Cancelar" />
+      <LocalizationItem Name="Clear" Value="Limpar" />
+      <LocalizationItem Name="Close" Value="Fechar" />
+      <LocalizationItem Name="Find" Value="Buscar" />
+      <LocalizationItem Name="Ignore" Value="&amp;Ignorar" />
+      <LocalizationItem Name="Next" Value="Próximo &gt;" />
+      <LocalizationItem Name="No" Value="&amp;Não" />
+      <LocalizationItem Name="Remove" Value="Remover" />
+      <LocalizationItem Name="Retry" Value="&amp;Repetir" />
+      <LocalizationItem Name="Yes" Value="&amp;Sim" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="WexProject.BLL.Shared.Domains.Escopo.CsTipoEstoriaDomain">
+        <LocalizationItem Name="EscopoContratado" Value="Escopo Contratado" />
+        <LocalizationItem Name="SolicitacaoMudanca" Value="Solicitação de mudança" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="WexProject.BLL.Shared.Domains.Escopo.CsValorNegocioDomain">
+        <LocalizationItem Name="Desejavel" Value="Desejável" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems DefaultChildItemsDisplayStyle="List" StartupNavigationItem="@8769867e-8c5a-4b4e-bf18-fd79d252c28e">
+    <Items>
+      <Item Id="Novos Negócios">
+        <Items>
+          <Item Id="Básicos">
+            <Items>
+              <Item Id="TipoSolicitacao_ListView" Visible="False" />
+            </Items>
+          </Item>
+          <Item Id="SolicitacaoOrcamento_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Projeto" QuickAccessItem="False" ChildItemsDisplayStyle="List" ViewId="">
+        <Items>
+          <Item Id="Execucao">
+            <Items>
+              <Item Id="MonitoracaoEControle" Index="1">
+                <Items>
+                  <Item Id="@8769867e-8c5a-4b4e-bf18-fd79d252c28e" ViewId="Dashboard_SituacaoGeral" Index="0" IsNewNode="True" />
+                  <Item Id="Dashboard" Removed="True" />
+                </Items>
+              </Item>
+              <Item Id="CicloDesenv_ListView" Index="2" />
+              <Item Id="Cronograma" QuickAccessItem="True" Caption="Cronograma" ObjectKey="" ViewId="" Removed="True" />
+            </Items>
+          </Item>
+          <Item Id="Planejamento">
+            <Items>
+              <Item Id="Basicos" Caption="Básicos" Index="0" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="@d4a150fc-0aa2-4e2d-b7bc-c9de1eb2300d" ViewId="Pais_ListView" IsNewNode="True" />
+                  <Item Id="SituacaoPlanejamento" Caption="Situação de Planejamento" ViewId="SituacaoPlanejamento_ListView" IsNewNode="True" />
+                </Items>
+              </Item>
+              <Item Id="Comunicacao" Index="1" />
+              <Item Id="Prioridades" Index="2" />
+               <Item Id="Cronograma1" QuickAccessItem="True" ImageName="cronograma" Index="3" ViewId="CronogramaTarefa_ListView" Visible="False" IsNewNode="True" />
+              <Item Id="Cronograma" Caption="Cronograma" ImageName="cronograma" Index="4" ViewId="AboutInfo_DetailView" IsNewNode="True" />
+              <Item Id="Situação PLanejamento" ImageName="situacao_do_planejamento" Removed="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Rh">
+        <Items>
+          <Item Id="Ferias_ListView" Caption="Controle de Férias" ViewId="FeriasPlanejamento_ListView" />
+          <Item Id="PlanejamentoFerias_DetailView" ViewId="PlanejamentoFerias_DetailView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="ControleAcesso" ChildItemsDisplayStyle="List" />
+    </Items>
+  </NavigationItems>
+  <Options FormStyle="Ribbon" EnableHtmlFormatting="True" Skin="Office 2010 Blue" UIType="TabbedMDI">
+    <LayoutManagerOptions CaptionHorizontalAlignment="Far" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SchedulerAspNetModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="11.2.8.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <ErrorMessageTemplates>
+      <RuleRequiredField MessageTemplateMustNotBeEmpty="O campo &quot;{Name}&quot;  é obrigatório." />
+      <RuleUniqueValue MessageTemplateMustBeUnique="Já existe um registro com este mesmo valor para o campo &quot;{Name}&quot;." />
+      <RuleValueComparison MessageTemplateMustBeEqualToOperand="&quot;{TargetPropertyName}&quot; deve ser igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOperand="&quot;{TargetPropertyName}&quot; deve ser maior que &quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; deve ser maior ou igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOperand="&quot;{TargetPropertyName}&quot; deve ser menor que &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; deve ser menor ou igual a &quot;{RightOperand}&quot;." MessageTemplateMustNotBeEqualToOperand="&quot;{TargetPropertyName}&quot; deve ser diferente de &quot;{RightOperand}&quot;." />
+    </ErrorMessageTemplates>
+    <Rules>
+      <RuleFromBoolProperty Id="Colaborador_ValidacaoNomeCompleto" Removed="True" />
+      <RuleValueComparison Id="Configuracao_NbDtMaxTirarFerias_Comparison" MessageTemplateMustBeEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOperand="&quot;{TargetPropertyName}&quot; necessita ser maior que&quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser maior ou igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOperand="&quot;{TargetPropertyName}&quot; necessita ser menor a &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser menor ou igual &quot;{RightOperand}&quot;." MessageTemplateMustNotBeEqualToOperand="&quot;{TargetPropertyName}&quot; não pode ser igual a &quot;{RightOperand}&quot;." />
+      <RuleValueComparison Id="Configuracao_NbQtdeMaxFerias_Comparison" MessageTemplateMustNotBeEqualToOperand="&quot;{TargetPropertyName}&quot; não pode ser igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser menor ou igual &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOperand="&quot;{TargetPropertyName}&quot; necessita ser menor a &quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser maior ou igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOperand="&quot;{TargetPropertyName}&quot; necessita ser maior que&quot;{RightOperand}&quot;." MessageTemplateMustBeEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser igual a &quot;{RightOperand}&quot;." />
+      <RuleValueComparison Id="Configuracao_NbQtdeMaxVenda_Comparison" MessageTemplateMustBeEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOperand="&quot;{TargetPropertyName}&quot; necessita ser maior que&quot;{RightOperand}&quot;." MessageTemplateMustBeGreaterThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser maior ou igual a &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOperand="&quot;{TargetPropertyName}&quot; necessita ser menor a &quot;{RightOperand}&quot;." MessageTemplateMustBeLessThanOrEqualToOperand="&quot;{TargetPropertyName}&quot; necessita ser menor ou igual &quot;{RightOperand}&quot;." MessageTemplateMustNotBeEqualToOperand="&quot;{TargetPropertyName}&quot; não pode ser igual a &quot;{RightOperand}&quot;." />
+      <RuleRequiredField Id="Ferias_NbAnoBase_Required" Removed="True" />
+      <RuleRequiredField Id="FileAttachmentBaseRule" CustomMessageTemplate="Selecione um anexo" />
+      <RuleRequiredField Id="MotivoCancelamento_CsSituacao_Required" MessageTemplateMustNotBeEmpty="&quot;{TargetPropertyName}&quot; não pode ser nulo" />
+      <RuleRequiredField Id="MotivoCancelamento_TxDescricao_Required" MessageTemplateMustNotBeEmpty="&quot;{TargetPropertyName}&quot; não pode ser nulo" />
+      <RuleRequiredField Id="Pais_Name_Required" TargetContextIDs="Save" TargetType="DevExpress.Persistent.BaseImpl.Country" TargetPropertyName="Name" MessageTemplateMustNotBeEmpty="O campo &quot;Nome&quot;  é obrigatório." IsNewNode="True" />
+      <RuleUniqueValue Id="Pais_Name_Unique" MessageTemplateMustBeUnique="Já existe um registro com este mesmo valor para o campo &quot;Nome&quot;." TargetType="DevExpress.Persistent.BaseImpl.Country" TargetPropertyName="Name" TargetContextIDs="Save" IsNewNode="True" />
+      <RuleIsReferenced Id="RuleIsReferenced_CargoParteInteressada" MessageTemplateMustBeReferenced="O Cargo está sendo referenciado por uma Parte Interessada!" />
+      <RuleIsReferenced Id="RuleIsReferenced_EmpresaInstituicaoProjeto" MessageTemplateMustBeReferenced="Empresa / Instituição não pode ser excluído pois está associado a um Projeto!" />
+      <RuleIsReferenced Id="RuleIsReferenced_moduloEstoria" MessageTemplateMustBeReferenced="Existe um Módulo sendo referenciado por uma Estória!" MessageTemplateFoundObjects="The following objects are found: " MessageTemplateCollectionValidationMessageSuffix="(For the &quot;{TargetCollectionOwnerType}.{TargetCollectionPropertyName}&quot; collection elements)." FoundObjectMessageFormat="" />
+      <RuleIsReferenced Id="RuleIsReferenced_moduloRequisito" MessageTemplateMustBeReferenced="Existe um Modulo sendo referenciado por um Requisito!" FoundObjectMessageFormat="" />
+      <RuleIsReferenced Id="RuleIsReferenced_PapelParteInteressada" MessageTemplateMustBeReferenced="O Papel está sendo referenciado por uma Projeto e Parte Interessa!" />
+      <RuleIsReferenced Id="RuleIsReferenced_RequisitocasoTeste" MessageTemplateMustBeReferenced="Existe um Requisito sendo referenciado por um Caso de Teste!" />
+      <RuleRequiredField Id="SolicitacaoOrcamento_Cliente_Required" CustomMessageTemplate="Preencher o campo Cliente " />
+      <RuleRequiredField Id="SolicitacaoOrcamento_CsPrioridade_Required" CustomMessageTemplate="Preencher o campo Prioridade " />
+      <RuleRequiredField Id="SolicitacaoOrcamento_DtPrazo_Required" CustomMessageTemplate="Preencher o campo Prazo " />
+      <RuleRequiredField Id="SolicitacaoOrcamento_Responsavel_Required" CustomMessageTemplate="Preencher o campo Responsável " />
+      <RuleRequiredField Id="SolicitacaoOrcamento_Situacao_Required" CustomMessageTemplate="Preencher o campo Situação " />
+      <RuleRequiredField Id="SolicitacaoOrcamento_Solicitante_Required" CustomMessageTemplate="Preencher o campo Solicitante" />
+      <RuleRequiredField Id="SolicitacaoOrcamento_TxContatoCliente_Required" CustomMessageTemplate="Preencher o campo Nome" />
+      <RuleRequiredField Id="SolicitacaoOrcamento_TxEmailContatoCliente_Required" CustomMessageTemplate="Preencher o campo E-mail " />
+      <RuleRequiredField Id="SolicitacaoOrcamento_TxTitulo_Required" CustomMessageTemplate="Preencher o campo Titulo" />
+      <RuleRequiredField Id="Solicitante_EmpresaInstituicao_Required" CustomMessageTemplate="" />
+      <RuleRequiredField Id="Solicitante_TxNome_Required" CustomMessageTemplate="Nome não pode ser vazio" />
+      <RuleRequiredField Id="User Name required" CustomMessageTemplate="Informe o nome do Usuário de Rede" InvertResult="True" Removed="True" />
+    </Rules>
+  </Validation>
+  <Views>
+    <DetailView Id="Solicitante_DetailView" Caption="Solicitantes">
+      <Items>
+        <PropertyEditor Id="EmpresaInstituicao" Caption="Empresa / Instituição" />
+      </Items>
+    </DetailView>
+    <ListView Id="Solicitante_ListView" Caption=" Solicitantes">
+      <Columns>
+        <ColumnInfo Id="EmpresaInstituicao" Caption="Empresa / Instituição" />
+      </Columns>
+    </ListView>
+    <ListView Id="Solicitante_LookupListView" Caption="Solicitantes">
+      <Columns>
+        <ColumnInfo Id="Cargo" Index="-1" />
+        <ColumnInfo Id="EmpresaInstituicao" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Address_DetailView" CustomizationEnabled="True" />
+    <DetailView Id="Beneficiado_DetailView" Caption=" Beneficiados" ImageName="beneficiado16" />
+    <ListView Id="Beneficiado_ListView" Caption="Beneficiados" ImageName="beneficiado16" />
+    <ListView Id="Beneficiado_LookupListView" Caption="Beneficiados" />
+    <DetailView Id="Calendario_DetailView" Caption="Calendario" ImageName="calendario16">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Calendario">
+              <LayoutGroup Id="Calendario_col1" RelativeSize="84">
+                <LayoutItem Id="TxDescricao" SizeConstraintsType="Custom" MaxSize="0, 30" MinSize="0, 30" RelativeSize="12" ViewItem="TxDescricao" />
+                <LayoutItem Id="CsVigencia" SizeConstraintsType="Custom" MaxSizeWidth="300" MinSizeWidth="300" MaxSizeHeight="25" MinSizeHeight="25" MaxSize="305, 30" MinSize="305, 30" RelativeSize="9" ViewItem="CsVigencia" />
+                <LayoutItem Id="DtInicio" SizeConstraintsType="Custom" MaxSizeWidth="300" MinSizeWidth="300" MaxSizeHeight="22" MinSizeHeight="22" MaxSize="305, 30" MinSize="305, 30" TextAlignMode="UseParentOptions" RelativeSize="8" ViewItem="DtInicio" />
+                <LayoutGroup Id="101c860d-f42b-4801-8828-604f26ef2691" RelativeSize="12" Caption="101c860d-f42b-4801-8828-604f26ef2691(8)" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions">
+                  <LayoutItem Id="Periodo" SizeConstraintsType="Custom" MaxSizeWidth="300" MinSizeWidth="300" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="300, 30" MinSize="300, 30" TextAlignMode="UseParentOptions" RelativeSize="50" ViewItem="Periodo" />
+                  <LayoutItem Id="DtTermino" MaxSizeWidth="300" MinSizeWidth="300" SizeConstraintsType="Custom" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="200, 30" MinSize="200, 30" TextAlignMode="UseParentOptions" RelativeSize="49" ViewItem="DtTermino" />
+                </LayoutGroup>
+                <LayoutGroup Id="36ce3b7d-43e6-4150-a292-0c2523969b20" RelativeSize="12" TextAlignMode="UseParentOptions">
+                  <LayoutItem Id="CsMes" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="0" RelativeSize="51" MaxSizeWidth="300" MinSizeWidth="300" SizeConstraintsType="Custom" MaxSizeHeight="27" MinSizeHeight="27" MaxSize="300, 30" MinSize="300, 30" TextAlignMode="UseParentOptions" ViewItem="CsMes" IsNewNode="True" />
+                  <LayoutItem Id="NbDia" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="1" RelativeSize="48" SizeConstraintsType="Custom" MaxSizeWidth="150" MinSizeWidth="150" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="150, 25" MinSize="150, 25" TextAlignMode="UseParentOptions" ViewItem="NbDia" IsNewNode="True" />
+                  <LayoutGroup Id="1f6f8e71-e103-45d4-9841-698f151265d1" Removed="True">
+                    <LayoutItem Id="CsMes" ViewItem="CsMes" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="0" RelativeSize="100" MaxSizeWidth="300" MinSizeWidth="300" SizeConstraintsType="Custom" MaxSizeHeight="27" MinSizeHeight="27" MaxSize="300, 27" MinSize="300, 27" Removed="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="b6931f47-4e5d-4f0b-a29f-357907de9d17" Removed="True">
+                    <LayoutItem Id="NbDia" SizeConstraintsType="Custom" MaxSizeWidth="150" MinSizeWidth="150" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="150, 30" MinSize="150, 30" ViewItem="NbDia" Removed="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="CsCalendario" MaxSizeWidth="300" MinSizeWidth="300" SizeConstraintsType="Custom" MaxSizeHeight="25" MinSizeHeight="25" MaxSize="305, 30" MinSize="305, 30" RelativeSize="10" ViewItem="CsCalendario" />
+                <LayoutItem Id="CsSituacao" SizeConstraintsType="Custom" MaxSizeWidth="300" MinSizeWidth="300" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="305, 30" MinSize="305, 30" RelativeSize="33" ViewItem="CsSituacao" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Calendario_ListView" Caption="Calendario" ImageName="calendario16" />
+    <ListView Id="Calendario_LookupListView" Caption="Calendario" ImageName="calendario16" />
+    <DetailView Id="Cargo_DetailView" Caption=" Cargo" />
+    <ListView Id="Cargo_ListView" AllowEdit="True" Caption="Cargo" />
+    <ListView Id="Cargo_LookupListView" Caption=" Cargo" />
+    <DetailView Id="CasoTeste_DetailView" FreezeLayout="True" Caption="Casos de Testes" DefaultFocusedItem="TxSumario">
+      <Items>
+        <PropertyEditor Id="Requisito" PropertyName="Requisito" LookupProperty="_TxRequisitoNome" Caption="Requisito" IsNewNode="True" />
+        <PropertyEditor Id="TxSumario" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="58">
+            <LayoutGroup Id="CasoTeste" RelativeSize="30">
+              <LayoutItem Id="TxID" SizeConstraintsType="Default" ViewItem="TxID" />
+              <LayoutItem Id="TxSumario" SizeConstraintsType="Default" ViewItem="TxSumario" />
+              <LayoutItem Id="Requisito" SizeConstraintsType="Default" ViewItem="Requisito" />
+            </LayoutGroup>
+            <LayoutGroup Id="PreCondicoes" RelativeSize="69">
+              <LayoutItem Id="PreCondicoes" MaxSizeHeight="230" MinSizeHeight="230" MaxSize="0, 320" MinSize="1, 320" SizeConstraintsType="Custom" RelativeSize="88" ViewItem="PreCondicoes" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Passos" RelativeSize="41">
+            <LayoutItem Id="Passos" MaxSizeHeight="400" MinSizeHeight="400" MaxSize="0, 0" MinSize="1, 300" SizeConstraintsType="Custom" RelativeSize="88" ViewItem="Passos" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CasoTeste_EstoriasCasoTeste_ListView" Caption=" Testes de Aceitação" />
+    <ListView Id="CasoTeste_ListView">
+      <Columns>
+        <ColumnInfo Id="TxID" Width="10">
+          <ConditionalFormatting>
+            <Rule Id="PintarLetraTxID" Criteria="TxID &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarTxID" Criteria="TxID &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxSumario" Width="460" />
+      </Columns>
+    </ListView>
+    <ListView Id="CasoTeste_LookupListView" Caption="Casos de Teste" />
+    <ListView Id="CasoTeste_Passos_ListView" Caption="Passos" IsFooterVisible="False">
+      <Columns>
+        <ColumnInfo Id="NbSequencia" Width="15" />
+        <ColumnInfo Id="TxPasso" Width="270" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" />
+        <ColumnInfo Id="_TxResultadoEsperado" Width="270" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" />
+      </Columns>
+    </ListView>
+    <ListView Id="CasoTeste_PreCondicoes_ListView" Caption=" Pré-Condição">
+      <Columns>
+        <ColumnInfo Id="Text" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+        <ColumnInfo Id="NbSequencia" Width="15" />
+        <ColumnInfo Id="TxDescricao" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.RichTextPropertyEditor" />
+        <ColumnInfo Id="_NbInformacoesAdicionais">
+          <ConditionalFormatting>
+            <Rule Id="InformacoesAdicionaisLetra" Criteria="_NbInformacoesAdicionais &gt;= 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCasoTeste_PreCondicoes" Criteria="_NbInformacoesAdicionais &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_NbAnexos">
+          <ConditionalFormatting>
+            <Rule Id="AnexosLetra" Criteria="_NbAnexos &gt;= 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCasoTeste_Precondicoes_Anexo" Criteria="_NbAnexos &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DetailView Id="CasoTestePasso_DetailView" Caption=" Passos" ImageName="caso_de_testex16">
+      <Items>
+        <PropertyEditor Id="TxPasso" RowCount="10" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" />
+      </Items>
+    </DetailView>
+    <ListView Id="CasoTestePasso_ListView" Caption="Passos" ImageName="caso_de_testex16">
+      <Columns>
+        <ColumnInfo Id="TxPasso" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+        <ColumnInfo Id="ResultadosEsperados" LinkView="CasoTestePasso_ResultadosEsperados_ListView" View="CasoTestePasso_ResultadosEsperados_ListView" />
+      </Columns>
+    </ListView>
+    <ListView Id="CasoTestePasso_LookupListView" Caption="Passos" ImageName="caso_de_testex16" />
+    <ListView Id="CasoTestePasso_ResultadosEsperados_ListView" Caption="Resultado Esperado" ImageName="caso_de_testex16">
+      <Columns>
+        <ColumnInfo Id="Passo" Index="-1" />
+        <ColumnInfo Id="NbSequencia" Width="15" Index="0" />
+        <ColumnInfo Id="TxResultadoEsperado" Width="340" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" Index="1" />
+        <ColumnInfo Id="CsTiposResultado" Width="50" />
+        <ColumnInfo Id="_NbInformacaoAdicional" Width="30">
+          <ConditionalFormatting>
+            <Rule Id="_InformacaoAdiconalLetra" Criteria="_NbInformacaoAdicional &gt;=0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCasoTestePasso_ResultadoEsperado" Criteria="_NbInformacaoAdicional &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_NbAnexo" Width="30">
+          <ConditionalFormatting>
+            <Rule Id="_AnexosLetra" Criteria="_NbAnexo &gt;=0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCasoTestePasso_ResultadoEsperado" Criteria="_NbAnexo &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DetailView Id="CasoTestePassoResultadoEsperado_DetailView" Caption=" Resultado Esperado" ImageName="caso_de_testex16">
+      <Items>
+        <PropertyEditor Id="TxResultadoEsperado" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" RowCount="10" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="37">
+            <LayoutGroup Id="DescricaoDoResultadoEsperado">
+              <LayoutItem Id="TxResultadoEsperado" RelativeSize="70" ViewItem="TxResultadoEsperado" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="62" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CasoTestePassoResultadoEsperado_ListView" Caption="Resultado Esperado" ImageName="caso_de_testex16" />
+    <ListView Id="CasoTestePassoResultadoEsperado_LookupListView" Caption="Resultado Esperado" />
+    <ListView Id="CasoTestePassoResultadoEsperado_ResultadosEsperadosAnexos_ListView" Caption=" Anexos" ImageName="caso_de_testex16">
+      <Columns>
+        <ColumnInfo Id="TxDescricao" Width="100" />
+      </Columns>
+    </ListView>
+    <ListView Id="CasoTestePassoResultadoEsperado_ResultadosEsperadosInformacoesAdicionais_ListView" Caption="Informações Adicionais" ImageName="caso_de_testex16">
+      <Columns>
+        <ColumnInfo Id="NbSequencia" Width="15" />
+        <ColumnInfo Id="Text" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CasoTestePassoResultadoEsperadoAnexo_DetailView" Caption=" Anexos" ImageName="caso_de_testex16" />
+    <ListView Id="CasoTestePassoResultadoEsperadoAnexo_ListView" Caption="Anexos" ImageName="caso_de_testex16" />
+    <ListView Id="CasoTestePassoResultadoEsperadoAnexo_LookupListView" Caption=" Anexos" ImageName="caso_de_testex16" />
+    <DetailView Id="CasoTestePassoResultadoEsperadoInformacaoAdicional_DetailView" Caption="Informações Adicionais">
+      <Items>
+        <PropertyEditor Id="Text" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Conteudo">
+              <LayoutItem Id="Text" SizeConstraintsType="Custom" MaxSizeHeight="860" MinSizeHeight="860" MaxSize="0, 860" MinSize="0, 860" ViewItem="Text" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CasoTestePassoResultadoEsperadoInformacaoAdicional_ListView" Caption="Informações Adicionais" />
+    <ListView Id="CasoTestePassoResultadoEsperadoInformacaoAdicional_LookupListView" Caption="Informações Adicionais" />
+    <ListView Id="CasoTestePreCondicao_CasoTestePreCondicaoAnexos_ListView" Caption="Anexo" ImageName="caso_de_testex16">
+      <Columns>
+        <ColumnInfo Id="TxDescricao" Width="200" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CasoTestePreCondicao_DetailView" ObjectCaptionFormat="" Caption="Pré-Condição">
+      <Items>
+        <PropertyEditor Id="TxDescricao" MaxLength="500" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.RichTextPropertyEditor" RowCount="10" />
+      </Items>
+    </DetailView>
+    <ListView Id="CasoTestePreCondicao_ListView" Caption="Pré-Condição">
+      <Columns>
+        <ColumnInfo Id="TxDescricao" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.RichTextPropertyEditor" />
+      </Columns>
+    </ListView>
+    <ListView Id="CasoTestePreCondicao_LookupListView" Caption="Pré-Condição">
+      <Columns>
+        <ColumnInfo Id="TxDescricao" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.RichTextPropertyEditor" />
+      </Columns>
+    </ListView>
+    <ListView Id="CasoTestePreCondicao_PreCondicoesInformacoesAdicionais_ListView" Caption="Informações Adicionais">
+      <Columns>
+        <ColumnInfo Id="Text" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CasoTestePreCondicaoAnexo_DetailView" Caption="Anexo" ImageName="caso_de_testex16" />
+    <ListView Id="CasoTestePreCondicaoAnexo_ListView" Caption=" Anexo" ImageName="caso_de_testex16" />
+    <ListView Id="CasoTestePreCondicaoAnexo_LookupListView" Caption="Anexo" ImageName="caso_de_testex16" />
+    <DetailView Id="CasoTestePreCondicaoInformacaoAdicional_DetailView" Caption="Informações Adicionais">
+      <Items>
+        <PropertyEditor Id="Text" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ConteudoDaInformacaoAdicional">
+              <LayoutItem Id="Text" SizeConstraintsType="Custom" MaxSizeHeight="860" MinSizeHeight="860" MaxSize="0, 860" MinSize="0, 860" ViewItem="Text" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CasoTestePreCondicaoInformacaoAdicional_ListView" Caption=" Informações Adicionais" />
+    <ListView Id="CasoTestePreCondicaoInformacaoAdicional_LookupListView" Caption="Informações Adicionais" />
+    <ListView Id="CicloDesenv_DesenvEstorias_ListView" Caption="Ciclo">
+      <Columns>
+        <ColumnInfo Id="NbSequencia" Width="15" />
+        <ColumnInfo Id="_TxNomeEstoria" Width="330" />
+        <ColumnInfo Id="Meta" Width="10" />
+        <ColumnInfo Id="_NbPontos" Width="20" />
+        <ColumnInfo Id="CsSituacao">
+          <ConditionalFormatting>
+            <Rule Id="PintarCsSicuacaoIniciado" Criteria="CsSituacao = 'NaoIniciado'" IsNewNode="True">
+              <Target Name="Background" Color="224, 224, 224" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCsSituacaoEmDesenv" Criteria="CsSituacao = 'EmDesenv'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 128" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCsSituacaoPronto" Criteria="CsSituacao = 'Pronto'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 255" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarCsSituacaoReplanejado" Criteria="CsSituacao = 'Replanejado'" IsNewNode="True">
+              <Target Name="Background" Color="Silver" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DetailView Id="CicloDesenv_DetailView" Caption="Ciclos de Desenvolvimento" ImageName="ciclos16">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CicloDesenv">
+              <LayoutItem Id="NbPontosPlanejados" SizeConstraintsType="Custom" MaxSizeWidth="220" MinSizeWidth="220" MaxSizeHeight="24" MinSizeHeight="24" MaxSize="220, 24" MinSize="220, 24" ViewItem="NbPontosPlanejados" />
+              <LayoutItem Id="NbPontosRealizados" MaxSizeWidth="220" MinSizeWidth="220" SizeConstraintsType="Custom" MaxSizeHeight="25" MinSizeHeight="25" MaxSize="220, 25" MinSize="220, 25" ViewItem="NbPontosRealizados" />
+              <LayoutItem Id="CsSituacaoCiclo" MaxSizeWidth="220" MinSizeWidth="220" SizeConstraintsType="Custom" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="220, 30" MinSize="220, 30" ViewItem="CsSituacaoCiclo" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CicloDesenv_ListView" Caption="Ciclos de Desenvolvimento" ImageName="ciclos16">
+      <Columns>
+        <ColumnInfo Id="_TxCiclo" Width="20" />
+        <ColumnInfo Id="CsSituacaoCiclo" Width="70" />
+        <ColumnInfo Id="NbAlcanceMeta" Width="30" />
+        <ColumnInfo Id="TxMeta" Width="120" />
+        <ColumnInfo Id="NbCiclo" Width="15">
+          <ConditionalFormatting>
+            <Rule Id="PintarNbCiclo" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="DtInicio" Width="20">
+          <ConditionalFormatting>
+            <Rule Id="PintarDtInicio" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="DtTermino" Width="20">
+          <ConditionalFormatting>
+            <Rule Id="PintarDtTermino" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="NbPontosPlanejados" Width="20">
+          <ConditionalFormatting>
+            <Rule Id="PintarNbPontosPlanejados" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="NbPontosRealizados" Width="20">
+          <ConditionalFormatting>
+            <Rule Id="PintarNbPontosRealizados" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_TxMeta" Width="195" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor">
+          <ConditionalFormatting>
+            <Rule Id="PintarTxMeta" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_TxAlcanceMeta" Width="30">
+          <ConditionalFormatting>
+            <Rule Id="PintarTxAlcanceMeta" Criteria="NbCiclo &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_SituacaoCiclo" Index="8" Caption="Situação" Width="50" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor">
+          <ConditionalFormatting>
+            <Rule Id="CicloCancelado" Criteria="CsSituacaoCiclo = 'Cancelado'" IsNewNode="True">
+              <Target Name="Background" Color="255, 128, 0" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="CicloConcluido" Criteria="CsSituacaoCiclo = 'Concluido'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 255" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="CicloEmAndamento" Criteria="CsSituacaoCiclo = 'EmAndamento'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 128" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="CicloEmAtraso" Criteria="CsSituacaoCiclo = 'EmAtraso'" IsNewNode="True">
+              <Target Name="Background" Color="Red" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="CicloNaoPlanejado" Criteria="CsSituacaoCiclo = 'NaoPlanejado'" IsNewNode="True">
+              <Target Name="Background" Color="Silver" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="CicloPlanejado" Criteria="CsSituacaoCiclo = 'Planejado'" IsNewNode="True">
+              <Target Name="Background" Color="Yellow" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="CicloDesenv_LookupListView" Caption="Ciclos de Desenvolvimento" ImageName="ciclos16" />
+    <DetailView Id="CicloDesenvEstoria_DetailView" Caption="Ciclo ">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1">
+              <LayoutItem Id="Estoria" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Estoria" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="6" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="CsSituacao" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="CsSituacao" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="1" RelativeSize="4" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="_NbPontos" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="_NbPontos" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSize="150, 25" MaxSize="150, 25" Index="2" RelativeSize="4" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="Meta" ShowCaption="False" TextAlignMode="UseParentOptions" ViewItem="Meta" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSize="1, 25" MaxSize="0, 25" Index="3" RelativeSize="4" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="NbSequencia" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="NbSequencia" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSize="150, 30" MaxSize="150, 30" Index="4" RelativeSize="70" IsNewNode="True" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CicloDesenvEstoria_ListView" Caption="Ciclo">
+      <Columns>
+        <ColumnInfo Id="NbSequencia" Width="15" />
+        <ColumnInfo Id="_TxNomeEstoria" Width="350" />
+        <ColumnInfo Id="Meta" Width="10" />
+        <ColumnInfo Id="_NbPontos" Width="20" />
+      </Columns>
+    </ListView>
+    <ListView Id="CicloDesenvEstoria_LookupListView" Caption="Ciclo" />
+    <ListView Id="Colaborador__PhoneNumber_ListView">
+      <Columns>
+        <ColumnInfo Id="Party" Index="-1" />
+        <ColumnInfo Id="PhoneType" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Colaborador_Afastamentos_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="DtInicio" SortOrder="Descending" SortIndex="0" />
+        <ColumnInfo Id="IsRemunerado" PropertyName="TipoAfastamento._IsRemunerado" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="TxObservacao" Index="4" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="Link" IsNewNode="True" />
+        <ActionLink ActionId="Unlink" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="Colaborador_DetailView" Caption="Colaborador">
+      <Items>
+        <PropertyEditor Id="IsActive" CaptionForTrue="Ativo" Caption="Situação" CaptionForFalse="Inativo" />
+        <PropertyEditor Id="UltimoNome" Caption="Último Nome" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="item5" Index="0" Caption="" Direction="Horizontal" IsNewNode="True">
+            <LayoutGroup Id="Item3" Caption="" Index="0" Direction="Horizontal" ShowCaption="False" TextAlignMode="CustomSize" HorizontalAlign="Left" CaptionLocation="Left" IsNewNode="True">
+              <LayoutItem Id="Foto" ViewItem="Foto" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="11" ShowCaption="False" SizeConstraintsType="Custom" MaxSize="200, 275" MinSize="200, 275" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item4" Caption="" Index="0" Direction="Vertical" HorizontalAlign="Left" IsNewNode="True">
+              <TabbedGroup Id="TabData" Index="0" Caption="Dados Gerais" IsNewNode="True">
+                <LayoutGroup Id="Dados Gerais" Index="0" IsNewNode="True">
+                  <LayoutGroup Id="GroupUsername" Index="0" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="UserName" ViewItem="UserName" CaptionHorizontalAlignment="Default" SizeConstraintsType="Custom" MinSize="300, 27" MaxSize="300, 27" Index="0" RelativeSize="35" IsNewNode="True" />
+                    <LayoutItem Id="Situação" ViewItem="IsActive" Index="1" SizeConstraintsType="Custom" MaxSize="300, 27" MinSize="300, 27" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="GroupNames" Index="1" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="PrimeiroNome" ViewItem="PrimeiroNome" CaptionHorizontalAlignment="Default" SizeConstraintsType="Custom" MinSize="300, 22" MaxSize="300, 22" Index="2" RelativeSize="11" IsNewNode="True" />
+                    <LayoutItem Id="NomeDoMeio" ViewItem="NomeDoMeio" SizeConstraintsType="Custom" MinSize="295, 22" MaxSize="295, 22" Index="3" RelativeSize="11" IsNewNode="True" />
+                    <LayoutItem Id="UltimoNome" ViewItem="UltimoNome" Index="4" RelativeSize="0" MaxSize="300, 22" MinSize="300, 22" SizeConstraintsType="Custom" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="GroupNameComplete" Index="2" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="_NomeCompleto" ViewItem="_NomeCompleto" CaptionHorizontalAlignment="Default" Index="5" RelativeSize="11" SizeConstraintsType="Custom" MaxSize="900, 22" MinSize="900, 22" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="GroupInfos" Index="3" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="TxMatricula" ViewItem="TxMatricula" Index="6" RelativeSize="11" SizeConstraintsType="Custom" MaxSize="300, 22" MinSize="300, 22" IsNewNode="True" />
+                    <LayoutItem Id="DtAdmissao" ViewItem="DtAdmissao" Index="7" RelativeSize="11" MinSize="300, 22" MaxSize="300, 22" SizeConstraintsType="Custom" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="GroupCoordinator" Index="4" IsNewNode="True">
+                    <LayoutItem Id="Coordenador" ViewItem="Coordenador" Index="8" RelativeSize="15" SizeConstraintsType="Custom" MaxSize="900, 22" MinSize="900, 22" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="GroupCargo" IsNewNode="True">
+                    <LayoutItem Id="Cargo" ViewItem="Cargo" Index="9" RelativeSize="20" SizeConstraintsType="Custom" MaxSize="900, 22" MinSize="900, 22" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Contatos" Index="1" Direction="Vertical" IsNewNode="True">
+                  <LayoutGroup Id="GroupEmail" Index="0" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="Email" ViewItem="Email" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="20" SizeConstraintsType="Custom" MaxSize="300, 27" MinSize="300, 27" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="GroupAdress" Index="1" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="Address1" ViewItem="Address1" CaptionHorizontalAlignment="Default" Index="1" RelativeSize="15" SizeConstraintsType="Custom" MaxSize="600, 28" MinSize="600, 28" IsNewNode="True" />
+                  </LayoutGroup>
+                  <TabbedGroup Id="TabTelefone" Caption="Telefone" ShowCaption="True" IsNewNode="True">
+                    <LayoutGroup Id="GroupPhoneNumber" Index="2" Direction="Horizontal" ShowCaption="True" IsNewNode="True">
+                      <LayoutItem Id="_PhoneNumber" ViewItem="_PhoneNumber" CaptionLocation="Left" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="68" ShowCaption="False" SizeConstraintsType="Custom" MaxSize="0, 150" MinSize="0, 150" IsNewNode="True" />
+                    </LayoutGroup>
+                  </TabbedGroup>
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Item1" RelativeSize="72" Index="6">
+            <LayoutGroup Id="Item3" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical">
+              <LayoutItem Id="PeriodosAquisitivos" TextAlignMode="AutoSize" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="PeriodosAquisitivos" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item4" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical">
+              <LayoutItem Id="Afastamentos" TextAlignMode="AutoSize" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="Afastamentos" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SimpleEditors" RelativeSize="27" TextAlignMode="AlignLocal" Direction="Vertical" Removed="True">
+            <TabbedGroup Id="Item1" RelativeSize="100" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" Index="0">
+              <LayoutGroup Id="Colaborador" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Vertical">
+                <LayoutGroup Id="@0fa61d71-4eab-4d45-948f-2274a905fe19" Index="0" RelativeSize="24" ImageName="" Removed="True">
+                  <LayoutItem Id="Item3" ViewItem="" RelativeSize="1" />
+                  <LayoutItem Id="Item4" ViewItem="" />
+                  <LayoutItem Id="NomeDoMeio" RelativeSize="26" ViewItem="NomeDoMeio" />
+                  <LayoutItem Id="PrimeiroNome" RelativeSize="35" ViewItem="PrimeiroNome" />
+                  <LayoutItem Id="UltimoNome" RelativeSize="34" ViewItem="UltimoNome" />
+                </LayoutGroup>
+                <LayoutGroup Id="6c2cd0dd-1eee-4cfb-a01d-b0db6d43482a" ShowCaption="False" Caption="6c2cd0dd-1eee-4cfb-a01d-b0db6d43482a(6)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="47d1058a-ddb5-499a-8506-cf3b9e5ed05e" ShowCaption="False" Caption="47d1058a-ddb5-499a-8506-cf3b9e5ed05e(7)" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="@a7163244-73f7-4add-a986-fe4a1f44836c" Index="1" RelativeSize="29" ImageName="" Removed="True">
+                  <LayoutItem Id="DtAdmissao" RelativeSize="24" ViewItem="DtAdmissao" />
+                  <LayoutItem Id="Item5" ViewItem="" RelativeSize="3" />
+                  <LayoutItem Id="Item6" ViewItem="" RelativeSize="35" />
+                  <LayoutItem Id="Item8" ViewItem="" RelativeSize="2" />
+                  <LayoutItem Id="TxMatricula" RelativeSize="33" ViewItem="TxMatricula" />
+                </LayoutGroup>
+                <LayoutItem Id="_NomeCompleto" Index="1" RelativeSize="13" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="_NomeCompleto" Removed="True" />
+                <LayoutItem Id="Coordenador" ViewItem="Coordenador" Index="3" RelativeSize="13" Removed="True" />
+                <LayoutItem Id="Cargo" ViewItem="Cargo" Index="4" RelativeSize="17" Removed="True" />
+                <LayoutGroup Id="@65db65a2-7120-4d26-8b5a-894a70a35427" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" ImageName="" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Removed="True">
+                <LayoutItem Id="Address1" RelativeSize="15" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="Address1" Removed="True" />
+                <LayoutItem Id="Email" RelativeSize="20" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="Email" Removed="True" />
+                <LayoutGroup Id="Item3" TextAlignMode="AlignLocal" RelativeSize="65" ImageName="" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" Direction="Vertical">
+                  <LayoutItem Id="_PhoneNumber" RelativeSize="68" TextAlignMode="UseParentOptions" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="_PhoneNumber" Removed="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutItem Id="Foto" RelativeSize="4" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="Foto" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Colaborador_ListView" Caption="Colaborador">
+      <Columns>
+        <ColumnInfo Id="_CsSituacaoFerias" Index="-1" />
+        <ColumnInfo Id="_NomeCompleto" SortIndex="0">
+          <ConditionalFormatting>
+            <Rule Id="PintarCaixa" Criteria="[_NomeCompleto] is not null" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="UserName" AllowEdit="False">
+          <ConditionalFormatting>
+            <Rule Id="PintarCaixa" Criteria="[Usuario.UserName] is not null" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="Coordenador" GroupIndex="0" SortIndex="0" />
+        <ColumnInfo Id="_PlanoFeriasAtual" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor">
+          <ConditionalFormatting>
+            <Rule Id="PintarCaixa" Criteria="[_CsSituacaoFerias] is not null" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="RegraSituacaoAtraso" Criteria="[_CsSituacaoFerias] = 1" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Red" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="Colaborador_LookupListView" Caption="Colaborador" />
+    <ListView Id="Colaborador_PeriodosAquisitivos_ListView">
+      <Columns>
+        <ColumnInfo Id="DtInicio" SortOrder="Descending" Width="100" MaxLength="10" SortIndex="0" />
+        <ColumnInfo Id="DtTermino" Width="100" MaxLength="10" />
+        <ColumnInfo Id="NbFeriasPlanejadas" Width="80" MaxLength="5" DisplayFormat="{0} dia(s)" />
+        <ColumnInfo Id="_PlanejamentoFerias" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" SortOrder="Descending" Width="400">
+          <ConditionalFormatting>
+            <Rule Id="SituacaoRed" Criteria="[Planejamentos][[CsSituacao] = ##Enum#WexProject.BLL.Shared.Domains.Rh.CsSituacaoFerias,EmAtraso#]" IsNewNode="True">
+              <Target Name="Foreground" Color="Red" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+      <ConditionalFormatting>
+        <Rule Id="PintarLinhaPeriodoAquisitivo" Criteria="[DtInicio] Is Not Null" IsNewNode="True">
+          <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+        </Rule>
+      </ConditionalFormatting>
+    </ListView>
+    <DetailView Id="ColaboradorAfastamento_DetailView">
+      <Items>
+        <PropertyEditor Id="DtInicio" Index="0" />
+        <PropertyEditor Id="DtTermino" Index="1" />
+        <PropertyEditor Id="TipoAfastamento" Index="2" DataSourceCriteria="[CsSituacao] = ##Enum#WexProject.BLL.Shared.Domains.Geral.CsSituacao,Ativo#" DataSourcePropertyIsNullMode="CustomCriteria" />
+        <PropertyEditor Id="TxObservacao" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" MaxLength="500" RowCount="5" ImmediatePostData="True" Index="3" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Caption="SimpleEditors" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+            <LayoutGroup Id="ColaboradorAfastamento" Caption="Dados do Afastamento" ShowCaption="True" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+              <LayoutItem Id="DtInicio" ShowCaption="True" Index="0" SizeConstraintsType="Custom" MaxSize="250, 32" MinSize="250, 32" ViewItem="DtInicio" IsNewNode="True" />
+              <LayoutItem Id="DtTermino" ShowCaption="True" Index="1" MinSize="250, 26" MaxSize="250, 26" SizeConstraintsType="Custom" ViewItem="DtTermino" IsNewNode="True" />
+              <LayoutItem Id="TipoAfastamento" ShowCaption="True" Index="2" SizeConstraintsType="Custom" MaxSize="250, 26" MinSize="250, 26" ViewItem="TipoAfastamento" IsNewNode="True" />
+              <LayoutItem Id="TxObservacao" ShowCaption="True" ViewItem="TxObservacao" SizeConstraintsType="Custom" MinSize="400, 70" Index="3" RelativeSize="50" MaxSize="400, 70" IsNewNode="True" Removed="True" />
+              <LayoutGroup Id="ColaboradorAfastamento_col1" Removed="True">
+                <LayoutItem Id="DtInicio" ViewItem="DtInicio" Removed="True" />
+                <LayoutItem Id="DtTermino" ViewItem="DtTermino" Removed="True" />
+                <LayoutItem Id="TipoAfastamento" ViewItem="TipoAfastamento" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ColaboradorAfastamento_col2" Removed="True">
+                <LayoutItem Id="TxObservacao" ViewItem="TxObservacao" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ColaboradorAfastamento_ListView" NewItemRowPosition="Top" />
+    <DetailView Id="ColaboradorPeriodoAquisitivo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutGroup Id="DadosPeriodoAquisitivo" Direction="Vertical" ShowCaption="True" Caption="Dados do Período Aquisitivo" Index="0" RelativeSize="15" IsNewNode="True">
+            <LayoutItem Id="DtInicio" ViewItem="DtInicio" SizeConstraintsType="Custom" MinSize="200, 32" Index="0" RelativeSize="27" MaxSize="200, 32" IsNewNode="True" />
+            <LayoutItem Id="DtTermino" ViewItem="DtTermino" SizeConstraintsType="Custom" MinSize="200, 26" Index="1" RelativeSize="22" MaxSize="200, 26" IsNewNode="True" />
+            <LayoutItem Id="NbFeriasPlanejadas" ViewItem="NbFeriasPlanejadas" Index="2" RelativeSize="22" SizeConstraintsType="Custom" MinSize="200, 26" MaxSize="200, 26" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Planejamentos_Group" Direction="Vertical" Index="1" RelativeSize="84" ImageName="" Caption="Planejamento de Férias" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions">
+            <LayoutItem Id="Planejamentos" RelativeSize="94" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="Planejamentos" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" Removed="True">
+            <LayoutGroup Id="ColaboradorPeriodoAquisitivo">
+              <LayoutItem Id="DtInicio" ViewItem="DtInicio" Removed="True" />
+              <LayoutItem Id="DtTermino" ViewItem="DtTermino" Removed="True" />
+              <LayoutItem Id="NbFeriasPlanejadas" ViewItem="NbFeriasPlanejadas" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ColaboradorPeriodoAquisitivo_Planejamentos_ListView" NewItemRowPosition="Top" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Realizadas" Index="-1" />
+        <ColumnInfo Id="DtInicio" SortOrder="Descending" Index="0" />
+        <ColumnInfo Id="_DtRetorno" Index="1" />
+        <ColumnInfo Id="Vender" Index="2" Caption="Venda de Férias?" />
+        <ColumnInfo Id="Modalidade" Index="3" />
+        <ColumnInfo Id="CsSituacao" Index="4">
+          <ConditionalFormatting>
+            <Rule Id="Atraso" Criteria="[DtInicio] &lt; LocalDateTimeToday()" IsNewNode="True">
+              <Target Name="Background" Color="Red" IsNewNode="True" />
+              <Target Name="Foreground" Color="White" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Planejado" Criteria="[DtInicio] &gt;= LocalDateTimeToday()  And [Vender] = 0" IsNewNode="True">
+              <Target Name="Background" Color="Yellow" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Realizado" Criteria="[Realizadas] = True" IsNewNode="True">
+              <Target Name="Background" Color="DodgerBlue" IsNewNode="True" />
+              <Target Name="Foreground" Color="White" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Vendida" Criteria="[Vender] = 1" IsNewNode="True">
+              <Target Name="Background" Color="LimeGreen" IsNewNode="True" />
+              <Target Name="Foreground" Color="White" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxAtualizado" Index="5" />
+        <ColumnInfo Id="TxPlanejado" Index="6" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Configuracao_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Configuracao">
+              <LayoutGroup Id="Item1" Direction="Vertical">
+                <LayoutItem Id="NbQtdeMaxVenda" ViewItem="NbQtdeMaxVenda" Index="0" RelativeSize="36" ShowCaption="True" SizeConstraintsType="Custom" MinSize="450, 32" MaxSize="450, 32" IsNewNode="True" />
+                <LayoutItem Id="NbQtdeMaxFerias" ViewItem="NbQtdeMaxFerias" Index="1" RelativeSize="27" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="450, 26" MinSize="450, 26" IsNewNode="True" />
+                <LayoutItem Id="NbDtMaxTirarFerias" ViewItem="NbDtMaxTirarFerias" Index="2" RelativeSize="36" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="450, 26" MinSize="450, 26" IsNewNode="True" />
+                <LayoutGroup Id="9a000154-9729-42c5-9ae6-5102298af6ea" Removed="True">
+                  <LayoutItem Id="NbDtMaxTirarFerias" ViewItem="NbDtMaxTirarFerias" Removed="True" />
+                  <LayoutItem Id="NbQtdeMaxFerias" ViewItem="NbQtdeMaxFerias" Removed="True" />
+                  <LayoutItem Id="NbQtdeMaxVenda" ViewItem="NbQtdeMaxVenda" Removed="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Item3" ViewItem="Item3" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ConfiguracaoDocumento_DetailView" Caption="Configuração de Documento" ImageName="config_documentos16" />
+    <ListView Id="ConfiguracaoDocumento_ListView" Caption=" Configuração de Documento" ImageName="config_documentos16" />
+    <ListView Id="ConfiguracaoDocumento_LookupListView" Caption="Configuração de Documento" ImageName="config_documentos16" />
+    <ListView Id="ConfiguracaoDocumento_Situacoes_ListView" Caption="Documento &gt; Situações" />
+    <ListView Id="ConfiguracaoDocumentoSituacao_ComCopia_ListView" Caption="Solicitação de Documentos &gt; Email &gt; Cc" />
+    <ListView Id="ConfiguracaoDocumentoSituacao_ComCopiaOculta_ListView" Caption=" Solicitação de Documentos &gt; Email &gt; Cco" />
+    <DetailView Id="ConfiguracaoDocumentoSituacao_DetailView" Caption=" Configuração &gt; Documento &gt; Situações">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" ShowCaption="True" Caption="Dados Gerais ">
+            <LayoutGroup Id="ConfiguracaoDocumentoSituacao">
+              <LayoutItem Id="_ClSituacao" Index="1" ViewItem="_ClSituacao" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ConfiguracaoDocumentoSituacao_ListView" Caption="Configuração &gt; Documento &gt; Situações" />
+    <ListView Id="ConfiguracaoDocumentoSituacao_LookupListView" Caption="Documento &gt; Situações" />
+    <DetailView Id="ConfiguracaoDocumentoSituacaoEmail_DetailView" Caption="Email" />
+    <ListView Id="ConfiguracaoDocumentoSituacaoEmail_ListView" Caption="Email" />
+    <ListView Id="ConfiguracaoDocumentoSituacaoEmail_LookupListView" Caption="Email" />
+    <DetailView Id="ConfiguracaoDocumentoSituacaoEmailCc_DetailView" Caption=" Email &gt; Cc" />
+    <ListView Id="ConfiguracaoDocumentoSituacaoEmailCc_ListView" Caption="Email &gt; Cc" />
+    <ListView Id="ConfiguracaoDocumentoSituacaoEmailCc_LookupListView" Caption=" Email &gt; Cc" />
+    <DetailView Id="ConfiguracaoDocumentoSituacaoEmailCco_DetailView" Caption="Email &gt; Cco" />
+    <ListView Id="ConfiguracaoDocumentoSituacaoEmailCco_ListView" Caption="Email &gt; Cco" />
+    <ListView Id="ConfiguracaoDocumentoSituacaoEmailCco_LookupListView" Caption="Email &gt; Cco" />
+    <DetailView Id="Cronograma_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Caption="SimpleEditors" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="Cronograma" ShowCaption="False" Caption="Cronograma" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True" Removed="True">
+              <LayoutItem Id="TxDescricao" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="TxDescricao" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="7" IsNewNode="True" />
+              <LayoutItem Id="SituacaoPlanejamento" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="SituacaoPlanejamento" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="1" RelativeSize="5" IsNewNode="True" />
+              <LayoutItem Id="Tarefas" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Tarefas" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="2" RelativeSize="5" IsNewNode="True" />
+              <LayoutItem Id="DtInicio" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="DtInicio" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="3" RelativeSize="5" IsNewNode="True" />
+              <LayoutItem Id="DtFinal" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="DtFinal" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="4" RelativeSize="77" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Tarefas_Group" Caption="Tarefas" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Index="1" RelativeSize="50" Removed="True">
+            <LayoutItem Id="Tarefas" ViewItem="Tarefas" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Tarefas2_Group" Caption="Tarefas" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Vertical" Index="1" RelativeSize="9" Removed="True">
+            <LayoutItem Id="Tarefas2" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" RelativeSize="54" ViewItem="Tarefas2" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Dashboard_Item_Escopo_Completude" Caption="Escopo Vs. Completude" EditorTypeName="DevExpress.ExpressApp.Chart.Win.ChartListEditor" ClassName="WexProject.BLL.Models.Escopo.Modulo" Criteria="" ImageName="BO_Unknown" AllowDelete="False" AllowEdit="False" AllowNew="False" IsNewNode="True">
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;11.2.8.0&quot;&gt;&#xD;&#xA;  &lt;Chart PaletteName=&quot;FPF&quot; AppearanceNameSerializable=&quot;Default&quot; BackColor=&quot;White&quot;&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisX&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisY&gt;&#xD;&#xA;      &lt;DefaultPane&gt;&#xD;&#xA;        &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;          &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;DodgerBlue&quot; /&gt;&#xD;&#xA;        &lt;/FillStyle&gt;&#xD;&#xA;      &lt;/DefaultPane&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;    &lt;EmptyChartText TextColor=&quot;White&quot; /&gt;&#xD;&#xA;    &lt;SmallChartText TextColor=&quot;White&quot; Antialiasing=&quot;false&quot; /&gt;&#xD;&#xA;    &lt;Padding Right=&quot;0&quot; Bottom=&quot;0&quot; Left=&quot;0&quot; Top=&quot;0&quot; /&gt;&#xD;&#xA;    &lt;XtraPaletteRepository&gt;&#xD;&#xA;      &lt;Item1 ScaleMode=&quot;Repeat&quot; Name=&quot;FPF&quot;&gt;&#xD;&#xA;        &lt;Palette&gt;&#xD;&#xA;          &lt;Item1 Color2=&quot;233, 233, 233&quot; Color=&quot;233, 233, 233&quot; /&gt;&#xD;&#xA;          &lt;Item2 Color2=&quot;255, 255, 128&quot; Color=&quot;255, 255, 128&quot; /&gt;&#xD;&#xA;          &lt;Item3 Color2=&quot;149, 255, 149&quot; Color=&quot;149, 255, 149&quot; /&gt;&#xD;&#xA;          &lt;Item4 Color2=&quot;Blue&quot; Color=&quot;Blue&quot; /&gt;&#xD;&#xA;          &lt;Item5 Color2=&quot;255, 74, 74&quot; Color=&quot;255, 74, 74&quot; /&gt;&#xD;&#xA;        &lt;/Palette&gt;&#xD;&#xA;      &lt;/Item1&gt;&#xD;&#xA;    &lt;/XtraPaletteRepository&gt;&#xD;&#xA;    &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;      &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; GradientMode=&quot;BottomToTop&quot; Color2=&quot;White&quot; /&gt;&#xD;&#xA;    &lt;/FillStyle&gt;&#xD;&#xA;    &lt;Border Thickness=&quot;2&quot; /&gt;&#xD;&#xA;    &lt;Legend EquallySpacedItems=&quot;false&quot; AlignmentHorizontal=&quot;Center&quot; AlignmentVertical=&quot;BottomOutside&quot; Direction=&quot;LeftToRight&quot; /&gt;&#xD;&#xA;    &lt;SeriesSerializable&gt;&#xD;&#xA;      &lt;Item1 Name=&quot;Não Iniciado&quot; ValueDataMembersSerializable=&quot;NbPontosNaoIniciado&quot; ArgumentDataMember=&quot;_TxNomeDashboard&quot;&gt;&#xD;&#xA;        &lt;Label Antialiasing=&quot;true&quot; Font=&quot;Arial, 10pt, style=Bold&quot; TextOrientation=&quot;Horizontal&quot; TextColor=&quot;Black&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;Border Visible=&quot;false&quot; /&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Empty&quot; /&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;LightGray&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;Gainsboro&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item1&gt;&#xD;&#xA;      &lt;Item2 Name=&quot;Em Análise&quot; ValueDataMembersSerializable=&quot;NbPontosEmAnalise&quot; ArgumentDataMember=&quot;_TxNomeDashboard&quot;&gt;&#xD;&#xA;        &lt;Label Font=&quot;Arial, 10pt, style=Bold&quot; TextOrientation=&quot;Horizontal&quot; TextColor=&quot;Black&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;Border Visible=&quot;false&quot; /&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Empty&quot; /&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;Yellow&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;255, 255, 192&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item2&gt;&#xD;&#xA;      &lt;Item3 Name=&quot;Em Desenvolvimento&quot; ValueDataMembersSerializable=&quot;NbPontosEmDesenv&quot; ArgumentDataMember=&quot;_TxNomeDashboard&quot;&gt;&#xD;&#xA;        &lt;Label Font=&quot;Arial, 10pt, style=Bold&quot; TextOrientation=&quot;Horizontal&quot; TextColor=&quot;Black&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Empty&quot; /&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;Lime&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;128, 255, 128&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item3&gt;&#xD;&#xA;      &lt;Item4 Name=&quot;Pronto&quot; ValueDataMembersSerializable=&quot;NbPontosPronto&quot; ArgumentDataMember=&quot;_TxNomeDashboard&quot;&gt;&#xD;&#xA;        &lt;Label Font=&quot;Arial, 10pt, style=Bold&quot; TextOrientation=&quot;Horizontal&quot; TextColor=&quot;Black&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;Border Visible=&quot;false&quot; /&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Empty&quot; /&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;DodgerBlue&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;LightSkyBlue&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item4&gt;&#xD;&#xA;      &lt;Item5 Name=&quot;Desvio&quot; ValueDataMembersSerializable=&quot;NbPontosDesvio&quot; ArgumentDataMember=&quot;_TxNomeDashboard&quot;&gt;&#xD;&#xA;        &lt;Label Font=&quot;Arial, 10pt, style=Bold&quot; TextOrientation=&quot;Horizontal&quot; TextColor=&quot;Black&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;Border Visible=&quot;false&quot; /&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Empty&quot; /&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;LightCoral&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;Red&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item5&gt;&#xD;&#xA;    &lt;/SeriesSerializable&gt;&#xD;&#xA;    &lt;SeriesTemplate&gt;&#xD;&#xA;      &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot; /&gt;&#xD;&#xA;      &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; /&gt;&#xD;&#xA;    &lt;/SeriesTemplate&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <DashboardView Id="Dashboard_Qualidade" Caption="Qualidade" IsNewNode="True">
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True" />
+      </Layout>
+    </DashboardView>
+    <DashboardView Id="Dashboard_Situacao_Ciclo" Caption="Situação do Ciclo" CaptionLocation="Top" IsNewNode="True">
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True" />
+      </Layout>
+    </DashboardView>
+    <DashboardView Id="Dashboard_SituacaoGeral" Caption="Situação Geral" CaptionLocation="Top" IsNewNode="True">
+      <Items IsNewNode="True">
+        <DashboardViewItem Id="Dashboard_Escopo_Completude" Caption="Escopo Vs. Completude" ViewId="Dashboard_Item_Escopo_Completude" IsNewNode="True" />
+        <WinUIContainerEstimadoRealizadoViewItem Id="Dashboard_Escopo_EstimadoVsRealizado" Caption="Estimado Vs Realizado" IsNewNode="True" />
+        <WinUIContainerRitimoTimeViewItem Id="Dashboard_Time_Ritmo" Caption="Ritmo do Time" IsNewNode="True" />
+        <WinUIContainerEscopoCompletudeViewItem Id="Escopo_completude" Caption="Escopo Vs. Completude" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Grupo_01" ShowCaption="False" Caption="Grupo_01(2)" Direction="Vertical" Index="0" RelativeSize="100" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" IsNewNode="True">
+          <LayoutItem Id="Dashboard_Escopo_Completude" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="0" RelativeSize="50" MinSizeWidth="132" MinSizeHeight="48" MaxSizeWidth="0" MaxSizeHeight="0" MaxSize="0, 0" MinSize="132, 48" VerticalAlign="Top" ViewItem="Escopo_completude" IsNewNode="True" />
+          <LayoutGroup Id="dcb27169-b362-4a46-a490-de5ae8fe2740" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="49" IsNewNode="True">
+            <LayoutItem Id="Dashboard_Escopo_EstimadoVsRealizado" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Dashboard_Escopo_EstimadoVsRealizado" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSizeWidth="127" MinSizeHeight="48" MaxSizeWidth="0" MaxSizeHeight="0" Index="0" RelativeSize="49" MaxSize="0, 0" MinSize="127, 48" IsNewNode="True" />
+            <LayoutItem Id="Dashboard_Time_Ritmo" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Dashboard_Time_Ritmo" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSizeWidth="127" MinSizeHeight="48" MaxSizeWidth="0" MaxSizeHeight="0" Index="1" RelativeSize="50" MaxSize="0, 0" MinSize="127, 48" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+    <DetailView Id="EmpresaInstituicao_DetailView" Caption="Empresa/Instituições">
+      <Items>
+        <PropertyEditor Id="TxFoneFax" DisplayFormat="" EditMask="" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="TxSigla" SizeConstraintsType="Custom" MaxSize="250, 32" MinSize="250, 32" ViewItem="TxSigla" />
+          <LayoutItem Id="TxNome" SizeConstraintsType="Custom" MaxSize="700, 26" MinSize="700, 26" ViewItem="TxNome" />
+          <LayoutItem Id="TxEmail" SizeConstraintsType="Custom" MaxSize="400, 26" MinSize="400, 26" ViewItem="TxEmail" />
+          <LayoutItem Id="Pais" SizeConstraintsType="Custom" MaxSize="400, 26" MinSize="400, 26" ViewItem="Pais" />
+          <LayoutItem Id="TxFoneFax" SizeConstraintsType="Custom" MaxSize="250, 26" MinSize="250, 26" ViewItem="TxFoneFax" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="EmpresaInstituicao_ListView" AllowEdit="True" NewItemRowPosition="Top" Caption="Empresa/Instituições" />
+    <ListView Id="EmpresaInstituicao_LookupListView" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="Pais" Index="-1" />
+        <ColumnInfo Id="TxNome" Index="0" />
+        <ColumnInfo Id="TxEmail" Index="1" />
+        <ColumnInfo Id="TxFoneFax" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="Estoria_CasosTeste_ListView" Caption="Testes de Aceitação">
+      <Columns>
+        <ColumnInfo Id="CasoTeste.TxID" Width="20" />
+        <ColumnInfo Id="CasoTeste" Width="150" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Estoria_DetailView" Caption="Estória" DefaultFocusedItem="ComoUmBeneficiado">
+      <Items>
+        <PropertyEditor Id="EstoriaPai" MaxLength="0" Caption="Estória Pai" PropertyName="EstoriaPai" LookupProperty="_TxIdEstoria_Titulo" AllowEdit="True" DataSourceProperty="Modulo.Estorias" DataSourceCriteria="" IsNewNode="True" />
+        <PropertyEditor Id="Modulo" DataSourceCriteria="Filhos.Count = 0" />
+        <PropertyEditor Id="ProjetoParteInteressada" Caption="Solicitante" />
+        <PropertyEditor Id="TxAnotacoes" PropertyEditorType="DevExpress.ExpressApp.HtmlPropertyEditor.Win.HtmlPropertyEditor" />
+        <PropertyEditor Id="TxDuvidas" PropertyEditorType="DevExpress.ExpressApp.HtmlPropertyEditor.Win.HtmlPropertyEditor" />
+        <PropertyEditor Id="TxEntaoPoderei" MaxLength="255" RowCount="0" />
+        <PropertyEditor Id="TxGostariaDe" MaxLength="255" RowCount="0" />
+        <PropertyEditor Id="TxReferencias" PropertyEditorType="DevExpress.ExpressApp.HtmlPropertyEditor.Win.HtmlPropertyEditor" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" ShowCaption="False" Caption="SimpleEditors" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Descricao" ShowCaption="True" Caption="Descrição" ImageName="" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Vertical" Index="0" RelativeSize="25" IsNewNode="True">
+              <LayoutItem Id="ComoUmBeneficiado" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="22" ViewItem="ComoUmBeneficiado" IsNewNode="True" />
+              <LayoutItem Id="TxGostariaDe" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="1" RelativeSize="16" ViewItem="TxGostariaDe" IsNewNode="True" />
+              <LayoutItem Id="TxEntaoPoderei" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="2" RelativeSize="16" ViewItem="TxEntaoPoderei" IsNewNode="True" />
+              <LayoutItem Id="TxTitulo" ShowCaption="True" ViewItem="TxTitulo" CaptionHorizontalAlignment="Default" Index="3" RelativeSize="22" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="DadosBasicos" ShowCaption="True" Caption="Dados Básicos" ImageName="" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Vertical" Index="1" RelativeSize="33" IsNewNode="True">
+              <LayoutItem Id="separador" Index="0" MaxSize="10, 8" MinSize="10, 8" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" ShowCaption="False" ViewItem="" CaptionHorizontalAlignment="Default" RelativeSize="4" IsNewNode="True" />
+              <LayoutItem Id="TxID" CaptionHorizontalAlignment="Default" Index="1" RelativeSize="13" ViewItem="TxID" MaxSize="250, 25" MinSize="250, 25" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="ProjetoParteInteressada" ShowCaption="True" CaptionHorizontalAlignment="Default" Index="2" RelativeSize="10" MinSizeHeight="20" MaxSizeHeight="20" ViewItem="ProjetoParteInteressada" MinSizeWidth="1" MaxSizeWidth="0" MaxSize="0, 19" MinSize="1, 19" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutGroup Id="d5068d24-8986-4738-a388-c6bec3f5cfbd" ShowCaption="False" Caption="d5068d24-8986-4738-a388-c6bec3f5cfbd(7)" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Horizontal" Index="3" RelativeSize="16" IsNewNode="True">
+                <LayoutItem Id="Modulo" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="0" RelativeSize="62" MinSizeHeight="30" MaxSizeHeight="30" ViewItem="Modulo" MinSizeWidth="1" MaxSizeWidth="0" MaxSize="0, 31" MinSize="1, 31" IsNewNode="True" />
+                <LayoutItem Id="CsTipo" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="1" RelativeSize="37" MinSizeHeight="30" MaxSizeHeight="30" ViewItem="CsTipo" MinSizeWidth="1" MaxSizeWidth="0" MaxSize="0, 26" MinSize="1, 26" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="EstoriaPai" ShowCaption="True" CaptionHorizontalAlignment="Default" Index="4" RelativeSize="13" ViewItem="EstoriaPai" MaxSize="0, 25" MinSize="1, 25" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="CsValorNegocio" ShowCaption="True" CaptionHorizontalAlignment="Default" Index="5" RelativeSize="10" MaxSizeHeight="20" MinSizeHeight="20" ViewItem="CsValorNegocio" MinSizeWidth="1" MaxSizeWidth="0" MaxSize="500, 19" MinSize="500, 19" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutGroup Id="ae91838b-1431-4786-ac98-67296c06e391" ShowCaption="False" Caption="ae91838b-1431-4786-ac98-67296c06e391(12)" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Center" TextAlignMode="UseParentOptions" Direction="Horizontal" Index="6" RelativeSize="20" IsNewNode="True">
+                <LayoutItem Id="_NbTamanho" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Center" SizeConstraintsType="Custom" Index="0" RelativeSize="37" MinSizeWidth="428" MinSizeHeight="30" MaxSizeWidth="428" MaxSizeHeight="30" ViewItem="_NbTamanho" MaxSize="250, 36" MinSize="250, 36" IsNewNode="True" />
+                <LayoutItem Id="NbPrioridade" ShowCaption="True" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Center" SizeConstraintsType="Custom" Index="1" RelativeSize="37" MinSizeWidth="428" MinSizeHeight="30" MaxSizeWidth="428" MaxSizeHeight="30" ViewItem="NbPrioridade" MaxSize="250, 32" MinSize="250, 32" IsNewNode="True" />
+                <LayoutItem Id="CsEmAnalise" ViewItem="CsEmAnalise" CaptionHorizontalAlignment="Default" Index="2" RelativeSize="24" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <TabbedGroup Id="Tabs" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="2" RelativeSize="41" Caption="Tabs" IsNewNode="True" Removed="True">
+              <LayoutGroup Id="Anotacoes" ShowCaption="True" Caption="Observações" ImageName="" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="TxAnotacoes" ShowCaption="False" TextAlignMode="AutoSize" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" MinSizeWidth="54" MinSizeHeight="24" MaxSizeWidth="0" MaxSizeHeight="0" ViewItem="TxAnotacoes" MaxSize="0, 0" MinSize="0, 0" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Referencias" ShowCaption="True" Caption="Referências" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="1" RelativeSize="100" ImageName="" IsNewNode="True">
+                <LayoutItem Id="TxReferencias" ShowCaption="False" TextAlignMode="AutoSize" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" MinSizeWidth="54" MinSizeHeight="24" MaxSizeWidth="0" MaxSizeHeight="0" ViewItem="TxReferencias" MaxSize="0, 0" MinSize="0, 0" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Duvidas" ShowCaption="True" Caption="Dúvidas" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="2" RelativeSize="100" ImageName="" IsNewNode="True">
+                <LayoutItem Id="TxDuvidas" ShowCaption="False" TextAlignMode="AutoSize" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" MinSizeWidth="54" MinSizeHeight="24" MaxSizeWidth="0" MaxSizeHeight="0" ViewItem="TxDuvidas" MaxSize="0, 0" MinSize="0, 0" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="TestesDeAceitacao" ShowCaption="True" Caption="Testes de Aceitação" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="3" RelativeSize="100" ImageName="" IsNewNode="True">
+                <LayoutItem Id="CasosTeste" ShowCaption="False" TextAlignMode="AutoSize" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" MinSizeWidth="4" MinSizeHeight="4" MaxSizeWidth="0" MaxSizeHeight="0" ViewItem="CasosTeste" MaxSize="0, 0" MinSize="0, 0" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="CasosTeste_Group" Caption="Casos Teste" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Index="1" RelativeSize="45" Removed="True">
+            <LayoutItem Id="CasosTeste" ViewItem="CasosTeste" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Estoria_ListView" Caption="Estórias">
+      <Columns>
+        <ColumnInfo Id="TxTitulo" Width="120" />
+        <ColumnInfo Id="TxID" Width="5" GroupIndex="-1" />
+        <ColumnInfo Id="Modulo" GroupIndex="-1" />
+        <ColumnInfo Id="ProjetoParteInteressada" Width="60" GroupIndex="-1" />
+        <ColumnInfo Id="CsTipo" Width="40" />
+        <ColumnInfo Id="CsValorNegocio" Width="40" />
+        <ColumnInfo Id="_NbTamanho" Width="20" PredefinedValues="0;0,5;1;2;3;5;8;13;20;40;100" />
+        <ColumnInfo Id="_TxQuando" Width="20" />
+        <ColumnInfo Id="CsSituacao" Width="40">
+          <ConditionalFormatting>
+            <Rule Id="Cancelado" Criteria="CsSituacao = 'Cancelado'" IsNewNode="True">
+              <Target Name="Background" Color="255, 128, 0" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="EmAnalise" Criteria="CsSituacao = 'EmAnalise'" IsNewNode="True">
+              <Target Name="Background" Color="Silver" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="EmDesenv" Criteria="CsSituacao = 'EmDesenv'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 128" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="NaoIniciado" Criteria="CsSituacao = 'NaoIniciado'" IsNewNode="True">
+              <Target Name="Background" Color="224, 224, 224" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Pronto" Criteria="CsSituacao = 'Pronto'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 255" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Replanejado" Criteria="CsSituacao = 'Replanejado'" IsNewNode="True">
+              <Target Name="Background" Color="Gray" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_TamanhoProjeto" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="Estoria_LookupListView" AllowNew="False" Caption="Estória">
+      <Columns>
+        <ColumnInfo Id="_NbTamanho" PredefinedValues="0;0,5;1;2;3;5;8;13;20;40;100" />
+      </Columns>
+    </ListView>
+    <DetailView Id="EstoriaCasoTeste_DetailView" Caption="Testes de Aceitação" />
+    <ListView Id="EstoriaCasoTeste_ListView" Caption="Testes de Aceitação">
+      <Columns>
+        <ColumnInfo Id="CasoTeste" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="EstoriaCasoTeste_LookupListView" Caption="Testes de Aceitação" />
+    <DetailView Id="FeriasPlanejamento_DetailView" Caption="Planejamento de Férias">
+      <Items>
+        <PropertyEditor Id="Realizadas" Index="-1" />
+        <PropertyEditor Id="DtInicio" Index="0" />
+        <PropertyEditor Id="Modalidade" Index="1" />
+        <PropertyEditor Id="_DtRetorno" Caption="Término" Index="2" />
+        <PropertyEditor Id="Vender" Caption="Venda de férias?" Index="3" />
+        <PropertyEditor Id="CsSituacao" Index="4" />
+        <PropertyEditor Id="TxAtualizado" Index="5" />
+        <PropertyEditor Id="TxPlanejado" Index="6" />
+        <PropertyEditor Id="PeriodoDtInicio" PropertyName="Periodo.DtInicio" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="PeriodoDtTermino" PropertyName="Periodo.DtTermino" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="PeriodoNbFeriasPlanejadas" PropertyName="Periodo.NbFeriasPlanejadas" AllowEdit="False" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="30" Caption="Dados do Período Aquisitivo" IsNewNode="True">
+              <LayoutItem Id="PeriodoDtInicio" ViewItem="PeriodoDtInicio" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="26" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="200, 32" MinSize="200, 32" IsNewNode="True" />
+              <LayoutItem Id="PeriodoDtTermino" ViewItem="PeriodoDtTermino" CaptionHorizontalAlignment="Default" Index="1" RelativeSize="19" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="200, 26" MinSize="200, 26" IsNewNode="True" />
+              <LayoutItem Id="PeriodoNbFeriasPlanejadas" ViewItem="PeriodoNbFeriasPlanejadas" CaptionHorizontalAlignment="Default" Index="2" RelativeSize="26" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="200, 26" MinSize="200, 26" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="FeriasPlanejamento" Caption="Dados do Planejamento de Férias" Index="1" RelativeSize="69">
+              <LayoutGroup Id="FeriasPlanejamento_col1" RelativeSize="87">
+                <LayoutGroup Id="33cf99b4-cca8-4947-98c9-2cb6d71f2df8" Direction="Vertical" RelativeSize="32" TextAlignMode="UseParentOptions">
+                  <LayoutItem Id="DtInicio" ViewItem="DtInicio" Index="0" RelativeSize="40" SizeConstraintsType="Custom" MinSize="200, 32" MaxSize="200, 32" IsNewNode="True" />
+                  <LayoutItem Id="Modalidade" Index="1" SizeConstraintsType="Custom" MinSize="250, 25" MaxSize="250, 25" ViewItem="Modalidade" />
+                  <LayoutItem Id="_DtRetorno" ViewItem="_DtRetorno" Index="2" RelativeSize="27" SizeConstraintsType="Custom" MinSize="200, 22" MaxSize="200, 22" IsNewNode="True" />
+                  <LayoutItem Id="Vender" ViewItem="Vender" Removed="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="804ed657-b2ae-4713-92f1-0e9e68b5661c" RelativeSize="10" Direction="Vertical" TextAlignMode="UseParentOptions">
+                  <LayoutItem Id="Vender" ViewItem="Vender" Index="0" RelativeSize="100" CaptionLocation="Left" SizeConstraintsType="Custom" MinSize="200, 25" MaxSize="200, 25" IsNewNode="True" />
+                  <LayoutItem Id="DtInicio" ViewItem="DtInicio" Index="2" RelativeSize="37" Removed="True" />
+                  <LayoutItem Id="_DtRetorno" RelativeSize="47" ViewItem="_DtRetorno" Removed="True" />
+                </LayoutGroup>
+                <LayoutItem Id="CsSituacaoFerias" Index="2" RelativeSize="9" SizeConstraintsType="Custom" ShowCaption="True" MinSize="250, 26" MaxSize="250, 26" ViewItem="CsSituacaoFerias" />
+                <LayoutItem Id="TxPlanejado" ViewItem="TxPlanejado" CaptionHorizontalAlignment="Default" Index="3" RelativeSize="10" SizeConstraintsType="Custom" MinSize="500, 25" MaxSize="500, 25" IsNewNode="True" />
+                <LayoutItem Id="TxAtualizado" ViewItem="TxAtualizado" CaptionHorizontalAlignment="Default" Index="4" RelativeSize="36" SizeConstraintsType="Custom" MinSize="500, 25" MaxSize="500, 25" IsNewNode="True" />
+                <LayoutItem Id="Realizadas" Index="5" RelativeSize="72" ViewItem="Realizadas" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FeriasPlanejamento_ListView" Caption="Controle de Férias" NewItemRowPosition="None" AutoExpandAllGroups="True" MasterDetailMode="ListViewOnly" IsGroupPanelVisible="True" AllowEdit="True" AllowDelete="False" AllowNew="False" ImageName="ferias16">
+      <Columns>
+        <ColumnInfo Id="DtInicio" Index="0" SortOrder="Descending" SortIndex="0" />
+        <ColumnInfo Id="_DtRetorno" Index="1" Caption="Término" />
+        <ColumnInfo Id="Modalidade" Index="2" />
+        <ColumnInfo Id="Vender" Caption="Venda de férias" Index="3" />
+        <ColumnInfo Id="CsSituacao" Index="4">
+          <ConditionalFormatting>
+            <Rule Id="EmAtraso" Criteria="[DtInicio] &lt; LocalDateTimeToday()" IsNewNode="True">
+              <Target Name="Background" Color="192, 0, 0" IsNewNode="True" />
+              <Target Name="Foreground" Color="White" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Planejado" Criteria="[DtInicio] &gt;= LocalDateTimeToday()" IsNewNode="True">
+              <Target Name="Background" Color="Yellow" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Realizado" Criteria="[Realizadas] = True" IsNewNode="True">
+              <Target Name="Background" Color="DeepSkyBlue" IsNewNode="True" />
+              <Target Name="Foreground" Color="White" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Vendida" Criteria="[Vender] = ##Enum#WexProject.BLL.Shared.Domains.Geral.CsSimNao,Sim#" IsNewNode="True">
+              <Target Name="Background" Color="LimeGreen" IsNewNode="True" />
+              <Target Name="Foreground" Color="White" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="Realizadas" Index="5" Caption="Definir como Realizado?" />
+        <ColumnInfo Id="TxPlanejado" Index="6" Caption="Criado por" AllowEdit="False">
+          <ConditionalFormatting>
+            <Rule Id="Bakcground" Criteria="[TxPlanejado] Is Not Null" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxAtualizado" Index="7" AllowEdit="False">
+          <ConditionalFormatting>
+            <Rule Id="BackgroundAtualizado" Criteria="[TxAtualizado] Is Not Null" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="ColaboradorSuperiorImediato" PropertyName="Periodo.Colaborador.Coordenador._NomeCompleto" GroupIndex="0" Caption="Superior Imediato" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="ColaboradorName" PropertyName="Periodo.Colaborador._NomeCompleto" GroupIndex="1" Index="9" Caption="Colaborador" IsNewNode="True" />
+        <ColumnInfo Id="Periodo" Index="10" GroupIndex="2" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="FeriasPlanejamento_LookupListView" Caption="Planejamento de Férias" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="DtInicio" Index="0" SortOrder="Descending" SortIndex="0" />
+        <ColumnInfo Id="_DtRetorno" Index="1" />
+        <ColumnInfo Id="Vender" Index="2" />
+        <ColumnInfo Id="Modalidade" Index="3" />
+        <ColumnInfo Id="CsSituacao" Index="4" />
+        <ColumnInfo Id="Realizadas" Index="5" />
+        <ColumnInfo Id="TxAtualizado" Index="6" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" />
+        <ColumnInfo Id="TxPlanejado" Index="7" PropertyEditorType="DevExpress.ExpressApp.Validation.Win.MemoEditStringPropertyEditor" />
+      </Columns>
+    </ListView>
+    <ListView Id="GraficoSituacaoAtual_ListView">
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;11.2.8.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; BoundSeriesSorting=&quot;Ascending&quot;&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisX&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisY&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;    &lt;SeriesSerializable&gt;&#xD;&#xA;      &lt;Item1 Name=&quot;Series 1&quot;&gt;&#xD;&#xA;        &lt;Label LineVisible=&quot;true&quot; TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;SideBySideBarSeriesLabel&quot; /&gt;&#xD;&#xA;      &lt;/Item1&gt;&#xD;&#xA;      &lt;Item2 Name=&quot;Series 2&quot;&gt;&#xD;&#xA;        &lt;Label LineVisible=&quot;true&quot; TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;SideBySideBarSeriesLabel&quot; /&gt;&#xD;&#xA;      &lt;/Item2&gt;&#xD;&#xA;    &lt;/SeriesSerializable&gt;&#xD;&#xA;    &lt;SeriesTemplate SeriesPointsSorting=&quot;Ascending&quot;&gt;&#xD;&#xA;      &lt;Label LineVisible=&quot;true&quot; TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;SideBySideBarSeriesLabel&quot; /&gt;&#xD;&#xA;    &lt;/SeriesTemplate&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" />
+    </ListView>
+    <DetailView Id="Meus_Dados_DetailView" ClassName="WexProject.BLL.Models.Rh.Colaborador" Caption="Meus Dados" AllowDelete="False" ImageName="BO_User" IsNewNode="True" Removed="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Address1" PropertyName="Usuario.Address1" Caption="Endereço" Index="-1" IsNewNode="True" />
+        <PropertyEditor Id="_Permissions" PropertyName="_Permissions" IsNewNode="True" />
+        <PropertyEditor Id="_PhoneNumber" PropertyName="_PhoneNumber" View="Colaborador__PhoneNumber_ListView" IsNewNode="True" />
+        <PropertyEditor Id="_Roles" PropertyName="_Roles" View="Colaborador__Roles_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Cargo" PropertyName="Cargo" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Coordenador" View="" PropertyName="Coordenador" DataSourceCriteria="" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="DtAdmissao" PropertyName="DtAdmissao" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Email" PropertyName="Usuario.Email" IsNewNode="True" />
+        <PropertyEditor Id="IsActive" PropertyName="Usuario.IsActive" Caption="Situação" CaptionForTrue="Ativo" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.BooleanPropertyEditor" CaptionForFalse="Inativo" IsNewNode="True" />
+        <PropertyEditor Id="NomeCompleto" PropertyName="Usuario.FullName" Caption="Nome Completo" IsNewNode="True" />
+        <PropertyEditor Id="TxMatricula" PropertyName="TxMatricula" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="UserName" PropertyName="Usuario.UserName" Caption="Usuário de Rede" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" Direction="Vertical" ShowCaption="False" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" Direction="Vertical" ShowCaption="False" Caption="SimpleEditors" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="48" IsNewNode="True">
+            <LayoutGroup Id="Colaborador" Index="0" Direction="Vertical" ShowCaption="True" Caption="Colaborador" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Colaborador_col1" Index="0" Direction="Vertical" ShowCaption="False" Caption="Colaborador_col1" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" RelativeSize="83" TextAlignMode="UseParentOptions" IsNewNode="True">
+                <LayoutGroup Id="58d37cb1-7114-4e50-a4ab-9405da9b64b6" ShowCaption="False" Caption="58d37cb1-7114-4e50-a4ab-9405da9b64b6(5)" Direction="Horizontal" Index="0" RelativeSize="18" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" IsNewNode="True">
+                  <LayoutItem Id="UserName" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="0" RelativeSize="60" TextAlignMode="UseParentOptions" ViewItem="UserName" SizeConstraintsType="Custom" MaxSize="0, 30" MinSize="0, 30" IsNewNode="True" />
+                  <LayoutItem Id="IsActive" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="1" RelativeSize="39" TextAlignMode="UseParentOptions" ViewItem="IsActive" SizeConstraintsType="Custom" MaxSize="0, 30" MinSize="0, 30" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="NomeCompleto" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="1" RelativeSize="11" TextAlignMode="UseParentOptions" ViewItem="NomeCompleto" SizeConstraintsType="Custom" MaxSize="0, 22" MinSize="0, 22" IsNewNode="True" />
+                <LayoutItem Id="Email" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Email" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="2" RelativeSize="11" MaxSize="0, 22" MinSize="0, 22" IsNewNode="True" />
+                <LayoutItem Id="Address1" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Address1" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="3" RelativeSize="11" MaxSize="0, 16" MinSize="0, 16" IsNewNode="True" />
+                <LayoutGroup Id="10393e85-167b-4291-962d-914e9fdde206" ShowCaption="False" Caption="10393e85-167b-4291-962d-914e9fdde206(11)" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Horizontal" Index="4" RelativeSize="17" IsNewNode="True">
+                  <LayoutItem Id="TxMatricula" TextAlignMode="UseParentOptions" ViewItem="TxMatricula" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="0" RelativeSize="49" MaxSize="0, 28" MinSize="0, 28" IsNewNode="True" />
+                  <LayoutItem Id="DtAdmissao" TextAlignMode="UseParentOptions" ViewItem="DtAdmissao" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="1" RelativeSize="50" MaxSize="0, 28" MinSize="0, 28" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Coordenador" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" Index="5" RelativeSize="11" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="Coordenador" SizeConstraintsType="Custom" MaxSize="0, 22" MinSize="0, 22" IsNewNode="True" />
+                <LayoutItem Id="Cargo" ShowCaption="True" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="6" RelativeSize="15" TextAlignMode="UseParentOptions" ViewItem="Cargo" SizeConstraintsType="Default" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Item1" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" Index="1" RelativeSize="51" IsNewNode="True">
+            <LayoutGroup Id="Ferias_Group" ShowCaption="True" Caption="Regras" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" Direction="Vertical" Index="0" RelativeSize="100" TextAlignMode="AlignLocal" IsNewNode="True">
+              <LayoutItem Id="_Roles" ShowCaption="False" TextAlignMode="UseParentOptions" ViewItem="_Roles" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item2" ShowCaption="True" Caption="Permissões" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="_Permissions" ShowCaption="False" TextAlignMode="UseParentOptions" ViewItem="_Permissions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item3" ShowCaption="True" Caption="Telefones" CaptionLocation="Top" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" TextAlignMode="AlignLocal" Direction="Vertical" Index="2" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="_PhoneNumber" ShowCaption="False" TextAlignMode="UseParentOptions" ViewItem="_PhoneNumber" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ModalidadeFerias_DetailView" Caption=" Modalidade de Férias" ImageName="modalidade_de_ferias16">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ModalidadeFerias">
+              <LayoutGroup Id="DadosGerais" ShowCaption="True" CaptionLocation="Top" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="15" Caption="Dados Gerais" IsNewNode="True">
+                <LayoutItem Id="NbDias" ViewItem="NbDias" Index="0" RelativeSize="37" ShowCaption="True" SizeConstraintsType="Custom" MaxSize="350, 32" MinSize="350, 32" IsNewNode="True" />
+                <LayoutItem Id="PodeVender" ViewItem="PodeVender" Index="1" RelativeSize="25" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="350, 26" MinSize="350, 26" IsNewNode="True" />
+                <LayoutItem Id="CsSituacao" ViewItem="CsSituacao" Index="2" RelativeSize="37" SizeConstraintsType="Custom" ShowCaption="True" MaxSize="350, 26" MinSize="350, 26" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="bf5f5bda-c996-48bb-a069-c23108cec5ed" Removed="True">
+                <LayoutGroup Id="c9bb0d3d-1ddb-4e84-a50d-3213e6e2328f">
+                  <LayoutGroup Id="Item1" Removed="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ModalidadeFerias_ListView" Caption="Modalidade de Férias" ImageName="modalidade_de_ferias16" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="NbDias" SortIndex="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="ModalidadeFerias_LookupListView" Caption="Modalidade de Férias" ImageName="modalidade_de_ferias16" Criteria="[CsSituacao] = ##Enum#WexProject.BLL.Shared.Domains.Geral.CsSituacao,Ativo#" />
+    <DetailView Id="ModuleInfo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="Modulo_DetailView" Caption="Módulos ">
+      <Items>
+        <PropertyEditor Id="_NbPercEmAnalise" Caption="% Em Análise" />
+        <PropertyEditor Id="_NbPercEmDesenv" Caption="% Em Desenvolvimento" />
+        <PropertyEditor Id="_NbPercNaoIniciado" Caption="% Não Iniciado" />
+        <PropertyEditor Id="_NbPercPronto" Caption="% Pronto" />
+        <PropertyEditor Id="ModuloPai" PropertyName="ModuloPai" DataSourceProperty="CandidatosModuloPai" LookupProperty="TxNome" IsNewNode="True" />
+        <PropertyEditor Id="NbEsforcoPlanejado" Caption="Esforço Planejado" MaxLength="50" />
+        <PropertyEditor Id="TxDescricao" PropertyEditorType="DevExpress.ExpressApp.HtmlPropertyEditor.Win.HtmlPropertyEditor" Caption="TxDescricao(12)" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1" RelativeSize="100">
+              <LayoutItem Id="TxID" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="TxID" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSize="0, 30" MaxSize="0, 30" Index="0" RelativeSize="7" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="TxNome" SizeConstraintsType="Custom" RelativeSize="5" MaxSize="0, 30" MinSize="0, 30" Index="1" ViewItem="TxNome" />
+              <LayoutItem Id="ModuloPai" RelativeSize="6" MaxSize="0, 25" MinSize="0, 25" Index="2" ViewItem="ModuloPai" />
+              <LayoutItem Id="NbPontosTotal" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="NbPontosTotal" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSize="250, 25" MaxSize="250, 25" Index="3" RelativeSize="7" IsNewNode="True" />
+              <LayoutItem Id="NbEsforcoPlanejado" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="NbEsforcoPlanejado" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MinSize="250, 25" MaxSize="250, 25" Index="4" RelativeSize="7" IsNewNode="True" />
+              <LayoutGroup Id="JuncaoNbEsforco%" Index="5" RelativeSize="56">
+                <LayoutGroup Id="Item4" ImageName="" TextAlignMode="AlignLocal" RelativeSize="32" Index="0">
+                  <LayoutItem Id="TxDescricao" ShowCaption="False" TextAlignMode="UseParentOptions" SizeConstraintsType="Default" RelativeSize="55" ViewItem="TxDescricao" />
+                </LayoutGroup>
+                <LayoutGroup Id="34d60a44-120f-49b2-be0e-18d7b726c2e8" TextAlignMode="UseParentOptions" RelativeSize="67" Caption="Situação" Index="1">
+                  <LayoutGroup Id="Item2" TextAlignMode="UseParentOptions">
+                    <LayoutItem Id="_NbPercNaoIniciado" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" RelativeSize="21" MaxSize="0, 25" MinSize="0, 25" ViewItem="_NbPercNaoIniciado" />
+                    <LayoutItem Id="_NbPercEmAnalise" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" RelativeSize="15" MaxSize="0, 25" MinSize="0, 25" ViewItem="_NbPercEmAnalise" />
+                    <LayoutItem Id="_NbPercEmDesenv" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" RelativeSize="15" MaxSize="0, 25" MinSize="0, 25" ViewItem="_NbPercEmDesenv" />
+                    <LayoutItem Id="_NbPercPronto" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" RelativeSize="21" MaxSize="0, 25" MinSize="0, 25" ViewItem="_NbPercPronto" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item3" TextAlignMode="UseParentOptions">
+                    <LayoutItem Id="_NbPontosTotalProjeto" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" RelativeSize="21" MaxSize="0, 30" MinSize="0, 30" ViewItem="_NbPontosTotalProjeto" />
+                    <LayoutItem Id="_NbPontosUtilizados" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" RelativeSize="15" MaxSize="0, 22" MinSize="0, 22" ViewItem="_NbPontosUtilizados" />
+                    <LayoutItem Id="_NbDiferencaDePontosProjeto" TextAlignMode="UseParentOptions" SizeConstraintsType="Default" RelativeSize="36" ViewItem="_NbDiferencaDePontosProjeto" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="2a98188c-3d4f-4359-86e7-6491e70fae0e" TextAlignMode="UseParentOptions" RelativeSize="18" Removed="True">
+                  <LayoutItem Id="NbPontosTotal" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="NbPontosTotal" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" Index="0" RelativeSize="30" MinSize="0, 25" MaxSize="0, 25" Removed="True" />
+                  <LayoutItem Id="NbEsforcoPlanejado" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="NbEsforcoPlanejado" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="1" RelativeSize="50" Removed="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Modulo_ListView" Criteria="" Caption="Módulos">
+      <Columns>
+        <ColumnInfo Id="_TxNomeCompleto" LookupProperty="_TxNomeCompleto" Width="40">
+          <ConditionalFormatting>
+            <Rule Id="PintarModuloPai" Criteria="Filhos.Count &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxID" Width="15">
+          <ConditionalFormatting>
+            <Rule Id="PintarTxID" Criteria="Filhos.Count &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_TxNomeModulo" Width="40">
+          <ConditionalFormatting>
+            <Rule Id="Pintar_TxNomeModulo" Criteria="Filhos.Count &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="NbEsforcoPlanejado">
+          <ConditionalFormatting>
+            <Rule Id="PintarEsforco" Criteria="Filhos.Count &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="NbPontosTotal">
+          <ConditionalFormatting>
+            <Rule Id="PintarPontosTotal" Criteria="Filhos.Count &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_TxSituacao" Width="120">
+          <ConditionalFormatting>
+            <Rule Id="PintarSituacao" Criteria="Filhos.Count &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+            <Rule Id="SomaNb" Criteria="_NbPercDesvio != 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Red" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="Modulo_LookupListView" Caption="Módulo">
+      <Columns>
+        <ColumnInfo Id="_TxNomeDashboard" Index="-1" />
+        <ColumnInfo Id="ModuloPai" Index="-1" LookupProperty="TxNomeCompleto" />
+      </Columns>
+    </ListView>
+    <DetailView Id="MotivoCancelamento_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Caption="SimpleEditors" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+            <LayoutGroup Id="MotivoCancelamento" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+              <LayoutItem Id="TxDescricao" SizeConstraintsType="Custom" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" MinSize="550, 30" MaxSize="550, 30" RelativeSize="53" ViewItem="TxDescricao" />
+              <LayoutItem Id="CsSituacao" SizeConstraintsType="Custom" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" MinSize="200, 28" MaxSize="200, 28" RelativeSize="41" ViewItem="CsSituacao" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="MotivoCancelamento_LookupListView">
+      <Columns>
+        <ColumnInfo Id="CsSituacao" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Pais_DetailView">
+      <Items>
+        <PropertyEditor Id="TxMascara" EditMask="[^a-zA-Z]+" EditMaskType="RegEx" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutItem Id="Name" MaxSize="700, 32" MinSize="700, 32" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" RelativeSize="6" ViewItem="" />
+          <LayoutItem Id="TxMascara" ViewItem="TxMascara" SizeConstraintsType="Custom" MinSize="400, 23" MaxSize="400, 23" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
+          <LayoutItem Id="_TxTesteMascara" ViewItem="_TxTesteMascara" CaptionHorizontalAlignment="Default" SizeConstraintsType="Custom" MinSize="400, 23" MaxSize="400, 23" Index="1" RelativeSize="50" IsNewNode="True" Removed="True" />
+          <LayoutItem Id="CsSituacao" RelativeSize="5" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MaxSize="400, 23" MinSize="400, 23" Index="2" ViewItem="CsSituacao" />
+          <LayoutItem Id="IsPadrao" RelativeSize="74" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" SizeConstraintsType="Custom" MaxSize="400, 23" MinSize="400, 23" Index="3" ViewItem="IsPadrao" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Pais_ListView" NewItemRowPosition="Top" />
+    <DetailView Id="Papel_DetailView" Caption="Papéis exercidos no projeto" ImageName="papeis16" />
+    <ListView Id="Papel_ListView" Caption="Papéis exercidos no projeto" ImageName="papeis16" />
+    <ListView Id="Papel_LookupListView" Caption="Papéis" ImageName="papeis16">
+      <Columns>
+        <ColumnInfo Id="TxNome" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ParteInteressada_DetailView" Caption="Partes Interessadas">
+      <Layout>
+        <LayoutGroup Id="Main" TextAlignMode="UseParentOptions">
+          <LayoutGroup Id="Item2" TextAlignMode="UseParentOptions" RelativeSize="49">
+            <LayoutItem Id="IsColaborador" SizeConstraintsType="Custom" MaxSize="0, 30" MinSize="1, 30" TextAlignMode="UseParentOptions" ViewItem="IsColaborador" />
+            <LayoutItem Id="TxParteInteressadaNome" SizeConstraintsType="Custom" MaxSize="0, 22" MinSize="1, 22" TextAlignMode="UseParentOptions" RelativeSize="13" ViewItem="TxParteInteressadaNome" />
+            <LayoutItem Id="Colaborador" SizeConstraintsType="Custom" MaxSize="0, 22" MinSize="1, 22" TextAlignMode="UseParentOptions" RelativeSize="13" ViewItem="Colaborador" />
+            <LayoutItem Id="EmpresaInstituicao" SizeConstraintsType="Custom" MaxSize="0, 22" MinSize="1, 22" TextAlignMode="UseParentOptions" RelativeSize="13" ViewItem="EmpresaInstituicao" />
+            <LayoutItem Id="Cargo" TextAlignMode="UseParentOptions" SizeConstraintsType="Default" RelativeSize="19" ViewItem="Cargo" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item1" TextAlignMode="UseParentOptions" RelativeSize="34">
+            <LayoutItem Id="TxTelefoneFixo" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" MaxSize="250, 30" MinSize="250, 30" ViewItem="TxTelefoneFixo" />
+            <LayoutItem Id="TxCelular" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" MaxSize="250, 22" MinSize="250, 22" ViewItem="TxCelular" />
+            <LayoutItem Id="TxEmail" TextAlignMode="UseParentOptions" SizeConstraintsType="Custom" MaxSize="250, 30" MinSize="250, 30" ViewItem="TxEmail" />
+          </LayoutGroup>
+          <LayoutGroup Id="ProjetoParteInteressadas_Group" TextAlignMode="UseParentOptions" RelativeSize="16">
+            <LayoutItem Id="ProjetoParteInteressadas" TextAlignMode="UseParentOptions" SizeConstraintsType="Default" RelativeSize="37" ViewItem="ProjetoParteInteressadas" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ParteInteressada_ListView" Caption="Partes  Interessadas">
+      <Columns>
+        <ColumnInfo Id="Colaborador" Index="-1" />
+        <ColumnInfo Id="EmpresaInstituicao" Index="-1" />
+        <ColumnInfo Id="Cargo" SortOrder="None" />
+        <ColumnInfo Id="TxEmail" Caption="E-mail" />
+      </Columns>
+    </ListView>
+    <ListView Id="ParteInteressada_LookupListView" AutoExpandAllGroups="True" Caption="Parte Interessada">
+      <Columns>
+        <ColumnInfo Id="Cargo" Index="-1" />
+        <ColumnInfo Id="EmpresaInstituicao" Index="-1" GroupIndex="0" />
+        <ColumnInfo Id="TxCelular" Index="-1" />
+        <ColumnInfo Id="TxParteInteressadaNome" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="ParteInteressada_ProjetoParteInteressadas_ListView" Caption=" Testes de Aceitação">
+      <Columns>
+        <ColumnInfo Id="TxParteInteressada" Caption="Parte Interessada" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PlanejamentoFerias_DetailView" Caption="Planejamento de Férias" ClassName="WexProject.BLL.Models.Rh.FeriasPlanejamento" IsNewNode="True">
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" Caption="Main" IsNewNode="True">
+          <LayoutItem Id="PlanejamentoFerias" ViewItem="PlanejamentoFerias" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Prioridade_ListView" Criteria="NbPrioridade &gt; 0">
+      <Columns>
+        <ColumnInfo Id="NbPrioridade" Width="20" SortOrder="Ascending" />
+        <ColumnInfo Id="TxID" Width="25">
+          <ConditionalFormatting>
+            <Rule Id="Letra" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="TxIDCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="Título" Width="120">
+          <ConditionalFormatting>
+            <Rule Id="LetraCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="TituloCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="CsTipo" Width="40">
+          <ConditionalFormatting>
+            <Rule Id="CsTipoCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+            <Rule Id="LetraCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="CsValorNegocio" Width="30">
+          <ConditionalFormatting>
+            <Rule Id="CsValorNegocioCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+            <Rule Id="LetraCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="NbTamanho" Width="20" Caption="Tamanho" DisplayFormat="{0}">
+          <ConditionalFormatting>
+            <Rule Id="LetraCinza" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Tamanho" Criteria="NbPrioridade &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxPremissas" Width="120" />
+      </Columns>
+    </ListView>
+    <ListView Id="Projeto_Cliente_ListView" Caption="Projeto Cliente" AllowNew="True" AllowDelete="True" ImageName="empresax16" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="Projeto" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Projeto_DetailView" Caption="Projetos">
+      <Items>
+        <PropertyEditor Id="EmpresaInstituicao" Caption="Patrocinador" />
+        <PropertyEditor Id="NbTamanhoTotal" Caption="Tamanho (Pontos)" />
+        <PropertyEditor Id="TxNome" Caption="Nome" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="DadosGerais">
+            <LayoutItem Id="TxNome" SizeConstraintsType="Custom" MaxSize="0, 30" MinSize="0, 30" ViewItem="TxNome" />
+            <LayoutItem Id="EmpresaInstituicao" SizeConstraintsType="Custom" MaxSizeHeight="18" MinSizeHeight="18" MaxSize="0, 16" MinSize="0, 16" ViewItem="EmpresaInstituicao" />
+            <LayoutGroup Id="Datas">
+              <LayoutGroup Id="DatasInicio">
+                <LayoutItem Id="DtInicioPlan" SizeConstraintsType="Custom" MaxSizeWidth="250" MinSizeWidth="250" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="250, 28" MinSize="250, 28" ViewItem="DtInicioPlan" />
+                <LayoutItem Id="DtInicioReal" SizeConstraintsType="Custom" MaxSizeWidth="250" MinSizeWidth="250" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="250, 30" MinSize="250, 30" ViewItem="DtInicioReal" />
+              </LayoutGroup>
+              <LayoutGroup Id="DatasReais">
+                <LayoutItem Id="DtTerminoPlan" SizeConstraintsType="Custom" MaxSizeWidth="250" MinSizeWidth="250" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="250, 28" MinSize="250, 28" ViewItem="DtTerminoPlan" />
+                <LayoutItem Id="_DtTerminoReal" SizeConstraintsType="Custom" MaxSizeWidth="250" MinSizeWidth="250" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="250, 30" MinSize="250, 30" ViewItem="_DtTerminoReal" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Escopo">
+            <LayoutItem Id="NbTamanhoTotal" SizeConstraintsType="Custom" MaxSizeWidth="220" MinSizeWidth="220" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="220, 29" MinSize="220, 29" ViewItem="NbTamanhoTotal" />
+            <LayoutItem Id="_NbPerConcluido" SizeConstraintsType="Custom" MaxSizeWidth="220" MinSizeWidth="220" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="220, 30" MinSize="220, 30" ViewItem="_NbPerConcluido" />
+          </LayoutGroup>
+          <LayoutGroup Id="CiclosDeDesenv">
+            <LayoutItem Id="NbCicloTotalPlan" SizeConstraintsType="Custom" MaxSizeWidth="250" MinSizeWidth="250" MaxSizeHeight="30" MinSizeHeight="30" MaxSize="250, 30" MinSize="250, 30" ViewItem="NbCicloTotalPlan" />
+            <LayoutItem Id="NbCicloDuracaoDiasPlan" SizeConstraintsType="Custom" MaxSizeHeight="22" MaxSizeWidth="250" MinSizeHeight="22" MinSizeWidth="250" MaxSize="250, 22" MinSize="250, 22" ViewItem="NbCicloDuracaoDiasPlan" />
+            <LayoutItem Id="NbCicloDiasIntervalo" MaxSizeHeight="30" MaxSizeWidth="250" MinSizeHeight="30" MinSizeWidth="250" SizeConstraintsType="Custom" MaxSize="250, 30" MinSize="250, 30" ViewItem="NbCicloDiasIntervalo" />
+          </LayoutGroup>
+          <LayoutGroup Id="Ritimo">
+            <LayoutItem Id="NbRitmoTime" SizeConstraintsType="Custom" MaxSize="250, 40" MinSize="250, 40" ViewItem="NbRitmoTime" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Projeto_ListView" Caption="Projetos">
+      <Columns>
+        <ColumnInfo Id="_DtTerminoReal" Width="60">
+          <ConditionalFormatting>
+            <Rule Id="DtTerminoReal" Criteria="_NbPerConcluido &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxNome" Width="120" />
+        <ColumnInfo Id="EmpresaInstituicao" GroupIndex="0" Caption="Patrocinador" />
+        <ColumnInfo Id="NbTamanhoTotal" Width="50" DisplayFormat="" />
+        <ColumnInfo Id="DtInicioReal" Width="50" />
+        <ColumnInfo Id="DtTerminoPlan" Width="60" />
+        <ColumnInfo Id="NbCicloTotalPlan" Width="20" />
+        <ColumnInfo Id="DtTerminoReal" Width="60">
+          <ConditionalFormatting>
+            <Rule Id="DtTerminoReal" Criteria="_NbPerConcluido &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_NbPerConcluido" Width="20">
+          <ConditionalFormatting>
+            <Rule Id="_NbPercConcluido" Criteria="_NbPerConcluido &gt;= 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="_TxSituacaoProjeto">
+          <ConditionalFormatting>
+            <Rule Id="Cancelado" Criteria="_TxSituacaoProjeto == 'Cancelado'" IsNewNode="True">
+              <Target Name="Background" Color="255, 192, 128" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="Concluido" Criteria="_TxSituacaoProjeto == 'Concluido'" IsNewNode="True">
+              <Target Name="Background" Color="128, 255, 255" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="EmAndamento" Criteria="_TxSituacaoProjeto == 'EmAndamento'" IsNewNode="True">
+              <Target Name="Background" Color="192, 255, 192" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="EmAtraso" Criteria="_TxSituacaoProjeto == 'EmAtraso'" IsNewNode="True">
+              <Target Name="Background" Color="255, 128, 128" IsNewNode="True" />
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="Projeto_LookupListView" Caption="Projeto" />
+    <ListView Id="Projeto_Modulos_ListView" ShowAutoFilterRow="False" Caption="Módulo">
+      <Columns>
+        <ColumnInfo Id="TxID" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Projeto_ProjetoParteInteressada_ListView" Caption="Testes de Aceitação" />
+    <DetailView Id="ProjetoCliente_DetailView" Caption="Projeto Cliente">
+      <Layout>
+        <LayoutGroup Id="Main" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+    <ListView Id="ProjetoCliente_ListView" Caption="Projeto Cliente" AllowNew="False" />
+    <ListView Id="ProjetoCliente_LookupListView" Caption="Projeto Cliente" AllowNew="True" AllowDelete="True" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Cliente" LookupEditorMode="Search" AllowEdit="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ProjetoParteInteressada_DetailView" Caption="Partes Interessadas do Projeto">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ProjetoParteInteressada">
+              <LayoutItem Id="Projeto" SizeConstraintsType="Custom" MaxSize="0, 30" MinSize="0, 30" ViewItem="Projeto" />
+              <LayoutItem Id="ParteInteressada" SizeConstraintsType="Custom" MaxSize="0, 22" MinSize="0, 22" ViewItem="ParteInteressada" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ProjetoParteInteressada_ListView" Caption="Partes Interessadas do Projeto">
+      <Columns>
+        <ColumnInfo Id="TxParteInteressada" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="ProjetoParteInteressada_LookupListView" Caption="Partes Interessadas do Projeto" AllowDelete="True" AllowNew="True" />
+    <DetailView Id="Requisito_DetailView" Caption="Requisitos">
+      <Items>
+        <PropertyEditor Id="Modulo" DataSourceCriteria="Filhos.Count = 0" />
+        <PropertyEditor Id="TxDescricao" PropertyEditorType="WexProject.Module.Win.Projeto.ClasseEditorDeTexto" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Item1">
+            <LayoutGroup Id="Item1">
+              <LayoutItem Id="TxDescricao" TextAlignMode="CustomSize" MaxSizeHeight="850" MinSizeHeight="850" MaxSize="0, 850" MinSize="0, 850" ViewItem="TxDescricao" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item2">
+              <LayoutItem Id="RequisitoCasosTeste" TextAlignMode="CustomSize" MaxSizeHeight="850" MinSizeHeight="850" MaxSize="0, 850" MinSize="0, 850" ViewItem="RequisitoCasosTeste" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Requisito_ListView" Caption="Requisitos">
+      <Columns>
+        <ColumnInfo Id="TxID">
+          <ConditionalFormatting>
+            <Rule Id="PintarLetraTxID" Criteria="TxID &gt; 0" IsNewNode="True">
+              <Target Name="Foreground" Color="Black" IsNewNode="True" />
+            </Rule>
+            <Rule Id="PintarTxID" Criteria="TxID &gt; 0" IsNewNode="True">
+              <Target Name="Background" Color="LightCyan" IsNewNode="True" />
+            </Rule>
+          </ConditionalFormatting>
+        </ColumnInfo>
+        <ColumnInfo Id="TxNome" Width="400" />
+      </Columns>
+    </ListView>
+    <ListView Id="Requisito_LookupListView" Caption="Requisitos" />
+    <ListView Id="Requisito_RequisitoCasosTeste_ListView" Caption="Casos de Teste">
+      <Columns>
+        <ColumnInfo Id="TxID" Width="35" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SituacaoPlanejamento_DetailView">
+      <Items>
+        <PropertyEditor Id="BlImagem" ImageEditorFixedWidth="0" PropertyEditorType="DevExpress.ExpressApp.Win.Editors.ImagePropertyEditor" ImageEditorFixedHeight="17" />
+        <PropertyEditor Id="CsSituacao" MaxLength="50" />
+        <PropertyEditor Id="CsTipo" MaxLength="40" />
+        <PropertyEditor Id="Key" Removed="True" />
+        <PropertyEditor Id="KeyPress" Caption="Atalho" MaxLength="40" />
+        <PropertyEditor Id="TxDescricao" EditMaskType="Simple" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" Caption="Main" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Caption="SimpleEditors" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="100">
+            <LayoutGroup Id="SituacaoPlanejamento" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" Direction="Vertical" RelativeSize="100">
+              <LayoutGroup Id="SituacaoPlanejamento_col1" Caption="SituacaoPlanejamento_col1" ImageName="" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" TextAlignMode="UseParentOptions" RelativeSize="95">
+                <LayoutItem Id="TxDescricao" SizeConstraintsType="Custom" MaxSize="450, 35" MinSize="250, 35" ShowCaption="True" RelativeSize="3" ViewItem="TxDescricao" />
+                <LayoutItem Id="BlImagem" MaxSize="300, 27" MinSize="300, 27" SizeConstraintsType="Custom" ShowCaption="True" RelativeSize="3" ViewItem="BlImagem" />
+                <LayoutItem Id="CsTipo" ShowCaption="True" SizeConstraintsType="Custom" MaxSize="250, 27" MinSize="250, 27" RelativeSize="3" ViewItem="CsTipo" />
+                <LayoutItem Id="CsPadrao" ShowCaption="True" SizeConstraintsType="Custom" MaxSize="250, 27" MinSize="250, 27" RelativeSize="3" ViewItem="CsPadrao" />
+                <LayoutItem Id="CsSituacao" ShowCaption="True" SizeConstraintsType="Custom" MaxSize="250, 27" MinSize="250, 27" RelativeSize="3" ViewItem="CsSituacao" />
+                <LayoutItem Id="Atalho" CaptionHorizontalAlignment="Default" Index="5" RelativeSize="2" ViewItem="KeyPress" MaxSize="250, 27" MinSize="250, 27" SizeConstraintsType="Custom" ShowCaption="True" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SituacaoPlanejamento_ListView">
+      <Columns>
+        <ColumnInfo Id="CsAtalhosSituacao" Removed="True" />
+        <ColumnInfo Id="TxKeys" Removed="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SolicitacaoOrcamento_DetailView">
+      <Items>
+        <PropertyEditor Id="TxUltimoComentario" RowCount="3" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SolicitacaoOrcamento_col1" RelativeSize="65" TextAlignMode="UseParentOptions">
+            <LayoutGroup Id="Item4" RelativeSize="28">
+              <LayoutItem Id="TxRepositorio" SizeConstraintsType="Default" MaxSize="0, 15" RelativeSize="15" ViewItem="TxRepositorio" />
+              <LayoutGroup Id="98487de7-3ec4-42d3-aeab-d4a007b475de" VerticalAlign="NotSet" RelativeSize="21">
+                <LayoutItem Id="Situacao" SizeConstraintsType="Default" MaxSize="0, 17" VerticalAlign="NotSet" ViewItem="Situacao" />
+                <LayoutItem Id="TipoSolicitacao" SizeConstraintsType="Default" MaxSize="0, 17" VerticalAlign="NotSet" ViewItem="TipoSolicitacao" />
+                <LayoutItem Id="CsPrioridade" SizeConstraintsType="Default" MaxSize="0, 17" VerticalAlign="NotSet" ViewItem="CsPrioridade" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item5" TextAlignMode="UseParentOptions" RelativeSize="22">
+              <LayoutItem Id="TxCodigo" RelativeSize="26" ViewItem="TxCodigo" />
+              <LayoutItem Id="TxTitulo" RelativeSize="20" ViewItem="TxTitulo" />
+              <LayoutItem Id="DtPrazo" ViewItem="DtPrazo" Index="2" RelativeSize="30" SizeConstraintsType="Custom" MaxSize="250, 32" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="NbValor" SizeConstraintsType="Custom" ViewItem="NbValor" />
+              <LayoutItem Id="DtEntrega" SizeConstraintsType="Custom" ViewItem="DtEntrega" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item8" RelativeSize="22" />
+          </LayoutGroup>
+          <TabbedGroup Id="Item1" RelativeSize="35">
+            <LayoutGroup Id="Item7" TextAlignMode="UseParentOptions">
+              <LayoutItem Id="TxUltimoComentario" RelativeSize="20" TextAlignMode="UseParentOptions" CaptionLocation="Default" CaptionWordWrap="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" ViewItem="TxUltimoComentario" />
+              <LayoutItem Id="SolicitacaoOrcamentoHistoricos" RelativeSize="80" TextAlignMode="UseParentOptions" SizeConstraintsType="Default" ViewItem="SolicitacaoOrcamentoHistoricos" />
+            </LayoutGroup>
+            <LayoutGroup Id="SizeableEditors" TextAlignMode="AlignLocal">
+              <LayoutItem Id="TxDescricao" TextAlignMode="AutoSize" SizeConstraintsType="Default" ViewItem="TxDescricao" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item2" TextAlignMode="AlignLocal">
+              <LayoutItem Id="TxObservacao" TextAlignMode="AutoSize" SizeConstraintsType="Default" ViewItem="TxObservacao" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SolicitacaoOrcamento_ListView" Caption="Solicitação de Orçamento" ImageName="Solicitar-Orçamento16" />
+    <ListView Id="SolicitacaoOrcamento_LookupListView" Caption="Solicitação de Orçamento" ImageName="Solicitar-Orçamento16" />
+    <ListView Id="SolicitacaoOrcamento_SolicitacaoOrcamentoHistoricos_ListView">
+      <Columns>
+        <ColumnInfo Id="DataHora" SortIndex="0" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="SolicitacaoOrcamentoHistorico_LookupListView" Caption="Histórico" />
+    <DetailView Id="TipoAfastamento_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="TipoAfastamento">
+              <LayoutGroup Id="Item1">
+                <LayoutItem Id="TxDescricao" SizeConstraintsType="Custom" ShowCaption="True" MinSize="700, 32" MaxSize="700, 32" ViewItem="TxDescricao" />
+                <LayoutItem Id="IsParaFeriasRealizadas" ViewItem="IsParaFeriasRealizadas" Index="1" RelativeSize="30" SizeConstraintsType="Custom" ShowCaption="False" MinSize="300, 24" MaxSize="300, 24" IsNewNode="True" />
+                <LayoutItem Id="IsRemunerado" ViewItem="IsRemunerado" Index="2" RelativeSize="30" SizeConstraintsType="Custom" ShowCaption="False" MinSize="300, 26" MaxSize="300, 26" IsNewNode="True" />
+                <LayoutItem Id="CsSituacao" ViewItem="CsSituacao" Index="3" RelativeSize="40" SizeConstraintsType="Custom" ShowCaption="True" MinSize="300, 26" MaxSize="300, 26" IsNewNode="True" />
+                <LayoutGroup Id="c966f206-2b36-4b9a-931d-9e503a90813e" Removed="True">
+                  <LayoutGroup Id="7c28110b-8287-43b0-852a-8826b6b0581b">
+                    <LayoutItem Id="CsSituacao" ViewItem="CsSituacao" Removed="True" />
+                    <LayoutItem Id="IsParaFeriasRealizadas" ViewItem="IsParaFeriasRealizadas" Removed="True" />
+                    <LayoutItem Id="IsRemunerado" ViewItem="IsRemunerado" Removed="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Item2" ViewItem="Item2" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TipoAfastamento_ListView" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="IsRemunerado" Index="-1" />
+        <ColumnInfo Id="TxDescricao" SortIndex="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="TipoAfastamento_LookupListView" Criteria="[CsSituacao] = ##Enum#WexProject.BLL.Shared.Domains.Geral.CsSituacao,Ativo#" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="TxDescricao" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TipoSolicitacao_DetailView" Caption="Tipo de Solicitação de Orçamento" ImageName="TipodeOrçamento16" />
+    <ListView Id="TipoSolicitacao_ListView" Caption="Tipo de Solicitação de Orçamento" ImageName="TipodeOrçamento16" />
+    <ListView Id="TipoSolicitacao_LookupListView" Caption="Tipo de Solicitação de Orçamento" ImageName="TipodeOrçamento16" />
+  </Views>
+</Application>

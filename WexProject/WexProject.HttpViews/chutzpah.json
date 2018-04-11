@@ -1,0 +1,41 @@
+﻿{
+
+    "Framework": "jasmine",
+	"FrameworkVersion": "1",
+
+    "RootReferencePathMode": "SettingsFileDirectory",
+
+	"References": [
+		{ "Path": "/Scripts/modernizr-2.6.2/modernizr-2.6.2.js" },
+		{ "Path": "/Scripts/jquery/jquery-1.9.1.min.js" },
+		{ "Path": "/Scripts/jquery/jquery-ui-1.8.24.min.js" },
+		{ "Path": "/Scripts/jquery/jquery.unobtrusive-ajax.min.js" },
+		{ "Path": "/Scripts/jquery/jquery.validate.min.js" },
+		{ "Path": "/Scripts/jquery/jquery.validate-vsdoc.js" },
+		{ "Path": "/Scripts/jquery/jquery.validate.unobtrusive.min.js" },
+		{ "Path": "/Scripts/jquery/jquery-stickytableheaders.js" },
+        { "Path": "/Scripts/angular-1.2.16/angular.min.js" },
+		{ "Path": "/Scripts/angular-1.2.16/i18n/angular-locale_pt-br.js" },
+		{ "Path": "/Scripts/angular-1.2.16/angular-resource.min.js" },
+		{ "Path": "/Scripts/angular-1.2.16/angular-mocks.js" },
+		{ "Path": "/Scripts/ui-bootstrap/ui-bootstrap-0.9.0.min.js" }
+    ],
+
+	"Tests": [
+		{ "Path": "ScriptsSpecs", "Include": "*.js" }
+	],
+
+    "CodeCoverageIncludes": [],
+
+	"CodeCoverageExcludes": [
+		"*/Scripts/modernizr-2.6.2/modernizr-*.js",
+		"*/Scripts/angular-1.2.16/*.js",
+		"*/Scripts/angular-1.2.16/i18n/*.js",
+		"*/Scripts/jquery/jquery*.js",
+		"*/Scripts/ui-bootstrap/*.js",
+		"*/ScriptsSpecs/*.js"
+	],
+
+    "EnableCodeCoverage": "true"
+
+}

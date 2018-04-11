@@ -1,0 +1,76 @@
+﻿<div>
+	<div class="modal-header">
+		<h2>{{ rubrica.Nome }} | {{ data | date : 'MMMM yyyy'}}</h2>
+		<button class="fecharModal" ng-click="$close()">Cancelar</button>
+	</div>
+	<div class="modal-body">
+		<div class="modal-body-mensagem">
+
+            <span ng-if="!isLoaded()">Carregando dados...</span>
+
+			<div class="custos-mao-de-obra-lote" ng-if="isLoaded()">
+
+                <div class="maoDeObraLote">
+                    <span class="divisorVertical infoLote" ng-if="hasLote()">
+					    <span class="statusLotes">
+                            <img ng-if="!requerAtualizacao()" src="~/Images/a_bolinha_verde.png" alt="Atualizado"/>
+						    <img ng-if="requerAtualizacao()" src="~/Images/a_bolinha_vermelha.png" alt="Desatualizado" />
+					    </span>
+                        <!--Lote: {{ lote.LoteId }},--> <span class="fontDestaque">Última Atualização:</span> {{ lote.DataAtualizacao | date : 'dd/MM/yyyy' }}
+				    </span>
+                </div>
+
+                <div class="maoDeObraImportar">
+				    <button class="adicionaRubrica btnComIcone" ng-click="importar()">
+					    <span class="btnAtualizar"></span>
+					    <span>Atualizar</span>
+				    </button>
+                </div>
+
+                <div class="maoDeObraColaboradores">
+                    <div ng-if="hasCustos()">Total de colaboradores: {{ quantidadeColaboradores }}</div>
+                </div>
+
+			</div>
+
+			<table class="tableCustoEquipe" ng-if="hasCustos()">
+				<thead>
+
+					<tr>
+						<td>Matricula</td>
+						<td>Nome</td>
+						<td>Cargo</td>
+						<td>Valor Total sem Provisões</td>
+						<td>Valor Total</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="maoDeObra in custos">
+						<td>{{ maoDeObra.Matricula }}</td>
+						<td>{{ maoDeObra.Nome }}</td>
+						<td>{{ maoDeObra.Cargo }}</td>
+						<td>{{ maoDeObra.ValorTotalSemProvisoes | monetario }}</td>
+						<td>{{ maoDeObra.ValorTotal | monetario }}</td>
+					</tr>
+				</tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-right">Total</td>
+                        <td>{{ somaTotal | monetario }}</td>
+                    </tr>
+                </tfoot>
+
+			</table>
+
+            <div ng-if="hasCustos()" class="buttonAreaCustoEquipe">
+                <button class="aplicarCustoEquipe btnComIcone" ng-click="aplicarSomatorio()">
+					<span class="btnAplicar"></span>
+					<span>Aplicar</span>
+				</button>
+                </div>
+
+			<span ng-if="isLoaded() && !hasCustos()">Nenhuma mão-de-obra encontrada nesta data</span>
+
+		</div>
+	</div>
+</div>

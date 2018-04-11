@@ -1,0 +1,5 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxxr" Namespace="DevExpress.XtraReports.Web" Assembly="DevExpress.XtraReports.v11.2.Web, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxxr:ReportDocumentMap runat="server" CssFilePath="~/App_Themes/Office2010Black/{0}/styles.css" CssPostfix="Office2010Black">
+    <Images SpriteCssFilePath="~/App_Themes/Office2010Black/{0}/sprite.css" />
+</dxxr:ReportDocumentMap>

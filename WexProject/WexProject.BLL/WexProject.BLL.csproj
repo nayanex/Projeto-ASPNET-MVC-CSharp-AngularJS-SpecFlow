@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A81A9A4-AF19-4479-805B-E33BC4DE8C99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.BLL</RootNamespace>
+    <AssemblyName>WexProject.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Data.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.ConditionalAppearance.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalEditorState.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.ConditionalEditorState.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Security.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.Base.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.BaseImpl.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Utils.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Xpo.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.1\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NMemory">
+      <HintPath>..\packages\NMemory.1.0.0-beta9\lib\net45\NMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BOs\Analise\AnaliseBo.cs" />
+    <Compile Include="BOs\Analise\Custos\GeralBo.cs" />
+    <Compile Include="BOs\Custos\AditivoBo.cs" />
+    <Compile Include="BOs\Custos\CentroCustoBo.cs" />
+    <Compile Include="BOs\Custos\ClasseProjetoBo.cs" />
+    <Compile Include="BOs\Custos\MaosDeObraBo.cs" />
+    <Compile Include="BOs\Custos\RubricaBo.cs" />
+    <Compile Include="BOs\Custos\RubricaMesBo.cs" />
+    <Compile Include="BOs\Escopo\ModuloBO.cs" />
+    <Compile Include="BOs\Geral\EmpresaInstituicaoBo.cs" />
+    <Compile Include="BOs\Outros\PartyBO.cs" />
+    <Compile Include="BOs\Outros\PersonBO.cs" />
+    <Compile Include="BOs\Outros\UserBO.cs" />
+    <Compile Include="BOs\Planejamento\CalendarioBo.cs" />
+    <Compile Include="BOs\Planejamento\CronogramaUltimaSelecaoBO.cs" />
+    <Compile Include="BOs\Planejamento\GraficoBurndownBO.cs" />
+    <Compile Include="BOs\RH\ColaboradorPeriodoAquisitivoBO.cs" />
+    <Compile Include="BOs\RH\ColaboradorUltimoFiltroBO.cs" />
+    <Compile Include="BOs\TotvsWex\NotasFiscaisBo.cs" />
+    <Compile Include="Contexto\ContextFactoryManager.cs" />
+    <Compile Include="Contexto\DbFirst\BCHORAS.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\DbFirst\EVENTOSRH.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\DbFirst\RUBRICA.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\DbFirst\sysdiagrams.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\DbFirst\TotvsWex.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotvsWex.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\DbFirst\TotvsWex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\DbFirst\TotvsWex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\ContextFactory.cs" />
+    <Compile Include="Contexto\ContextFactoryImpl.cs" />
+    <Compile Include="Contexto\WexDb.cs" />
+    <Compile Include="DAOs\Analise\Custos\IGeralDao.cs" />
+    <Compile Include="DAOs\Custos\IMaosDeObraDao.cs" />
+    <Compile Include="DAOs\Custos\MaosDeObraDao.cs" />
+    <Compile Include="DAOs\Custos\RubricaMesDao.cs" />
+    <Compile Include="DAOs\Custos\TipoProjetoDao.cs" />
+    <Compile Include="BOs\Custos\TipoRubricaBo.cs" />
+    <Compile Include="BOs\Escopo\GraficoEscopoCompletudeBO.cs" />
+    <Compile Include="BOs\Escopo\GraficoEstimadoRealizadoBO.cs" />
+    <Compile Include="BOs\Execucao\GraficoRitmoTimeBo.cs" />
+    <Compile Include="BOs\Geral\ColaboradorConfigBO.cs" />
+    <Compile Include="BOs\Geral\DiaTrabalhoBo.cs" />
+    <Compile Include="BOs\Geral\PeriodoTrabalhoBo.cs" />
+    <Compile Include="BOs\Geral\ProjetoBo.cs" />
+    <Compile Include="BOs\Geral\SemanaTrabalhoBo.cs" />
+    <Compile Include="BOs\Planejamento\CronogramaBo.cs" />
+    <Compile Include="BOs\Planejamento\CronogramaColaboradorConfigBo.cs" />
+    <Compile Include="BOs\Planejamento\CronogramaTarefaBo.cs" />
+    <Compile Include="BOs\Planejamento\SituacaoPlanejamentoBO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BOs\Planejamento\TarefaBo.cs" />
+    <Compile Include="BOs\Planejamento\TarefaHistoricoTrabalhoBo.cs" />
+    <Compile Include="BOs\Planejamento\TarefaLogAlteracaoBo.cs" />
+    <Compile Include="BOs\RH\ColaboradorBo.cs" />
+    <Compile Include="BOs\SessionConnection.cs" />
+    <Compile Include="BOs\Util\WindowsADBO.cs" />
+    <Compile Include="DAOs\Analise\Custos\GeralDao.cs" />
+    <Compile Include="DAOs\Custos\AditivoDao.cs" />
+    <Compile Include="DAOs\Custos\CentroCustoDao.cs" />
+    <Compile Include="DAOs\Custos\ClasseProjetoDao.cs" />
+    <Compile Include="DAOs\Custos\RubricaDao.cs" />
+    <Compile Include="DAOs\Custos\TipoRubricaDao.cs" />
+    <Compile Include="DAOs\Escopo\BeneficiadoDAO.cs" />
+    <Compile Include="DAOs\Escopo\EstoriaDAO.cs" />
+    <Compile Include="DAOs\Escopo\ModuloDAO.cs" />
+    <Compile Include="DAOs\Execucao\CicloDesenvDAO.cs" />
+    <Compile Include="DAOs\Execucao\ClicloDesenvEstoriaDAO.cs" />
+    <Compile Include="DAOs\Geral\CalendarioDAO.cs" />
+    <Compile Include="DAOs\Geral\EmpresaInstituicaoDAO.cs" />
+    <Compile Include="DAOs\Geral\ProjetoDAO.cs" />
+    <Compile Include="DAOs\Geral\UsuarioDAO.cs" />
+    <Compile Include="DAOs\Planejamento\CronogramaCapacidadePlanDao.cs" />
+    <Compile Include="DAOs\Planejamento\CronogramaColaboradorConfigDao.cs" />
+    <Compile Include="DAOs\Planejamento\CronogramaDao.cs" />
+    <Compile Include="DAOs\Planejamento\CronogramaTarefaDao.cs" />
+    <Compile Include="DAOs\Planejamento\CronogramaUltimaSelecaoDao.cs" />
+    <Compile Include="DAOs\Planejamento\SemanaTrabalhoDao.cs" />
+    <Compile Include="DAOs\Planejamento\SituacaoPlanejamentoDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAOs\Planejamento\TarefaDao.cs" />
+    <Compile Include="BOs\Planejamento\TarefaHistoricoEstimativaBo.cs" />
+    <Compile Include="DAOs\Planejamento\TarefaHistoricoEstimativaDao.cs" />
+    <Compile Include="DAOs\Planejamento\TarefaHistoricoTrabalhoDao.cs" />
+    <Compile Include="DAOs\Planejamento\TarefaLogAlteracaoDao.cs" />
+    <Compile Include="DAOs\RH\ColaboradorDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAOs\RH\ColaboradorUltimoFiltroDAO.cs" />
+    <Compile Include="DAOs\TotvsWex\NotasFiscaisDao.cs" />
+    <Compile Include="Entities\Generico\Entidade.cs" />
+    <Compile Include="Entities\Planejamento\TarefaHistoricoEstimativa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\Analise\NenhumPlanejamentoException.cs" />
+    <Compile Include="Exceptions\Custos\AditivoNaoVazioException.cs" />
+    <Compile Include="Exceptions\Custos\ProjetoJaAssociadoATermoAditivoException.cs" />
+    <Compile Include="Exceptions\Custos\ProjetoNaoVazioException.cs" />
+    <Compile Include="Exceptions\Custos\ProjetoSemCentroCustoException.cs" />
+    <Compile Include="Exceptions\Custos\ProjetoSemTipoException.cs" />
+    <Compile Include="Exceptions\Custos\RubricaNaoVaziaException.cs" />
+    <Compile Include="Exceptions\Custos\RubricaTipoDiferenteException.cs" />
+    <Compile Include="Exceptions\Custos\TermoAditivoNaoVazioException.cs" />
+    <Compile Include="Exceptions\Geral\EntidadeNaoEncontradaException.cs" />
+    <Compile Include="Exceptions\Planejamento\CapacidadePlanejamentoForaDoPeriodoCronogramaException.cs" />
+    <Compile Include="Exceptions\Planejamento\CronogramaCapacidadePlanDataJaCadastradaException.cs" />
+    <Compile Include="Exceptions\Planejamento\EstimativaInicialInvalidaException.cs" />
+    <Compile Include="Extensions\Custos\CentroCustoDtoExtension.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Extensions\Custos\CustosDtoExtension.cs" />
+    <Compile Include="Extensions\Entities\EntitiesExtension.cs" />
+    <Compile Include="Migrations\201306081614225_Aditivo.cs" />
+    <Compile Include="Migrations\201306081614225_Aditivo.Designer.cs">
+      <DependentUpon>201306081614225_Aditivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306101841276_AtualizadoAditivo.cs" />
+    <Compile Include="Migrations\201306101841276_AtualizadoAditivo.Designer.cs">
+      <DependentUpon>201306101841276_AtualizadoAditivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306131719365_UpdateLegacy.cs" />
+    <Compile Include="Migrations\201306131719365_UpdateLegacy.Designer.cs">
+      <DependentUpon>201306131719365_UpdateLegacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306132114084_PatrocinadorCentroCusto.cs" />
+    <Compile Include="Migrations\201306132114084_PatrocinadorCentroCusto.Designer.cs">
+      <DependentUpon>201306132114084_PatrocinadorCentroCusto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306191438168_UpdateLegacy2.cs" />
+    <Compile Include="Migrations\201306191438168_UpdateLegacy2.Designer.cs">
+      <DependentUpon>201306191438168_UpdateLegacy2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306242037166_Rubricas.cs" />
+    <Compile Include="Migrations\201306242037166_Rubricas.Designer.cs">
+      <DependentUpon>201306242037166_Rubricas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307082327175_ProjetoUpdate.cs" />
+    <Compile Include="Migrations\201307082327175_ProjetoUpdate.Designer.cs">
+      <DependentUpon>201307082327175_ProjetoUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307111846567_AditivoNbOrcamento.cs" />
+    <Compile Include="Migrations\201307111846567_AditivoNbOrcamento.Designer.cs">
+      <DependentUpon>201307111846567_AditivoNbOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307112349462_RubricasGastos.cs" />
+    <Compile Include="Migrations\201307112349462_RubricasGastos.Designer.cs">
+      <DependentUpon>201307112349462_RubricasGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307252028050_GastosModificado.cs" />
+    <Compile Include="Migrations\201307252028050_GastosModificado.Designer.cs">
+      <DependentUpon>201307252028050_GastosModificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308071730583_DBrefactory.cs" />
+    <Compile Include="Migrations\201308071730583_DBrefactory.Designer.cs">
+      <DependentUpon>201308071730583_DBrefactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308202017313_DuracaoAditivo.cs" />
+    <Compile Include="Migrations\201308202017313_DuracaoAditivo.Designer.cs">
+      <DependentUpon>201308202017313_DuracaoAditivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309261751080_RubricasAninhadas.cs" />
+    <Compile Include="Migrations\201309261751080_RubricasAninhadas.Designer.cs">
+      <DependentUpon>201309261751080_RubricasAninhadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310120101276_TiposProjetos.cs" />
+    <Compile Include="Migrations\201310120101276_TiposProjetos.Designer.cs">
+      <DependentUpon>201310120101276_TiposProjetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311151600378_ClassesProjetos.cs" />
+    <Compile Include="Migrations\201311151600378_ClassesProjetos.Designer.cs">
+      <DependentUpon>201311151600378_ClassesProjetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311161530412_ForeignKeyTipoProjetoClasseProjeto.cs" />
+    <Compile Include="Migrations\201311161530412_ForeignKeyTipoProjetoClasseProjeto.Designer.cs">
+      <DependentUpon>201311161530412_ForeignKeyTipoProjetoClasseProjeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401062027304_CampoCentroCustoProjeto.cs" />
+    <Compile Include="Migrations\201401062027304_CampoCentroCustoProjeto.Designer.cs">
+      <DependentUpon>201401062027304_CampoCentroCustoProjeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401071659170_ProjetoMacro.cs" />
+    <Compile Include="Migrations\201401071659170_ProjetoMacro.Designer.cs">
+      <DependentUpon>201401071659170_ProjetoMacro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401152059280_RubricaMesValoresNulos.cs" />
+    <Compile Include="Migrations\201401152059280_RubricaMesValoresNulos.Designer.cs">
+      <DependentUpon>201401152059280_RubricaMesValoresNulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401281756161_BugFix.cs" />
+    <Compile Include="Migrations\201401281756161_BugFix.Designer.cs">
+      <DependentUpon>201401281756161_BugFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402042212137_CriacaoEntidadesDoCronograma.cs" />
+    <Compile Include="Migrations\201402042212137_CriacaoEntidadesDoCronograma.Designer.cs">
+      <DependentUpon>201402042212137_CriacaoEntidadesDoCronograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403062001529_CsLinhaBaseNotNull.cs" />
+    <Compile Include="Migrations\201403062001529_CsLinhaBaseNotNull.Designer.cs">
+      <DependentUpon>201403062001529_CsLinhaBaseNotNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402261914399_GastosRelacionados.cs" />
+    <Compile Include="Migrations\201402261914399_GastosRelacionados.Designer.cs">
+      <DependentUpon>201402261914399_GastosRelacionados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403061950099_AdicionarCentroCustoIdProjeto.cs" />
+    <Compile Include="Migrations\201403061950099_AdicionarCentroCustoIdProjeto.Designer.cs">
+      <DependentUpon>201403061950099_AdicionarCentroCustoIdProjeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403072304239_FlagGastoRelacionadoMesRubrica.cs" />
+    <Compile Include="Migrations\201403072304239_FlagGastoRelacionadoMesRubrica.Designer.cs">
+      <DependentUpon>201403072304239_FlagGastoRelacionadoMesRubrica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403172037414_GastosRelacionadosChaveImportacao.cs" />
+    <Compile Include="Migrations\201403172037414_GastosRelacionadosChaveImportacao.Designer.cs">
+      <DependentUpon>201403172037414_GastosRelacionadosChaveImportacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403181417168_RetirandoCampoTxObservacaoDeEstoria.cs" />
+    <Compile Include="Migrations\201403181417168_RetirandoCampoTxObservacaoDeEstoria.Designer.cs">
+      <DependentUpon>201403181417168_RetirandoCampoTxObservacaoDeEstoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403262059231_CustosMaoDeObra.cs" />
+    <Compile Include="Migrations\201403262059231_CustosMaoDeObra.Designer.cs">
+      <DependentUpon>201403262059231_CustosMaoDeObra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403272207318_AjustesMaoDeObras.cs" />
+    <Compile Include="Migrations\201403272207318_AjustesMaoDeObras.Designer.cs">
+      <DependentUpon>201403272207318_AjustesMaoDeObras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403300145529_LoteMaoDeObra.cs" />
+    <Compile Include="Migrations\201403300145529_LoteMaoDeObra.Designer.cs">
+      <DependentUpon>201403300145529_LoteMaoDeObra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404072247008_AlterandoMaoDeObraColaborador.cs" />
+    <Compile Include="Migrations\201404072247008_AlterandoMaoDeObraColaborador.Designer.cs">
+      <DependentUpon>201404072247008_AlterandoMaoDeObraColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404091741501_CodigoImportacaoTotvs.cs" />
+    <Compile Include="Migrations\201404091741501_CodigoImportacaoTotvs.Designer.cs">
+      <DependentUpon>201404091741501_CodigoImportacaoTotvs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405081951566_CriacaoTarefaHistoricoEstimativa.cs" />
+    <Compile Include="Migrations\201405081951566_CriacaoTarefaHistoricoEstimativa.Designer.cs">
+      <DependentUpon>201405081951566_CriacaoTarefaHistoricoEstimativa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405131459288_CorrecaoCamposNaoNulosCronograma.cs" />
+    <Compile Include="Migrations\201405131459288_CorrecaoCamposNaoNulosCronograma.Designer.cs">
+      <DependentUpon>201405131459288_CorrecaoCamposNaoNulosCronograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405191807403_CorrecaoRelacionamentosOpcionaisParaObrigatorioDeCronogramaTarefa.cs" />
+    <Compile Include="Migrations\201405191807403_CorrecaoRelacionamentosOpcionaisParaObrigatorioDeCronogramaTarefa.Designer.cs">
+      <DependentUpon>201405191807403_CorrecaoRelacionamentosOpcionaisParaObrigatorioDeCronogramaTarefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407240236463_RenomeandoGastosRelacionados.cs" />
+    <Compile Include="Migrations\201407240236463_RenomeandoGastosRelacionados.Designer.cs">
+      <DependentUpon>201407240236463_RenomeandoGastosRelacionados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\WexAutomaticMigration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Entities\Escopo\Beneficiado.cs" />
+    <Compile Include="Entities\Escopo\Estoria.cs" />
+    <Compile Include="Entities\Escopo\EstoriaCasoTeste.cs" />
+    <Compile Include="Entities\Escopo\Modulo.cs" />
+    <Compile Include="Entities\Escopo\Requisito.cs" />
+    <Compile Include="Entities\Escopo\Solicitante.cs" />
+    <Compile Include="Entities\Execucao\CicloDesenv.cs" />
+    <Compile Include="Entities\Execucao\CicloDesenvEstoria.cs" />
+    <Compile Include="Entities\Execucao\MotivoCancelamento.cs" />
+    <Compile Include="Entities\Geral\Calendario.cs" />
+    <Compile Include="Entities\Geral\Cargo.cs" />
+    <Compile Include="Entities\Geral\ConfiguracaoDocumento.cs" />
+    <Compile Include="Entities\Geral\ConfiguracaoDocumentoSituacao.cs" />
+    <Compile Include="Entities\Geral\ConfiguracaoDocumentoSituacaoEmail.cs" />
+    <Compile Include="Entities\Geral\ConfiguracaoDocumentoSituacaoEmailCc.cs" />
+    <Compile Include="Entities\Geral\ConfiguracaoDocumentoSituacaoEmailCco.cs" />
+    <Compile Include="Entities\Geral\DiaTrabalho.cs" />
+    <Compile Include="Entities\Geral\EmpresaInstituicao.cs" />
+    <Compile Include="Entities\Geral\Pai.cs" />
+    <Compile Include="Entities\Geral\Papel.cs" />
+    <Compile Include="Entities\Geral\ParteInteressada.cs" />
+    <Compile Include="Entities\Geral\PeriodoTrabalho.cs" />
+    <Compile Include="Entities\Geral\Projeto.cs" />
+    <Compile Include="Entities\Geral\ProjetoCliente.cs" />
+    <Compile Include="Entities\Geral\ProjetoColaboradorConfig.cs" />
+    <Compile Include="Entities\Geral\ProjetoParteInteressada.cs" />
+    <Compile Include="Entities\Geral\ProjetoUltimoFiltro.cs" />
+    <Compile Include="Entities\Geral\SemanaTrabalho.cs" />
+    <Compile Include="Entities\Mapping\AddressMap.cs" />
+    <Compile Include="Entities\Mapping\BeneficiadoMap.cs" />
+    <Compile Include="Entities\Mapping\CalendarioMap.cs" />
+    <Compile Include="Entities\Mapping\CargoMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTesteMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePassoMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePassoResultadoEsperadoAnexoMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePassoResultadoEsperadoInformacaoAdicionalMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePassoResultadoEsperadoMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePreCondicaoAnexoMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePreCondicaoInformacaoAdicionalMap.cs" />
+    <Compile Include="Entities\Mapping\CasoTestePreCondicaoMap.cs" />
+    <Compile Include="Entities\Mapping\CicloDesenvEstoriaMap.cs" />
+    <Compile Include="Entities\Mapping\CicloDesenvMap.cs" />
+    <Compile Include="Entities\Mapping\ColaboradorAfastamentoMap.cs" />
+    <Compile Include="Entities\Mapping\ColaboradorMap.cs" />
+    <Compile Include="Entities\Mapping\ColaboradorPeriodoAquisitivoMap.cs" />
+    <Compile Include="Entities\Mapping\ColaboradorUltimoFiltroMap.cs" />
+    <Compile Include="Entities\Mapping\ConfiguracaoDocumentoMap.cs" />
+    <Compile Include="Entities\Mapping\ConfiguracaoDocumentoSituacaoEmailCcMap.cs" />
+    <Compile Include="Entities\Mapping\ConfiguracaoDocumentoSituacaoEmailCcoMap.cs" />
+    <Compile Include="Entities\Mapping\ConfiguracaoDocumentoSituacaoEmailMap.cs" />
+    <Compile Include="Entities\Mapping\ConfiguracaoDocumentoSituacaoMap.cs" />
+    <Compile Include="Entities\Mapping\ConfiguracaoMap.cs" />
+    <Compile Include="Entities\Mapping\CountryMap.cs" />
+    <Compile Include="Entities\Mapping\CronogramaMap.cs" />
+    <Compile Include="Entities\Mapping\CronogramaTarefaMap.cs" />
+    <Compile Include="Entities\Mapping\EmpresaInstituicaoMap.cs" />
+    <Compile Include="Entities\Mapping\EstoriaCasoTesteMap.cs" />
+    <Compile Include="Entities\Mapping\EstoriaMap.cs" />
+    <Compile Include="Entities\Mapping\EventMap.cs" />
+    <Compile Include="Entities\Mapping\FeriasMap.cs" />
+    <Compile Include="Entities\Mapping\FeriasPlanejamentoMap.cs" />
+    <Compile Include="Entities\Mapping\FileDataMap.cs" />
+    <Compile Include="Entities\Mapping\ModalidadeFeriaMap.cs" />
+    <Compile Include="Entities\Mapping\ModuleInfoMap.cs" />
+    <Compile Include="Entities\Mapping\ModuloMap.cs" />
+    <Compile Include="Entities\Mapping\MotivoCancelamentoMap.cs" />
+    <Compile Include="Entities\Mapping\NoteMap.cs" />
+    <Compile Include="Entities\Mapping\PaiMap.cs" />
+    <Compile Include="Entities\Mapping\PapelMap.cs" />
+    <Compile Include="Entities\Mapping\ParteInteressadaMap.cs" />
+    <Compile Include="Entities\Mapping\PartyMap.cs" />
+    <Compile Include="Entities\Mapping\PersistentPermissionMap.cs" />
+    <Compile Include="Entities\Mapping\PersonMap.cs" />
+    <Compile Include="Entities\Mapping\PhoneNumberMap.cs" />
+    <Compile Include="Entities\Mapping\PhoneTypeMap.cs" />
+    <Compile Include="Entities\Mapping\ProjetoClienteMap.cs" />
+    <Compile Include="Entities\Mapping\ProjetoColaboradorConfigMap.cs" />
+    <Compile Include="Entities\Mapping\ProjetoMap.cs" />
+    <Compile Include="Entities\Mapping\ProjetoParteInteressadaMap.cs" />
+    <Compile Include="Entities\Mapping\ProjetoUltimoFiltroMap.cs" />
+    <Compile Include="Entities\Mapping\RequisitoCasoTesteMap.cs" />
+    <Compile Include="Entities\Mapping\RequisitoMap.cs" />
+    <Compile Include="Entities\Mapping\ResourceMap.cs" />
+    <Compile Include="Entities\Mapping\ResourceResources_EventEventsMap.cs" />
+    <Compile Include="Entities\Mapping\RoleBaseMap.cs" />
+    <Compile Include="Entities\Mapping\RoleMap.cs" />
+    <Compile Include="Entities\Mapping\SituacaoPlanejamentoMap.cs" />
+    <Compile Include="Entities\Mapping\SolicitacaoOrcamentoHistoricoMap.cs" />
+    <Compile Include="Entities\Mapping\SolicitacaoOrcamentoMap.cs" />
+    <Compile Include="Entities\Mapping\SolicitanteMap.cs" />
+    <Compile Include="Entities\Mapping\TarefaHistoricoTrabalhoMap.cs" />
+    <Compile Include="Entities\Mapping\TarefaLogAlteracaoMap.cs" />
+    <Compile Include="Entities\Mapping\TarefaMap.cs" />
+    <Compile Include="Entities\Mapping\TarefaResponsaveisMap.cs" />
+    <Compile Include="Entities\Mapping\TipoAfastamentoMap.cs" />
+    <Compile Include="Entities\Mapping\TipoEscopoMap.cs" />
+    <Compile Include="Entities\Mapping\TipoSolicitacaoMap.cs" />
+    <Compile Include="Entities\Mapping\UserMap.cs" />
+    <Compile Include="Entities\Mapping\UserUsers_RoleRolesMap.cs" />
+    <Compile Include="Entities\Mapping\XPObjectTypeMap.cs" />
+    <Compile Include="Entities\NovosNegocios\SolicitacaoOrcamento.cs" />
+    <Compile Include="Entities\NovosNegocios\SolicitacaoOrcamentoHistorico.cs" />
+    <Compile Include="Entities\NovosNegocios\TipoSolicitacao.cs" />
+    <Compile Include="Entities\Outros\Address.cs" />
+    <Compile Include="Entities\Outros\Country.cs" />
+    <Compile Include="Entities\Outros\Event.cs" />
+    <Compile Include="Entities\Outros\Ferias.cs" />
+    <Compile Include="Entities\Outros\FileData.cs" />
+    <Compile Include="Entities\Outros\ModuleInfo.cs" />
+    <Compile Include="Entities\Outros\Note.cs" />
+    <Compile Include="Entities\Outros\Party.cs" />
+    <Compile Include="Entities\Outros\PersistentPermission.cs" />
+    <Compile Include="Entities\Outros\Person.cs" />
+    <Compile Include="Entities\Outros\PhoneNumber.cs" />
+    <Compile Include="Entities\Outros\PhoneType.cs" />
+    <Compile Include="Entities\Outros\RequisitoCasoTeste.cs" />
+    <Compile Include="Entities\Outros\Resource.cs" />
+    <Compile Include="Entities\Outros\ResourceResources_EventEvents.cs" />
+    <Compile Include="Entities\Outros\Role.cs" />
+    <Compile Include="Entities\Outros\RoleBase.cs" />
+    <Compile Include="Entities\Outros\TipoEscopo.cs" />
+    <Compile Include="Entities\Outros\User.cs" />
+    <Compile Include="Entities\Outros\UserUsers_RoleRoles.cs" />
+    <Compile Include="Entities\Outros\XPObjectType.cs" />
+    <Compile Include="Entities\Planejamento\Cronograma.cs" />
+    <Compile Include="Entities\Planejamento\CronogramaCapacidadePlan.cs" />
+    <Compile Include="Entities\Planejamento\CronogramaColaboradorConfig.cs" />
+    <Compile Include="Entities\Planejamento\CronogramaTarefa.cs" />
+    <Compile Include="Entities\Planejamento\CronogramaUltimaSelecao.cs" />
+    <Compile Include="Entities\Planejamento\SituacaoPlanejamento.cs" />
+    <Compile Include="Entities\Planejamento\Tarefa.cs" />
+    <Compile Include="Entities\Planejamento\TarefaConstantes.cs" />
+    <Compile Include="Entities\Planejamento\TarefaHistoricoTrabalho.cs" />
+    <Compile Include="Entities\Planejamento\TarefaLogAlteracao.cs" />
+    <Compile Include="Entities\Planejamento\TarefaResponsaveis.cs" />
+    <Compile Include="Entities\Qualidade\CasoTeste.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePasso.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePassoResultadoEsperado.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePassoResultadoEsperadoAnexo.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePassoResultadoEsperadoInformacaoAdicional.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePreCondicao.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePreCondicaoAnexo.cs" />
+    <Compile Include="Entities\Qualidade\CasoTestePreCondicaoInformacaoAdicional.cs" />
+    <Compile Include="Entities\RH\Colaborador.cs" />
+    <Compile Include="Entities\RH\ColaboradorAfastamento.cs" />
+    <Compile Include="Entities\RH\ColaboradorPeriodoAquisitivo.cs" />
+    <Compile Include="Entities\RH\ColaboradorUltimoFiltro.cs" />
+    <Compile Include="Entities\RH\Configuracao.cs" />
+    <Compile Include="Entities\RH\FeriasPlanejamento.cs" />
+    <Compile Include="Entities\RH\ModalidadeFeria.cs" />
+    <Compile Include="Entities\RH\TipoAfastamento.cs" />
+    <Compile Include="Models\Custos\Aditivo.cs" />
+    <Compile Include="Models\Custos\AditivoCentroCusto.cs" />
+    <Compile Include="Models\Custos\AditivoPatrocinador.cs" />
+    <Compile Include="Models\Custos\CentroCusto.cs" />
+    <Compile Include="Models\Custos\ClasseProjeto.cs" />
+    <Compile Include="Models\Custos\NotaFiscal.cs" />
+    <Compile Include="Models\Custos\LoteMaoDeObra.cs" />
+    <Compile Include="Models\Custos\MaoDeObra.cs" />
+    <Compile Include="Models\Custos\Patrocinador.cs" />
+    <Compile Include="Models\Custos\Rubrica.cs" />
+    <Compile Include="Models\Custos\RubricaMes.cs" />
+    <Compile Include="Models\Custos\TermoAditivo.cs" />
+    <Compile Include="Models\Custos\TipoProjeto.cs" />
+    <Compile Include="Models\Custos\TipoRubrica.cs" />
+    <Compile Include="Models\Escopo\Beneficiado.cs" />
+    <Compile Include="Models\Escopo\Estoria.cs" />
+    <Compile Include="Models\Escopo\EstoriaCasoTeste.cs" />
+    <Compile Include="Models\Escopo\Modulo.cs" />
+    <Compile Include="Models\Geral\ParteInteressada.cs" />
+    <Compile Include="Models\Escopo\Requisito.cs" />
+    <Compile Include="Models\Escopo\Solicitante.cs" />
+    <Compile Include="Models\Execucao\CicloDesenv.cs" />
+    <Compile Include="Models\Execucao\CicloDesenvEstoria.cs" />
+    <Compile Include="Models\Execucao\MotivoCancelamento.cs" />
+    <Compile Include="Models\Geral\Calendario.cs" />
+    <Compile Include="Models\Geral\ConfiguracaoDocumento.cs" />
+    <Compile Include="Models\Geral\ConfiguracaoDocumentoSituacao.cs" />
+    <Compile Include="Models\Geral\ConfiguracaoDocumentoSituacaoEmail.cs" />
+    <Compile Include="Models\Geral\ConfiguracaoDocumentoSituacaoEmailCc.cs" />
+    <Compile Include="Models\Geral\ConfiguracaoDocumentoSituacaoEmailCco.cs" />
+    <Compile Include="Models\Geral\ItemDeTrabalho.cs" />
+    <Compile Include="Models\Geral\Projeto.cs" />
+    <Compile Include="Models\Geral\ProjetoCliente.cs" />
+    <Compile Include="Models\Geral\ProjetoColaboradorConfig.cs" />
+    <Compile Include="Models\Geral\ProjetoParteInteressada.cs" />
+    <Compile Include="Models\Geral\ProjetoUltimoFiltro.cs" />
+    <Compile Include="Models\NovosNegocios\SolicitacaoOrcamento.cs" />
+    <Compile Include="Models\NovosNegocios\SolicitacaoOrcamentoHistorico.cs" />
+    <Compile Include="Models\NovosNegocios\TipoSolicitacao.cs" />
+    <Compile Include="Models\Geral\Cargo.cs" />
+    <Compile Include="Models\Geral\EmpresaInstituicao.cs" />
+    <Compile Include="Models\Geral\Pais.cs" />
+    <Compile Include="Models\Geral\Papel.cs" />
+    <Compile Include="Models\Planejamento\SituacaoPlanejamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Qualidade\CasoTeste.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePasso.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePassoResultadoEsperado.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePassoResultadoEsperadoAnexo.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePassoResultadoEsperadoInformacaoAdicional.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePreCondicao.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePreCondicaoAnexo.cs" />
+    <Compile Include="Models\Qualidade\CasoTestePreCondicaoInformacaoAdicional.cs" />
+    <Compile Include="Models\Rh\Colaborador.cs" />
+    <Compile Include="Models\Rh\ColaboradorAfastamento.cs" />
+    <Compile Include="Models\Rh\ColaboradorPeriodoAquisitivo.cs" />
+    <Compile Include="Models\Rh\ColaboradorUltimoFiltro.cs" />
+    <Compile Include="Models\Rh\Configuracao.cs" />
+    <Compile Include="Models\Rh\FeriasPlanejamento.cs" />
+    <Compile Include="Models\Rh\ModalidadeFerias.cs" />
+    <Compile Include="Models\Rh\TipoAfastamento.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.log4net.cs" />
+    <Compile Include="Util\Validation.cs" />
+    <Compile Include="Exceptions\Geral\ValidationException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WexProject.BLL.Shared\WexProject.BLL.Shared.csproj">
+      <Project>{F89450B3-825B-400E-A83C-DA21A6391867}</Project>
+      <Name>WexProject.BLL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Library\WexProject.Library.csproj">
+      <Project>{1936C8E5-0ABA-4B76-84D7-E7FFE24F3F79}</Project>
+      <Name>WexProject.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Contexto\DbFirst\TotvsWex.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TotvsWex.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Contexto\DbFirst\TotvsWex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+      <LastGenOutput>TotvsWex.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Contexto\DbFirst\TotvsWex.edmx.diagram">
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+    </None>
+    <None Include="Contexto\DbFirst\TotvsWex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+      <LastGenOutput>TotvsWex.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201306081614225_Aditivo.resx">
+      <DependentUpon>201306081614225_Aditivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306101841276_AtualizadoAditivo.resx">
+      <DependentUpon>201306101841276_AtualizadoAditivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306131719365_UpdateLegacy.resx">
+      <DependentUpon>201306131719365_UpdateLegacy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306132114084_PatrocinadorCentroCusto.resx">
+      <DependentUpon>201306132114084_PatrocinadorCentroCusto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306191438168_UpdateLegacy2.resx">
+      <DependentUpon>201306191438168_UpdateLegacy2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306242037166_Rubricas.resx">
+      <DependentUpon>201306242037166_Rubricas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307082327175_ProjetoUpdate.resx">
+      <DependentUpon>201307082327175_ProjetoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307111846567_AditivoNbOrcamento.resx">
+      <DependentUpon>201307111846567_AditivoNbOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307112349462_RubricasGastos.resx">
+      <DependentUpon>201307112349462_RubricasGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307252028050_GastosModificado.resx">
+      <DependentUpon>201307252028050_GastosModificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308071730583_DBrefactory.resx">
+      <DependentUpon>201308071730583_DBrefactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308202017313_DuracaoAditivo.resx">
+      <DependentUpon>201308202017313_DuracaoAditivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309261751080_RubricasAninhadas.resx">
+      <DependentUpon>201309261751080_RubricasAninhadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310120101276_TiposProjetos.resx">
+      <DependentUpon>201310120101276_TiposProjetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311151600378_ClassesProjetos.resx">
+      <DependentUpon>201311151600378_ClassesProjetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311161530412_ForeignKeyTipoProjetoClasseProjeto.resx">
+      <DependentUpon>201311161530412_ForeignKeyTipoProjetoClasseProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401062027304_CampoCentroCustoProjeto.resx">
+      <DependentUpon>201401062027304_CampoCentroCustoProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401071659170_ProjetoMacro.resx">
+      <DependentUpon>201401071659170_ProjetoMacro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401152059280_RubricaMesValoresNulos.resx">
+      <DependentUpon>201401152059280_RubricaMesValoresNulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401281756161_BugFix.resx">
+      <DependentUpon>201401281756161_BugFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402042212137_CriacaoEntidadesDoCronograma.resx">
+      <DependentUpon>201402042212137_CriacaoEntidadesDoCronograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402261914399_GastosRelacionados.resx">
+      <DependentUpon>201402261914399_GastosRelacionados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403062001529_CsLinhaBaseNotNull.resx">
+      <DependentUpon>201403062001529_CsLinhaBaseNotNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403061950099_AdicionarCentroCustoIdProjeto.resx">
+      <DependentUpon>201403061950099_AdicionarCentroCustoIdProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403072304239_FlagGastoRelacionadoMesRubrica.resx">
+      <DependentUpon>201403072304239_FlagGastoRelacionadoMesRubrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403172037414_GastosRelacionadosChaveImportacao.resx">
+      <DependentUpon>201403172037414_GastosRelacionadosChaveImportacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403181417168_RetirandoCampoTxObservacaoDeEstoria.resx">
+      <DependentUpon>201403181417168_RetirandoCampoTxObservacaoDeEstoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403262059231_CustosMaoDeObra.resx">
+      <DependentUpon>201403262059231_CustosMaoDeObra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403272207318_AjustesMaoDeObras.resx">
+      <DependentUpon>201403272207318_AjustesMaoDeObras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403300145529_LoteMaoDeObra.resx">
+      <DependentUpon>201403300145529_LoteMaoDeObra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404072247008_AlterandoMaoDeObraColaborador.resx">
+      <DependentUpon>201404072247008_AlterandoMaoDeObraColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404091741501_CodigoImportacaoTotvs.resx">
+      <DependentUpon>201404091741501_CodigoImportacaoTotvs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405081951566_CriacaoTarefaHistoricoEstimativa.resx">
+      <DependentUpon>201405081951566_CriacaoTarefaHistoricoEstimativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405131459288_CorrecaoCamposNaoNulosCronograma.resx">
+      <DependentUpon>201405131459288_CorrecaoCamposNaoNulosCronograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405191807403_CorrecaoRelacionamentosOpcionaisParaObrigatorioDeCronogramaTarefa.resx">
+      <DependentUpon>201405191807403_CorrecaoRelacionamentosOpcionaisParaObrigatorioDeCronogramaTarefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407240236463_RenomeandoGastosRelacionados.resx">
+      <DependentUpon>201407240236463_RenomeandoGastosRelacionados.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

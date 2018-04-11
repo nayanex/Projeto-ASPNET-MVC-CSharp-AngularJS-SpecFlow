@@ -1,0 +1,17 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxPopupControl" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxDocking" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dx:ASPxDockPanel runat="server">
+    <Images SpriteCssFilePath="~/App_Themes/PlasticBlue/{0}/sprite.css" />
+    <Styles CssFilePath="~/App_Themes/PlasticBlue/{0}/styles.css" CssPostfix="PlasticBlue">
+	    <Header>
+		    <Paddings PaddingTop="4px" PaddingRight="4px" PaddingBottom="4px" PaddingLeft="10px"/>
+	    </Header>
+        <Content>
+            <BorderBottom BorderWidth="1px" BorderStyle="Solid" BorderColor="#E0E0E0"/>
+        </Content>
+        <CloseButton Paddings-Padding="0px"/>
+    </Styles>
+</dx:ASPxDockPanel>
+

@@ -1,0 +1,16 @@
+﻿<thead>
+	<tr>
+        <td></td>
+		<td style="text-align:left;">Código</td>
+		<td>Centro de custo</td>
+	</tr>
+</thead>
+<tbody>
+	<tr data-id="{{centroCusto.CentroCustoId}}" ng-repeat="centroCusto in centrosCusto">
+        <td>
+			<button class="excluiCentroCusto iconeExcluir" ng-click="excluiCentroCusto($index)"></button>
+		</td>
+		<td>{{centroCusto.Codigo}}</td>
+		<td>{{centroCusto.Nome}}</td>
+	</tr>
+</tbody>

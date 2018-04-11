@@ -1,0 +1,56 @@
+﻿<div class="editandoProjeto blocoInfoAreaSecundario">
+
+    <div class="campoInformacoes textInfo nomeProjeto">
+        <label>Nome do Projeto:</label>
+        <input type="text" ng-model="projeto.Nome" ng-blur="salvarProjeto()" />
+    </div>
+
+    <div class="campoInformacoes selectInfo" ng-if="!projeto.HasProjetosMicros">
+        <label>Projeto Macro:</label>
+        <select ng-model="projeto.ProjetoMacro.IdProjeto" ng-options="pmacro.IdProjeto as pmacro.Nome for pmacro in model.projetosMacros" ng-change="alterarTipoProjeto()">
+            <option value="">&nbsp;</option>
+        </select>
+    </div>
+
+    <div class="campoInformacoes textInfo inicioPlanejado tresColunas">
+        <label>Inicio Planejado:</label>
+        <input type="text" datepicker-popup="dd/MM/yyyy" ng-model="projeto.InicioPlanejado" readonly="readonly" ng-change="salvarProjeto()" title="Clique para selecionar a data..." />
+    </div>
+
+    <div class="campoInformacoes textInfo inicioReal tresColunas">
+        <label>Inicio Real:</label>
+        <input type="text" datepicker-popup="dd/MM/yyyy" ng-model="projeto.InicioReal" readonly="readonly" ng-change="salvarProjeto()" title="Clique para selecionar a data..." />
+    </div>
+
+    <div class="campoInformacoes textInfo terminoReal tresColunas">
+        <label>Término Real:</label>
+        <input type="text" datepicker-popup="dd/MM/yyyy" ng-model="projeto.TerminoReal" readonly="readonly" ng-change="salvarProjeto()" title="Clique para selecionar a data..." />
+    </div>
+
+    <div class="campoInformacoes selectInfo situacaoProjeto">
+        <label>Situação:</label>
+        <select ng-model="projeto.Situacao" ng-options="s.Valor as s.Desc for s in model.situacoes" ng-change="salvarProjeto()">
+            <option value="">&nbsp;</option>
+        </select>
+    </div>
+
+    <div class="campoInformacoes textInfo clientesProjeto">
+        <label class="obrigatorio">Clientes:</label>
+        <input clientes-autocomplete to-model="projeto.Clientes" value="{{model.clientesNomes}}" close="salvarProjeto()" />
+    </div>
+
+    <div class="campoInformacoes selectInfo gerenteProjeto">
+        <label>Gerente de Projeto:</label>
+        <select ng-model="projeto.Gerente" ng-options="gerente.TxNomeCompletoColaborador for gerente in model.gerentesProjetos track by gerente.OidColaborador" ng-change="salvarProjeto()" ng-disabled="!projeto.IsMacro">
+            <option value="">&nbsp;</option>
+        </select>
+    </div>
+
+    <div class="campoInformacoes selectInfo centroCusto">
+        <label>Centro de Custo:</label>
+        <select ng-model="projeto.CentroCusto" ng-options="centroCusto.Codigo + ' - ' + centroCusto.Nome for centroCusto in model.centrosCustos track by centroCusto.IdCentroCusto | orderBy:['Codigo']"
+                ng-change="salvarProjeto()" ng-disabled="!projeto.IsMacro">
+            <option value="">&nbsp;</option>
+        </select>
+    </div>
+</div>

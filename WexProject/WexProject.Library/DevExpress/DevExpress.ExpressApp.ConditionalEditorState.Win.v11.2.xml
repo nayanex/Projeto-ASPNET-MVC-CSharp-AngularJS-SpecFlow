@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.ExpressApp.ConditionalEditorState.Win.v11.2</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.Win.ConditionalEditorStateWindowsFormsModule">
+
+            <summary>
+                <para>The <b>Conditional Editor State</b> module is now obsolete. Use the Conditional Appearance Module Overview module instead.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.Win.ConditionalEditorStateWindowsFormsModule.#ctor">
+            <summary>
+                <para>Creates an instance of the ConditionalEditorStateWindowsFormsModule class.
+</para>
+            </summary>
+
+
+        </member>
+    </members>
+</doc>

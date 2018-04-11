@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="9f905e62-a1c7-4c67-a999-83b337194179"
+  name="RH"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="22ae2830-6ab6-4e38-81d3-6decce952a60"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Entities.RH"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4331d76d-60f8-4b84-b877-7049e5e5ea42"
+        name="Colaborador"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9e4848cf-4fa4-478b-991c-f7c8a69254a3"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL%2Fbin%2FDebug%2FWexProject.BLL.dll&quot; Namespace%3DWexProject.BLL.Entities.RH Type%3DColaborador"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="201f4e43-6b0f-4ad7-8e83-7eb1d01f1a94"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="36f6a4bd-53e1-41f1-a928-3950999f474f">
+                <propertyInstance
+                  Id="e1e7aad7-68fd-4cd2-8d53-f372515ec43c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="85364a37-1ca1-40f3-a9f4-79aa1914fe11">
+                <propertyInstance
+                  Id="2480e304-a821-44e8-8c6e-0a379922b86b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4bc681c7-e9e2-40aa-949b-f93be3cc12c1">
+                <propertyInstance
+                  Id="bcae9f17-c6d6-4c2b-8a10-4e01686c5f70"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab786f2b-81da-4a01-acbd-8616eb705251">
+                <propertyInstance
+                  Id="22277f09-9a07-41fb-b287-bfd0ea4598a5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f36e22e9-abfa-43a0-b973-2e931906fd07">
+                <propertyInstance
+                  Id="4b48ce86-8985-4897-afc3-5ad3c0f3e37d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

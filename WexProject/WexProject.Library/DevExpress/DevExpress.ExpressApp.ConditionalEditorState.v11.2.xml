@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.ExpressApp.ConditionalEditorState.v11.2</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule">
+
+            <summary>
+                <para>Declares member implemented by classes representing Conditional Editor State rules.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule.Criteria">
+            <summary>
+                <para>Specifies the criteria string which is used when determining whether Property Editors should be customized.
+</para>
+            </summary>
+            <value>A string specifying the criteria string which is used when determining whether Property Editors should be customized.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule.Description">
+            <summary>
+                <para>Specifies the description of the current rule.
+</para>
+            </summary>
+            <value>A string specifying the description of the current rule.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule.EditorState">
+            <summary>
+                <para>Specifies how Property Editors are affected when the current rule is active.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorState"/> enumeration value specifying how Property Editors are affected when the current rule is active.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule.Id">
+            <summary>
+                <para>Specifies the current rule identifier.
+</para>
+            </summary>
+            <value>A string specifying the current rule identifier.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule.Properties">
+            <summary>
+                <para>Specifies the properties that should be affected by the current rule.
+</para>
+            </summary>
+            <value>A string containing property names separated by the semicolon character. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule.ViewType">
+            <summary>
+                <para>Specifies the View type in which the current rule is in effect.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.ExpressApp.ViewType"/> enumeration value specifying the View type in which the current rule is in effect.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.HideEditorMode">
+
+            <summary>
+                <para>Specifies the mode of editor hiding used by the Conditional Editor State Module.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.ExpressApp.ConditionalEditorState.HideEditorMode.Remove">
+            <summary>
+                <para>Specifies that layout items containing the hidden Property Editors are removed, and the Detail View's layout is rearranged.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.ExpressApp.ConditionalEditorState.HideEditorMode.ShowEmptySpace">
+            <summary>
+                <para>Specifies that only the content of the layout item is hidden, without rearranging the Detail View's layout. This is the default mode. In <b>XAF</b> ASP.NET Web applications this mode functions like the <see cref="F:DevExpress.ExpressApp.ConditionalEditorState.HideEditorMode.Remove"/> mode.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.IModelApplicationConditionalEditorStates">
+
+            <summary>
+                <para>Used to extend the Application Model with the ConditionalEditorState node.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelApplicationConditionalEditorStates.ConditionalEditorState">
+            <summary>
+                <para>Provides access to the ConditionalEditorState node.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.IModelConditionalEditorState"/> object representing the ConditionalEditorState node.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.IModelRules">
+
+            <summary>
+                <para>The Rules node provides access to the conditional editor state rules defined in the application.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.IModelEditorStateRule">
+
+            <summary>
+                <para>A Rule node specifies a conditional editor state rule used to dynamically configure a UI.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelEditorStateRule.Attribute">
+            <summary>
+                <para>Specifies the Editor State rule represented by the current Rule node.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.IEditorStateRule"/> object representing an Editor State rule.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelEditorStateRule.MethodName">
+            <summary>
+                <para>Specifies the name of the method to which the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute"/> is applied.
+</para>
+            </summary>
+            <value>A string specifying the name of the method to which the <b>EditorStateRule</b> attribute is applied.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelEditorStateRule.MethodNames">
+            <summary>
+                <para>Specifies the possible method names to which the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute"/> can be applied.
+</para>
+            </summary>
+            <value>An <b>IEnumerable@lt;String@gt;</b> collection representing the possible method names to which the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute"/> can be applied.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelEditorStateRule.ModelClass">
+            <summary>
+                <para>Specifies the business class whose properties are affected by the current rule.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.Model.IModelClass"/> object specifying the business class whose properties are affected by the current rule.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.IModelConditionalEditorState">
+
+            <summary>
+                <para>The ConditionalEditorState node specifies the mode of editor hiding used by the Conditional Editor State module.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelConditionalEditorState.HideEditorMode">
+            <summary>
+                <para>Specifies the way Property Editors are hidden in Detail Views.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.HideEditorMode"/> enumeration values specifying the way Property Editors are hidden in Detail Views.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.IModelConditionalEditorState.Rules">
+            <summary>
+                <para>Provides access to the Rules node.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.IModelRules"/> object representing the Rules node.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute">
+
+            <summary>
+                <para>Applied to business classes or methods. Declares a conditional editor state rule.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.#ctor(System.String,System.String,DevExpress.ExpressApp.ViewType)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.Persistent.Base.CreatableItemAttribute"/> class.
+</para>
+            </summary>
+            <param name="id">
+		A string containing the rule's unique identifier. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Id"/> property.
+
+            </param>
+            <param name="properties">
+		A string which contains the names of the properties affected by the current rule. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Properties"/> property.
+
+            </param>
+            <param name="viewType">
+		A <see cref="T:DevExpress.ExpressApp.ViewType"/> enumeration value which specifies the Views in which the rule is in effect. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.ViewType"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.#ctor(System.String,System.String,DevExpress.ExpressApp.ViewType,System.String)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.Persistent.Base.CreatableItemAttribute"/> class.
+</para>
+            </summary>
+            <param name="id">
+		A string containing the rule's unique identifier. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Id"/> property.
+
+            </param>
+            <param name="properties">
+		A string which contains the names of the properties affected by the current rule. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Properties"/> property.
+
+            </param>
+            <param name="viewType">
+		A <see cref="T:DevExpress.ExpressApp.ViewType"/> enumeration value which specifies the Views in which the rule is in effect. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.ViewType"/> property.
+
+            </param>
+            <param name="description">
+		A string which holds the rule's description. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Description"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.#ctor(System.String,System.String,DevExpress.ExpressApp.ConditionalEditorState.EditorState,System.String,DevExpress.ExpressApp.ViewType)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.Persistent.Base.CreatableItemAttribute"/> class.
+</para>
+            </summary>
+            <param name="id">
+		A string containing the rule's unique identifier. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Id"/> property.
+
+            </param>
+            <param name="properties">
+		A string which contains the names of the properties affected by the current rule. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Properties"/> property.
+
+            </param>
+            <param name="editorState">
+		An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorState"/> enumeration value which specifies how Property Editors are affected when the current rule is active. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.EditorState"/> property.
+
+            </param>
+            <param name="criteria">
+		A string representing the criterion used when determining whether Property Editors should be customized. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Criteria"/> property.
+
+            </param>
+            <param name="viewType">
+		A <see cref="T:DevExpress.ExpressApp.ViewType"/> enumeration value which specifies the Views in which the rule is in effect. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.ViewType"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.#ctor(System.String,System.String,DevExpress.ExpressApp.ConditionalEditorState.EditorState,System.String,DevExpress.ExpressApp.ViewType,System.String)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.Persistent.Base.CreatableItemAttribute"/> class.
+</para>
+            </summary>
+            <param name="id">
+		A string containing the rule's unique identifier. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Id"/> property.
+
+            </param>
+            <param name="properties">
+		A string which contains the names of the properties affected by the current rule. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Properties"/> property.
+
+            </param>
+            <param name="editorState">
+		An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorState"/> enumeration value which specifies how Property Editors are affected when the current rule is active. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.EditorState"/> property.
+
+            </param>
+            <param name="criteria">
+		A string representing the criterion used when determining whether Property Editors should be customized. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Criteria"/> property.
+
+            </param>
+            <param name="viewType">
+		A <see cref="T:DevExpress.ExpressApp.ViewType"/> enumeration value which specifies the Views in which the rule is in effect. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.ViewType"/> property.
+
+            </param>
+            <param name="description">
+		A string which holds the rule's description. This parameter's value is used to initialize the <see cref="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Description"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Criteria">
+            <summary>
+                <para>Specifies the criteria string used when determining whether Property Editors should be customized.
+</para>
+            </summary>
+            <value>A string representing the criterion used when determining whether Property Editors should be customized.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Description">
+            <summary>
+                <para>Specifies the rule's description.
+</para>
+            </summary>
+            <value>A string which holds the rule's description.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.EditorState">
+            <summary>
+                <para>Specifies how Property Editors are affected when the current rule is active.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorState"/> enumeration value which specifies how Property Editors are affected when the current rule is active.
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Id">
+            <summary>
+                <para>Specifies the rule's unique identifier.
+</para>
+            </summary>
+            <value>A string containing the rule's unique identifier.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.Properties">
+            <summary>
+                <para>Specifies the properties affected by the current rule.
+</para>
+            </summary>
+            <value>A string which contains the names of the properties affected by the current rule.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.ToString">
+            <summary>
+                <para>Returns a string that represents the current EditorStateRuleAttribute. 
+</para>
+            </summary>
+            <returns>A string that represents the current <b>EditorStateRuleAttribute</b>.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.TypeId">
+            <summary>
+                <para>Returns a unique identifier for the current EditorStateRuleAttribute. 
+</para>
+            </summary>
+            <value>An <b>Object</b> that is a unique identifier for the <b>EditorStateRuleAttribute</b>. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute.ViewType">
+            <summary>
+                <para>Specifies the View type in which the rule is in effect. 
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.ExpressApp.ViewType"/> enumeration value which specifies the Views in which the rule is in effect.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.EditorState">
+
+            <summary>
+                <para>Contains values specifying the state of Property Editors affected by the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute"/>. 
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.ExpressApp.ConditionalEditorState.EditorState.Default">
+            <summary>
+                <para>Specifies that Property Editors are not affected by the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.EditorStateRuleAttribute"/>.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.ExpressApp.ConditionalEditorState.EditorState.Disabled">
+            <summary>
+                <para>Specifies that Property Editors should be disabled.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.ExpressApp.ConditionalEditorState.EditorState.Hidden">
+            <summary>
+                <para>Specifies that Property Editors should be hidden.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase">
+
+            <summary>
+                <para>The module contained in the <i>DevExpress.ExpressApp.ConditionalEditorState.v11.2.dll</i> assembly.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase.#ctor">
+            <summary>
+                <para>Creates an instance of the ConditionalEditorStateModuleBase class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase.CollectRulesFromModel(DevExpress.ExpressApp.Model.IModelApplication)">
+            <summary>
+                <para>This method is intended for internal use.
+</para>
+            </summary>
+            <param name="applicationModel">
+		@nbsp;
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase.ExtendModelInterfaces(DevExpress.ExpressApp.Model.ModelInterfaceExtenders)">
+            <summary>
+                <para>Extends the Application Model with the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.IModelApplicationConditionalEditorStates"/> interface.
+</para>
+            </summary>
+            <param name="extenders">
+		A <b>ModelInterfaceExtenders</b> object that is a collection of Application Model interface extenders. 
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateModuleBase.Setup(DevExpress.ExpressApp.XafApplication)">
+            <summary>
+                <para>Sets up the ConditionalEditorStateModuleBase after it has been added to the <see cref="P:DevExpress.ExpressApp.XafApplication.Modules"/> collection.
+</para>
+            </summary>
+            <param name="application">
+		An <see cref="T:DevExpress.ExpressApp.XafApplication"/> object that provides methods and properties to manage the current application.
+
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateNodesGenerator">
+
+            <summary>
+                <para>A Nodes Generator that generates the content of the <see cref="T:DevExpress.ExpressApp.ConditionalEditorState.IModelRules"/> node.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.ConditionalEditorStateNodesGenerator.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ConditionalEditorStateNodesGenerator class.
+</para>
+            </summary>
+
+
+        </member>
+    </members>
+</doc>

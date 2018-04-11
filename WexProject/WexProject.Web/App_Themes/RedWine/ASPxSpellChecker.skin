@@ -1,0 +1,13 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwsc" Namespace="DevExpress.Web.ASPxSpellChecker" Assembly="DevExpress.Web.ASPxSpellChecker.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxwsc:ASPxSpellChecker runat="server" 
+    CssFilePath="~/App_Themes/RedWine/{0}/styles.css" CssPostfix="RedWine" SpriteCssFilePath="~/App_Themes/RedWine/{0}/sprite.css" LoadingPanelImagePosition="Top">
+	<LoadingPanelImage Url="~/App_Themes/RedWine/SpellChecker/Loading.gif"></LoadingPanelImage>
+    <ImagesEditors>
+		<DropDownEditDropDown>
+			<SpriteProperties HottrackedCssClass="dxEditors_edtDropDownHover_RedWine" />
+		</DropDownEditDropDown>
+    </ImagesEditors>  
+</dxwsc:ASPxSpellChecker>
+

@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.ExpressApp.ConditionalFormatting.v11.2</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingTarget">
+
+            <summary>
+                <para>The Target node specifies formatting options to be applied to the List View rows/cells that match the current Rule.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingTarget.Color">
+            <summary>
+                <para>Specifies the color to be used to highlight the current List View's data that satisfies the current Rule.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Drawing.Color"/> object specifying the color to be used to highlight the current List View's data that satisfies the current Rule.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingTarget.Name">
+            <summary>
+                <para>Specifies the format setting to be used to highlight the current List View's data in the specified color.
+</para>
+            </summary>
+            <value>A string specifying the format setting to be used to highlight the current List View's data in the specified color.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingTarget.TargetNames">
+            <summary>
+                <para>Specifies the available format settings which can be used to highlight the current List View's data.
+</para>
+            </summary>
+            <value>A <b>List@lt;String@gt;</b> object representing the collection of the available format settings.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRules">
+
+            <summary>
+                <para>The ConditionalFormatting node specifies criteria and target formatting for the List View's data.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule">
+
+            <summary>
+                <para>The Rule node specifies a Rule for formatting the current List View or column data.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule.Criteria">
+            <summary>
+                <para>Specifies criteria for the current List View's data. If it is satisfied, the current column data is formatted.
+</para>
+            </summary>
+            <value>A string specifying criteria for the current List View's data. If it is satisfied, the current column data is formatted.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule.Id">
+            <summary>
+                <para>Specifies the current formatting Rule identifier.
+</para>
+            </summary>
+            <value>A string specifying the current formatting Rule identifier.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule.Priority">
+            <summary>
+                <para>Specifies the current Rule's priority in case the List View's data satisfies several Rules.
+</para>
+            </summary>
+            <value>An integer value specifying the current Rule's priority in case the List View's data satisfies several Rules.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule.TargetType">
+            <summary>
+                <para>Specifies the objects' type used in the construction of the <see cref="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule.Criteria"/>.
+</para>
+            </summary>
+            <value>The objects' type used in the construction of the <see cref="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRule.Criteria"/>.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormatting">
+
+            <summary>
+                <para>Used to extend the Application Model with the ConditionalFormatting node.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormatting.ConditionalFormatting">
+            <summary>
+                <para>Provides access to the ConditionalFormatting node.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormattingRules"/> object representing the ConditionalFormatting node.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.ExpressApp.ConditionalFormatting.ConditionalFormattingModule">
+
+            <summary>
+                <para>The <b>Conditional Formatting</b> module is now obsolete. Use the Conditional Appearance Module Overview module instead.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalFormatting.ConditionalFormattingModule.#ctor">
+            <summary>
+                <para>Creates an instance of the ConditionalFormattingModule class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalFormatting.ConditionalFormattingModule.ExtendModelInterfaces(DevExpress.ExpressApp.Model.ModelInterfaceExtenders)">
+            <summary>
+                <para>Extends the Application Model with the <see cref="T:DevExpress.ExpressApp.ConditionalFormatting.IModelConditionalFormatting"/> interface.
+</para>
+            </summary>
+            <param name="extenders">
+		A <b>ModelInterfaceExtenders</b> object that is a collection of Application Model interface extenders. 
+
+            </param>
+
+
+        </member>
+    </members>
+</doc>

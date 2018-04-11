@@ -1,0 +1,16 @@
+﻿<div id="{{'Rubrica ' + rubrica.Nome | asciify | camelCase}}" class="tableArea" ng-class="{ rubricaPaiDespesas: rubrica.pai }" ng-switch="rubrica.pai" ng-repeat="rubrica in rubricas[classe] | subRubricas:false">
+
+	<div ng-switch-when="true">
+
+		<header>
+			<h1>{{rubrica.Nome}}</h1>
+		</header>
+
+		<div id="{{'Rubrica ' + rubrica.Nome | asciify | camelCase}}" class="tableArea" ng-repeat="rubrica in rubricas[classe] | rubricasFilhas:rubrica.RubricaId">
+			<table class="rubricaFilhaDespesas rubricaDespesas" despesa>
+			</table>
+		</div>
+	</div>
+	<table ng-switch-default class="rubricaDespesas" despesa>
+	</table>
+</div>

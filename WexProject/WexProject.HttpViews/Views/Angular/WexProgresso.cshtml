@@ -1,0 +1,11 @@
+﻿<progress class="wex-progresso" ng-class="{'wex-progresso-grouped': excedenteBarra(progresso) >= limiteBarraInicial, 'wex-progresso-inicial': excedenteBarra(progresso) < limiteBarraInicial, 'wex-progresso-singlebar': excedenteBarra(progresso) == 0}" max="maxBarra(progresso)" animate="false">
+    <bar type="success" value="valorBarra(progresso)">
+        <span ng-if="valorBarra(progresso) >= limiteBarraInicial">{{valorBarra(progresso) | number : 2}}%</span>
+    </bar>
+    <bar type="error" value="excedenteBarra(progresso)" ng-if="excedenteBarra(progresso) > 0">
+        <span>{{excedenteBarra(progresso) | number : 2}}%</span>
+    </bar>
+</progress>
+
+<span ng-class="{inicial: progresso < tamanhoTitulo}">{{titulo}}</span>
+<span class="inicialPercentual" ng-if="progresso < limiteBarraInicial" >{{valorBarra(progresso) | number : 2}}%</span>

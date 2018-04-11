@@ -1,0 +1,718 @@
+﻿/*
+    PROJETO WEX WEB © FPF Tech;
+    Ano: 2013;
+    Equipe: Ayrton Araujo, Diogo Riker, Thiago Andrade, Kasem Abou Ali; 
+*/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {display: none !important;}
+body{font-family:Arial, Helvetica, sans-serif;}
+body > section{min-width:960px; margin:0px auto;}
+
+
+/* Adequando Jquery UI ao projeto*/
+div.ui-widget-header{background:none !important; color:#000 !important; border:none !important;}
+div.modalArea{background:#FFF !important;}
+div.ui-widget-overlay{background:#000 !important; opacity:0.8 !important;}
+
+/* UI Autocomplete */
+ul.ui-autocomplete{background:#FFF; border:1px solid black; height:193px; overflow-y:auto;}
+
+/* UI Datepicker*/
+ul[datepicker-popup-wrap]{background:url("/Content/themes/temaPadrao/backgroundCinza.png") repeat; border-radius:0px; padding-top:0px; padding-bottom:2px;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th{padding:3px; vertical-align:middle;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th:nth-of-type(2) button{padding:0px; background:none !important; color:#FFF;  border:none; box-shadow:none; text-align:center; opacity:1;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th:nth-of-type(2) button > strong{font-weight:normal; text-shadow:none;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th:first-child button, ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th:last-child button{background:url("/Content/themes/temaPadrao/btnSetaCalendario.png") no-repeat !important; width:15px; height:26px; border:none; box-shadow:none; }
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th:first-child button{background-position:10px 4px !important;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr:first-child th:last-child button{background-position:-10px 4px !important;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr{border:none !important; }
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr th button{border-radius:0px;}
+ul[datepicker-popup-wrap] li table[show-weeks] > thead tr[ng-show="labels.length > 0"] > th{padding:10px; color:#FFF; background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x,url("/Content/themes/temaPadrao/backgroundBlackDark.png") repeat; text-shadow:none; font-weight:normal;}
+ul[datepicker-popup-wrap] li table[show-weeks] > tbody tr td{padding:0px;}
+ul[datepicker-popup-wrap] li table[show-weeks] > tbody tr td > button{background:none !important; border-radius:0px; padding:2px; margin:0px; box-shadow:none !important; border:none !important;}
+ul[datepicker-popup-wrap] li table[show-weeks] > tbody tr td > button.btn-info{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; opacity:1;}
+ul[datepicker-popup-wrap] li[ng-show="showButtonBar"]{padding:0px !important; display:table; width:100%;}
+ul[datepicker-popup-wrap] li[ng-show="showButtonBar"] > *{display:table-cell;}
+ul[datepicker-popup-wrap] li[ng-show="showButtonBar"] .btn-group{padding-left:7px; padding-bottom:6px; padding-top:5px; text-align:left;}
+ul[datepicker-popup-wrap] li[ng-show="showButtonBar"] > button{ margin-top:7px; margin-right:7px;}
+ul[datepicker-popup-wrap] li[ng-show="showButtonBar"] button{border-radius:0px !important; color:#3f3f3f; text-shadow:none !important;}
+ul[datepicker-popup-wrap] li[ng-show="showButtonBar"] button.active{background:#7fb744 !important; color:#FFF !important; opacity:1; box-shadow:none !important;}
+
+/* MODAL EM GERAL */
+div.modalArea > form > .camposForm{display:block; width:100%; margin-bottom:10px; margin-top:10px;}
+div.modalArea > form > .camposForm > label{text-align:right; width:84px; display:inline-block; margin-right:3px;}
+div.modalArea > form > .camposForm > input[type="text"]{width:75%; display:inline-block;}
+div.modalArea > form > .camposForm > .campoFormRadio{display:inline-block; margin-right:10px;}
+div.modalArea > form > .camposForm > .campoFormRadio > input[type="radio"]{margin:0px;}
+div.modalArea > form > .camposForm > .campoFormRadio > label{font-size:16px; margin-left:2px;}
+div.modalArea > form > .camposFormButtons > button{width:20%; padding:5px; border:1px solid #b5b5b5; background: #ebebeb; cursor:pointer; opacity:0.6; float:right; margin-right:16px;}
+div.modalArea > form > .camposFormButtons > button:hover{opacity:1;}
+div.modalArea > form > .camposFormButtons > button:active{background:#cecece; color:#3d3d3d;}
+
+/* Gridster*/
+.gridster{min-height:746px !important; height:100%; width:100%;}
+.gridster > ul li{min-height: 30px; min-width:30px;}
+.gridster .preview-holder{background:#3d3d3d !important;}
+
+/* Elementos Gerais */
+input[type="text"], input[type="datetime"], input[type="date"], select{padding:4px; font-size: 11px;}
+a{text-decoration:none; cursor: pointer;}
+button{background:none; border:none; cursor: pointer;}
+div#load, img[id^="carregando"]{position:absolute; top:50%; left:50%; margin-left:-8px; margin-top:-8px;}
+
+
+/*Forms, Inputs, Labels*/
+.campoInformacoes > label{font-size:12px; padding: 2px;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button{-webkit-appearance: none; margin: 0;}
+
+/*Tables*/
+table tr td{padding: 10px; border-left: 1px solid black; border-bottom: 1px solid black;}
+table tr.selecionado{background:#f2f2f2;}
+table{width: 100%; border:1px solid black; font-size: 11px;}
+table > thead tr{background:#d8d8d8; text-align: center; font-weight: bold;}
+
+/* Icones */
+a.texto, a.texto:link, a.texto.visited, a.texto.active, a.texto:hover {color: #000; text-decoration: none;} 
+.btnExcluirWidget,.btnExcluirDashboard{background: url(../images/icoExcluir.png) no-repeat;}
+.btnConfigurarWidget{background: url(../images/icoConfig16x16.png) no-repeat;}
+.btnFavoritosDashboard{background: url(../images/icoFavoritos.png) no-repeat;}
+.btnFechar{background:url(../images/icoFecharTabs.png) no-repeat;}
+
+/* Componentes */
+    /* Wex Message */
+    .wex-message {position: fixed; z-index: 10001; top: 0; left: 50%; margin-left: -150px; width: 320px; box-shadow: 0px 0px 10px #444; background: #f9f9f9;}
+    .wex-message-title {font-weight: bold !important; font-size: medium !important; line-height: 120% !important; margin-bottom: 5px; padding-bottom: 7px; border-bottom: 2px dotted #c0c0c0;}
+    .wex-message-button-close {position: absolute; right: 13px; top: 13px; height: 15px; width: 15px; background: url("/Content/themes/temaPadrao/icoFecharModal.png") no-repeat center !important; border: none; text-indent: -1000px; overflow: hidden; background-size:100% 100% !important;}
+    .wex-message-content {padding:10px 10px 10px 10px; font-family: 'Conv_Frutiger'; font-size: small; line-height: 125%;}
+    .wex-message-content ul {text-align: left; margin-left: 20px; list-style: disc;}
+    .wex-message-content ul li{margin-bottom:3px; margin-top:3px;}
+    .wex-message-modal-overlay {position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background: #ccc; opacity: 0.4; filter: alpha(opacity=40);}
+    .wex-message-icon {display: inline-block; background: transparent no-repeat center center; width: 26px; height: 26px; margin-top: 5px;}
+    .wex-message-icon.wex-message-icon-loading {background-image:  url("/Content/themes/temaPadrao/loading_fpf.gif");}
+    .wex-message.wex-message-loading {color: #404040; text-align: center;}
+        /*WexMessage - Erro Validação*/
+        .wex-message.wex-message-validation {background: #09495A url("/Content/themes/temaPadrao/backgroundVermelho.png"); color: #ffffff;}
+        .wex-message.wex-message-validation .wex-message-title {color: #FFF; border-color: #940202;}
+        /*WexMessage - Sucesso*/
+        .wex-message.wex-message-success {background: #09495A url("/Content/themes/temaPadrao/backgroundAzul.png"); color: #ffffff;}
+        .wex-message.wex-message-success .wex-message-title {color: #ffffff; border-color: #648D97; text-align:center;}
+        .wex-message.wex-message-success .wex-message-button-close {display:none;}
+        .wex-message.wex-message-success  .wex-message-content{text-align:center;}
+        /*WexMessage - Erro Fatal*/
+        .wex-message.wex-message-error, .wex-message.wex-message-fatal {background: #D52727 url("/Content/themes/temaPadrao/backgroundVermelho.png"); color: #ffffff;}
+        .wex-message.wex-message-error .wex-message-title, .wex-message.wex-message-fatal .wex-message-title {color: #ffffff; border-color: #E77878;}
+
+/* ============================================================HEADER================================================================================== */
+/* Header */
+body > header{width:100%; margin-top:10px; position:relative;}
+body > header > .feedbackGeral{background:#191919; position:fixed; left:50%; top:-10px; padding:10px; font-size:11px; color:#FFF; box-shadow:0px 0px 10px #999; width:250px; text-align:center; margin-left:-125px;}
+body > header > .feedbackGeral > #btnFecharFeedback {top:50%; right:10px; position:absolute; margin-top:-8px;}
+body > header > #headerInfos{min-width:960px; margin:0px auto;}
+body > section[class^="dashboard"]{margin-bottom:10px;}
+body > header > #headerInfos > div{float:left; height:94px; border:1px solid #000;}
+
+    /* Lista de Dashboards*/
+    body > header > #headerInfos > #areaUsuario nav{position:relative;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard{width:320px; position: absolute; right:66px; top:30px; background:#FFF; box-shadow:0px 2px 4px #666; padding:10px; z-index:1000; height:auto;} 
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > h1{font-size:18px; font-weight:bold; margin-bottom:5px; display:block; width:100%;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > #novoDashboard{width:100%; border-bottom:1px solid #000; float:left; padding-bottom:10px; margin-bottom:3px;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > #novoDashboard > a .iconeNovoDashboard{border:1px solid #000; width: 20px; height: 20px; float: left; margin-right: 5px;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > #novoDashboard > a{float:left; margin-top:5px; font-size:12px;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul#dashesFavoritas{border-bottom: 1px solid black; float:left; width:100%; padding-bottom:6px; margin-bottom:6px;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li{margin-top:5px; margin-bottom:5px; float:left; width:100%; cursor:pointer;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes {width:100%;}
+    /* Lista de Dashboards - Icones */
+        body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li[favorito="false"] .iconeFavoritos{background:url(../images/icoFavoritos.png) -24px 0px no-repeat;}
+        body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li[favorito="true"] .iconeFavoritos{background:url(../images/icoFavoritos.png) 0px 0px no-repeat;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > div.iconeDashboard{background:#666; width:20px; height:20px; float:left; margin-right:5px;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > h2{float:left; margin-top:2px;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > div.meusDashesOpcoes{float:right;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > div.meusDashesOpcoes > *{display:inline-block; width:20px; height:20px; margin-left:2px; cursor:pointer;}
+    
+header > #headerInfos > #areaLogo{width:242px; padding-left:10px;}
+header > #headerInfos > #areaLogo span{text-align: center; width:100%; text-transform: uppercase; cursor:pointer; display:block;}
+header > #headerInfos > #areaLogo time{font-size: 12px; text-align: center; width: 100%; display: block;}
+header > #headerInfos > div#areaPesquisa{width:400px; padding:10px;}
+header > #headerInfos > div#areaPesquisa input[type="text"]{width:96%;}
+header > #headerInfos > div#areaUsuario{width:366px; padding: 6px 10px 6px 10px; float:right;}
+header > #headerInfos > div#areaUsuario .infoUsuario > .fotoUsuario{background:gray; width:28px; height:28px; float: left; margin-right:10px; border:1px solid #d7d7d7;}
+header > #headerInfos > div#areaUsuario .infoUsuario > .dadosUsuario{margin-top:20px; float: left; width:94px; word-wrap:break-word;}
+header > #headerInfos > div#areaUsuario .infoUsuario > .dadosUsuario h1{font-size:17px; display: block; width:165px;}
+header > #headerInfos > div#areaUsuario .infoUsuario > .dadosUsuario span{font-size:12px;margin-top:2px; display: block; width:165px;}
+header > #headerInfos > div#areaUsuario .opcoesUsuario{float:right;}
+header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li {float:left; width:28px; height:30px; border:1px solid black; margin-left: 10px; cursor: pointer;}
+header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li#meusDashboards,header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li#logout{opacity:1;}
+
+/*Menu*/
+#menuPrincipal{clear:both; min-width:960px; border:1px solid black; margin-bottom:10px; position:relative; height:37px;}
+#menuPrincipal nav ul li{display:inline-block; margin-left:10px; margin-right:10px; text-align:center;padding:10px;}
+#menuPersonalizado{position:absolute; right:0px; top:0px; border:1px solid black; background:#333;}
+
+/* ============================================================CUSTOS================================================================================== */
+/*Section Custos*/
+section#wexCusto{border:1px solid black; padding: 0px 10px 10px 10px; min-width:940px;}
+section#wexCusto header h2{font-size:18px; font-weight: bold;}
+
+/*Header*/
+header.infoGeralCusto{ border-bottom: 1px solid black; float:left; width: 100%; margin-bottom: 10px; padding-bottom: 10px;}
+header.infoGeralCusto > h1{font-size:30px; float: left;}
+header.infoGeralCusto > button{font-size:10px; border:1px solid black; text-align: center; float:left; margin-left: 5px; margin-top: 8px;}
+header.infoGeralCusto > div.infoGeralCusto{width:100%; float: left; margin-top: 10px;}
+header.infoGeralCusto > div.infoGeralCusto > .campoInformacoes:last-child{margin-left:2px; width:129px;}
+header.infoGeralCusto > div.infoGeralCusto > .campoInformacoes{float:left; width: 134px;}
+header.infoGeralCusto > div.infoGeralCusto > div > input{width:82%;}
+header.infoGeralCusto > div.infoGeralCusto > div > select{width:89%;}
+header.infoGeralCusto > div.infoGeralCusto > div > label{ display:block;}
+
+/*Detalhamento do Projeto*/
+div.detalhamentoProjeto{clear:both; margin-top:10px;}
+div.detalhamentoProjeto > header{margin-bottom: 10px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td{padding: 10px; border-left: 1px solid black; border-bottom: 1px solid black; vertical-align:middle;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{text-align:center; margin:0px; font-size:11px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input::-webkit-outer-spin-button,
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input::-webkit-inner-spin-button,
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input::-webkit-clear-button{-webkit-appearance: none; margin: 0;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td span{word-wrap:break-word;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr.selecionado{background:#f2f2f2;}
+div.detalhamentoProjeto > .aditivosProjeto > table{width: 100%; border:1px solid black; font-size: 11px;}
+div.detalhamentoProjeto > .aditivosProjeto > table > thead tr{background:#d8d8d8; text-align: center; font-weight: bold;}
+div.detalhamentoProjeto > .aditivosProjeto > table > thead tr td{height:14px;}
+div.detalhamentoProjeto > .aditivosProjeto > table > tbody > tr td{height:30px;}
+div.detalhamentoProjeto > .aditivosProjeto > button{float: right; background: #999; padding: 5px; font-size: 11px; margin-right: 0px; margin-top: 10px; margin-bottom: 10px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td:first-child{border:none !important; width:23px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td:first-child > button{border:none; width:23px; height:23px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(2){border-left:none !important; text-align:left;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(2), div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(3), div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(4), div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(5), div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(6), div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(7), div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(8){width:90px; max-width:90px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td input{width:90px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(2) > input{text-align:left;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(3) .dropdown-menu, div.detalhamentoProjeto > .aditivosProjeto > table tr td:nth-of-type(4) .dropdown-menu{width:352px !important;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td ul.dropdown-menu button{padding:5px !important;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td ul.dropdown-menu li table thead tr th:first-child{padding-left:10px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td ul.dropdown-menu li table thead tr th:last-child {padding-right:10px;}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td ul.dropdown-menu li table thead tr th:first-child button{background-position:5px 4px !important}
+div.detalhamentoProjeto > .aditivosProjeto > table tr td ul.dropdown-menu li table thead tr th:last-child button{background-position:-15px 4px !important}
+
+/*Detalhamento do Aditivo*/
+div.detalhamentoAditivo{border-top: 1px solid black; clear: both; margin-top: 10px;}
+div.detalhamentoAditivo > .saveArea{border-top:1px solid black; margin-top: 10px; text-align: right;}
+div.detalhamentoAditivo > .saveArea button{background:#999; padding: 5px; margin-top: 10px;}
+div.detalhamentoAditivo > header{margin-bottom: 10px; width:100%; height:22px;}
+div.detalhamentoAditivo > header > h2{float:left; word-wrap:break-word; width:96%;}
+div.detalhamentoAditivo > header > button{float:right;}
+div.detalhamentoAditivo > div#centroCusto, div.detalhamentoAditivo > div#patrocinadores{display: inline-block; width:47.1%; border:1px solid black; vertical-align: top; padding: 10px; clear:both;}
+div.detalhamentoAditivo > div:first-child{margin-right:3px;}
+div.detalhamentoAditivo > div:nth-of-type(2){margin-left:5px;}
+div.detalhamentoAditivo > div:last-child{width:100%;}
+div.detalhamentoAditivo > div > header h2{display: inline-block; float: left; cursor:pointer;}
+div.detalhamentoAditivo > div > header button{border:1px solid black; font-size: 11px; float:right;}
+div.detalhamentoAditivo > div > div{clear:both; margin-bottom: 10px;}
+div.detalhamentoAditivo > div > div > input{width:80%;}
+div.detalhamentoAditivo > div > div > button{background:#999; padding: 4px;}
+div.detalhamentoAditivo > div > table{margin-top: 10px;}
+div.detalhamentoAditivo > div > table tr td:first-child{width:30px; border-right:none !important;}
+div.detalhamentoAditivo > div > table tbody tr td:first-child button{ border:1px solid black; text-align: center; margin:0px auto; display: block;}
+div.detalhamentoAditivo > div > table tr td:nth-of-type(2){border-left:none !important;}
+
+    /*Abas*/
+    div#detalhamentoAbas{margin-top: 10px; overflow: hidden;}
+    div#detalhamentoAbas > .tabs{border: 1px solid black; padding: 20px; font-size: 12px; text-align: center; display: inline-block; margin-right:-5px; width: 46%; cursor: pointer; margin-bottom: 0px; clear:none;}
+    div#detalhamentoAbas > .selecionado{background:#999;}
+
+    /* Orçamento Aprovado*/
+
+         /*Aditivo Info Valor e Anos*/
+            .aditivoInfoValorAno{
+                display: block;
+            }
+
+            .aditivoInfoValorAno > p:first-child{
+                text-align: center;
+                padding: 10px;
+            }
+
+            .aditivoInfoValorAno .anosAditivo{
+                text-align: center;
+            }
+
+            .aditivoInfoValorAno .anosAditivo ul li{
+                display:inline-block;
+            }
+
+            .aditivoInfoValorAno .anosAditivo ul li > button{
+                padding: 8px;
+            }
+            /*Aditivo Info Valor e Anos*/
+
+        /* Orçamento Aprovado*/
+        div#detalhamentoAbas > #orcamentoAprovado > div > header > button {float:right;}
+        div#detalhamentoAbas > #orcamentoAprovado{margin:0px; border: 1px solid black;}
+        div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > span{font-size: 16px; float: right; margin-top:6px;}
+        div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > button{float:left; margin-top:4px;}
+        div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > div {margin-top:0px;}
+        div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > div label, div#detalhamentoAbas > #despesasReais > .topoOrcamentos > div label {font-size:13px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"]{
+            margin:10px;
+        }
+        
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table{clear:both; margin-top:7px;margin-bottom: 10px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:first-child{width:1px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:nth-of-type(2){width:270px; border-left:none !important; text-align:left; vertical-align:middle; padding-left:0px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:last-child button{border: 1px solid black; font-size: 10px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:last-child {vertical-align: middle;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3){padding: 0px; margin: 0px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div {display: table;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div{display:table-cell; border-bottom: 1px solid black; border-right: 1px solid black; padding:10px; text-align: center; background:#F2F2F2;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:first-child{width:60px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:nth-of-type(2){width:88px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div:last-child{width:497px; border-right: none;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:nth-of-type(2n+1){background:#F2F2F2;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:first-child{vertical-align: middle;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3){padding:0px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div[class*="Planejado"]{display: table-cell;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div{border-bottom:none;}
+        /*Total*/
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{border-right: 1px solid gray; margin: 0px auto; padding: 10px; vertical-align: middle; position:relative;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{width:50px; float:left;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado button{margin:5px 0px 0px 0px !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > span{position:absolute; width:100px; right:-34px; top:0; margin-bottom:-13px; padding:5px; cursor:default; box-shadow:0px 0px 2px #959595; transition:opacity 0.17s;}
+        /*Meses*/
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado{padding: 5px 10px 5px 10px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes{display: inline-block;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes label{font-size:11px; display: block; text-align: center;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.mesesPlanejado > .campoInformacoes input{width:57px; margin-left: 5px; margin-right: 5px; text-align:center;}
+        /*Rúbrica Filhas*/
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div.rubricaFilhasGeral{display: table-cell; vertical-align:middle;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div.rubricaFilhasGeral > ul li{display:inline-block; margin-left:6px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div.rubricaFilhasGeral > button{margin-top:10px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div.rubricaFilhasGeral > ul li span:before{content:":: "}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div.rubricaFilhasGeral > ul li span:after{content:","}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr> td:nth-of-type(3) > div.rubricaFilhasGeral > ul li:last-child span:after{content:"." !important;}
+
+        /*Despesas Reais*/
+        div#despesasReais{
+            margin:0px; 
+            border: 1px solid black; 
+            position:relative;
+        }
+
+        div#despesasReais > div[id^="despesasReais"]{
+            margin:10px;
+        }
+
+        div#despesasReais .opcoesArea .buttonsRubricaGastosPendente{
+            display: block;
+            text-align: center;
+            padding: 8px;
+        }
+
+        div#despesasReais .tableArea > table{
+            clear: both;
+        }
+
+        div#despesasReais > div .tableArea > table tr td{
+            word-wrap:break-word; max-width:34px;
+        }
+
+        div#despesasReais .tableArea > table tr td:last-child{
+            width:65px;
+        }
+
+        div#despesasReais .tableArea > table tr td:last-child button{
+            border:1px solid;
+        }
+
+        div#despesasReais > div .tableArea > table tbody:first-of-type tr:first-child{
+            background:#f0f0f0;
+        }
+
+		div#despesasReais > div .tableArea > table tr td > input{
+            width:34px; 
+            text-align:center;
+		}
+
+        div#despesasReais > div .tableArea > table tr td > input.comFoco[readonly="readonly"]{
+            box-shadow:none; 
+            border-color:#9E9E9E;
+        }
+
+        div#despesasReais > div[id^="despesas"]:last-child{
+            margin-bottom:10px;
+        }
+
+        div#despesasReais > div[id^="despesas"] > div > .rubricaPaiDespesas{
+            background:#ccc; 
+            padding:10px;
+        }
+
+        /* Associação de Notas Fiscias */
+        .topoOrcamentos{
+            width: 100%; 
+        }
+        
+        /*Meses*/
+        #despesasReais .aditivoInfoValorAno .mesesNotasFiscais{
+            display: table;
+            width: 100%;
+        }
+
+        #despesasReais .aditivoInfoValorAno .mesesNotasFiscais > div{
+            display: table-cell;
+        }
+
+        #despesasReais .aditivoInfoValorAno .mesesNotasFiscais > div button{
+            width: 100%;
+            padding: 5px;
+        }
+
+        #despesasReais .aditivoInfoValorAno.fixo{
+            position:fixed;
+            top:67px;
+            left:0px;
+            width:100%;
+            z-index:99;
+        }
+
+        
+
+        /*Botões*/
+        .topoOrcamentos.infoVisivel > .opcoesArea .btnSelecionado{
+            box-shadow:0px 0px 3px #292C30;
+        }
+        
+        /*Associação Notas Fiscais Content*/
+        .AssociacaoNotasFicaisContent{
+            clear: both;
+        }
+
+        .AssociacaoNotasFicaisContent > .tabelasAccordionArea{
+            width: 100%;
+            display:table;
+        }
+
+        .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div{
+            display: table-cell; 
+            vertical-align: top; 
+            width:49%;
+            padding:10px;
+        }
+
+            /*Setas*/
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes{
+                vertical-align: top; 
+                text-align: center; 
+                width:50px;
+                padding: 10px 0px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes.fixo{
+                position:fixed; 
+                top:100px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes .iconeSetas{
+                display: block; 
+                text-indent: -9999px; 
+                width: 36px; 
+                height: 31px; 
+                margin: 0px auto 10px auto; 
+                border: none;
+            }
+
+            /*Tabela Notas Fiscais*/
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table  thead tr th:first-child{
+                text-align:left;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table  thead tr th:nth-of-type(2){
+                text-align:left; 
+                padding-left:0px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr td{
+                vertical-align: middle;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr td:first-child{
+                text-align:left; 
+                border-right:none !important; 
+                width:20px; 
+                padding-right:0px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr td:nth-of-type(2){
+                text-align:left; 
+                border-left:none !important; 
+                padding-left:0px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr:nth-of-type(even){
+                background:#f2f2f2;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr td textarea{
+                resize:none; 
+                width: 80%;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr td p{
+                font-size:13px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr td p span{
+                display:block; 
+                color:#0c5f74; 
+                font-size:12px; 
+                padding-top:2px;
+            }
+
+            /*Acordeão Rubricas*/
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.fixo{
+                position:fixed; 
+                top:100px; 
+                right:18px; 
+                width:42.5%;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion{
+                padding: 2px; 
+                font-size: 12px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion button{
+                display:inline-block; 
+                text-indent: -9999px; 
+                border: none; 
+                width: 18px; 
+                height: 18px; 
+                background-size: 100% 100% !important; 
+                margin:5px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion .rubricaAccordionContent{
+                background:#FFF; 
+                margin:0px -1px -1px -1px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion .rubricaAccordionContent .mensagem{
+                color:#3f3f3f; 
+                text-align:center; 
+                font-size:13px; 
+                padding:10px; 
+                font-weight:bold;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion .rubricaAccordionContent thead tr td:first-child{
+                text-align:left;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion .rubricaAccordionTitle span.totalLabel{
+                float:right; 
+                padding:7px;
+            }
+
+            .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricaExpandida .rubricaAccordionTitle span.selecionadosLabel{
+                color:#9CEAFD;
+            }
+
+/* ============================================================ANÁLISE CRÍTICA DE PROJETOS================================================================================== */
+section#wexAnaliseCritica{padding: 0px 10px 10px 10px; min-width:940px;}
+section#wexAnaliseCritica header{margin-bottom: 10px;}
+section#wexAnaliseCritica header > .campoInformacoes{margin-top:7px; display:inline-block; margin-right:7px; vertical-align:top;}
+section#wexAnaliseCritica header > .campoInformacoes > label{display:block;}
+section#wexAnaliseCritica header > .campoInformacoes > input[type="text"], section#wexAnaliseCritica header > .campoInformacoes > select{width:175px;}
+section#wexAnaliseCritica header > .checkboxInfo > label {margin-bottom:5px; display:block; float:none;}
+section#wexAnaliseCritica header > .checkboxInfo > span{font-size:13px; margin-right:10px; margin-top:3px;}
+section#wexAnaliseCritica header > .checkboxInfo > * {float:left;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > .barrasArea{position:relative;}
+section#wexAnaliseCritica > .progressaoGeralArea{margin-bottom:5px;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"]{margin-top:10px; padding:10px; opacity:0.9; box-shadow:none;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"]:hover{opacity:1; box-shadow:0px 0px 10px #dfdddd;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"]:first-child{margin-top:0px;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header{margin-bottom:10px;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea{display:table; width:100%;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .progressaoArea > div[class$="Area"]{display:table-cell;}
+/*Barra de Progressão*/
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao{border:1px solid black; width:100%; position:relative;}
+
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span{display: inline-block; margin-top:3px;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicial{color:#83B0C2; right:85% !important;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span.inicialPercentual{color:#83B0C2; right:90% !important;}
+
+    /*Status do Projeto*/
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .statusArea{border:1px solid black; width:32px; height:41px; position: relative;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .statusArea > .statusProjeto{width:16px; height:16px; position: absolute; top:50%; left:50%; margin-top:-8px; margin-left:-8px; background-image: url("../Images/icoStatusProjeto.png");}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .statusArea > .statusPositivo{background-position:0 1px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .statusArea > .statusAtencao{background-position:0 -19px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .statusArea > .statusCritico{background-position:0 -37px;}
+
+    /*Barra de Orçamento Consumido*/
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido{width:100%; position:relative; height: 20px; border-top:1px solid #e0dddd; border-bottom:none !important;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > progress{height:20px; top:-2px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span{font-size:11px; position: absolute; top:2px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span:nth-of-type(1){width:115px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span:last-child{right:0px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicial{right:85% !important; color:#2A631B;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span.inicialPercentual{right:90% !important; color:#2A631B;}
+
+
+/*Extrato do Projeto*/
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .tabs{width:47.7%;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{padding:10px; clear:both;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise{border:1px solid #e2e0e0; padding: 10px; clear: both;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table{clear:both;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > .selectInfo{margin-bottom: 10px;}
+section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > .selectInfo > label{font-size:14px;}
+
+/* ============================================================ANÁLISE CRÍTICA GERAL================================================================================== */
+#wexAnaliseCriticaGeral{padding:0px 10px 10px 10px;}
+#wexAnaliseCriticaGeral > header > div#filtroArea > *{display:inline-block; margin-top:10px; margin-bottom: 10px; margin-right:5px;}
+#wexAnaliseCriticaGeral > header > div#filtroArea > div > label{display:block;}
+#wexAnaliseCriticaGeral > header > div#filtroArea > div:last-child > span{font-size:14px;}
+#wexAnaliseCriticaGeral table tbody tr td:first-child{text-align:left; vertical-align:middle;}
+#wexAnaliseCriticaGeral table tbody tr td{font-size:13px; padding:0px !important;}
+#wexAnaliseCriticaGeral table tbody tr td > span{padding:9px 6px;}
+#wexAnaliseCriticaGeral table tbody tr td:first-child > span{display:inline-block; width:85px; vertical-align:middle;}
+#wexAnaliseCriticaGeral table tbody tr.rubricasCategoria td:first-child > span{width:auto !important;}
+#wexAnaliseCriticaGeral table.tabelaAnalise > thead > tr:first-child td:first-child{visibility: hidden;}
+/*#wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:first-child, #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:first-child{width:20px; max-width:20px; min-width:20px; vertical-align:middle;}*/
+#wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.geral td:nth-of-type(2), #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){text-align:left; vertical-align:middle;}
+/*#wexAnaliseCriticaGeral table.tabelaAnalise  tr td:nth-of-type(3){width:47px; max-width:47px; min-width:47px;}*/
+#wexAnaliseCriticaGeral table.tabelaAnalise  tr td{width:40px;min-width:40px; max-width:40px; word-wrap:break-word; vertical-align:middle; font-size:9px;}
+#wexAnaliseCriticaGeral #analiseFluxoCaixa table.tabelaAnalise > tbody tr.projetos td:nth-of-type(2){width:47px; max-width:47px; min-width:47px;}
+
+/* =========================================================================== TermoAditivo ================================================================================= */
+#wexTermoAditivo{padding: 0px 10px 10px 10px;}
+#wexTermoAditivo > header{margin-bottom: 10px;}
+#wexTermoAditivo > #areaTermoAditivo{position:relative;}
+#wexTermoAditivo > #areaTermoAditivo > header{margin-bottom: 10px;}
+
+/*Área Termo Aditivo (TA)*/
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivo{margin-bottom:10px; display: table; width: 100%}
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivo:last-of-type{margin-bottom:0px;}
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivo > div{display: table-cell; vertical-align: middle; padding:5px;}
+#wexTermoAditivo > #areaTermoAditivo div[class="buttonArea"] > button{width:20px; height:20px; background-size: 100% 100% !important; border: none; margin-right:10px; float:left;}
+#wexTermoAditivo > #areaTermoAditivo div[class="buttonArea"]{width:90px;}
+#wexTermoAditivo > #areaTermoAditivo div[class="termoAditivoTitulo"] {font-size:16px;}
+#wexTermoAditivo > #areaTermoAditivo div[class="termoAditivoTitulo"] p{margin:0px;}
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivo > div.termoAditivoTitulo p > span{font-size:13px; color: #7C7C7C}
+#wexTermoAditivo > #areaTermoAditivo div[class="termoAditivoInput"] {text-align: right;}
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivoAberto{background: url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; margin-bottom: 0px;}
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivoAberto > .termoAditivoTitulo{color:#FFF;}
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivoAberto > .termoAditivoTitulo > p > span{color:#dfdfdf !important;}
+    
+    /*Detalhes Termo Aditivo (TA)*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes{margin: -1px -1px 10px 1px;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal{width:100%; margin-bottom: 10px; display: table; }
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taPatrocinador{display: table-caption; border-bottom: 1px solid #000;  width: auto;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{padding-right: 10px; margin-right:10px; word-break:break-word; font-size:14px; width:61%;}
+    
+    /*Projetos Macro*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > div{display: table-cell; width: 78%; vertical-align: middle; padding: 10px;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > div.projetosMacrosGeral{width: 100%; margin-top: 10px;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > div.projetosMacrosGeral > .projetoMacro{margin-bottom: 10px; display: table; width: 100%;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > div.projetosMacrosGeral > .projetoMacro > div{display: table-cell; vertical-align: middle; padding:5px;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > div.projetosMacrosGeral > .projetoMacro > div.buttonArea{width:30px;}
+
+    /*Novo Termo Aditivo (TA)*/
+    .novoTermoAditivo{width:626px; position:absolute; top:32px; left:12px; z-index:10; }
+    .novoTermoAditivo > header{background:url("/Content/themes/temaPadrao/divisorHorizontal.png") bottom center repeat-x;}
+    .novoTermoAditivo > header > h2{padding:10px; color:#186b80;}
+    .novoTermoAditivo > form{padding:10px;}
+    .novoTermoAditivo > form > div{margin-bottom:5px;}
+    .novoTermoAditivo > form > div label{display:inline-block; width:75px; text-align:right;}
+    .novoTermoAditivo > form > div input, .novoTermoAditivo > form > div textarea{width:511px; resize:none;}
+    .novoTermoAditivo > form > div textarea{height:100px;}
+    .novoTermoAditivo > form > div.nome, .novoTermoAditivo > form > div.periodo{display:inline-block;}
+    .novoTermoAditivo > form > div.nome{width:280px;}
+    .novoTermoAditivo > form > div.nome > input{width:170px;}
+    .novoTermoAditivo > form > div.periodo > label{width:50px;}
+    .novoTermoAditivo > form > div.periodo > input:first-of-type{margin-right:6px;}
+    .novoTermoAditivo > form > div.periodo > input{width:115px;}
+    .novoTermoAditivo > form > div.patrocinador{margin-bottom:7px;}
+    .novoTermoAditivo > form > div.patrocinador > select{width:523px;}
+    .novoTermoAditivo > form > div.descricao > label{vertical-align:top;}
+    .novoTermoAditivo > form > div.buttonArea{text-align:right; margin-bottom:-2px;}
+
+    /*Modal Associação de Projetos*/
+    .modalAssociacaoProjeto{width:960px; margin-left:-480px;}
+    .modalAssociacaoProjeto .projetos{padding: 10px 0px 10px 0px; margin-bottom: 10px; margin-top: 10px; display:table; width:100%;}
+    .modalAssociacaoProjeto .projetos > .projetoTitulo{ vertical-align: middle; padding-top: 4px; padding-left:10px; display:table-cell;}
+    .modalAssociacaoProjeto .projetos > .projetoDados{margin-left: 10px; margin-right: 10px; float:right;}
+    .modalAssociacaoProjeto .projetos > .projetoDados > div { vertical-align: middle; padding-left: 15px; padding-right: 15px; display:table-cell;}
+    .modalAssociacaoProjeto .projetos > .projetoDados > div p {font-size: 12px; font-family: 'Conv_Frutiger';}
+    .modalAssociacaoProjeto .projetos > .projetoDados > div p span {display: block; font-family: 'Conv_FrutigerLight'; font-weight: 300; margin-top: 1px;}
+
+/* ======================================================================= CRIAÇÃO DE PROJETOS =========================================================================== */
+#wexProjetos { padding: 0px 10px 10px 10px}
+#wexProjetos > header { margin-bottom: 10px;}
+
+/*Projetos Macro*/
+#wexProjetos > div#projetosArea .projetos { padding: 10px 0px 10px 0px; margin-bottom: 10px; margin-top: 10px; display:table; width:100%;}
+#wexProjetos > div#projetosArea .projetos:last-of-type{margin-bottom:0px;}
+#wexProjetos > div#projetosArea .projetos .projetoButton {display:table-cell; vertical-align:middle; max-width:30px; min-width:30px; width:30px;}
+#wexProjetos > div#projetosArea .projetos .projetoButton button { width:20px; height:20px; border: none; background-size:100% 100% !important; margin-left:10px;}
+#wexProjetos > div#projetosArea .projetos .projetoTitulo { vertical-align: middle; padding-top: 4px; padding-left:10px; display:table-cell; width:221px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados { margin-left:10px; margin-right: 10px; float:right;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div{vertical-align: middle; padding-left: 15px; padding-right: 15px; display:table-cell; text-align:right;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.clientes{width:200px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.gerenteProjeto, #wexProjetos > div#projetosArea .projetos .projetoDados > div.centroCusto{width:160px;}
+#wexProjetos > div#projetosArea .projetos .projetoDados > div.periodo{width:110px;}
+
+/*Projetos Expandidos*/
+#wexProjetos > div#projetosArea .expandido{margin-bottom:0px; border:1px solid #00a8d3 !important; border-bottom:none !important; opacity:1 !important;}
+
+/*Formulario Adicionar Projeto*/
+.obrigatorio::after{content: " *"; color:#C01B1B}
+#wexProjetos > div#projetosArea > header { position:relative;}
+.novoProjeto > .campoInformacoes { margin-top:5px; width: 100%; display: block;}
+.novoProjeto > .campoInformacoes:first-of-type{margin-top:10px;}
+.novoProjeto > .campoInformacoes > label { text-align: right; width:130px; display: inline-block;}
+.novoProjeto > .campoInformacoes > input { width:80%;}
+.novoProjeto > .campoInformacoes > select { width:81.5%;}
+.novoProjeto > .inicioPlanejado { width:50%; display: inline-block;}
+.novoProjeto > .inicioPlanejado > input{width:63%;}
+.novoProjeto > .inicioReal { width:48%; display: inline-block;}
+.novoProjeto > .inicioReal > label{width:95px;}
+.novoProjeto > .inicioReal > input{width:67.8%; margin-left:10px;}
+.novoProjeto > .gerenteProjeto { width:50%; display: inline-block;}
+.novoProjeto > .gerenteProjeto > select {width:64.5%;}
+.novoProjeto > .centroCusto { width:48%; display: inline-block;}
+.novoProjeto > .centroCusto > label{width:105px;}
+.novoProjeto > .centroCusto > select{width:70.9%;}
+.novoProjeto > .buttonInfo { text-align:right;}
+.novoProjeto > .buttonInfo > button{margin-right:14px; margin-bottom:10px; margin-top:2px;}
+
+
+.novoProjeto > .tresColunas{width:32.5%; display:inline-block;}
+.novoProjeto > .tresColunas input{width:43%; }
+.novoProjeto > .inicioReal.tresColunas label{width:75px;}
+.novoProjeto > .inicioReal.tresColunas input{width:59%;}
+.novoProjeto > .terminoReal.tresColunas label{width:90px;}
+.novoProjeto > .terminoReal.tresColunas input{width:58.3%;}
+
+/*Formulario Edição Projeto*/
+#wexProjetos div#projetosArea .modoEdicao {margin-bottom:0px; border-bottom: none !important;}
+#wexProjetos div#projetosArea .modoEdicao + .editandoProjeto {border-top:none !important; box-shadow:none; padding:1px;}
+.editandoProjeto > .campoInformacoes:first-of-type{margin-top:10px;}
+.editandoProjeto > .campoInformacoes:last-of-type{margin-bottom:10px;}
+.editandoProjeto > .campoInformacoes{margin-top:5px; width: 99%; display: block;}
+.editandoProjeto > .campoInformacoes > label{text-align: right; width:130px; display: inline-block;}
+.editandoProjeto > .campoInformacoes > input{width:83.8%;}
+.editandoProjeto > .campoInformacoes > select{width:85.1%;}
+.editandoProjeto > .gerenteProjeto{width:45%; display: inline-block;}
+.editandoProjeto > .gerenteProjeto > select {width:67%;}
+.editandoProjeto > .centroCusto{width:54%; display: inline-block;}
+.editandoProjeto > .centroCusto > select{width:71.9%;}
+.editandoProjeto > .tresColunas{width:33%; display:inline-block;}
+.editandoProjeto > .tresColunas input{width:51%}
+.editandoProjeto > .inicioReal.tresColunas label{width:80px;}
+.editandoProjeto > .inicioReal.tresColunas input{width:67%;}
+.editandoProjeto > .terminoReal.tresColunas label{width:95px;}
+.editandoProjeto > .terminoReal.tresColunas input{width:60%;}
+
+/* ============================================================ CUSTO ADMINISTRATIVO POR RÚBRICAS ============================================================ */
+#wexCustoAdministrativoPorRubricas {margin: -10px 10px 10px 10px; }
+#wexCustoAdministrativoPorRubricas > header { margin-bottom: 10px; }
+#wexCustoAdministrativoPorRubricas .areaInteracao { margin-bottom: 8px; display: block; }

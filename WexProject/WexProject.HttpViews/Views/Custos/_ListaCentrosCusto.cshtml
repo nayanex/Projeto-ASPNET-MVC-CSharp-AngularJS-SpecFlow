@@ -1,0 +1,23 @@
+﻿@model List<WexProject.BLL.Models.Custos.CentroCusto>
+
+<table id="listaCentrosCusto">
+	<thead>
+		<tr>
+			<td>Código</td>
+			<td>Centro de custo</td>
+			<td>Ação</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var centroCusto in Model)
+  {
+			<tr data-id="@centroCusto.CentroCustoId">
+				<td>@centroCusto.Codigo</td>
+				<td>@centroCusto.Nome</td>
+				<td>
+					<button title="Excluir Centro de Custo" class="excluiCentroCusto iconeExcluir"></button>
+				</td>
+			</tr>
+  }
+	</tbody>
+</table>

@@ -1,0 +1,17 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dxhe" %>
+
+<dxhe:ASPxHtmlEditor runat="server" Width="727px">
+    <Images SpriteCssFilePath="~/App_Themes/Youthful/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/Youthful/HtmlEditor/Loading.gif"></LoadingPanel>
+    </Images>
+    <ImagesFileManager>
+        <LoadingPanel Url="~/App_Themes/Youthful/Web/Loading.gif"></LoadingPanel>
+        <FolderContainerNodeLoadingPanel Url="~/App_Themes/Youthful/Web/tvNodeLoading.gif"></FolderContainerNodeLoadingPanel>
+    </ImagesFileManager>
+	<SettingsLoadingPanel Text="" />
+	<Styles CssPostfix="Youthful" CssFilePath="~/App_Themes/Youthful/{0}/styles.css">
+        <ViewArea Border-BorderColor="#D3E4A6" />
+	</Styles>
+</dxhe:ASPxHtmlEditor>
+

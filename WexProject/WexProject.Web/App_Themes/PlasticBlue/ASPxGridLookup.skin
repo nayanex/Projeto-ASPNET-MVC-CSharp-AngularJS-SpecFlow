@@ -1,0 +1,33 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxe" Namespace="DevExpress.Web.ASPxEditors" Assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxgv" Namespace="DevExpress.Web.ASPxGridLookup" Assembly="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+
+<dxgv:ASPxGridLookup runat="server" CssFilePath="~/App_Themes/PlasticBlue/{0}/styles.css" SpriteCssFilePath="~/App_Themes/PlasticBlue/{0}/sprite.css" CssPostfix="PlasticBlue">
+    <GridViewImages SpriteCssFilePath="~/App_Themes/PlasticBlue/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/PlasticBlue/GridView/Loading.gif" />
+        <LoadingPanelOnStatusBar Url="~/App_Themes/PlasticBlue/GridView/gvLoadingOnStatusBar.gif" />
+    </GridViewImages>
+    <GridViewImagesFilterControl>
+        <LoadingPanel Url="~/App_Themes/PlasticBlue/Editors/Loading.gif" />
+    </GridViewImagesFilterControl>
+    <GridViewStyles CssPostfix="PlasticBlue" CssFilePath="~/App_Themes/PlasticBlue/{0}/styles.css">
+        <Header SortingImageSpacing="10px" ImageSpacing="10px" />
+    </GridViewStyles>
+    <GridViewProperties>
+        <SettingsPager ShowDefaultImages="False" CurrentPageNumberFormat="{0}">
+            <AllButton Text="All" />
+            <NextPageButton Text="Next &gt;" />
+            <PrevPageButton Text="&lt; Prev" />
+        </SettingsPager>
+    </GridViewProperties>
+    <GridViewStylesEditors>
+        <ProgressBar Height="25px" />
+        <CalendarHeader Spacing="11px" />
+    </GridViewStylesEditors>
+    <ValidationSettings>
+        <ErrorFrameStyle ImageSpacing="4px">
+            <ErrorTextPaddings PaddingLeft="4px" />
+        </ErrorFrameStyle>
+    </ValidationSettings>
+</dxgv:ASPxGridLookup>
+

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WexProject.Schedule.Win.Setup", "WexProject.Schedule.Win.Setup\WexProject.Schedule.Win.Setup.vdproj", "{561F6ED5-E54F-421E-A320-69EC9123C6EC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WexProject.Win.Setup", "WexProject.Setup\WexProject.Setup.vdproj", "{3D1E52D6-F55E-4A7E-8ABC-EC5CB02EC0A9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WexProject.MultiAccess.Service.Setup", "WexProject.MultiAccess.Service.Setup\WexProject.MultiAccess.Service.Setup.vdproj", "{7AECCA25-E494-4FCA-9A19-0A200A65F78E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{561F6ED5-E54F-421E-A320-69EC9123C6EC}.Debug|Default.ActiveCfg = Debug
+		{561F6ED5-E54F-421E-A320-69EC9123C6EC}.Debug|Default.Build.0 = Debug
+		{561F6ED5-E54F-421E-A320-69EC9123C6EC}.Release|Default.ActiveCfg = Release
+		{561F6ED5-E54F-421E-A320-69EC9123C6EC}.Release|Default.Build.0 = Release
+		{3D1E52D6-F55E-4A7E-8ABC-EC5CB02EC0A9}.Debug|Default.ActiveCfg = Debug
+		{3D1E52D6-F55E-4A7E-8ABC-EC5CB02EC0A9}.Debug|Default.Build.0 = Debug
+		{3D1E52D6-F55E-4A7E-8ABC-EC5CB02EC0A9}.Release|Default.ActiveCfg = Release
+		{3D1E52D6-F55E-4A7E-8ABC-EC5CB02EC0A9}.Release|Default.Build.0 = Release
+		{7AECCA25-E494-4FCA-9A19-0A200A65F78E}.Debug|Default.ActiveCfg = Debug
+		{7AECCA25-E494-4FCA-9A19-0A200A65F78E}.Debug|Default.Build.0 = Debug
+		{7AECCA25-E494-4FCA-9A19-0A200A65F78E}.Release|Default.ActiveCfg = Release
+		{7AECCA25-E494-4FCA-9A19-0A200A65F78E}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

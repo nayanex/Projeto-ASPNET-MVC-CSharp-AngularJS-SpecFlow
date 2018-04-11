@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Requisitos</title>
+    <link rel="stylesheet" href="../bower_components/jasmine/lib/jasmine-core/jasmine.css" />
+    <script src="../bower_components/jasmine/lib/jasmine-core/json2.js"></script>
+    <script src="../bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script src="../bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+    <!-- Fallback de carregamento de dependências de testes para CDNs caso o bower não esteja instalado -->
+    <script>
+    if (typeof jasmine  === "undefined") {
+      document.write("<link rel='stylesheet' href='//cdn.jsdelivr.net/jasmine/1.3.1/jasmine.css' \/>");
+      document.write("<script src='//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js'><\/script>");
+      document.write("<script src='//cdn.jsdelivr.net/jasmine/1.3.1/jasmine.js'><\/script>");
+      document.write("<script src='//cdn.jsdelivr.net/jasmine/1.3.1/jasmine-html.js'><\/script>");
+      document.write("<script src='//code.angularjs.org/1.2.3/angular.js'><\/script>");
+      document.write("<script src='//code.angularjs.org/1.2.3/angular-mocks.js'><\/script>");
+    };
+    </script>
+    
+    <!-- Testes dos módulos -->
+    <script src="spec/planejamento.js"></script>
+    <script src="spec/monitoracaoControle.js"></script>
+    <script src="spec/novosNegocios.js"></script>
+    <script src="spec/issues.js"></script>
+
+    <!-- Bootstrap do test runner -->    
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../jasmineBootstrap.js"></script>
+  </head>
+
+  <body>
+    <div id="HTMLReporter" class="jasmine_reporter"></div>
+  </body>
+
+</html>
+

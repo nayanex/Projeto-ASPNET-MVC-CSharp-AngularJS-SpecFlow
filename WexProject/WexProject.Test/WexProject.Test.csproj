@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CA5E854-CFDB-444C-B732-D7877AEF161D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.Test</RootNamespace>
+    <AssemblyName>WexProject.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Data.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v11.2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v11.2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.Base.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v11.2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.BaseImpl.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v11.2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Xpo.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Effort">
+      <HintPath>..\packages\Effort.1.0.0-beta5\lib\net45\Effort.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1402.2112, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NMemory">
+      <HintPath>..\packages\NMemory.1.0.0-beta9\lib\net45\NMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\AdministradorSistemaDefinirAcessosPorPapeis.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministradorSistemaDefinirAcessosPorPapeis.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AnalistaNegociosEscopoVsCompletude.feature.cs">
+      <DependentUpon>AnalistaNegociosEscopoVsCompletude.feature</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\AnalistaNegociosEscopoVsCompletudeEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalistaNegociosEscopoVsCompletudeEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AnalistaNegociosManterDadosEstoria1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalistaNegociosManterDadosEstoria.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AnalistaNegociosManterSituacaoEstorias1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalistaNegociosManterSituacaoEstorias.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AnalistaRHVisualizarFeriasPlanejadasParaDeterminadoPeriodo1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalistaRHVisualizarFeriasPlanejadasParaDeterminadoPeriodo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CoordenadorAdministrativoCalcularAutomaticamenteSaldoDisponivelPorRubricaAdministrativa.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoordenadorAdministrativoCalcularAutomaticamenteSaldoDisponivelPorRubricaAdministrativa.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CoordenadorAdministrativoLancarDespesasReaisAdministrativas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoordenadorAdministrativoLancarDespesasReaisAdministrativas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CoordenadorAdministrativoListarProjetosAgrupadosRubricaAdministrativa.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoordenadorAdministrativoListarProjetosAgrupadosRubricaAdministrativa.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CoordenadorPDInformarAportesPlanejadosRealizadosProjeto.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoordenadorPDInformarAportesPlanejadosRealizadosProjeto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePortifolioAcompanharHistoricoSolicitacaoOrcamento1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePortifolioAcompanharHistoricoSolicitacaoOrcamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePortifolioEnviarEmailsNotificacaoAlteracaoSituacaoSEOT1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePortifolioEnviarEmailsNotificacaoAlteracaoSituacaoSEOT.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePortifolioFiltrarPorSituacaoSolicitacaoOrcamento1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePortifolioFiltrarPorSituacaoSolicitacaoOrcamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePortifolioRealizarAnaliseCriticaProjetos.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePortifolioRealizarAnaliseCriticaProjetos.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePortifolioTerSugeridoDadosSolicitacaoOrcamento1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePortifolioTerSugeridoDadosSolicitacaoOrcamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePortifolioValidarDadosEmpresaInstituicao1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePortifolioValidarDadosEmpresaInstituicao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerentePrejetosCalcularOrcamentoRestanteParaRubricas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerentePrejetosCalcularOrcamentoRestanteParaRubricas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerenteProjetoImportarAutomaticamenteCustoProfissionaisAoLancarRHDiretoDespesasReais.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerenteProjetoImportarAutomaticamenteCustoProfissionaisAoLancarRHDiretoDespesasReais.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerenteProjetosAssociarNotasFiscaisADespesaRealRubrica.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerenteProjetosAssociarNotasFiscaisADespesaRealRubrica.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerenteProjetosInformarDespesasReaisProjeto.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerenteProjetosInformarDespesasReaisProjeto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GerenteProjetosInformarOrcamentoPorMeioDeRubricas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GerenteProjetosInformarOrcamentoPorMeioDeRubricas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GestorProdutoIdentificarEntregasCiclo1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorProdutoIdentificarEntregasCiclo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GestorProdutoManterOTotalDePontosDosModulosInalterado1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorProdutoManterOTotalDePontosDosModulosInalterado.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\LiderProjetoPoderCancelarCicloDesenvolvimento1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiderProjetoPoderCancelarCicloDesenvolvimento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\LiderProjetoPoderInformarDestinoEstoriaCiclo1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiderProjetoPoderInformarDestinoEstoriaCiclo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\LiderProjetoVisualizarGraficamenteRitmoTimeBurnUp1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiderProjetoVisualizarGraficamenteRitmoTimeBurnUp.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepAssociarNostasFiscais.cs" />
+    <Compile Include="Features\StepDefinition\StepBeneficiado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepCalcularOrcamentoRestanteRubricas.cs" />
+    <Compile Include="Features\StepDefinition\StepCiclo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepCicloEntity.cs" />
+    <Compile Include="Features\StepDefinition\StepDespesaReal.cs" />
+    <Compile Include="Features\StepDefinition\StepEstoria.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepModulo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepMotivoCancelamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepPlanejamentoFerias.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepProjeto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepProjetoCustos.cs" />
+    <Compile Include="Features\StepDefinition\StepTipoRubricaCustos.cs" />
+    <Compile Include="Features\StepDefinition\StepUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\Custos\AditivoFactory.cs" />
+    <Compile Include="Fixtures\Factory\BeneficiadoFactoryEntity.cs" />
+    <Compile Include="Features\StepDefinition\StepCargo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepColaborador.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepConfiguracaoDocumento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepConfiguracaoDocumentoSituacao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepEmpresaInsituicao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepEstoriaEntity.cs" />
+    <Compile Include="Features\StepDefinition\StepModalidadeFerias.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepModuloEntity.cs" />
+    <Compile Include="Features\StepDefinition\StepPais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepProjetoEntity.cs" />
+    <Compile Include="Features\StepDefinition\StepProjetoParteInteressada.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepSolicitacaoOrcamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepTipoSolicitacaoOrcamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\StepDefinition\StepUsuario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\TimeVisualizarLogAlteracoesTarefa1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeVisualizarLogAlteracoesTarefa.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UsuarioTerProjetoSelecionadoAutomaticamente1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioTerProjetoSelecionadoAutomaticamente.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Fixtures\Factory\BaseFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\BeneficiadoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\Calendario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CargoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTesteFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePassoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePassoResultadoEsperadoAnexoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePassoResultadoEsperadoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePassoResultadoEsperadoInformacaoAdicionalFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePreCondicaoAnexoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePreCondicaoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CasoTestePreCondicaoInformacaoAdicionalFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\Custos\CentroCustoFactory.cs" />
+    <Compile Include="Fixtures\Factory\CicloDesenvEstoriaFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CicloDesenvEstoriaFactoryEntity.cs" />
+    <Compile Include="Fixtures\Factory\CicloFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\CicloFactoryEntity.cs" />
+    <Compile Include="Fixtures\Factory\Custos\ClasseProjetoFactory.cs" />
+    <Compile Include="Fixtures\Factory\ColaboradorAfastamentoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ColaboradorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ColaboradorFactoryEntity.cs" />
+    <Compile Include="Fixtures\Factory\ConfiguracaoDocumentoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ConfiguracaoDocumentoSituacaoEmailFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ConfiguracaoDocumentoSituacaoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ConfiguracaoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\Custos\NotaFiscalFactory.cs" />
+    <Compile Include="Fixtures\Factory\EmpresaInstituicaoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\EmpresaInstituiçãoFactoryEntity.cs" />
+    <Compile Include="Fixtures\Factory\EstoriaCasoTesteFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\EstoriaFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\EstoriaFactoryEntity.cs" />
+    <Compile Include="Fixtures\Factory\FeriasPlanejamentoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ModalidadeFeriasFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ModuloFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\MotivoCancelamentoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\PaisFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ParteInteressadaFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\PeriodoAquisitivoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\PlanejamentoFeriasFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ProjetoAnaliseFactory.cs" />
+    <Compile Include="Fixtures\Factory\ProjetoCustosFactory.cs" />
+    <Compile Include="Fixtures\Factory\ProjetoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\ProjetoFactoryEntity.cs" />
+    <Compile Include="Fixtures\Factory\ProjetoParteInteressadaFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\RequisitoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\Custos\RubricaFactory.cs" />
+    <Compile Include="Fixtures\Factory\Custos\RubricaMesFactory.cs" />
+    <Compile Include="Fixtures\Factory\SolicitacaoOrcamentoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\SolicitanteFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\TipoAfastamentoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Factory\Custos\TipoProjetoFactory.cs" />
+    <Compile Include="Fixtures\Factory\Custos\TipoRubricaFactory.cs" />
+    <Compile Include="Fixtures\Factory\TipoSolicitacaoFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Serializer\Cachorro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Serializer\Filho.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Serializer\Gato.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Serializer\Pessoa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fixtures\Serializer\ValoresNumericos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\BDD\Bind\AditivoBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\EstoriaBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\ModuloBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\ProjetoBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\ProjetoCustosBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\ProjetoDespesaBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\RubricaBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\RubricaMesBindHelper.cs" />
+    <Compile Include="Helpers\BDD\Bind\TipoRubricaBindHelper.cs" />
+    <Compile Include="Helpers\Mocks\ContextFactoryMock.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UnitTest\AnaliseGeralTest.cs" />
+    <Compile Include="UnitTest\BaseEntityFrameworkTest.cs" />
+    <Compile Include="UnitTest\CalendarioTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePassoResultadoAnexoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePassoResultadoEsperadoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePassoResultadoInfoAdicionalTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePassoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePreCondicaoAnexoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePreCondicaoInfoAdicionalTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTestePreCondicaoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CasoTesteTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CicloTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ColaboradorTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ConfiguracaoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\CustosAdministrativos\RubricaMesesDaoTest.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="UnitTest\Custos\TipoRubricaDaoTest.cs" />
+    <Compile Include="UnitTest\Custos\TipoRubricaBoTest.cs" />
+    <Compile Include="UnitTest\Custos\CentroCustoTest.cs" />
+    <Compile Include="UnitTest\EstoriaTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\FeriasPlanejamentoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\FiltroExtensionTest.cs" />
+    <Compile Include="UnitTest\GraficoEstimadoRealizadoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ModalidadeFeriasTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ModuloTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\MotivoCancelamentoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ParteInteressadaTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\PlanejamentoFeriasTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ProjetoColaboradorConfigTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ProjetoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\ProjetoWebTest.cs" />
+    <Compile Include="UnitTest\RequisitoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\BaseTest.cs" />
+    <Compile Include="UnitTest\SituacaoPlanejamentoBoTest.cs" />
+    <Compile Include="UnitTest\SituacaoPlanejamentoDaoTest.cs" />
+    <Compile Include="UnitTest\SolicitacaoOrcamentoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\StrUtilTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\TipoAfastamentoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTest\AnaliseCustosTest.cs" />
+    <Compile Include="UnitTest\ColaboradorUltimoFiltroBOTest.cs" />
+    <Compile Include="UnitTest\GastosRelacionadosSpec.cs" />
+    <Compile Include="UnitTest\Custos\ProjetoCustosTest.cs" />
+    <Compile Include="UnitTest\WexDtoTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WexProject.BLL.Shared\WexProject.BLL.Shared.csproj">
+      <Project>{F89450B3-825B-400E-A83C-DA21A6391867}</Project>
+      <Name>WexProject.BLL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.BLL\WexProject.BLL.csproj">
+      <Project>{5A81A9A4-AF19-4479-805B-E33BC4DE8C99}</Project>
+      <Name>WexProject.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Library\WexProject.Library.csproj">
+      <Project>{1936C8E5-0ABA-4B76-84D7-E7FFE24F3F79}</Project>
+      <Name>WexProject.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\AdministradorSistemaDefinirAcessosPorPapeis.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AdministradorSistemaDefinirAcessosPorPapeis.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AnalistaNegociosEscopoVsCompletude.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AnalistaNegociosEscopoVsCompletude.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AnalistaNegociosEscopoVsCompletudeEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AnalistaNegociosEscopoVsCompletudeEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AnalistaNegociosManterDadosEstoria.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AnalistaNegociosManterDadosEstoria1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AnalistaNegociosManterSituacaoEstorias.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AnalistaNegociosManterSituacaoEstorias1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AnalistaRHVisualizarFeriasPlanejadasParaDeterminadoPeriodo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AnalistaRHVisualizarFeriasPlanejadasParaDeterminadoPeriodo1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CoordenadorAdministrativoCalcularAutomaticamenteSaldoDisponivelPorRubricaAdministrativa.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CoordenadorAdministrativoCalcularAutomaticamenteSaldoDisponivelPorRubricaAdministrativa.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CoordenadorAdministrativoLancarDespesasReaisAdministrativas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CoordenadorAdministrativoLancarDespesasReaisAdministrativas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CoordenadorAdministrativoListarProjetosAgrupadosRubricaAdministrativa.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CoordenadorAdministrativoListarProjetosAgrupadosRubricaAdministrativa.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CoordenadorPDInformarAportesPlanejadosRealizadosProjeto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CoordenadorPDInformarAportesPlanejadosRealizadosProjeto.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePortifolioAcompanharHistoricoSolicitacaoOrcamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePortifolioAcompanharHistoricoSolicitacaoOrcamento1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePortifolioEnviarEmailsNotificacaoAlteracaoSituacaoSEOT.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePortifolioEnviarEmailsNotificacaoAlteracaoSituacaoSEOT1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePortifolioFiltrarPorSituacaoSolicitacaoOrcamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePortifolioFiltrarPorSituacaoSolicitacaoOrcamento1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePortifolioRealizarAnaliseCriticaProjetos.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePortifolioRealizarAnaliseCriticaProjetos.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePortifolioTerSugeridoDadosSolicitacaoOrcamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePortifolioTerSugeridoDadosSolicitacaoOrcamento1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePortifolioValidarDadosEmpresaInstituicao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePortifolioValidarDadosEmpresaInstituicao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerentePrejetosCalcularOrcamentoRestanteParaRubricas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerentePrejetosCalcularOrcamentoRestanteParaRubricas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerenteProjetoImportarAutomaticamenteCustoProfissionaisAoLancarRHDiretoDespesasReais.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerenteProjetoImportarAutomaticamenteCustoProfissionaisAoLancarRHDiretoDespesasReais.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerenteProjetosAssociarNotasFiscaisADespesaRealRubrica.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerenteProjetosAssociarNotasFiscaisADespesaRealRubrica.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerenteProjetosInformarDespesasReaisProjeto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerenteProjetosInformarDespesasReaisProjeto.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GerenteProjetosInformarOrcamentoPorMeioDeRubricas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GerenteProjetosInformarOrcamentoPorMeioDeRubricas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GestorProdutoIdentificarEntregasCiclo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GestorProdutoIdentificarEntregasCiclo1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GestorProdutoManterOTotalDePontosDosModulosInalterado.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GestorProdutoManterOTotalDePontosDosModulosInalterado1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\LiderProjetoPoderCancelarCicloDesenvolvimento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LiderProjetoPoderCancelarCicloDesenvolvimento1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\LiderProjetoPoderInformarDestinoEstoriaCiclo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LiderProjetoPoderInformarDestinoEstoriaCiclo1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\LiderProjetoVisualizarGraficamenteRitmoTimeBurnUp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LiderProjetoVisualizarGraficamenteRitmoTimeBurnUp1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\TimeVisualizarLogAlteracoesTarefa.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TimeVisualizarLogAlteracoesTarefa1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\UsuarioTerProjetoSelecionadoAutomaticamente.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsuarioTerProjetoSelecionadoAutomaticamente1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

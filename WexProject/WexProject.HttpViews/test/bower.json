@@ -1,0 +1,17 @@
+{
+  "name": "wex-test",
+  "version": "0.0.1",
+  "authors": [
+    "Ayrton Araújo <ayrton.junior@fpf.br>"
+  ],
+  "private": true,
+  "dependencies": {
+    "jasmine": "1.3.1",
+    "jquery": "1.9.1",
+    "angular": "1.2.2",
+    "angular-mocks": "1.2.2",
+	"angular-resource": "1.2.2",
+    "blanket": "1.1.5",
+	"angular-ui-bootstrap-bower": "0.9.0"
+  }
+}

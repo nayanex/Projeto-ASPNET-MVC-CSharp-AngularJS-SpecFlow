@@ -1,0 +1,8 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxFileManager" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dx:ASPxFileManager runat="server">
+    <Styles CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass"></Styles>
+    <Images SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css" LoadingPanel-Url="~/App_Themes/BlackGlass/Web/Loading.gif" 
+            FolderContainerNodeLoadingPanel-Url="~/App_Themes/BlackGlass/Web/tvNodeLoading.gif"></Images>
+</dx:ASPxFileManager>

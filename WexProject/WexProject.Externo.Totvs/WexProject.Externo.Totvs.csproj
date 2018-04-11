@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{713C739C-E8C6-4A0F-BE74-200B113BEAFA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.Externo.Totvs</RootNamespace>
+    <AssemblyName>WexProject.Externo.Totvs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Contexto\TotvsWex.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TotvsWex.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Contexto\TotvsWex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+      <LastGenOutput>TotvsWex.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Contexto\TotvsWex.edmx.diagram">
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+    </None>
+    <None Include="Contexto\TotvsWex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+      <LastGenOutput>TotvsWex.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BOs\Custos\MaoDeObraBo.cs" />
+    <Compile Include="Contexto\BCHORAS.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\EVENTOSRH.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\RUBRICA.cs">
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\TotvsWex.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotvsWex.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\TotvsWex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotvsWex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\TotvsWex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotvsWex.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAOs\Custos\MaoDeObraDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WexProject.BLL.Shared\WexProject.BLL.Shared.csproj">
+      <Project>{f89450b3-825b-400e-a83c-da21a6391867}</Project>
+      <Name>WexProject.BLL.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

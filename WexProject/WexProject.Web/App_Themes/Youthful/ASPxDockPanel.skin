@@ -1,0 +1,15 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxPopupControl" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxDocking" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dx:ASPxDockPanel runat="server" LoadingPanelImagePosition="Bottom">
+    <Images SpriteCssFilePath="~/App_Themes/Youthful/{0}/sprite.css">
+	    <LoadingPanel Url="~/App_Themes/Youthful/Web/Loading.gif"/>
+    </Images>
+    <Styles CssFilePath="~/App_Themes/Youthful/{0}/styles.css" CssPostfix="Youthful">
+	    <Header>
+		    <BackgroundImage ImageUrl="~/App_Themes/Youthful/Web/pcHeaderBack.gif" Repeat="RepeatX" />
+	    </Header>
+    </Styles>
+</dx:ASPxDockPanel>
+

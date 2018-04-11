@@ -1,0 +1,14 @@
+{
+  "name": "wex-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "author": "Ayrton Araujo <ayrton.junior@fpf.br>",
+  "license": "Copyright",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+	"ng-midway-tester": "2.0.5"
+  }
+}

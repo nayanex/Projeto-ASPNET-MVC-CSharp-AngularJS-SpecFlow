@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAC84FDE-849B-4525-8A73-76CA3A7699D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.Module.Win</RootNamespace>
+    <AssemblyName>WexProject.Module.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Charts.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.CodeParser.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Data.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.ConditionalAppearance.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.HtmlPropertyEditor.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.HtmlPropertyEditor.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Objects.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Objects.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.PivotGrid.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.PivotGrid.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Scheduler.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Scheduler.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Scheduler.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Scheduler.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Security.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Validation.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Validation.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.Base.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.BaseImpl.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.PivotGrid.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Printing.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Reports.v11.2.Designer, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Reports.v11.2.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.RichEdit.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.SpellChecker.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Utils.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Xpo.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraBars.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraCharts.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v11.2.Extensions, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraCharts.v11.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v11.2.UI, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraCharts.v11.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraEditors.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraGrid.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraLayout.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraNavBar.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraPivotGrid.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraPrinting.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraReports.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v11.2.Extensions, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraReports.v11.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Design, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Extensions, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Printing, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraScheduler.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraScheduler.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.2.Extensions, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraScheduler.v11.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.2.Reporting.Extensions, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraScheduler.v11.2.Reporting.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraSpellChecker.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraTreeList.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraVerticalGrid.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\Escopo\Estoria\EstoriaDetailViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Escopo\Estoria\EstoriaDetailViewController.Designer.cs">
+      <DependentUpon>EstoriaDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Planejamento\CronogramaController.cs" />
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Escopo\EscopoService.cs" />
+    <Compile Include="Services\Execucao\ExecucaoService.cs" />
+    <Compile Include="Services\Geral\GeralService.cs" />
+    <Compile Include="Views\Geral\Componentes\EditorDeTexto\ClasseEditorDeTexto.cs" />
+    <Compile Include="Controllers\Execucao\Ciclos\CicloDesenvolvimentoViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Execucao\Ciclos\CicloDesenvolvimentoViewController.Designer.cs">
+      <DependentUpon>CicloDesenvolvimentoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ControleAcesso\MeusDados\MeusDadosViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ControleAcesso\MeusDados\MeusDadosViewController.Designer.cs">
+      <DependentUpon>MeusDadosViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MonitoracaoControle\SituacaoGeral\RefreshButtonViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\MonitoracaoControle\SituacaoGeral\RefreshButtonViewController.Designer.cs">
+      <DependentUpon>RefreshButtonViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Geral\Alinhamentos\Alignment_Controller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Geral\Alinhamentos\Alignment_Controller.Designer.cs">
+      <DependentUpon>Alignment_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Qualidade\CasoTeste\CTPassoPResultado_Anexos_Controller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Qualidade\CasoTeste\CTPassoPResultado_Anexos_Controller.Designer.cs">
+      <DependentUpon>CTPassoPResultado_Anexos_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Qualidade\CasoTeste\CasoTestePreCondicoes_Anexos_Controller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Qualidade\CasoTeste\CasoTestePreCondicoes_Anexos_Controller.Designer.cs">
+      <DependentUpon>CasoTestePreCondicoes_Anexos_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Escopo\Prioridades\Prioridade_AutoSaveListView_ViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Escopo\Prioridades\Prioridade_AutoSaveListView_ViewController.Designer.cs">
+      <DependentUpon>Prioridade_AutoSaveListView_ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Geral\Botoes\Disable_Buttons_Controller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Geral\Botoes\Disable_Buttons_Controller.Designer.cs">
+      <DependentUpon>Disable_Buttons_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Geral\Navegacoes\Controller_NavegationDetailView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Geral\Navegacoes\Controller_NavegationDetailView.Designer.cs">
+      <DependentUpon>Controller_NavegationDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamento_AutoSaveListView_ViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamento_AutoSaveListView_ViewController.Designer.cs">
+      <DependentUpon>SolicitacaoOrcamento_AutoSaveListView_ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Geral\Componentes\EditorDeTexto\EditorDeTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Geral\Componentes\EditorDeTexto\EditorDeTexto.Designer.cs">
+      <DependentUpon>EditorDeTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Geral\Filtros\SingleChoiceProjeto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Geral\Filtros\SingleChoiceProjeto.Designer.cs">
+      <DependentUpon>SingleChoiceProjeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\ChartRitimoTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\ChartRitimoTime.Designer.cs">
+      <DependentUpon>ChartRitimoTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\EscopoCompletudeViewItem.cs" />
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\EstimadoRealizadoViewItem.cs" />
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\ChartEstimadoRealizado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\ChartEstimadoRealizado.Designer.cs">
+      <DependentUpon>ChartEstimadoRealizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\RitimoTimeViewItem.cs" />
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\ChartEscopoCompletude.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MonitoracaoControle\SituacaoGeral\ChartEscopoCompletude.Designer.cs">
+      <DependentUpon>ChartEscopoCompletude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Execucao\Ciclo\CicloDecisaoEstoriasPendentesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Execucao\Ciclo\CicloDecisaoEstoriasPendentesForm.Designer.cs">
+      <DependentUpon>CicloDecisaoEstoriasPendentesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Execucao\Componentes\ListaItensPendentesCicloUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Execucao\Componentes\ListaItensPendentesCicloUserControl.Designer.cs">
+      <DependentUpon>ListaItensPendentesCicloUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Execucao\Ciclo\CancelamentoCicloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Execucao\Ciclo\CancelamentoCicloForm.Designer.cs">
+      <DependentUpon>CancelamentoCicloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RH\PlanejamentoFerias\PlanejamentoFeriasModelViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RH\PlanejamentoFerias\PlanejamentoFeriasModelViewForm.Designer.cs">
+      <DependentUpon>PlanejamentoFeriasModelViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RH\PlanejamentoFerias\TimeLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RH\PlanejamentoFerias\TimeLine.Designer.cs">
+      <DependentUpon>TimeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinModule.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Updater.cs" />
+    <Compile Include="WinModule.Designer.cs">
+      <DependentUpon>WinModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XRDesignRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\Escopo\Estoria\EstoriaDetailViewController.resx">
+      <DependentUpon>EstoriaDetailViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Execucao\Ciclos\CicloDesenvolvimentoViewController.resx">
+      <DependentUpon>CicloDesenvolvimentoViewController.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ControleAcesso\MeusDados\MeusDadosViewController.resx">
+      <DependentUpon>MeusDadosViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\MonitoracaoControle\SituacaoGeral\RefreshButtonViewController.resx">
+      <DependentUpon>RefreshButtonViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Qualidade\CasoTeste\CTPassoPResultado_Anexos_Controller.resx">
+      <DependentUpon>CTPassoPResultado_Anexos_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Qualidade\CasoTeste\CasoTestePreCondicoes_Anexos_Controller.resx">
+      <DependentUpon>CasoTestePreCondicoes_Anexos_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Geral\Botoes\Disable_Buttons_Controller.resx">
+      <DependentUpon>Disable_Buttons_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Geral\Componentes\EditorDeTexto\EditorDeTexto.resx">
+      <DependentUpon>EditorDeTexto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Geral\Filtros\SingleChoiceProjeto.resx">
+      <DependentUpon>SingleChoiceProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MonitoracaoControle\SituacaoGeral\ChartEstimadoRealizado.resx">
+      <DependentUpon>ChartEstimadoRealizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MonitoracaoControle\SituacaoGeral\ChartRitimoTime.resx">
+      <DependentUpon>ChartRitimoTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MonitoracaoControle\SituacaoGeral\ChartEscopoCompletude.resx">
+      <DependentUpon>ChartEscopoCompletude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Execucao\Ciclo\CicloDecisaoEstoriasPendentesForm.resx">
+      <DependentUpon>CicloDecisaoEstoriasPendentesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Execucao\Componentes\ListaItensPendentesCicloUserControl.resx">
+      <DependentUpon>ListaItensPendentesCicloUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Execucao\Ciclo\CancelamentoCicloForm.resx">
+      <DependentUpon>CancelamentoCicloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RH\PlanejamentoFerias\PlanejamentoFeriasModelViewForm.resx">
+      <DependentUpon>PlanejamentoFeriasModelViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RH\PlanejamentoFerias\TimeLine.resx">
+      <DependentUpon>TimeLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinModule.resx">
+      <DependentUpon>WinModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>XRDesignRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WexProject.BLL.Shared\WexProject.BLL.Shared.csproj">
+      <Project>{F89450B3-825B-400E-A83C-DA21A6391867}</Project>
+      <Name>WexProject.BLL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.BLL\WexProject.BLL.csproj">
+      <Project>{5A81A9A4-AF19-4479-805B-E33BC4DE8C99}</Project>
+      <Name>WexProject.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Library\WexProject.Library.csproj">
+      <Project>{1936C8E5-0ABA-4B76-84D7-E7FFE24F3F79}</Project>
+      <Name>WexProject.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Module\WexProject.Module.csproj">
+      <Project>{371113D6-9B54-40D8-A363-4F360DF6968F}</Project>
+      <Name>WexProject.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Schedule.Library\WexProject.Schedule.Library.csproj">
+      <Project>{54F15076-3C1D-4923-A5C7-5E947E5AC003}</Project>
+      <Name>WexProject.Schedule.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\WexProject.Module.Model.Entity.Util.GraficoRitmoTime.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\WexProject.Module.Win.TelasForaPadrao.Cronograma.ChartEstimadoRealizado.datasource" />
+    <None Include="Properties\DataSources\WexProject.Module.Win.TelasForaPadrao.Cronograma.ChartEstimadoRealizado1.datasource" />
+    <None Include="Properties\DataSources\WexProject.Module.Win.TelasForaPadrao.Cronograma.DadosGraficoEstimadoRealizado.datasource" />
+    <None Include="Properties\DataSources\WexProject.Module.Win.TelasForaPadrao.Cronograma.DadosGraficoEstimadoRealizado1.datasource" />
+    <None Include="Properties\DataSources\WexProject.Module.WService.GraficoEstimadoRealizado.datasource" />
+    <None Include="Properties\DataSources\WexProject.Module.WService.GraficoRitmoTime.datasource" />
+    <None Include="Properties\DataSources\WexProject.Service.Library.Dto.Escopo.GraficoEscopoCompletudeDto.datasource" />
+    <None Include="Properties\DataSources\WexProject.Service.Library.Dto.Escopo.GraficoEstimadoRealizadoDto.datasource" />
+    <None Include="Properties\DataSources\WexProject.Service.Library.Dto.Execucao.GraficoRitmoTimeDto.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferias_vendidas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferias_realizadas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferias_planejadas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferias_atraso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferias_andamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outras_licencas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\projetox16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Action_Edit_32x32.png" />
+    <Content Include="Resources\Action_New_32x32.png" />
+    <Content Include="Resources\BO_Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

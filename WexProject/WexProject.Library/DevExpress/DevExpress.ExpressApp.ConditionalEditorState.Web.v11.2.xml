@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.ExpressApp.ConditionalEditorState.Web.v11.2</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.ExpressApp.ConditionalEditorState.Web.ConditionalEditorStateAspNetModule">
+
+            <summary>
+                <para>The <b>Conditional Editor State module</b> is now obsolete. Use the Conditional Appearance Module Overview module instead.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.ExpressApp.ConditionalEditorState.Web.ConditionalEditorStateAspNetModule.#ctor">
+            <summary>
+                <para>Creates an instance of the ConditionalEditorStateAspNetModule class.
+</para>
+            </summary>
+
+
+        </member>
+    </members>
+</doc>

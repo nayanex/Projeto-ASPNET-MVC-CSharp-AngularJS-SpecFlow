@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7515334a-6adb-4ecb-b882-2aff73bea7f1"
+  name="Models"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="44facc31-e498-44be-840a-9cbbf45724d4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Models"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7c387bd4-4a3a-4add-9f5b-503a64672a26"
+        LastKnownName="Custos"
+        LastKnownLocation="Package3_1649.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2d02d3aa-cbd2-49a0-9d83-e45b86b635a7"
+        LastKnownName="Geral"
+        LastKnownLocation="Package_1715.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c7078301-d414-4045-9f5f-49b461e0298a"
+        LastKnownName="Execucao"
+        LastKnownLocation="Package4_1715.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

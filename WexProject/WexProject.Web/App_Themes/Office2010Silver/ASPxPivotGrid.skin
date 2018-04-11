@@ -1,0 +1,15 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dxwpg" %>
+<%@ Register Assembly="DevExpress.PivotGrid.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraPivotGrid" TagPrefix="temp" %>
+<dxwpg:ASPxPivotGrid runat="server">
+	<Images SpriteCssFilePath="~/App_Themes/Office2010Silver/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/Office2010Silver/PivotGrid/Loading.gif" />
+        <CustomizationFieldsBackground Url="~/App_Themes/Office2010Silver/PivotGrid/pcHBack.png" />
+        <TreeViewNodeLoadingPanel Url="~/App_Themes/Office2010Silver/PivotGrid/tvNodeLoading.gif" />
+	</Images>
+	<OptionsPager CurrentPageNumberFormat="{0}" />
+    <Styles CssFilePath="~/App_Themes/Office2010Silver/{0}/styles.css" CssPostfix="Office2010Silver">
+        <LoadingPanel ImageSpacing="5" />
+    </Styles>
+    <StylesEditors ButtonEditCellSpacing="0" />
+</dxwpg:ASPxPivotGrid>

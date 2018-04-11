@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TotvsWexModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TotvsWexModelStoreContainer">
+          <EntitySet Name="BCHORAS" EntityType="TotvsWexModel.Store.BCHORAS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EVENTOSRH" EntityType="TotvsWexModel.Store.EVENTOSRH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RUBRICA" EntityType="TotvsWexModel.Store.RUBRICA" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="BCHORAS">
+          <Key>
+            <PropertyRef Name="CHAVE" />
+          </Key>
+          <Property Name="ANOMES" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="FILIAL" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="MATRICULA" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="NOME" Type="varchar" MaxLength="50" />
+          <Property Name="CCUSTO" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="SLD_ANT" Type="float" />
+          <Property Name="VLR_DEB" Type="float" />
+          <Property Name="VLR_CRE" Type="float" />
+          <Property Name="SLD_ATU" Type="float" />
+          <Property Name="FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="CONTROLE" Type="float" Nullable="false" />
+          <Property Name="CHAVE" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="EVENTOSRH">
+          <Key>
+            <PropertyRef Name="CHAVE" />
+          </Key>
+          <Property Name="RA_FILIAL" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="RA_MAT" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="RA_NOME" Type="varchar" MaxLength="30" />
+          <Property Name="RA_CC" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="RA_ADMISSA" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="RA_DEMISSA" Type="varchar" MaxLength="8" />
+          <Property Name="RA_CATFUNC" Type="varchar" MaxLength="1" />
+          <Property Name="RA_SITFOLH" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="RA_SALARIO" Type="float" />
+          <Property Name="RA_CODFUNC" Type="varchar" MaxLength="5" />
+          <Property Name="RJ_DESC" Type="varchar" MaxLength="20" />
+          <Property Name="RD_CC" Type="varchar" MaxLength="9" />
+          <Property Name="ANOMES" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="FOL_PROV" Type="float" />
+          <Property Name="FOL_DESC" Type="float" />
+          <Property Name="FER_PROV" Type="float" />
+          <Property Name="FER_DESC" Type="float" />
+          <Property Name="P13_PROV" Type="float" />
+          <Property Name="P13_DESC" Type="float" />
+          <Property Name="PD799" Type="float" />
+          <Property Name="INSS" Type="float" />
+          <Property Name="FGTS" Type="float" />
+          <Property Name="PIS" Type="float" />
+          <Property Name="ENCARGOS" Type="float" />
+          <Property Name="PLSAUDE" Type="float" />
+          <Property Name="PLODONT" Type="float" />
+          <Property Name="AUX_ALIM" Type="float" />
+          <Property Name="AUX_OUT" Type="float" />
+          <Property Name="AUX_REF" Type="float" />
+          <Property Name="AUX_TRANSP" Type="float" />
+          <Property Name="BENEFICIOS" Type="float" />
+          <Property Name="PROVFER" Type="float" />
+          <Property Name="PROV13o" Type="float" />
+          <Property Name="PROVTOT" Type="float" />
+          <Property Name="PROVDEM" Type="float" />
+          <Property Name="PROVISAO" Type="float" />
+          <Property Name="TOTALFIM" Type="float" />
+          <Property Name="PERCCUSTO" Type="float" />
+          <Property Name="CONTROLE" Type="float" Nullable="false" />
+          <Property Name="FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="CHAVE" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="RUBRICA">
+          <Key>
+            <PropertyRef Name="CHAVE" />
+          </Key>
+          <Property Name="FILIAL" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="DATA" Type="date" Nullable="false" />
+          <Property Name="LOTE" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="SUBLOTE" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="DOCUMENTO" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="LINHA" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="EMPORI" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="FILORI" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="MOEDLC" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="SEQIDX" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="ANOMES" Type="varchar" MaxLength="6" />
+          <Property Name="TP_LANC" Type="varchar" MaxLength="1" />
+          <Property Name="CENTRO_CUSTO" Type="varchar" MaxLength="9" />
+          <Property Name="DESC_CC" Type="varchar" MaxLength="40" />
+          <Property Name="CONTA_CONTABIL" Type="varchar" MaxLength="20" />
+          <Property Name="DESC_CCONTABIL" Type="varchar" MaxLength="40" />
+          <Property Name="MATRICULA" Type="varchar" MaxLength="6" />
+          <Property Name="HIST_LANC" Type="varchar" MaxLength="40" />
+          <Property Name="VALOR_CREDITO" Type="float" Nullable="false" />
+          <Property Name="VALOR_DEBITO" Type="float" Nullable="false" />
+          <Property Name="CONTROLE" Type="float" Nullable="false" />
+          <Property Name="FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="CHAVE" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'Totvs_Wex.dbo.LOG010' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="LOG010">
+        <Property Name="CONTROLE" Type="int" />
+        <Property Name="ID_USER" Type="nchar" MaxLength="15" />
+        <Property Name="USER" Type="varchar" MaxLength="50" />
+        <Property Name="ORIGEM" Type="varchar" MaxLength="50" />
+        <Property Name="OBS" Type="text" />
+        <Property Name="DATA" Type="datetime" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TotvsWexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TotvsWexEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BCHORAS" EntityType="TotvsWexModel.BCHORAS" />
+          <EntitySet Name="EVENTOSRH" EntityType="TotvsWexModel.EVENTOSRH" />
+          <EntitySet Name="RUBRICA" EntityType="TotvsWexModel.RUBRICA" />
+        </EntityContainer>
+        <EntityType Name="BCHORAS">
+          <Key>
+            <PropertyRef Name="CHAVE" />
+          </Key>
+          <Property Name="ANOMES" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="FILIAL" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="NOME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CCUSTO" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="SLD_ANT" Type="Double" />
+          <Property Name="VLR_DEB" Type="Double" />
+          <Property Name="VLR_CRE" Type="Double" />
+          <Property Name="SLD_ATU" Type="Double" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CONTROLE" Type="Double" Nullable="false" />
+          <Property Name="CHAVE" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="EVENTOSRH">
+          <Key>
+            <PropertyRef Name="CHAVE" />
+          </Key>
+          <Property Name="RA_FILIAL" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="RA_MAT" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="RA_NOME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="RA_CC" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="RA_ADMISSA" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="RA_DEMISSA" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="RA_CATFUNC" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="RA_SITFOLH" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="RA_SALARIO" Type="Double" />
+          <Property Name="RA_CODFUNC" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="RJ_DESC" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RD_CC" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="ANOMES" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="FOL_PROV" Type="Double" />
+          <Property Name="FOL_DESC" Type="Double" />
+          <Property Name="FER_PROV" Type="Double" />
+          <Property Name="FER_DESC" Type="Double" />
+          <Property Name="P13_PROV" Type="Double" />
+          <Property Name="P13_DESC" Type="Double" />
+          <Property Name="PD799" Type="Double" />
+          <Property Name="INSS" Type="Double" />
+          <Property Name="FGTS" Type="Double" />
+          <Property Name="PIS" Type="Double" />
+          <Property Name="ENCARGOS" Type="Double" />
+          <Property Name="PLSAUDE" Type="Double" />
+          <Property Name="PLODONT" Type="Double" />
+          <Property Name="AUX_ALIM" Type="Double" />
+          <Property Name="AUX_OUT" Type="Double" />
+          <Property Name="AUX_REF" Type="Double" />
+          <Property Name="AUX_TRANSP" Type="Double" />
+          <Property Name="BENEFICIOS" Type="Double" />
+          <Property Name="PROVFER" Type="Double" />
+          <Property Name="PROV13o" Type="Double" />
+          <Property Name="PROVTOT" Type="Double" />
+          <Property Name="PROVDEM" Type="Double" />
+          <Property Name="PROVISAO" Type="Double" />
+          <Property Name="TOTALFIM" Type="Double" />
+          <Property Name="PERCCUSTO" Type="Double" />
+          <Property Name="CONTROLE" Type="Double" Nullable="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CHAVE" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="RUBRICA">
+          <Key>
+            <PropertyRef Name="CHAVE" />
+          </Key>
+          <Property Name="FILIAL" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LOTE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="SUBLOTE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="DOCUMENTO" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="LINHA" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="EMPORI" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="FILORI" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="MOEDLC" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="SEQIDX" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ANOMES" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="TP_LANC" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CENTRO_CUSTO" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="DESC_CC" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="CONTA_CONTABIL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DESC_CCONTABIL" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="MATRICULA" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="HIST_LANC" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="VALOR_CREDITO" Type="Double" Nullable="false" />
+          <Property Name="VALOR_DEBITO" Type="Double" Nullable="false" />
+          <Property Name="CONTROLE" Type="Double" Nullable="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="CHAVE" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TotvsWexModelStoreContainer" CdmEntityContainer="TotvsWexEntities">
+          <EntitySetMapping Name="BCHORAS">
+            <EntityTypeMapping TypeName="TotvsWexModel.BCHORAS">
+              <MappingFragment StoreEntitySet="BCHORAS">
+                <ScalarProperty Name="ANOMES" ColumnName="ANOMES" />
+                <ScalarProperty Name="FILIAL" ColumnName="FILIAL" />
+                <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="CCUSTO" ColumnName="CCUSTO" />
+                <ScalarProperty Name="SLD_ANT" ColumnName="SLD_ANT" />
+                <ScalarProperty Name="VLR_DEB" ColumnName="VLR_DEB" />
+                <ScalarProperty Name="VLR_CRE" ColumnName="VLR_CRE" />
+                <ScalarProperty Name="SLD_ATU" ColumnName="SLD_ATU" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="CONTROLE" ColumnName="CONTROLE" />
+                <ScalarProperty Name="CHAVE" ColumnName="CHAVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EVENTOSRH">
+            <EntityTypeMapping TypeName="TotvsWexModel.EVENTOSRH">
+              <MappingFragment StoreEntitySet="EVENTOSRH">
+                <ScalarProperty Name="RA_FILIAL" ColumnName="RA_FILIAL" />
+                <ScalarProperty Name="RA_MAT" ColumnName="RA_MAT" />
+                <ScalarProperty Name="RA_NOME" ColumnName="RA_NOME" />
+                <ScalarProperty Name="RA_CC" ColumnName="RA_CC" />
+                <ScalarProperty Name="RA_ADMISSA" ColumnName="RA_ADMISSA" />
+                <ScalarProperty Name="RA_DEMISSA" ColumnName="RA_DEMISSA" />
+                <ScalarProperty Name="RA_CATFUNC" ColumnName="RA_CATFUNC" />
+                <ScalarProperty Name="RA_SITFOLH" ColumnName="RA_SITFOLH" />
+                <ScalarProperty Name="RA_SALARIO" ColumnName="RA_SALARIO" />
+                <ScalarProperty Name="RA_CODFUNC" ColumnName="RA_CODFUNC" />
+                <ScalarProperty Name="RJ_DESC" ColumnName="RJ_DESC" />
+                <ScalarProperty Name="RD_CC" ColumnName="RD_CC" />
+                <ScalarProperty Name="ANOMES" ColumnName="ANOMES" />
+                <ScalarProperty Name="FOL_PROV" ColumnName="FOL_PROV" />
+                <ScalarProperty Name="FOL_DESC" ColumnName="FOL_DESC" />
+                <ScalarProperty Name="FER_PROV" ColumnName="FER_PROV" />
+                <ScalarProperty Name="FER_DESC" ColumnName="FER_DESC" />
+                <ScalarProperty Name="P13_PROV" ColumnName="P13_PROV" />
+                <ScalarProperty Name="P13_DESC" ColumnName="P13_DESC" />
+                <ScalarProperty Name="PD799" ColumnName="PD799" />
+                <ScalarProperty Name="INSS" ColumnName="INSS" />
+                <ScalarProperty Name="FGTS" ColumnName="FGTS" />
+                <ScalarProperty Name="PIS" ColumnName="PIS" />
+                <ScalarProperty Name="ENCARGOS" ColumnName="ENCARGOS" />
+                <ScalarProperty Name="PLSAUDE" ColumnName="PLSAUDE" />
+                <ScalarProperty Name="PLODONT" ColumnName="PLODONT" />
+                <ScalarProperty Name="AUX_ALIM" ColumnName="AUX_ALIM" />
+                <ScalarProperty Name="AUX_OUT" ColumnName="AUX_OUT" />
+                <ScalarProperty Name="AUX_REF" ColumnName="AUX_REF" />
+                <ScalarProperty Name="AUX_TRANSP" ColumnName="AUX_TRANSP" />
+                <ScalarProperty Name="BENEFICIOS" ColumnName="BENEFICIOS" />
+                <ScalarProperty Name="PROVFER" ColumnName="PROVFER" />
+                <ScalarProperty Name="PROV13o" ColumnName="PROV13o" />
+                <ScalarProperty Name="PROVTOT" ColumnName="PROVTOT" />
+                <ScalarProperty Name="PROVDEM" ColumnName="PROVDEM" />
+                <ScalarProperty Name="PROVISAO" ColumnName="PROVISAO" />
+                <ScalarProperty Name="TOTALFIM" ColumnName="TOTALFIM" />
+                <ScalarProperty Name="PERCCUSTO" ColumnName="PERCCUSTO" />
+                <ScalarProperty Name="CONTROLE" ColumnName="CONTROLE" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="CHAVE" ColumnName="CHAVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RUBRICA">
+            <EntityTypeMapping TypeName="TotvsWexModel.RUBRICA">
+              <MappingFragment StoreEntitySet="RUBRICA">
+                <ScalarProperty Name="FILIAL" ColumnName="FILIAL" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="LOTE" ColumnName="LOTE" />
+                <ScalarProperty Name="SUBLOTE" ColumnName="SUBLOTE" />
+                <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
+                <ScalarProperty Name="LINHA" ColumnName="LINHA" />
+                <ScalarProperty Name="EMPORI" ColumnName="EMPORI" />
+                <ScalarProperty Name="FILORI" ColumnName="FILORI" />
+                <ScalarProperty Name="MOEDLC" ColumnName="MOEDLC" />
+                <ScalarProperty Name="SEQIDX" ColumnName="SEQIDX" />
+                <ScalarProperty Name="ANOMES" ColumnName="ANOMES" />
+                <ScalarProperty Name="TP_LANC" ColumnName="TP_LANC" />
+                <ScalarProperty Name="CENTRO_CUSTO" ColumnName="CENTRO_CUSTO" />
+                <ScalarProperty Name="DESC_CC" ColumnName="DESC_CC" />
+                <ScalarProperty Name="CONTA_CONTABIL" ColumnName="CONTA_CONTABIL" />
+                <ScalarProperty Name="DESC_CCONTABIL" ColumnName="DESC_CCONTABIL" />
+                <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+                <ScalarProperty Name="HIST_LANC" ColumnName="HIST_LANC" />
+                <ScalarProperty Name="VALOR_CREDITO" ColumnName="VALOR_CREDITO" />
+                <ScalarProperty Name="VALOR_DEBITO" ColumnName="VALOR_DEBITO" />
+                <ScalarProperty Name="CONTROLE" ColumnName="CONTROLE" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="CHAVE" ColumnName="CHAVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

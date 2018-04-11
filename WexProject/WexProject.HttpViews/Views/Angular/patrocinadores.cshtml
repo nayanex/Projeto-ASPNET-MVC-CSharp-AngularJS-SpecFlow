@@ -1,0 +1,14 @@
+﻿<thead>
+	<tr>
+        <td></td>
+		<td>Patrocinador</td>
+	</tr>
+</thead>
+<tbody>
+	<tr data-oid="{{patrocinador.Oid}}" ng-repeat="patrocinador in patrocinadores">
+        <td>
+			<button class="excluiPatrocinador iconeExcluir" ng-click="excluiPatrocinador($index)" title="Excluir Patrocinador"></button>
+		</td>
+		<td>{{patrocinador.Nome}}</td>
+	</tr>
+</tbody>

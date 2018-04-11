@@ -1,0 +1,245 @@
+﻿@{
+	ViewBag.Title = "Análise Crítica Geral";
+	ViewBag.AngularModule = "wex.analise.geral";
+}
+
+<section id="wexAnaliseCriticaGeral" ng-controller="AnaliseCtrl">
+	<header>
+		<h1>Análise Crítica Geral</h1>
+
+		<div id="filtroArea">
+
+			<div class="campoInformacoes textInfo">
+				<label>Projeto:</label>
+				<input type="text" placeholder="Insira o nome do projeto" ng-model="filtro.Nome" />
+			</div>
+
+			<div class="campoInformacoes selectInfo">
+				<label>Classes de Projeto:</label>
+				<select ng-model="filtro.Classe" ng-options="classe.Classe as classe.Nome for classe in classes">
+					<option value="">Todos</option>
+				</select>
+			</div>
+
+			<div class="campoInformacoes selectInfo">
+				<label>Situação:</label>
+				<select ng-model="filtro.Status" ng-options="situacao.Valor as situacao.Desc for situacao in situacoes">
+					<option value="">Todas</option>
+				</select>
+			</div>
+
+			<div class="campoInformacoes textInfo">
+				<label>Periodo:</label>
+				<input type="month" ng-model="filtro.Inicio" />
+				<span>a</span>
+				<input type="month" ng-model="filtro.Termino" />
+			</div>
+		</div>
+	</header>
+
+	<div id="analiseGeral" class="blocoInfoAreaPrimario" valores="geral">
+		<header>
+			<h2>Análise Geral</h2>
+		</header>
+
+		<table class="tabelaAnalise" border="0" cellpadding="0" cellspacing="0" sticky-headers>
+			<thead>
+				<tr>
+					<td colspan="3">Análise Geral</td>
+					<td colspan="12">
+						<button class="iconeRetornar" title="Retornar Ano" ng-click="retornarAno()">Retornar Ano</button>
+                        <button class="iconeRecuarMes" title="Retornar Mês" ng-click="retornarMes()">Retornar Mes</button>
+						<span ng-class="{ 'atual': isAtual(ano), 'multiAnos': isMultiAnos(ano) }" ng-repeat="ano in anos">
+							<a ng-click="mostrarAno(ano)">{{ano}}</a><i ng-hide="ano == anoMaximo"> /</i>
+						</span>
+                        <button class="iconeAvancarMes" title="Avançar Mês" ng-click="avancarMes()">Avançar</button>
+						<button class="iconeAvancar" title="Avançar Ano" ng-click="avancarAno()">Avançar</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><span>Descrição</span></td>
+					<td><span>Total</span></td>
+					<td ng-repeat="mes in meses()"><span>{{mes.curto}}</span></td>
+				</tr>
+			</thead>
+
+			<tbody ng-class="{ aberto: detalhamento.aberto }" detalhamento="geral.Planejado">
+				<tr class="geral">
+					<td colspan="2"><button title="{{ { true: 'Fechar Informações', false: 'Abrir Informações' }[detalhamento.aberto] }}" ng-class="{ true: 'iconeRecuar', false: 'iconeExpandir' }[detalhamento.aberto]" ng-click="toggleAberto()"></button><span>Planejado</span></td>
+					<td ng-class="{negativo: detalhamento.Total < 0}"><span>{{detalhamento.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(detalhamento.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody ng-show="geral.Planejado.aberto" ng-repeat="projeto in geral.Planejado.Projetos" ng-controller="ProjetoCtrl">
+				<tr class="projetos">
+					<td colspan="2"><button title="{{ { true: 'Fechar Informações', false: 'Abrir Informações' }[projeto.aberto] }}" ng-class="{ true: 'iconeRecuar', false: 'iconeExpandir' }[projeto.aberto]" ng-click="toggleRubricas(projeto, 'Planejado')">ABRIR </button><span>{{projeto.Nome}}</span></td>
+					<td ng-class="{negativo: projeto.Total < 0}"><span>{{projeto.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(projeto.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+
+				<tr class="rubricasCategoria" ng-show="projeto.aberto">
+					<td colspan="15"><span>Rúbricas de Desenvolvimento</span></td>
+				</tr>
+				<tr class="rubricas" ng-show="projeto.aberto" ng-repeat="rubrica in projeto.Rubricas.Desenvolvimento">
+					<td colspan="2"><span>{{rubrica.Nome}}</span></td>
+					<td ng-class="{negativo: rubrica.Total < 0}"><span>{{rubrica.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(rubrica.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+				<tr class="rubricasCategoria" ng-show="projeto.aberto">
+					<td colspan="15"><span>Rúbricas Administrativas</span></td>
+				</tr>
+				<tr class="rubricas" ng-show="projeto.aberto" ng-repeat="rubrica in projeto.Rubricas.Administrativa">
+					<td colspan="2"><span>{{rubrica.Nome}}</span></td>
+					<td ng-class="{negativo: rubrica.Total < 0}"><span>{{rubrica.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(rubrica.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody ng-class="{ aberto: detalhamento.aberto }" detalhamento="geral.Real">
+				<tr class="geral">
+					<td colspan="2"><button title="{{ { true: 'Fechar Informações', false: 'Abrir Informações' }[detalhamento.aberto] }}" ng-class="{ true: 'iconeRecuar', false: 'iconeExpandir' }[detalhamento.aberto]" ng-click="toggleAberto()"></button><span>Real / Previsão</span></td>
+					<td ng-class="{negativo: detalhamento.Total < 0}"><span>{{detalhamento.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(detalhamento.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody ng-show="geral.Real.aberto" ng-repeat="projeto in geral.Real.Projetos" ng-controller="ProjetoCtrl">
+				<tr class="projetos" ng-class="{ aberto: projeto.aberto }">
+					<td colspan="2"><button title="{{ { true: 'Fechar Informações', false: 'Abrir Informações' }[projeto.aberto] }}" ng-class="{ true: 'iconeRecuar', false: 'iconeExpandir' }[projeto.aberto]" ng-click="toggleRubricas(projeto, 'Real')">ABRIR </button><span>{{projeto.Nome}}</span></t>
+					<td ng-class="{negativo: projeto.Total < 0}"><span>{{projeto.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(projeto.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+
+				<tr class="rubricasCategoria" ng-show="projeto.aberto">
+					<td colspan="15"><span>Rúbricas de Desenvolvimento</span></td>
+				</tr>
+				<tr class="rubricas" ng-show="projeto.aberto" ng-repeat="rubrica in projeto.Rubricas.Desenvolvimento">
+					<td colspan="2"><span>{{rubrica.Nome}}</span></td>
+					<td ng-class="{negativo: rubrica.Total < 0}"><span>{{rubrica.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(rubrica.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+				<tr class="rubricasCategoria" ng-show="projeto.aberto">
+					<td colspan="15"><span>Rúbricas Administrativas</span></td>
+				</tr>
+				<tr class="rubricas" ng-show="projeto.aberto" ng-repeat="rubrica in projeto.Rubricas.Administrativa">
+					<td colspan="2"><span>{{rubrica.Nome}}</span></td>
+					<td ng-class="{negativo: rubrica.Total < 0}"><span>{{rubrica.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(rubrica.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody>
+				<tr>
+					<td colspan="2"><span>Saldo Mensal</span></td>
+					<td ng-class="{negativo: geral.Resultado.Total < 0}"><span>{{geral.Resultado.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0}" ng-repeat="valorMes in ano(geral.Resultado.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><span>Saldo Acumulado</span></td>
+					<td ng-class="{negativo: geral.Acumulado.Total < 0}"><span>{{geral.Acumulado.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0}" ng-repeat="valorMes in ano(geral.Acumulado.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+		</table>
+        <div class="legendaArea">
+            <span>Legenda:</span>
+            <ul>
+                <li>
+                    <div class="bgLegendas valoresPlanejadosGeral legendaTripla"></div>
+                    <div class="bgLegendas valoresPlanejadosProjeto legendaTripla"></div>
+                    <div class="bgLegendas valoresPlanejadosRubrica legendaTripla"></div>
+                    <span>Valor Real Previsto</span>
+                </li>
+            </ul>
+        </div>
+
+	</div>
+
+	<div id="analiseFluxoCaixa" class="blocoInfoAreaPrimario" valores="fluxo">
+		<header>
+			<h2>Análise de Fluxo de Aportes</h2>
+		</header>
+
+		<table class="tabelaAnalise" border="0" cellpadding="0" cellspacing="0" sticky-headers>
+			<thead>
+				<tr>
+					<td colspan="3">Análise de Fluxo de Aportes</td>
+					<td colspan="12">
+						<button class="iconeRetornar" title="Retornar" ng-click="retornarAno()">Recuar</button>
+                        <button class="iconeRecuarMes" title="Retornar Mês" ng-click="retornarMes()">Retornar Mes</button>
+						<span ng-class="{ 'atual': isAtual(ano), 'multiAnos': isMultiAnos(ano) }" ng-repeat="ano in anos">
+							<a ng-click="mostrarAno(ano)">{{ano}}</a><i ng-hide="ano == anoMaximo"> /</i>
+						</span>
+                        <button class="iconeAvancarMes" title="Avançar Mês" ng-click="avancarMes()">Avançar</button>
+						<button class="iconeAvancar" title="Avançar" ng-click="avancarAno()">Avançar</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><span>Descrição</span></td>
+					<td><span>Total</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0}" ng-repeat="mes in meses()"><span>{{mes.curto}}</span></td>
+				</tr>
+			</thead>
+
+			<tbody ng-class="{ aberto: detalhamento.aberto }" detalhamento="geral.Planejado">
+				<tr class="geral">
+					<td colspan="2"><button title="{{ { true: 'Fechar Informações', false: 'Abrir Informações' }[detalhamento.aberto] }}" ng-class="{ true: 'iconeRecuar', false: 'iconeExpandir' }[detalhamento.aberto]" ng-click="toggleAberto()"></button><span>Planejados</span></td>
+					<td ng-class="{negativo: detalhamento.Total < 0}"><span>{{detalhamento.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(detalhamento.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody ng-show="geral.Planejado.aberto" ng-repeat="projeto in geral.Planejado.Projetos" ng-controller="ProjetoCtrl">
+				<tr class="projetos">
+					<td colspan="2"><span>{{projeto.Nome}}</span></td>
+					<td ng-class="{negativo: projeto.Total < 0}"><span>{{projeto.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(projeto.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody ng-class="{ aberto: detalhamento.aberto }" detalhamento="geral.Real">
+				<tr class="geral">
+					<td colspan="2"><button title="{{ { true: 'Fechar Informações', false: 'Abrir Informações' }[detalhamento.aberto] }}" ng-class="{ true: 'iconeRecuar', false: 'iconeExpandir' }[detalhamento.aberto]" ng-click="toggleAberto()"></button><span>Reais</span></td>
+					<td ng-class="{negativo: detalhamento.Total < 0}"><span>{{detalhamento.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(detalhamento.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody ng-show="geral.Real.aberto" ng-repeat="projeto in geral.Real.Projetos" ng-controller="ProjetoCtrl">
+				<tr class="projetos" ng-class="{ aberto: projeto.aberto }">
+					<td colspan="2"><span>{{projeto.Nome}}</span></td>
+					<td ng-class="{negativo: projeto.Total < 0}"><span>{{projeto.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0, previsao: valorMes.Previsao}" ng-repeat="valorMes in ano(projeto.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+
+			<tbody>
+				<tr>
+					<td colspan="2"><span>Saldo Mensal</span></td>
+					<td ng-class="{negativo: geral.Resultado.Total < 0}"><span>{{geral.Resultado.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0}" ng-repeat="valorMes in ano(geral.Resultado.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><span>Saldo Acumulado</span></td>
+					<td ng-class="{negativo: geral.Acumulado.Total < 0}"><span>{{geral.Acumulado.Total | monetario}}</span></td>
+					<td ng-class="{negativo: valorMes.Valor < 0}" ng-repeat="valorMes in ano(geral.Acumulado.Anos) track by $index"><span>{{valorMes.Valor | monetario:true}}</span></td>
+				</tr>
+			</tbody>
+		</table>
+
+        <div class="legendaArea">
+            <span>Legenda:</span>
+            <ul>
+                <li>
+                    <div class="bgLegendas valoresPlanejadosGeral legendaTripla"></div>
+                    <div class="bgLegendas valoresPlanejadosProjeto legendaTripla"></div>
+                    <div class="bgLegendas valoresPlanejadosRubrica legendaTripla"></div>
+                    <span>Valor Real Previsto</span>
+                </li>
+            </ul>
+        </div>
+	</div>
+
+
+</section>

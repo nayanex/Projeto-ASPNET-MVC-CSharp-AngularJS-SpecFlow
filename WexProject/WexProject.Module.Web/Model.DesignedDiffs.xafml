@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="Export" Caption="Exportar para" />
+    </Actions>
+  </ActionDesign>
+  <CreatableItems>
+    <CreatableItem ClassName="WexProject.Module.Lib.Util.UserDao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Beneficiado" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Cargo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Estoria" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ParteInteressada" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Solicitante" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.CicloDesenv" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.CicloDesenvEstoria" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.LicaoAprendida" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Execucao.TipoEscopo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Calendario" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumentoSituacaoEmailCc" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ConfiguracaoDocumentoSituacaoEmailCco" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Projeto" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.NovosNegocios.SolicitacaoOrcamentoHistorico" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Entities.Planejamento.Cronograma" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.CronogramaTarefa" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.CronogramaUltimaSelecao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.Papel" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.SituacaoPlanejamento" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Planejamento.TarefaHistorico" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTeste" IsNewNode="True" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePasso" IsNewNode="True" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperado" IsNewNode="True" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperadoAnexo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePassoResultadoEsperadoInformacaoAdicional" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePreCondicao" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePreCondicaoAnexo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Qualidade.CasoTestePreCondicaoInformacaoAdicional" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Rh.Colaborador" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Modulo" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ProjetoCliente" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Geral.ProjetoParteInteressada" Removed="True" />
+    <CreatableItem ClassName="WexProject.BLL.Models.Escopo.Requisito" Removed="True" />
+  </CreatableItems>
+  <SchemaModules>
+    <SchemaModule Name="SchedulerAspNetModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="11.2.8.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="CasoTeste_PreCondicoes_ListView" IsGroupPanelVisible="True" />
+    <ListView Id="CasoTestePasso_ResultadosEsperados_ListView" IsGroupPanelVisible="True" />
+    <ListView Id="Dashboard_SituacaoGeral" Caption="Situacao Geral" ClassName="WexProject.BLL.Models.Escopo.Modulo" EditorTypeName="DevExpress.ExpressApp.Chart.Web.ASPxChartListEditor" IsNewNode="True">
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;11.2.7.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; BackColor=&quot;White&quot;&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisX&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisY&gt;&#xD;&#xA;      &lt;DefaultPane BackColor=&quot;White&quot;&gt;&#xD;&#xA;        &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;          &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;DodgerBlue&quot; /&gt;&#xD;&#xA;        &lt;/FillStyle&gt;&#xD;&#xA;      &lt;/DefaultPane&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;    &lt;SeriesSerializable&gt;&#xD;&#xA;      &lt;Item1 Name=&quot;Não Iniciado&quot; ValueDataMembersSerializable=&quot;NbPontosNaoIniciado&quot;&gt;&#xD;&#xA;        &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;Gray&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;224, 224, 224&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item1&gt;&#xD;&#xA;      &lt;Item2 Name=&quot;Em Analise&quot; ValueDataMembersSerializable=&quot;NbPontosEmAnalise&quot;&gt;&#xD;&#xA;        &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;Yellow&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;255, 255, 192&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item2&gt;&#xD;&#xA;      &lt;Item3 Name=&quot;Em Desenv&quot; ValueDataMembersSerializable=&quot;NbPontosEmDesenv&quot;&gt;&#xD;&#xA;        &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;Lime&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;192, 255, 192&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item3&gt;&#xD;&#xA;      &lt;Item4 Name=&quot;Desvio&quot; ValueDataMembersSerializable=&quot;NbPontosDesvio&quot;&gt;&#xD;&#xA;        &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;Red&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;255, 128, 128&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item4&gt;&#xD;&#xA;      &lt;Item5 Name=&quot;Pronto&quot; ValueDataMembersSerializable=&quot;NbPontosPronto&quot;&gt;&#xD;&#xA;        &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot;&gt;&#xD;&#xA;          &lt;PointOptions TypeNameSerializable=&quot;PointOptions&quot; Pattern=&quot;{V} pts&quot; /&gt;&#xD;&#xA;        &lt;/Label&gt;&#xD;&#xA;        &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; Color=&quot;DodgerBlue&quot;&gt;&#xD;&#xA;          &lt;FillStyle FillMode=&quot;Gradient&quot;&gt;&#xD;&#xA;            &lt;Options TypeNameSerializable=&quot;RectangleGradientFillOptions&quot; Color2=&quot;SkyBlue&quot; /&gt;&#xD;&#xA;          &lt;/FillStyle&gt;&#xD;&#xA;        &lt;/View&gt;&#xD;&#xA;      &lt;/Item5&gt;&#xD;&#xA;    &lt;/SeriesSerializable&gt;&#xD;&#xA;    &lt;SeriesTemplate&gt;&#xD;&#xA;      &lt;Label TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;StackedBarSeriesLabel&quot; /&gt;&#xD;&#xA;      &lt;View TypeNameSerializable=&quot;StackedBarSeriesView&quot; /&gt;&#xD;&#xA;    &lt;/SeriesTemplate&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" IsNewNode="True" />
+    </ListView>
+    <DashboardView Id="DashboardSituacaoAtual">
+      <Layout>
+        <LayoutGroup Id="Main" IsNewNode="True">
+          <LayoutItem Id="GraficoSituacaoAtual_DashboardItem" Index="0" ViewItem="GraficoSituacaoAtual_DashboardItem" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+    <DetailView Id="EmpresaInstituicao_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="TxNome" ViewItem="TxNome" CaptionHorizontalAlignment="Default" Index="1" RelativeSize="3" IsNewNode="True" />
+          <LayoutItem Id="TxEmail" Index="2" ViewItem="TxEmail" />
+          <LayoutItem Id="Pais" Index="3" ViewItem="Pais" />
+          <LayoutItem Id="TxFoneFax" Index="4" RelativeSize="80" ViewItem="TxFoneFax" />
+          <LayoutGroup Id="SizeableEditors" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="GraficoSituacaoAtual_ListView" EditorTypeName="DevExpress.ExpressApp.Chart.Web.ASPxChartListEditor">
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;11.1.8.0&quot;&gt;&#xD;&#xA;  &lt;Chart&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisX&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot;&gt;&#xD;&#xA;        &lt;WorkdaysOptions /&gt;&#xD;&#xA;        &lt;Range SideMarginsEnabled=&quot;true&quot;&gt;&#xD;&#xA;          &lt;ScrollingRange SideMarginsEnabled=&quot;true&quot; /&gt;&#xD;&#xA;        &lt;/Range&gt;&#xD;&#xA;      &lt;/AxisY&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;    &lt;SeriesSerializable&gt;&#xD;&#xA;      &lt;Item1 Name=&quot;Series 1&quot;&gt;&#xD;&#xA;        &lt;Label LineVisible=&quot;true&quot; TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;SideBySideBarSeriesLabel&quot; /&gt;&#xD;&#xA;      &lt;/Item1&gt;&#xD;&#xA;      &lt;Item2 Name=&quot;Series 2&quot;&gt;&#xD;&#xA;        &lt;Label LineVisible=&quot;true&quot; TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;SideBySideBarSeriesLabel&quot; /&gt;&#xD;&#xA;      &lt;/Item2&gt;&#xD;&#xA;    &lt;/SeriesSerializable&gt;&#xD;&#xA;    &lt;SeriesTemplate&gt;&#xD;&#xA;      &lt;Label LineVisible=&quot;true&quot; TextOrientation=&quot;Horizontal&quot; TypeNameSerializable=&quot;SideBySideBarSeriesLabel&quot; /&gt;&#xD;&#xA;    &lt;/SeriesTemplate&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" />
+    </ListView>
+    <DetailView Id="PlanejamentoFerias_DetailView">
+      <Items>
+        <PropertyEditor Id="CsSituacaoFerias" PropertyName="CsSituacaoFerias" IsNewNode="True" />
+        <TimeLineProperty Id="TimeLineProperty" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" ImageName="" Caption="Main" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Far" CaptionVerticalAlignment="Default" Direction="Vertical" RelativeSize="5">
+          <LayoutItem Id="TimeLineProperty" ViewItem="TimeLineProperty" CaptionHorizontalAlignment="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" Direction="Horizontal" Index="1" RelativeSize="95" Removed="True" />
+        </LayoutGroup>
+        <LayoutItem Id="CsSituacaoFerias" ViewItem="CsSituacaoFerias" CaptionHorizontalAlignment="Default" Index="1" RelativeSize="3" IsNewNode="True" />
+        <LayoutItem Id="@50bbd751-2493-44c6-b4e6-c2e325d44899" ViewItem="" CaptionHorizontalAlignment="Default" Index="2" RelativeSize="91" ShowCaption="False" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

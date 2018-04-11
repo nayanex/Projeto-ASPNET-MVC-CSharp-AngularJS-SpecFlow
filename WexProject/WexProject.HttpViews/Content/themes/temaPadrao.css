@@ -1,0 +1,898 @@
+/*
+    PROJETO WEX WEB © FPF Tech;
+    Ano: 2013;
+    Tema: Padrão;
+    UX & UI & CSS: Diogo Riker;
+*/
+
+body{background:url("/Content/themes/temaPadrao/backgroundGeral.png") repeat; font-family: 'Conv_FrutigerLight';}
+body > header:first-child{background:#f9f9f9; width:100%; margin-top:0px; float:left;}
+.gridster .preview-holder{background:#dedede !important;}
+.ui-tooltip{background:#f7f5f5; border:1px solid #e1e1e1 !important; box-shadow:0px 0px 3px #dddddd; font-family: 'Conv_FrutigerLight'; padding:10px; border-radius:0px;}
+input[readonly="readonly"]{background:#d8d5d5; border:1px solid #efefef; }
+button{outline:none;}
+.divisorHorizontal{background:url("/Content/themes/temaPadrao/divisorHorizontal.png") repeat-x;}
+.divisorVertical{background:url("/Content/themes/temaPadrao/divisorVertical.png") repeat-y;}
+
+.modal { width: 800px; margin-left: -400px; }
+.modal { top: 25% !important; opacity: 1 !important; } /* para desativar a animacao */
+
+.negativo{color: #ed3b12 !important; font-weight:bold !important; }
+
+/*
+ * SCROLLBAR
+ */
+body::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:#c9c9c9;}
+::-webkit-scrollbar-thumb{box-shadow: inset 0 0 4px #343434 !important;  background:#7a7a7a;}
+::-webkit-scrollbar-thumb:active{background:#f2f2f2; box-shadow: inset 0px 0px 2px #a7a7a7 !important}
+
+/*
+ * MODAL
+ */
+div.modalArea{border: 1px solid #2a2a2a; box-shadow: 0px 0px 0px #000;}
+div.modal-header{background-image:url("/Content/themes/temaPadrao/backgroundDark.png"), url("/Content/themes/temaPadrao/divisorHorizontal.png") !important; background-repeat:repeat; background-position:bottom, bottom; border-radius:0px !important; position:relative}
+div.modal-header > h2{font-family:'Conv_FrutigerLight'; font-size:16px; font-weight:normal; color:#FFF;}
+button.fecharModal{position:absolute; right:10px !important; top:7px !important; background:url("/Content/themes/temaPadrao/icoFecharModal.png") 0px 0px no-repeat !important; background-size:100% 100% !important; width:19px; height:19px; display:block; text-indent:9999px; border:none;}
+
+    /* MODAL DE ESCOLHA DE PROJETO (CUSTO)*/
+    #escolhaProjeto > .campoInformacoes > label{float:left; font-size:15px; font-family:'Conv_FrutigerLight'; margin-top:3px;}
+    #escolhaProjeto > .campoInformacoes > div > input{float:left; width:65%; margin-left:6px;}
+    #escolhaProjeto > .campoInformacoes > div > button{margin-top:3px;}
+
+   	/* MODAL LOADING */
+	.backdrop-white{background:#dddddd; opacity: 0.92;}
+
+    /* MODAL DE EXCLUSÃO */
+    .modal-exclusao-footer{padding:5px 10px 10px 0px;}
+    .modal-exclusao-footer > button{opacity:1;}
+    .btn-negar{border:1px solid #d69595;}
+    .btn-negar:hover{box-shadow:0px 0px 6px #d72929;}
+    .btn-confirmar{border:1px solid #83a979;}
+    .btn-confirmar:hover{box-shadow:0px 0px 6px #2A631B;}
+
+/*
+ * INPUTS & LABELS
+ */
+input, textarea, select{border:1px solid #dfdfdf; padding: 5px !important; color: #3f3f3f; font-family:Arial; font-size:11px;}
+input:focus, textarea:focus, select:focus{outline:none;}
+select{padding:4px !important;}
+input[type="month"]{padding-top:2px !important; padding-bottom:2px !important;}
+label{font-family: 'Conv_Frutiger';}
+select[disabled]{background:#e6e6e6; border-color:#dfdfdf; color:#C9C9C9}
+
+     /*Search Bar*/
+    .campoPesquisa {margin-top:9px;}
+    .campoPesquisa > .icoInputLupa{background:url("/Content/themes/temaPadrao/icoBgLupa.png") right 1px no-repeat; float:left; width:33px; height:29px;}
+    .campoPesquisa > input[type="text"]{border-right:none; padding:4px 4px 7px 4px !important; float:left; margin-top:2px;}
+    .campoPesquisa > input[type="text"]:focus{outline:none;}
+
+    /* UI Autocomplete */
+    ul.ui-autocomplete{border-top:none; border: 1px solid #dfdfdf; font-size:12px; overflow-x:hidden;}
+    ul.ui-autocomplete li a{padding:6px !important; font-size:12.5px; display:block; color:#3f3f3f; font-family: 'Conv_FrutigerLight' !important;}
+    ul.ui-autocomplete li a:hover, ul.ui-autocomplete > li.ui-menu-item > a.ui-state-hover{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; color:#FFF !important; font-family: 'Conv_Frutiger' !important; font-size:12.5px !important; font-family: 'Conv_FrutigerLight' !important;}
+
+/*
+ * TABLES, THEAD, TBODY, TR & TD
+ */
+table, tr, td{border: 1px solid #dfdfdf !important;}
+table tr{background: #FFF;}
+table tr td{font-family: 'Conv_Frutiger'; font-size: 13px; color: #3f3f3f; text-align:center;}
+table thead tr{background:url("/Content/themes/temaPadrao/backgroundDark.png") repeat !important;}
+table thead tr td, table thead tr th{color: #FFF; font-family: 'Conv_FrutigerLight'; font-size: 11px; font-weight: normal; vertical-align: middle; padding:10px;}
+table > tbody > tr > td.negativo, table > tbody > tr > td .negativo {color:#ed3b12 !important; font-weight: bold !important;}
+
+/*
+ * TABS
+ */
+.tabs{float:left; padding:20px 10px; background: #e4e3e3; color: #bebebe; border-bottom: 1px solid #b6b6b6 !important; text-align: center; cursor: pointer;}
+.tabs:nth-of-type(1n+1){border-right:1px solid #b6b6b6;}
+.tabSelecionada{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; color: #FFF !important; border-bottom:1px solid #00a8d3 !important;}
+
+/*
+ * LINK, BUTTONS & ICONES
+ */
+a{color:#a9a9a9;}
+a:hover{color:#4f4f4f;}
+button{background: #f3f3f3 url("/Content/themes/temaPadrao/backgroundButtons.png") repeat-x 50% 50% !important; border: 1px solid #dfdfdf; font-size: 13px !important; font-family: 'Conv_FrutigerLight'; opacity: 0.7;}
+button:hover{opacity:1;}
+button.btnComIcone{padding: 0px !important; height: 23px; border-color: #dfdfdf !important; position:relative;}
+button.btnComIcone.btnSelecionado{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; opacity: 1; color: #FFF; border-color: #00a8d3 !important;}
+button.btnComIcone > span{display: inline-block; vertical-align: top; padding: 0px 10px 0px 30px; font-size:12px; font-family: 'Conv_Frutiger' }
+button.btnComIcone > span[class^="btn"]{width: 21px; height: 21px; display: inline-block; margin-right: 8px; position:absolute; top:0px; left:0px; background-repeat:no-repeat !important;}
+button.btnComIcone > .btnNovoAditivo, button.btnComIcone > span[class^="btnAdicionar"]{background:url("/Content/themes/temaPadrao/icoAdicionar.png") no-repeat !important;}
+button.btnComIcone > .btnMudarProjeto{background:url("/Content/themes/temaPadrao/icoProjeto.png") !important;}
+button.btnComIcone > .btnAbrirProjeto{background:url("/Content/themes/temaPadrao/icoAbrirProjeto.png") !important;}
+button.btnComIcone > .btnAcessar{background:url("/Content/themes/temaPadrao/icoAcessar.png") no-repeat !important;}
+button.btnComIcone > .btnSalvar{background:url("/Content/themes/temaPadrao/icoSalvar.png") !important;}
+button.btnComIcone > .btnAssociarProjeto{background:url("/Content/themes/temaPadrao/icoAssociarProjeto2.png") !important;}
+button.btnComIcone > .btnDespesaRealRubricas{background:url("/Content/themes/temaPadrao/icoRubricas.png") !important;}
+button.btnComIcone > .btnDespesaRealAssociacaoNotasFiscais{background:url("/Content/themes/temaPadrao/icoDinheiro.png") !important;}
+button.btnComIcone > .btnAtualizar{background:url("/Content/themes/temaPadrao/icoAtualizar.png") !important;}
+button.btnComIcone > .btnAplicar{background:url("/Content/themes/temaPadrao/icoAplicar.png") !important;}
+
+/*Buttons selecionados*/
+button.btnComIcone.btnSelecionado > .btnDespesaRealAssociacaoNotasFiscais{background:url("/Content/themes/temaPadrao/icoDinheiroSelecionado.png") no-repeat !important;}
+button.btnComIcone.btnSelecionado > .btnDespesaRealRubricas{background:url("/Content/themes/temaPadrao/icoRubricasSelecionado.png") no-repeat !important;}
+
+/*Icones*/
+.iconeAdicionar{background:url("/Content/themes/temaPadrao/icoAdicionar24x24.png") no-repeat !important;}
+.iconeExcluir{background:url("/Content/themes/temaPadrao/icoExcluir.png") no-repeat !important;}
+.iconeExcluirContraste{background:url("/Content/themes/temaPadrao/icoExcluirContraste.png") no-repeat !important;}
+.iconeRedistribuir{background:url("/Content/themes/temaPadrao/icoRedistribuir.png") no-repeat !important;}
+.iconeRedistribuirContraste{background:url("/Content/themes/temaPadrao/icoRedistribuirContraste.png") no-repeat !important;}
+.iconeNotificacoes, .iconeConfiguracoes,.iconeMeusDashboards,.iconeLogout{background:url("/Content/themes/temaPadrao/icoUsuario.png") no-repeat;}
+.iconeNovoDashboard{background:url("/Content/themes/temaPadrao/icoNovoDashboard.png") no-repeat !important;}
+.iconeDashboard{background:url("/Content/themes/temaPadrao/icoDashboard.png") no-repeat !important;}
+.iconeEditarDashboard{background:url("/Content/themes/temaPadrao/icoDashboardEdicao.png") no-repeat !important;}
+.iconeFavoritos{background:url("/Content/themes/temaPadrao/icoFavoritos.png") no-repeat !important;}
+.iconeFechar{background:url("/Content/themes/temaPadrao/icoFecharDashes.png") no-repeat !important;}
+.iconeFecharAditivo{background:url("/Content/themes/temaPadrao/icoFecharAditivo.png") no-repeat !important;}
+.iconeConfigurar{background:url("/Content/themes/temaPadrao/icoConfiguracoes.png") no-repeat !important;}
+.iconeMenuDefault{background:url("/Content/themes/temaPadrao/icoMenuDefault.png") no-repeat !important;}
+.iconeRepetirValor{background:url("/Content/themes/temaPadrao/icoReproduzir.png") no-repeat !important;}
+.iconeAbrirRubricaPai{background:url("/Content/themes/temaPadrao/icoAbrirRubrica.png") no-repeat !important;}
+.iconeFecharRubricaPai{background:url("/Content/themes/temaPadrao/icoFecharRubrica.png") no-repeat !important;}
+.iconeExpandir{background:url("/Content/themes/temaPadrao/icoAbrirRubrica.png") no-repeat !important;}
+.iconeRecuar{background:url("/Content/themes/temaPadrao/icoFecharRubrica.png") no-repeat !important;}
+.iconeRecuar2{background:url("/Content/themes/temaPadrao/icoRecuar.png") no-repeat !important;}
+.iconeRecuarMes{background:url("/Content/themes/temaPadrao/icoRetornarUnidade.png") no-repeat !important;}
+.iconeAvancarMes{background:url("/Content/themes/temaPadrao/icoAvancarUnidade.png") no-repeat !important;}
+.iconeAvancar{background:url("/Content/themes/temaPadrao/icoAvancar.png") no-repeat !important;}
+.iconeRetornar{background:url("/Content/themes/temaPadrao/icoRetornar.png") no-repeat !important;}
+.iconeSetaParaBaixo{background:url("/Content/themes/temaPadrao/icoSetaParaBaixo.png") no-repeat !important;}
+.iconeBorracha{background:url("/Content/themes/temaPadrao/icoBorracha.png") no-repeat !important;}
+.iconeBorrachaContraste{background:url("/Content/themes/temaPadrao/icoBorrachaContraste.png") no-repeat !important;}
+.iconeEquipe{background:url("/Content/themes/temaPadrao/icoEquipe.png") no-repeat !important;}
+.iconeExpandir2{background:url("/Content/themes/temaPadrao/icoExpandir.png") no-repeat !important;}
+.iconeAssociarProjeto{background:url("/Content/themes/temaPadrao/icoAssociarProjeto.png") no-repeat !important;}
+.iconeAssociarProjetoContraste{background:url("/Content/themes/temaPadrao/icoAssociarProjetoContraste.png") no-repeat !important;}
+.iconeTrofeu{background:url("/Content/themes/temaPadrao/icoTrofeus.png") no-repeat !important;}
+.iconeBurndown{background:url("/Content/themes/temaPadrao/icoBurndown.png") no-repeat !important;}
+.iconeSetas{background:url("/Content/themes/temaPadrao/icoSetas.png") no-repeat !important;}
+.iconeCustoEquipe{background:url("/Content/themes/temaPadrao/icoCustoEquipe.png") no-repeat !important;}
+.iconeCarregandoAzul{background:url("/Content/themes/temaPadrao/loading_fpf_azul.gif") no-repeat !important;}
+.iconeCarregando{background:url("/Content/themes/temaPadrao/loading_fpf.gif") no-repeat !important;}
+.iconeCarregandoAzulDark{background:url("/Content/themes/temaPadrao/loading_fpf_azulEscuro.gif") no-repeat !important;}
+.statusAberto{background:url("/Content/themes/temaPadrao/icoAberto.png") no-repeat !important;}
+.statusFechado{background:url("/Content/themes/temaPadrao/icoFechado.png") no-repeat !important;}
+.statusAbertoBranco{background:url("/Content/themes/temaPadrao/icoAbertoBranco.png") no-repeat !important;}
+.statusFechadoBranco{background:url("/Content/themes/temaPadrao/icoFechadoBranco.png") no-repeat !important;}
+
+.animacaoSpin {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+/*
+ * TITULOS
+ */
+h1, h2, h3, h4, h5, h6{color:#3f3f3f; font-weight:normal;  font-family: 'Conv_FrutigerLight';}
+h1{font-size:36px !important;}
+h2{font-size:16px !important; font-family: 'Conv_Frutiger';}
+
+/*
+ * HEADER
+ */
+body > header > #headerInfos > div{height:auto; border:none;}
+body > header > #headerInfos > div{background:url("/Content/themes/temaPadrao/divisorVertical.png") repeat-y right center; padding-right:10px; padding-top:10px;}
+body > header > #headerInfos > div:nth-of-type(2){background:none;}
+body > header > .feedbackGeral{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat;}
+body > header > .feedbackErro{background:url("/Content/themes/temaPadrao/backgroundVermelho.png") repeat;}
+body > header > .feedbackErro > img[src$="loading_fpf.gif"]{display:none;}
+body > header > .feedbackCarregando{background: #ffffff;}
+body > header > #feedback{top:0px; font-family: 'Conv_Frutiger'; line-height:14px; z-index:9999;}
+body > header > .feedbackErro >  #btnFecharFeedback{background:url("/Content/themes/temaPadrao/icoFecharModal.png") no-repeat !important; display:block !important; text-indent:-9999px; background-size:100% 100% !important; width:15px; height:15px; border:none;}
+body > header > .feedbackGeral > #btnFecharFeedback{display:none;}
+body > header > .feedbackCarregando > #btnFecharFeedback{display:none;}
+body > header > .feedbackCarregando > #msg{color:black;}
+
+    /*Logo*/
+    header > #headerInfos > #areaLogo{width:auto; padding-bottom:4px; padding-top:6px;}
+    header > #headerInfos > #areaLogo time{text-align:left; font-size:13px; color:#323232; margin-top:5px;}
+
+    /*Search Bar*/
+    header > #headerInfos > div#areaPesquisa > .campoPesquisa {margin-top:0px;}
+    header > #headerInfos > div#areaPesquisa > .campoPesquisa > .icoInputLupa{background:url("/Content/themes/temaPadrao/icoBgLupa.png") right 1px no-repeat; float:left; width:30px; height:28px; background-size:100% 100%;}
+    header > #headerInfos > div#areaPesquisa > .campoPesquisa input[type="text"]{width: 250px; margin-top:2px;}
+    header > #headerInfos > div#areaPesquisa > .campoPesquisa input[type="text"]:focus{outline:none;}
+    header > #headerInfos > div#areaPesquisa{opacity:0.3;}
+
+    /*User Info*/
+    header > #headerInfos > div#areaUsuario .infoUsuario > .dadosUsuario{margin-top:7px;}
+    header > #headerInfos > div#areaUsuario .infoUsuario > .dadosUsuario h1{font-size:14px !important; font-family:'Conv_Frutiger';}
+    header > #headerInfos > div#areaUsuario .infoUsuario > .dadosUsuario #cargo{font-family:'Conv_Frutiger'; font-size:13px;}
+    header > #headerInfos > div#areaUsuario{background:url("/Content/themes/temaPadrao/divisorVertical.png") repeat-y left center;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li{border:none; margin-left:5px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeNotificacoes:hover{background-position:0px -31px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeMeusDashboards{background-position:-33px 0px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeMeusDashboards:hover{background-position:-33px -31px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeConfiguracoes{background-position:-66px 0px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeConfiguracoes:hover{background-position:-66px -31px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeLogout{background-position:-99px 0px;}
+    header > #headerInfos > div#areaUsuario .opcoesUsuario > ul li.iconeLogout:hover{background-position:-99px -31px;}
+
+    /*Lista Meus Dashboards*/
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard{background:#f5f5f5; border:1px solid #b0b0b0; box-shadow:0px 2px 4px #b7b7b7;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > h1{font-size:24px !important; font-weight:normal; color:#a9a9a9;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > #novoDashboard > a .iconeNovoDashboard{border:none;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > #novoDashboard > a span{font-size:16px !important; margin-top:3px; float:left;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul#dashesFavoritas, body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > #novoDashboard{border:none; background:url("/Content/themes/temaPadrao/divisorHorizontal.png") bottom center repeat-x}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > h2{font-family:'Conv_FrutigerLight'; color:#a9a9a9;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > h2:hover{color:#4f4f4f;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li > div.meusDashes > div.meusDashesOpcoes > *{width:20px; height:19px; border:none;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li[favorito="false"] .iconeFavoritos{background-position:0px -20px !important;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li[favorito="true"] .iconeFavoritos{background-position:0px 0px !important;}
+    body > header > #headerInfos > #areaUsuario nav #listMeusDashboard > ul li .iconeExcluir{background-size:100% 100% !important;}
+
+
+/*
+ * MENU PRINCIPAL
+ */
+div#menuPrincipal{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; border:none; box-shadow:0px 3px 7px 3px #104e5d inset; width:100% !important;}
+div#menuPrincipal nav ul li{font-size:13px; font-family:'Conv_Frutiger'; padding:0; margin-left:0px; position:relative; margin-right:0px;}
+div#menuPrincipal nav ul li a{color:#FFF; text-shadow:1px 1px 0px #042129; padding:12px 12px 12px 12px; display:block;}
+div#menuPrincipal nav ul li a:hover{color:#93c8d8; text-shadow:none; }
+div#menuPrincipal nav ul li ul{position: absolute; background:url("/Content/themes/temaPadrao/borderMenuEsquerda.png") left center repeat-y, url("/Content/themes/temaPadrao/borderMenuDireita.png") right center repeat-y, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; top:37px; left:0px; box-shadow:0px 3px 6px #6d6d6d; border-bottom:1px solid #0a6076; }
+div#menuPrincipal nav ul li ul li{display: block; margin:0px; padding:0px;}
+div#menuPrincipal nav ul li[wex-dropdown] > a:hover{background:url("/Content/themes/temaPadrao/borderMenuEsquerda.png") left center repeat-y, url("/Content/themes/temaPadrao/borderMenuDireita.png") right center repeat-y, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; }
+div#menuPrincipal nav ul li[wex-dropdown] > ul[style="display: block;"]:hover + a[wex-dropdown-cabecalho]{background:url("/Content/themes/temaPadrao/borderMenuEsquerda.png") left center repeat-y, url("/Content/themes/temaPadrao/borderMenuDireita.png") right center repeat-y, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; color:#93c8d8; text-shadow:none;}
+div#menuPrincipal nav ul li ul li > a {display:block; padding:10px 31px 10px 29.7px;}
+div#menuPersonalizado{background:url("/Content/themes/temaPadrao/backgroundDark.png") repeat; border:1px solid #105466; box-shadow:-1px 1px 3px #0c3540; height:35px;}
+div.menuFechado > .btnMenuDefault, div.menuFechado > #menuDefault{display:none;}
+div.menuFechado > div.bgSetaMenu{background:url("/Content/themes/temaPadrao/bgSetaMenu.png") no-repeat; width:14px; height:13px; position:absolute; top:50%; left:-13px; margin-top:-6px;}
+div.menuFechado > button{height:17px; width:19px; border:none; margin:8px 10px 10px 10px;}
+div.menuFechado > #menuPessoal{display:none;}
+div.menuAberto{width:95%; }
+div.menuAberto > .btnMenuDefault{width:22px; height:7px; border:none; position:absolute; top:16px; left:-35px;}
+div.menuAberto > .btnMenuFavoritos{display:none;}
+div.menuAberto > div.bgSetaMenu{background:url("/Content/themes/temaPadrao/bgSetaMenu2.png") no-repeat;  width:14px; height:13px; position:absolute; top:50%; left:0px; margin-top:-6px;}
+div.menuAberto > #menuPessoal{margin-left:7px;}
+
+/*
+ * CUSTOS - GERAL
+ */
+div.blocoInfoAreaPrimario{background: #f3f3f3; border:1px solid #cbcbcb; box-shadow: 0px 0px 10px #dfdddd; padding: 10px;}
+div.blocoInfoAreaSecundario{background:#fbfbfb; border:1px solid #e2e0e0 !important; box-shadow: 0px 0px 10px #dfdddd;}
+section#wexCusto{border:none;}
+section#wexCusto ~ .ui-autocomplete{width:42.4% !important;}
+    /*Header*/
+    header.infoGeralCusto{background:url("/Content/themes/temaPadrao/divisorHorizontal.png") bottom center repeat-x; border: none; }
+    header.infoGeralCusto > h1{background: url("/Content/themes/temaPadrao/divisorVertical.png") right center repeat-y; padding-right: 10px; margin-right: 10px;}
+    header.infoGeralCusto > div.infoGeralCusto > div > input[readonly="readonly"]{background:#d8d5d5; border:1px solid #efefef;}
+
+    /*Detalhamento do Projeto -> Aditivos*/
+    div.detalhamentoAditivo{min-width:940px;}
+    div.detalhamentoAditivo > .saveArea{border:none;}
+    div.detalhamentoAditivo > header > button{display:block; text-indent:-9999px; border:none; width:15px; height:15px; background-size:100% 100% !important; margin-right:3px;}
+    div.detalhamentoProjeto > .aditivosProjeto > table tr:hover{background:#f8f8f8; cursor:pointer;}
+    div.detalhamentoProjeto > .aditivosProjeto > table tr:active{background:#f2f2f2;}
+    div.detalhamentoAditivo > div#centroCusto, div.detalhamentoAditivo > div#patrocinadores{border:1px solid #dfdfdf}
+    div.detalhamentoAditivo > div#centroCusto > div,div.detalhamentoAditivo > div#patrocinadores > div{background:#fff;border:1px solid #dfdfdf; float: left; width: 99.6%; padding: 0px; margin: 10px 0px 10px 0px;}
+    div.detalhamentoAditivo > div#centroCusto > div > input, div.detalhamentoAditivo > div#patrocinadores > div > input{width: 91.2%; float: left; border: none; margin-top: 0px; margin-bottom: 0px;}
+    div.detalhamentoAditivo > div#centroCusto > div > button, div.detalhamentoAditivo > div#patrocinadores > div > button{width: 24px; height: 24px; float: right; border: none; margin-bottom: 0px;}
+    div.detalhamentoAditivo > .saveArea{border: none; background:url("/Content/themes/temaPadrao/divisorHorizontal.png") top center repeat-x;}
+    div.detalhamentoAditivo > div > table tbody tr td:first-child button{ border:none; text-align: center; margin:0px auto; display: block; width: 15px; height: 15px; background-size: 100% !important;}
+    div.detalhamentoProjeto > .aditivosProjeto > .buttonArea{text-align:right; margin-top:10px;}
+    div.detalhamentoAditivo > div > header{float:left; width:100%; cursor:pointer;}
+    div.detalhamentoAditivo > div > header > h2 {margin-left:18px;}
+    div.detalhamentoAditivo > div > header.statusAberto{background-position:0px 5px !important;}
+    div.detalhamentoAditivo > div > header.statusFechado{background-position:0px 1px !important;}
+
+         /*Detalhamento do Projeto -> Topo (Rolagem)*/
+        div#detalhamentoAbas > div > .infoVisivel{
+           position:fixed; 
+           top:0px; 
+           left:0px; 
+           z-index: 15;             
+           color:#FFF; 
+           box-shadow:0px 2px 5px #737C7C; 
+           width:100%; 
+        }
+
+        div#detalhamentoAbas > div > .infoVisivel > .aditivoInfoValorAno p:first-child{
+            background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; 
+            box-shadow:0px 2px 5px #232525
+        }
+
+        div#detalhamentoAbas > div > .infoVisivel > .aditivoInfoValorAno .anosAditivo{
+            background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; 
+            box-shadow:inset 0px 3px 4px #03313d;
+        }
+
+        div#detalhamentoAbas > div > .infoVisivel > .aditivoInfoValorAno .anosAditivo ul li button.selecionado {
+            background: none !important;
+            box-shadow: inset 0px 0px 25px #000;
+        } 
+        div#detalhamentoAbas > div > .infoVisivel > span{margin-right:10px;}
+        div#detalhamentoAbas > div > .infoVisivel .visualizacaoAnoArea{margin:4px !important;}
+        div#detalhamentoAbas > div > .infoVisivel .visualizacaoAnoArea #visualizacaoAno ul li button.selecionado{box-shadow:0px 0px 3px #292C30;}
+
+     /*Detalhamento do Projeto -> Orçamento Aprovado*/
+
+     /*Aditivo Info Valor e Anos*/
+      .aditivoInfoValorAno > p:first-child{
+            background:url("/Content/themes/temaPadrao/backgroundCinza.png") repeat;
+            font-size: 13px;
+            box-shadow:0px 3px 3px #6c6c6c;
+       }
+
+        .aditivoInfoValorAno > p span{
+            font-weight: bold;
+       }
+
+      .aditivoInfoValorAno .anosAditivo{
+           background:url("/Content/themes/temaPadrao/backgroundDarkGray.png") repeat;
+           box-shadow: inset 0px 3px 4px #262626;
+        }
+
+        .aditivoInfoValorAno .anosAditivo ul li{
+            background: url("/Content/themes/temaPadrao/divisorVerticalDark.png") center right repeat-y, 
+                        url("/Content/themes/temaPadrao/divisorVerticalDark.png") center left repeat-y !important;
+        }
+
+        .aditivoInfoValorAno .anosAditivo button{
+            background:none !important;
+           border: none;
+            color: #FFF;
+           margin: 0px 0px;
+            font-size:11px !important;
+       }
+
+        .aditivoInfoValorAno .anosAditivo ul li button.selecionado{
+           background: url("/Content/themes/temaPadrao/bgShadow.png") center top repeat-x,
+                      url("/Content/themes/temaPadrao/backgroundDarkGray2.png") repeat !important;
+           opacity: 1;
+       }
+
+       .aditivoInfoValorAno .anosAditivo ul li:first-child{
+           background:url("/Content/themes/temaPadrao/divisorVerticalDark.png") center left repeat-y !important;
+        }
+
+       .aditivoInfoValorAno .anosAditivo ul li:last-child{
+            background:url("/Content/themes/temaPadrao/divisorVerticalDark.png") center right repeat-y !important;
+        }
+
+    div#detalhamentoAbas > #orcamentoAprovado > span{font-size:14px;}
+    div#detalhamentoAbas > #orcamentoAprovado > span:last-child{margin-top:5px;}
+    div#detalhamentoAbas{border:1px solid #dfdfdf; padding-bottom:10px;}
+    div#detalhamentoAbas > div.tabs{background:#e4e3e3; color:#bebebe; border-bottom:1px solid #b6b6b6 !important; border-left:1px solid #b6b6b6 !important; font-size:16px;}
+    div#detalhamentoAbas > div.tabs:first-child{border-left:none !important;}
+    div#detalhamentoAbas > *{border:none !important;}
+    div#detalhamentoAbas > div > div > header, div#detalhamentoAbas > div > div > div > header {background:url("/Content/themes/temaPadrao/divisorHorizontal.png") 0px 9px repeat-x; float:left; width:100%; margin:5px 0px 10px 0px}
+    div#detalhamentoAbas > div > div > header h2, div#detalhamentoAbas > div > div > div > header h2{background-color:#f3f3f3 !important; float:left; width:auto; padding-right: 5px; cursor:pointer; padding-left:18px;}
+    div#detalhamentoAbas > div > div > header h2.statusAberto, div#detalhamentoAbas > div > div > div > header h2.statusAberto{background-position:0px 5px !important;}
+    div#detalhamentoAbas > div > div > header h2.statusFechado, div#detalhamentoAbas > div > div > div > header h2.statusFechado{background-position:0px 1px !important;}
+    div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > span{padding-top:5px; padding-bottom:5px; margin-top:2px;}
+    div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > span > span{font-weight:bold; font-size:16px;}
+    div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos > span:nth-of-type(2){background:url(/Content/themes/temaPadrao/divisorVertical.png) repeat-y center right; padding-right:10px; margin-right:10px;}
+    div#detalhamentoAbas > #orcamentoAprovado > .topoOrcamentos:last-child{float:left; margin-top:-2px; clear:none;}
+    .topoOrcamentos .visualizacaoAnoArea #visualizacaoAno ul li button.selecionado{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; border-color:#00a8d3; color:#FFF; opacity: 1;}
+
+        /*Detalhamento do Projeto -> Orçamento Aprovado -> Rúbricas Pais*/
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaPai{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; border:1px solid #00a8d3 !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaPai td{color:#FFF; border-bottom:1px solid #00a8d3 !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody > tr.rubricaPai td:first-child{width:58px !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaPai td:first-child button{float:left;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaPai td:first-child button:nth-of-type(2){width:22px; height:22px; display:block; margin-left:8px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr.rubricaPai td{border-color:#7bc4d7 !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr.rubricaPai td > div{border-color:#7bc4d7 !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaPai td .totalPlanejado{width:14% !important;}
+
+        /*Detalhamento do Projeto -> Orçamento Aprovado -> Rúbricas Filhas*/
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaPai + tr.rubricaFilha td{background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaFilha{background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaFilha td{color:#FFF; border-color:#042d37 !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaFilha td:first-child{border-bottom:1px solid #042d37 !important; border-left:1px solid #042d37 !important; }
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaFilha td > div{border-color:#042d37 !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr.rubricaFilha td .totalPlanejado{width:14% !important;}
+
+        /*Detalhamento do Projeto -> Orçamento Aprovado -> Table*/
+        div#detalhamentoAbas > #orcamentoAprovado > div > header > button{margin-right:0px; margin-top:-3px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea .semFoco{opacity:0.3}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr:first-child > td:nth-of-type(3) > div:first-child > div{font-size: 13px; border-color: #dfdfdf;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado{padding:9px; border-color: #dfdfdf;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:first-child{width:58px !important; text-align: center; border:none !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:nth-of-type(3){border-left:0px !important; vertical-align:middle;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tr td:first-child button {width: 23px; height: 23px; border: none; margin-left:3px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div[id^="rubrica"] > div > .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado input{margin-top:12px !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado button{width:23px; height:23px; border:none; margin-top: 4px !important; background-size:100% 100% !important;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div{padding-bottom:15px !important; padding-top:10px !important}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td > div.mesesPlanejado > .campoInformacoes input.comFoco{box-shadow: 0px 0px 6px #116479; border-color:#368ba1;}
+		div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td > div.mesesPlanejado > .campoInformacoes input:focus{box-shadow: 0px 0px 6px #116479; border-color:#368ba1; opacity: 1;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr td select[ng-model="novoTipo"] optgroup{background:#12657a; color:#FFF;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table tbody tr td select[ng-model="novoTipo"] optgroup > option{background:#0c4c5c; color:#FFF; line-height:18px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > div.atencaoRubrica{position:absolute; left:-108px; top:50%;  margin-top:-17px; width:100px; color:#864a07; border:1px solid #864a07; background:#fea406; padding:5px; opacity:0.3; cursor:default; box-shadow:0px 0px 2px #959595; transition:opacity 0.17s;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > div.atencaoRubrica:hover{opacity:1; box-shadow:0px 0px 6px #959595;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > div.atencaoRubrica > .setaDireita{background:url("/Content/themes/temaPadrao/bgSetaDestaque.png") no-repeat; background-size:100% 100% !important; width:10px; height:14px; position:absolute; right:-10px; top:12px; transform:rotate(180deg); -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -o-transform:rotate(180deg); -ms-transform:rotate(180deg);}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > div.atencaoRubrica > p{font-size:11px; word-break: break-word; margin:0px;}
+        div#detalhamentoAbas > #orcamentoAprovado > div .tableArea > table > tbody > tr > td:nth-of-type(3) > div.totalPlanejado > div.atencaoRubrica > p span{display:block; padding-top:5px;}
+
+    /*Detalhamento do Projeto -> Despesas Reais*/
+    div#detalhamentoAbas > div#despesasReais > .visualizacaoAnoMes > div#visualizacaoMes{background-image:url("/Content/themes/temaPadrao/divisorHorizontal.png");}
+    div#detalhamentoAbas > div#despesasReais > div > div > header{margin-bottom:10px;}
+        /*Detalhamento do Projeto -> Despesas Reais -> Table*/
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas{width:100%; clear:both; position:fixed; bottom:0px; left:0px; }
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > button:first-child{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; border:1px solid #084d5e; padding:5px 10px 5px 10px; font-size: 13px !important; color:#FFF; position:relative; left:50%; margin-left:-50px; margin-bottom:0px; box-shadow:0px 0px 10px #666; bottom:-1px; transition:opacity 0.17s}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > button:first-child:hover{opacity:1 !important;}
+		div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > button.totalizacaoFechado:first-child{opacity: 0.7;}
+		div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > button.totalizacaoAberto:first-child{opacity: 1;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table{box-shadow:0px 1px 10px #7c7c7c; border:none !important;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table tbody tr td{background:#e4e3e3 !important; border:1px solid #cfcfcf !important;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table thead tr:first-child, div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > table, div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > table thead tr:first-child td{border:none !important;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table thead tr:first-child{background:url("/Content/themes/temaPadrao/backgroundBlackDark.png") repeat !important;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table tbody tr[ng-click="mostrarAno(ano)"] td{ background:url("/Content/themes/temaPadrao/backgroundDark.png") repeat !important; color:#FFF; cursor:pointer; opacity:1;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table tbody tr[ng-click="mostrarAno(ano)"] td:hover{opacity:.9;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table tbody tr[ng-show^="ano"] td:last-child{background:#d9d9d9 !important;}
+        div#detalhamentoAbas > div#despesasReais > .totalizacaoDespesas > div > table tbody tr:last-child td{background:#d9d9d9 !important;}
+		div#detalhamentoAbas > div#despesasReais > div .tableArea input.semFoco{opacity:0.3}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea input.comFoco{box-shadow: 0px 0px 6px #116479; border-color:#368ba1;}
+		div#detalhamentoAbas > div#despesasReais > div .tableArea input:focus{box-shadow: 0px 0px 6px #116479; border-color:#368ba1; opacity: 1;}
+        div#detalhamentoAbas > div#despesasReais > div div[id^="rubrica"] table{position:relative;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td{vertical-align: middle;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child{text-align: center;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table tr td:last-child button{width: 23px; height: 23px; border: none; margin-left:16px;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table tbody tr:first-child td > span{display:block; margin-top:10px; font-family:'Conv_FrutigerBlack'; }
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas thead tr td{font-family:'Conv_FrutigerLight'; font-size:15px; text-align:left; position:relative; overflow:hidden; padding-bottom:7px; padding-top:8px;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas thead tr td > span{margin-left:10px; display:inline-block; padding-top:3px; vertical-align:top;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas thead tr td > div.destaqueCorRubrica{position:absolute; background:#ffa200; top:0px; left:-14px; width:23px; height:44px; -webkit-transform:skew(-30deg); -moz-transform:skew(-30deg); -o-transform:skew(-30deg); -ms-transform:skew(-30deg); transform:skew(-30deg); box-shadow:0px 0px 10px #000;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas tbody:first-of-type tr:first-child{background:#f2f2f2;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas tbody:first-of-type tr:nth-of-type(2) td{font-family:'Conv_FrutigerBlack';}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas{margin-bottom:10px;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas tbody tr td.ng-scope{position:relative;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas tbody tr td.ng-scope > button.icoRepetirValor{position:absolute; bottom:18px; right:-1px;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas tbody tr td.ng-scope > button.icoRepetirValor2{position:absolute; bottom:0px; right:50%; margin-right:-10px;}
+        div#detalhamentoAbas > div#despesasReais > div .tableArea > table.rubricaDespesas tbody tr:nth-of-type(2) td.ng-scope:hover button{display:block !important; width:15px; height:15px; border:none; background-size:100% 100% !important; outline:none;}
+        div#detalhamentoAbas > div#despesasReais > div[id^="despesas"] > div > .rubricaPaiDespesas{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; border:1px solid #00a8d3; clear:both; margin-bottom:10px;}
+        div#detalhamentoAbas > div#despesasReais > div[id^="despesas"] > div > .rubricaPaiDespesas header > h1{color:#FFF; font-size:24px !important; font-family:'Conv_FrutigerLight'; margin-bottom:10px;}
+            /*Cores das rúbricas*/
+            div#detalhamentoAbas > div#despesasReais > div #rubricaViagensEDeslocamentos > table.rubricaDespesas thead tr td > div.destaqueCorRubrica{background:#777aff !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaContratacoesForaDeManaus > table.rubricaDespesas thead tr td > div.destaqueCorRubrica{background:#fc6f4c !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTreinamentos > table.rubricaDespesas thead tr td > div.destaqueCorRubrica{background:#e0e205 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaManutencaoAposEntrega > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#CC3838 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaLivrosEPeriodicos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#a8a6a6 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaSoftware > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#4673D1 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaHardware > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#60afe2 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaObrasDeInfraestrutura > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#AEE260 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTerceiros > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#7CAA76 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaRhGdc > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#B9B946 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaRhTi > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#8DBBEC !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaRhDesigner > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#E0950E !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaRhTestes > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#6DBE22 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaRhQualidade > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#ABC206 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaMaoDeObraDiretaExclusiva > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#259690 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaCustoFixoFpfRateio > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#EC8C73 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaDepreciacaoDeEquipamentos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#D11C1C !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTaxaDeAdministracao > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#7a8ed6 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaImpostosEEncargos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#949494 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaApoioAClientes > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#A998DD  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaFacn > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#E27714 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaAportes > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#589648  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaSalarios > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#6ED81A  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaRescisaoFerias > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#FFDC24 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaEstagiarios > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#A4D0E9 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaEncargosSociais > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#DF6060 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaBeneficiosSociais > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#ADD31B !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaPqcProgramaDeQualificacaoColaboradores > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#C1DAB6 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTransporteDeFuncionarios > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#F0E706  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaExamesLaboatoriais > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#BE0000  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaGinasticaLaboral > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#079766  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaEscritorio > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#778D0F !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaLimpeza > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#00CCFF !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaCopacozinha > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#DDC857 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaPrevencaoParaSegurancaESinalizacao > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#62F17E !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaManutencao > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#E45716 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaInformatica > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#8DBBEC !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaMaterialDeJardinagem > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#865A4C !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaEnfermaria > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#11C467 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTelefone > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#DA3643 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaUniformes > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#C2C232 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaLimpezaEConservacao > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#80E0FF !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaSegurancaFisicaDPatrimonial > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#7E89D8 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaJardinagem > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#865A4C  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaManutencaoDeMaquinasEEqptos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#DD6B2B  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaConservacaoEReformas > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#FF3D00  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaConsultoriaPj > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#5FC5FF  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTreinamentosFuncionarios > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#e0e205  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaServicosPublicos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#BF69E7 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaAquisicaolocacaoMaqEquiptos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#BDE4E9  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaAssinaturasLivrosrevistasjornais > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#B1873E  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaConducoesTaxi > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#F0E706 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaLanchesrefeicoes > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#E0591A !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaCopiasreprograficas > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#B37777 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaTaxasBancfinanc > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#7a8ed6 !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaParcelamentoDeImpostos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#949494  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaCorreios > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#5EA7EB !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaSeguroPredial > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#AB55DB  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaViagensEHospedagens > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#62C0C4  !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaEventos > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#E68C1A   !important;}
+            div#detalhamentoAbas > div#despesasReais > div #rubricaBrindeshomenagens > table.rubricaDespesas thead tr td  > div.destaqueCorRubrica{background:#98CFF3 !important;}
+
+         /*Associação de Notas Fiscais*/           
+             /*Botões Rubricas e Associar Notas Fiscais - Topo*/
+                #despesasReais .opcoesArea .buttonsRubricaGastosPendente{
+                    background:url("/Content/themes/temaPadrao/backgroundCinza.png") repeat;
+                }
+
+                #despesasReais .infoVisivel .opcoesArea .buttonsRubricaGastosPendente{
+                    background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat;
+                }
+
+                /*Meses*/
+                #despesasReais .aditivoInfoValorAno .mesesNotasFiscais > div button{
+                    background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundDark.png") repeat !important;
+                    opacity: 1;
+                    border: none;
+                    padding: 10px;
+                    color:#a7a7a7;
+                    margin: 0px;
+                }
+
+                #despesasReais .aditivoInfoValorAno .mesesNotasFiscais > div button:hover{
+                    color: #fff;
+                }
+
+                #despesasReais .aditivoInfoValorAno .mesesNotasFiscais > div button.selecionado{
+                    background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundMesSelecionado.png") repeat !important;
+                    color:#fff;
+                    box-shadow:inset 0px 0px 14px #000;
+                }
+
+                #despesasReais .aditivoInfoValorAno.fixo{
+                    box-shadow:0px 2px 5px #3A3A3A;
+                }
+
+                #despesasReais .aditivoInfoValorAno.fixo .mesesNotasFiscais > div button{
+                    background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundAzulDark2.png") repeat !important;
+                    margin-bottom:0px;
+                    margin-top:0px;
+                }
+
+                #despesasReais .aditivoInfoValorAno.fixo .mesesNotasFiscais > div button.selecionado{
+                    background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundMesSelecionadoAzul.png") repeat !important;
+                    color:#fff;
+                    box-shadow:inset 0px 2px 10px #041d25;
+                }
+
+
+                 /*Setas*/
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes .iconeSetas.icoSetasTransferir{
+                    background-position:-40px 0px !important;
+                }
+
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes .iconeSetas.icoSetasRegredir{
+                    background-position:1px 0px !important;
+                }
+
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes .iconeSetas.icoSetasTransferir.desativado{
+                    background-position:-40px -32px !important;
+                }
+
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .botoesAcoes .iconeSetas.icoSetasRegredir.desativado{
+                    background-position:1px -32px !important;
+                }
+
+                 /*Tabela Rubricas*/
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr.linhaSelecionada{
+                    background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat;
+                }
+
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr.linhaSelecionada td{
+                    color: #FFF; 
+                    border-color:#042d37 !important;
+                }
+
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > div table tbody tr.linhaSelecionada td p span{
+                    color:#9CEAFD
+                }
+
+                /*Acordeão Rúbricas*/
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion{
+                    background:url("/Content/themes/temaPadrao/backgroundDarkGray.png") repeat; 
+                    border:1px solid #3D3D3D; 
+                    border-bottom: none; 
+                    color: #FFF;
+                }
+            
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion table, 
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion table thead tr{
+                    border:none !important; 
+                    background: url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, 
+                                url("/Content/themes/temaPadrao/backgroundDark.png") repeat !important;
+                }
+            
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas .rubricasAccordion.rubricaExpandida,
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle{ 
+                    background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; 
+                    border:1px solid #00a8d3; 
+                    color: #FFF; 
+                }
+
+                .AssociacaoNotasFicaisContent > .tabelasAccordionArea > .accordionRubricas.rubricaTituloFixo .rubricasAccordion.rubricaExpandida .rubricaAccordionTitle {
+                    position: fixed; 
+                    top: 73px; 
+                    margin-left:-3px; 
+                    width:45%
+                }
+
+        /* Custo Equipe */
+        .iconeCustoEquipe{width:38px; height:38px; position:absolute; top:17px; right:-10px;}
+        .custos-mao-de-obra-lote{margin-bottom:10px; display:table; width:100%;}
+        .custos-mao-de-obra-lote > div {display:table-cell;}
+        .custos-mao-de-obra-lote span.divisorVertical{background-position:right center !important; padding:6px 10px 5px 10px; margin-right:10px; font-size:11px;}
+        .custos-mao-de-obra-lote span.infoLote{padding-left:0px; font-size:13px;}
+        .custos-mao-de-obra-lote span.statusLotes{padding-right:2px;}
+        .custos-mao-de-obra-lote span.statusLotes img{vertical-align:top; padding-top:4px;}
+        .custos-mao-de-obra-lote span .fontDestaque{font-weight:bold;}
+        .custos-mao-de-obra-lote .maoDeObraLote{width:238px;}
+        .custos-mao-de-obra-lote .maoDeObraColaboradores{text-align:right; vertical-align:middle; font-size:13px; font-weight:bold; padding-top:4px;}
+        .buttonAreaCustoEquipe{text-align:right; margin-top:10px;}
+
+        table.tableCustoEquipe tr:nth-of-type(even){background: #f2f2f2;}
+        table.tableCustoEquipe tr:nth-of-type(odd){background: #FFF;}
+/*
+ * ANÁLISE CRÍTICA
+ */
+ section#wexAnaliseCritica header > .selectInfo label{font-family:'Conv_Frutiger';}
+ section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea{background:#fbfbfb; border:1px solid #e2e0e0; width:100%; position: relative;}
+ section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .statusArea{border:none !important; background:#eaeaea;}
+
+     /*Projetos*/
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header{padding:0px; cursor: pointer; padding-left:0px;}
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header > h3{padding:3px 0 3px 25px; font-size:13px; font-family:'Conv_Frutiger';}
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header > h3.statusFechado{background-position: 4px 2px !important;}
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header > h3.statusAberto{background-position: 4px 5px !important;}
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header > h3 > span{font-family:'Conv_FrutigerBlack';}
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header > h3 > span.positivo{color:#6c9a3c;}
+     section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > header > h3 > span.negativo{color:#ed3b12;}
+         /*Barra de Progressão*/
+         section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao{font-size:13px;  border:none; border-bottom:1px solid #e0dddd; color:#fff; font-family:'Conv_Frutiger'; float:left;}
+         section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao .progress{margin-bottom:0px !important; box-shadow:none !important; border-radius:0px; background:none;}
+         section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao .progress .progress-bar{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; height:20px; float:left;}
+         section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao .progress .progress-bar-error{background:url("/Content/themes/temaPadrao/divisorVerticalVermelho.png") repeat-y, url("/Content/themes/temaPadrao/backgroundVermelho.png") repeat !important; height:20px;}
+         section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span{position:absolute; top:50%; margin-top:-5px; font-size:10px;}
+         section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraProgressao > span:nth-of-type(1){left:6px;}
+
+         /*Barra de Orçamento Consumido*/
+        section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > .progress .progress-bar{background:url("/Content/themes/temaPadrao/backgroundOrcamentoConsumido.png") repeat !important; float:left;}
+        section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > .progress .progress-bar-error{background:url("/Content/themes/temaPadrao/divisorVerticalVermelho.png") repeat-y, url("/Content/themes/temaPadrao/backgroundVermelho.png") repeat !important;}
+        section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido{position:relative;}
+        section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .progressaoArea > .barrasArea > .barraOrcamentoConsumido > span{position:absolute;}
+
+    /*Detalhamento do Projeto*/
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral{background:#efefef; padding: 10px; clear: both; border-left: 1px solid #e2e0e0; border-right: 1px solid #e2e0e0; border-bottom: 1px solid #e2e0e0; width:97.9%;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .tabs:nth-of-type(2){border-right:none;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise{border:1px solid #e2e0e0 !important; clear:both; padding: 10px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > .selectInfo{background:url("/Content/themes/temaPadrao/divisorHorizontal.png") 0px 16px repeat-x;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > .selectInfo > label{font-size:14px; background:#f3f2f2; padding-right:5px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > .selectInfo > select{margin-left:-4px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody tr td.orcApr, section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] >  .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody tr td.aportes{background:#eaeaea;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody tr td.despReal{background:#f8f8f8;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody tr td.acum{background:#eaeaea;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody tr td.previsao{background:url("/Content/themes/temaPadrao/backgroundVerdeBranco.png") repeat !important; color:#5E8113 !important; border-bottom-color: #BDD686 !important; border-left-color:#BDD686 !important; border-right-color:#BDD686 !important; }
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody > tr > td:last-child{background:#eaeaea;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody:last-child > tr{background:#eaeaea; font-weight: bold;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tbody > tr > td.negativo{color:#ed3b12 !important; font-weight: bold !important;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > header h2{font-family:'Conv_Frutiger'; font-size:22px !important;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > header p{font-family:'Conv_Frutiger'; font-size:14px; font-weight: bold;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > header p > span{font-family:'Conv_Frutiger'; font-weight: normal;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table > tbody tr td{padding-bottom:6px; padding-top:6px;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tr td.tabelaAnaliseProjetoDesenvolvimento{background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; border-bottom-color:#0C3E4B !important;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tr td.tabelaAnaliseProjetoAdministrativo {background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; border-bottom-color:#0C3E4B !important;}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tr td.tabelaAnaliseProjetoOrcamentoAprovado{background:url("/Content/themes/temaPadrao/backgroundAzulCinzento.png") repeat; border-right-color:#2C3C42 !important}
+    section#wexAnaliseCritica > .progressaoGeralArea > div[id^="projeto"] > .detalhesProjetoGeral > .detalhamentoProjetoAnalise > table tr td.tabelaAnaliseProjetoDespesaReal{background: url("/Content/themes/temaPadrao/backgroundAzulBranco.png") repeat;}
+
+ /*
+ * ANÁLISE CRÍTICA GERAL
+ */
+
+    #wexAnaliseCriticaGeral div[id^="analise"] .tableFloatingHeaderOriginal[style*="position: fixed"]{box-shadow:0px 0px 8px #000;}
+    #wexAnaliseCriticaGeral div[id^="analise"] .tableFloatingHeaderOriginal[style*="position: fixed"] > tr{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat !important; border:none!important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] .tableFloatingHeaderOriginal[style*="position: fixed"] tr:first-child td:first-child{font-size:16px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] .tableFloatingHeaderOriginal[style*="position: fixed"] tr td{border:none !important; padding:11px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] .tableFloatingHeaderOriginal[style*="position: fixed"] > tr:first-child td{visibility:visible; border-bottom:1px solid #3294AC !important;}
+
+
+    #wexAnaliseCriticaGeral table > tbody tr.projetos{background-color:#f5f5f5;}
+    #wexAnaliseCriticaGeral table > tbody tr:hover,#wexAnaliseCriticaGeral table > tbody tr.rubricasCategoria:hover, #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.rubricas:hover, #wexAnaliseCriticaGeral div[id^="analise"] > table.tabelaAnalise tbody:last-child > tr:hover {background:url("/Content/themes/temaPadrao/backgroundLaranja.png") repeat !important; color:#864a07; border-color:#864a07;}
+    #wexAnaliseCriticaGeral table > tbody tr:hover td.previsao{background:url("/Content/themes/temaPadrao/backgroundLaranja.png") repeat !important; color:#304406 !important; border-color:#864a07;}
+    #wexAnaliseCriticaGeral table > tbody tr:hover td.negativo, #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas:hover td.previsao.negativo{color:#A7290C !important; }
+    #wexAnaliseCriticaGeral table > tbody > tr > td.previsao{background:url("/Content/themes/temaPadrao/backgroundVerdeBranco.png") repeat; color:#5E8113 !important; border-color:#BDD686 !important; }
+    #wexAnaliseCriticaGeral div[id^="analise"] > table.tabelaAnalise tbody:last-child > tr:hover td:nth-of-type(3), #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas:hover td:nth-of-type(3), #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas:hover td{background:none !important;}
+    #wexAnaliseCriticaGeral table > tbody tr.rubricasCategoria, #wexAnaliseCriticaGeral table.tabelaAnalise > tbody tr.rubricas {background:#e4e3e3;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas td:nth-of-type(3) {background:#c5c5c5 !important; color:#3f3f3f !important; text-align:center !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas td{background:#c5c5c5 !important; border:1px solid #A2A2A2 !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas td.previsao{background:url("/Content/themes/temaPadrao/backgroundVerdeBranco3.png") repeat !important; color:#D6EEC1 !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas td.previsao.negativo{color:#FF5128 !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas:hover td.previsao{background:url("/Content/themes/temaPadrao/backgroundLaranja.png") repeat !important; color: #304406  !important}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas:hover td{background:none;}
+    #wexAnaliseCriticaGeral table tbody tr td:first-child > button{display:inline-block; text-indent:-9999px; border:none; width:17px; height:17px; background-size:100% 100% !important; vertical-align:middle; margin-left:10px;}
+    #wexAnaliseCriticaGeral div[id^="analise"]{margin-bottom:10px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr td{padding-top:6px; padding-bottom:6px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody.aberto + tbody tr td{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody.aberto ~ tbody tr.projetos td.previsao{background: url("/Content/themes/temaPadrao/backgroundVerdeBranco2.png") repeat; color:#F6FFE0 !important; }
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody.aberto ~ tbody tr.projetos:hover td.previsao{color:#304406 !important}
+    #wexAnaliseCriticaGeral table > tbody > tr > td.negativo, #wexAnaliseCriticaGeral table > tbody > tr > td.negativo.previsao{color:#ed3b12 !important; font-weight: normal !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody.aberto + tbody tr.projetos td.previsao{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x, url("/Content/themes/temaPadrao/backgroundVerdeBranco2.png") repeat;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody.aberto + tbody tr.projetos:hover td.previsao{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x, url("/Content/themes/temaPadrao/backgroundLaranja.png") repeat !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody.aberto + tbody tr.projetos td.previsao.negativo{color:#BB2401 !important; }
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr:first-child td:last-child{font-size:11px; color:#a5a2a2;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > span.atual a{font-size:14px; color:#FFF;}
+	#wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > span.multiAnos i{font-size:14px; color:#FFF;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > button{border:none; display:block; text-indent:-9999px; width:10px; height:11px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > button.iconeRetornar{position:absolute; left:8px; top:12px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > button.iconeRecuarMes{width:20px; position:absolute; left:25px; top:12px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > button.iconeAvancar{position:absolute; right:8px; top:12px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child > button.iconeAvancarMes{width:20px; position:absolute; right:25px; top:12px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table thead tr td:last-child{position:relative;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr td:nth-of-type(1), #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr td:nth-of-type(2){background:url("/Content/themes/temaPadrao/backgroundDarkGray.png") repeat !important; color:#FFF;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas td:nth-of-type(1), #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricas td:nth-of-type(2){background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat-x !important; border:1px solid #136A80 !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.aberto ~ tr.rubricasCategoria td:first-child{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat-x !important}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.aberto ~ tr.rubricasCategoria td:first-child span{width:auto !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody > tr.rubricasCategoria td{background: url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat-x !important; border:1px solid #136A80 !important; text-align:center;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.projetos td:nth-of-type(1), #wexAnaliseCriticaGeral div[id^="analise"] > table tbody tr.projetos td:nth-of-type(2){background:url("/Content/themes/temaPadrao/backgroundDarkGray2.png") repeat !important;}
+    #wexAnaliseCriticaGeral div#analiseGeral > table tbody tr.projetos td:nth-of-type(2){padding-left:25px;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table > tbody tr td:nth-child(2){text-align:right !important;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody:last-child > tr td:nth-of-type(2) {text-align:left;}
+    #wexAnaliseCriticaGeral div[id^="analise"] > table tbody:last-child > tr td:nth-of-type(2).negativo {color: #FC2F00 !important}
+    #wexAnaliseCriticaGeral div#analiseFluxoCaixa > table tbody.aberto ~ tbody[ng-show^="geral."] tr td:nth-of-type(1), #wexAnaliseCriticaGeral div#analiseFluxoCaixa > table tbody.aberto ~ tbody[ng-show^="geral."] tr td:nth-of-type(2){background:url("/Content/themes/temaPadrao/backgroundDarkGray2.png") repeat !important; text-align:left;}
+    #wexAnaliseCriticaGeral div#analiseFluxoCaixa > table tbody.aberto ~ tbody[ng-show^="geral."] tr:hover td:nth-of-type(3){background:none !important;}
+    #wexAnaliseCriticaGeral div#analiseFluxoCaixa > table tbody.aberto ~ tbody[ng-show^="geral."] tr td:nth-of-type(3){background:#f5f5f5 !important; text-align:center !important; color:#3f3f3f !important;}
+    #wexAnaliseCriticaGeral div#analiseFluxoCaixa > table tbody.aberto + tbody[ng-show^="geral."] tr td, #wexAnaliseCriticaGeral div#analiseFluxoCaixa > table tbody.aberto + tbody[ng-show^="geral."] tr td:nth-of-type(3){background: url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x !important;}
+
+    /* Legendas */
+    .legendaArea{background:url("/Content/themes/temaPadrao/divisorHorizontal.png") repeat-x; margin-top:10px; padding-top:10px;}
+    .legendaArea > span {display:inline-block; vertical-align:top; font-size:11px; padding-top:3px; color:#A0A0A0;  margin-right:5px;}
+    .legendaArea > ul {display:inline-block;}
+    .legendaArea > ul li div.bgLegendas{width:18px; height:18px; display:inline-block;}
+    .legendaArea > ul li div.legendaTripla:nth-of-type(3){margin-left:-8px; width:7px;}
+    .legendaArea > ul li div.legendaTripla:nth-of-type(2){margin-left:-8px; width:10px;}
+    .legendaArea > ul li div.legendaTripla:nth-of-type(1){margin-left:0px; width:10px;}
+    .legendaArea > ul li div.valoresPlanejadosGeral{background:url("/Content/themes/temaPadrao/bgGradient.png") bottom center repeat-x, url("/Content/themes/temaPadrao/backgroundVerdeBranco.png") no-repeat;}
+    .legendaArea > ul li div.valoresPlanejadosProjeto{background:url("/Content/themes/temaPadrao/bgGradient.png") bottom center repeat-x, url("/Content/themes/temaPadrao/backgroundVerdeBranco2.png") no-repeat;}
+    .legendaArea > ul li div.valoresPlanejadosRubrica{background:url("/Content/themes/temaPadrao/bgGradient.png") bottom center repeat-x, url("/Content/themes/temaPadrao/backgroundVerdeBranco3.png") no-repeat;}
+    .legendaArea > ul li span{display:inline-block; vertical-align:top; padding-top:4px; font-family: 'Conv_Frutiger'; color: #636363; font-size:11px; margin-left:3px;}
+
+/*
+ * Termo Aditivo (TA)
+ */
+#wexTermoAditivo > #areaTermoAditivo > .termoAditivo{box-shadow:none;}
+#wexTermoAditivo > #areaTermoAditivo div[class="buttonArea"]{width:94px; padding-right:0px;}
+#wexTermoAditivo > #areaTermoAditivo div[class="buttonArea"] > button:first-child{margin-left:5px; margin-right:8px;}
+#wexTermoAditivo > #areaTermoAditivo div[class="termoAditivoTitulo"]{padding-left:0px;}
+    /*Detalhes Termo Aditivo (TA)*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes{background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; border:none !important; box-shadow: 0px 0px 0px #000;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal{background:url("/Content/themes/temaPadrao/backgroundDark.png") repeat; color: #FFF; line-height: 18px;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taPatrocinador{background:  url("/Content/themes/temaPadrao/divisorHorizontalDark.png") bottom center repeat-x, url("/Content/themes/temaPadrao/backgroundBlackDark.png") repeat; border:none;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taDescricao{font-size:14px;}
+
+    /*Projetos Macro*/
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes{padding: 10px;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taPeriodo{background: url("/Content/themes/temaPadrao/divisorVerticalDark.png") left center repeat-y; text-align: right;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > .termoAditivoDetalhesPrincipal > .taPeriodo input{text-align: center;}
+    #wexTermoAditivo > #areaTermoAditivo > div.termoAditivoDetalhes > div.projetosMacrosGeral > .projetoMacro{box-shadow:1px 2px 2px #03333f;}
+
+    /*Modal Associação de Projetos*/
+    .modalAssociacaoProjeto .projetos:first-of-type{margin-top:0px;}
+    .modalAssociacaoProjeto .projetos:last-of-type{margin-bottom:0px;}
+    .modalAssociacaoProjeto .modal-footer{padding-top:10px; padding-bottom:10px;}
+    .modalAssociacaoProjeto .projetos{opacity:0.6; cursor:pointer; transition:opacity 0.17s; box-shadow:0px 0px 2px #dfdddd;}
+    .modalAssociacaoProjeto .projetos:hover{opacity:1; box-shadow:0px 0px 10px #dfdddd;}
+    .modalAssociacaoProjeto .selecionado{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; color:#fff; opacity:1; box-shadow:0px 0px 10px #dfdddd;}
+    .modalAssociacaoProjeto .selecionado h2 {color: #FFF !important}
+
+/*
+ * CRIAÇÃO DE PROJETOS
+ */
+
+    #wexProjetos .inicioPlanejado input,
+    #wexProjetos .inicioReal input,
+    #wexProjetos .terminoReal input { background: #ffffff; cursor: pointer; }
+
+    /* Projetos Macro */
+    #wexProjetos > div#projetosArea .projetos{opacity:0.7; box-shadow:none;}
+    #wexProjetos > div#projetosArea .projetos:hover{opacity:1; box-shadow: 0px 0px 10px #dfdddd;}
+    #wexProjetos > div#projetosArea .projetos > .projetoDados > div p { font-size:12px; font-family: 'Conv_Frutiger'; font-weight:600;}
+    #wexProjetos > div#projetosArea .projetos > .projetoDados > div p span { display: block; font-family: 'Conv_Frutiger'; font-weight:300; margin-top: 1px;}
+    #wexProjetos div#projetosArea .modoEdicao{background:url("/Content/themes/temaPadrao/backgroundDarkGray.png") repeat !important; opacity:1; border:1px solid #4d4b4b !important; border-bottom:none !important;  cursor:pointer;}
+    #wexProjetos div#projetosArea .modoEdicao *, #wexProjetos > div#projetosArea div.modoEdicao h2 {color:#9F9F9F !important;}
+    #wexProjetos div#projetosArea .modoEdicao + editar-dados-projeto .editandoProjeto{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x,url("/Content/themes/temaPadrao/backgroundCinza.png") repeat; box-shadow:none !important}
+    #wexProjetos div#projetosArea .modoEdicao > .projetoButton button.iconeExpandir2{background:url("/Content/themes/temaPadrao/icoAbrirRubrica.png") no-repeat !important; background-size:100% 100% !important;}
+
+    /*Projetos Micro*/
+    #wexProjetos > div#projetosArea .expandido {background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; color:#FFF !important;}
+    #wexProjetos > div#projetosArea .expandido h2{color:#FFF !important;}
+    #wexProjetos > div#projetosArea .expandido + div:nth-of-type(2) .projetoMicro{background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat;}
+    #wexProjetos > div#projetosArea .expandido + .projetoMicro:hover { background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundLaranja.png") repeat-x !important; color:#2f2f2f;}
+    #wexProjetos > div#projetosArea .projetoMicro:hover { background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundLaranja.png") repeat !important; color:#2f2f2f; box-shadow:none !important;}
+    #wexProjetos > div#projetosArea .projetoMicro:hover h2 { color:#2f2f2f;}
+    #wexProjetos > div#projetosArea .projetoMicro {margin-top:0px; margin-bottom: 0px; background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; box-shadow: none; border:1px solid #042d37 !important; border-top:none !important; color:#FFF; opacity:1 !important;}
+    #wexProjetos > div#projetosArea .projetoMicro h2 { color:#FFF;}
+    #wexProjetos > div#projetosArea .projetoMicro .informacaoNaoEditavel {color:#66b2c5;}
+    #wexProjetos > div#projetosArea .projetoMicro + editar-dados-projeto[projeto="projetoMicro"] .editandoProjeto{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x,url("/Content/themes/temaPadrao/backgroundAzulCinzento.png") repeat; color:#FFF; border-color:#083a47 !important; box-shadow:none !important}
+    #wexProjetos > div#projetosArea .projetoMicro.modoEdicao{background:url("/Content/themes/temaPadrao/bgShadow2.png") repeat-x,url("/Content/themes/temaPadrao/backgroundAzulBranco.png") repeat !important;}
+
+
+    /*Formulário para Adicionar Projeto*/
+    .novoProjeto{position:absolute; top:20px; left:2px; z-index:100; width:820px; padding-top:10px; box-shadow:0px 2px 5px #dfdddd !important}
+    .novoProjeto > header{background:url("/Content/themes/temaPadrao/divisorHorizontal.png") center bottom repeat-x;}
+    .novoProjeto > header h2{padding:0px 10px 10px 10px; color:#186b80;}
+
+    /*Formulario Edição Projeto*/
+    #wexProjetos > div#projetosArea > .modoEdicao > * {opacity: 0.6;}
+
+
+
+/*
+ * Associação de Notas Fiscais
+ */
+
+.modal-dialog table tr td{vertical-align:middle;}
+.modal-dialog table.tableDesassociarModal tbody tr td:first-child{border-right:none !important; width:22px; padding-right:5px;}
+.modal-dialog table.tableDesassociarModal tbody tr td:nth-of-type(2){text-align:left; width:220px; border-left:none !important;}
+.modal-dialog table.tableDesassociarModal > tbody tr td:nth-of-type(2) p{font-size:12px;}
+.modal-dialog table.tableDesassociarModal > tbody tr td:nth-of-type(2) p span{display:block; color:#0c5f74; font-size:11px; padding-top:2px;}
+.modal-dialog table tfoot tr{background:url("/Content/themes/temaPadrao/backgroundDarkGray.png") repeat !important;}
+.modal-dialog table tfoot tr td{color:#FFF !important; border:none !important;}
+.modal-dialog table.tableDesassociarModal tfoot tr td:first-child{border-right:none !important; text-align:center !important;}
+.modal-dialog table.tableDesassociarModal tfoot tr td:nth-of-type(2){border-left:none !important;}
+
+.possuiGastosRelacionados {position: relative;}
+    .possuiGastosRelacionados:hover .botaoModal {display: block;}
+    .possuiGastosRelacionados .botaoModal {position: absolute; display: none; top: 0 !important; left: 0 !important; margin: 0 !important; padding: 0 !important; width: 100% !important; height: 100% !important; background:rgba(79, 79, 79, 0.9) url("/Content/themes/temaPadrao/icoGastosRelacionados.gif") center no-repeat !important; text-indent: -1000px !important; overflow: hidden !important;}
+
+.btnDesassociarModal{text-indent:-9999px; width:22px; height:24px; border:none;}
+
+/*
+ * Custo Equipe
+ */
+.modal-dialog table.tableCustoEquipe tfoot tr td:last-child{border-left:1px solid rgb(73, 73, 73) !important;}
+.btnDesassociarModal{text-indent:-9999px; width:22px; height:24px; border:none;}
+
+/*
+ * Custo Administrativos por Rúbricas
+ */
+
+ .filtroMes ul[datepicker-popup-wrap] li table tbody tr td span{padding:6px; display:block;}
+ .tabelaCustoRubrica thead tr td{text-align:left;}
+ .tabelaCustoRubrica tr:nth-of-type(even){background:#f3f3f3;}
+ .tabelaCustoRubrica tr.listaProjetos{background:url("/Content/themes/temaPadrao/backgroundAzul.png") repeat; border: none !important;}
+ .tabelaCustoRubrica tr.listaProjetos td:first-child a i.iconeCarregando{background:url("/Content/themes/temaPadrao/loading_fpf_azul.gif") no-repeat !important;}
+ .tabelaCustoRubrica tr.listaProjetos td{color:#fff; border-color:#389db7 !important;}
+ .tabelaCustoRubrica tr.listaProjetos + tr.projetosListados{background:url("/Content/themes/temaPadrao/bgShadow.png") repeat-x, url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat; border: none !important;}
+ .tabelaCustoRubrica tr.listaProjetos + tr.projetosListados td{border-top:none !important; border-color:#042d37 !important;}
+ .tabelaCustoRubrica tr.projetosListados{background:url("/Content/themes/temaPadrao/backgroundAzulDark.png") repeat;  }
+ .tabelaCustoRubrica tr.projetosListados td{color:#fff; border-color:#042d37 !important;}
+ .tabelaCustoRubrica tfoot tr{background:url("/Content/themes/temaPadrao/backgroundDarkGray.png") repeat;}
+ .tabelaCustoRubrica tfoot tr td{border-color:#353535 !important; color: #fff;}
+ .tabelaCustoRubrica tfoot tr td.negativo {color:#EC6767 !important; font-weight: bold !important;}
+ .tabelaCustoRubrica tfoot tr td:first-child{text-align:right;}
+ .tabelaCustoRubrica tbody tr td{border-left:none !important; text-align:left;  position:relative;}
+ .tabelaCustoRubrica tbody tr td i{text-indent:-9999px; border:none; width:19px; height:19px; margin-right:10px; background-size:100% 100% !important; display:inline-block; vertical-align:middle;}
+ .tabelaCustoRubrica tbody tr td:first-child span{display:inline-block; vertical-align:top; padding-top:3px;} 
+ .tabelaCustoRubrica tbody tr td:last-child{width:236px;}
+ .tabelaCustoRubrica tbody tr td:last-child > input{width:80%; text-align:right;} 
+ .tabelaCustoRubrica tbody tr.listaProjetos td:hover button.icoRepetirValor, .tabelaCustoRubrica tbody tr.projetosListados td:hover button.icoRepetirValor{background:url("/Content/themes/temaPadrao/icoReproduzirBranco.png") no-repeat !important; background-size:100% 100% !important; display:block !important; position:absolute; width:19px; height:19px; right:0px; background-size:100% 100% !important; top:50%; margin-top:-11px; border:none !important;}
+ .tabelaCustoRubrica tbody tr td:nth-of-type(3){padding-right:22px;}
+ .tabelaCustoRubrica tr td:nth-of-type(2), .tabelaCustoRubrica tr td:nth-of-type(3), .tabelaCustoRubrica tr td:nth-of-type(4){text-align:right;}
+ .tabelaCustoRubrica tbody tr td.negativo:hover button{display:none !important;}
+
+/* angular-ui progress */
+.progress .progress-bar { position: relative; }
+.progress .progress-bar span { position: absolute; right: 5px; font-size: 10px; line-height: 20px; }
+
+/* progress em analise critica por projeto */
+.barraProgressao .progress .progress-bar-success { max-width: 97%; }
+.barraProgressao .progress .progress-bar-error   { min-width: 3%; }
+.barraProgressao .wex-progresso-singlebar .progress-bar-success { max-width: 100%; }

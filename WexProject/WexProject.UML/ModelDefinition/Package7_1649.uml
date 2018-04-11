@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7e041c47-937a-4fbb-9450-975190044973"
+  name="Entities"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d06589e8-bd82-451c-ac97-d712eb768e08"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Entities"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="285180a7-7128-48a9-bbad-14a088e1aaae"
+        LastKnownName="Geral"
+        LastKnownLocation="Package8_1649.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9f905e62-a1c7-4c67-a999-83b337194179"
+        LastKnownName="RH"
+        LastKnownLocation="Package_1716.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ceec2a0a-b83c-44d3-a752-ef1f9eb981a1"
+        LastKnownName="Execucao"
+        LastKnownLocation="Package1_1716.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c5999507-063c-4550-afa1-4ad6e8bcb658"
+        LastKnownName="Escopo"
+        LastKnownLocation="Package2_1716.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

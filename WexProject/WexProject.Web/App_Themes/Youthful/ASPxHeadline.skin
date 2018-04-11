@@ -1,0 +1,13 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxhl" Namespace="DevExpress.Web.ASPxHeadline" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxhl:ASPxHeadline runat="server" CssFilePath="~/App_Themes/Youthful/{0}/styles.css" CssPostfix="Youthful" DateHorizontalPosition="OutsideLeft" 
+    TailPosition="KeepWithLastWord" SpriteCssFilePath="~/App_Themes/Youthful/{0}/sprite.css">
+    <DateStyle Spacing="10px" />
+    <LeftPanelStyle Spacing="7px" />
+    <RightPanelStyle Spacing="7px" />
+    <HeaderStyle Spacing="2px" />
+    <TailImage Align="Bottom">
+		<SpriteProperties CssClass="dxWeb_hlTail_Youthful" />
+	</TailImage>
+</dxhl:ASPxHeadline>

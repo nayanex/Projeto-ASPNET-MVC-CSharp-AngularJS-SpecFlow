@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alerta_JaExisteCronogramaComEsseNome" xml:space="preserve">
+    <value>Já existe um cronograma com esse nome.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_32x32_Nova_Tarefa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32x32_Nova_Tarefa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_32x32_Tarefas_Pendentes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32x32_Tarefas_Pendentes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_SituacaoPlanejamentoInvalidaAoSalvar" xml:space="preserve">
+    <value>A situação de planejamento informada não é válida com relação à estimativa das horas,  revise a estimativa.</value>
+  </data>
+  <data name="Alerta_NomeCronogramaObrigatorio" xml:space="preserve">
+    <value>O valor do nome do cronograma é obrigatório.</value>
+  </data>
+  <data name="LoginDefault" xml:space="preserve">
+    <value>juca.pereira</value>
+  </data>
+  <data name="Caption_SituacaoPlanejamentoInvalida" xml:space="preserve">
+    <value>Situação de planejamento informada não é válida.</value>
+  </data>
+  <data name="Alerta_ConfirmarExclusaoTarefasSelecionadas" xml:space="preserve">
+    <value>Deseja realmente excluir as tarefas selecionadas?</value>
+  </data>
+  <data name="Alerta_JaPossuiTarefaEmEdicao" xml:space="preserve">
+    <value>Você já possui uma edição de tarefa em andamento.</value>
+  </data>
+  <data name="Erro_ExcluirCronogramaComColaboradoresConectados" xml:space="preserve">
+    <value>Não é possível excluir um cronograma com outros colaboradores conectados.</value>
+  </data>
+  <data name="Alerta_PreenchimentoNomeCronograma" xml:space="preserve">
+    <value>A descrição do cronograma não é válida.
+A descrição poderá conter apenas letras, números, sublinhados, espaços, pontos e traços.</value>
+  </data>
+  <data name="alert_popup32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_popup32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Caption_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="Info_Conectado" xml:space="preserve">
+    <value>Cronograma conectado.</value>
+  </data>
+  <data name="imagemPadrao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagemPadrao.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_SituacaoPlanejamentoInvalida" xml:space="preserve">
+    <value>A situação de planejamento informada não é válida.</value>
+  </data>
+  <data name="doc2_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doc2_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seta_acima3264" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_acima3264.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="None" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\None.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_Fechar_Cronograma" xml:space="preserve">
+    <value>Deseja realmente fechar o cronograma?</value>
+  </data>
+  <data name="seta_abaixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_abaixo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seta_abaixo3264" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_abaixo3264.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_NaoHaHistorico" xml:space="preserve">
+    <value>A tarefa selecionada não possui histórico.</value>
+  </data>
+  <data name="Alerta_DevePossuirDuracaoTarefa" xml:space="preserve">
+    <value>Uma estimativa inicial deve ser informada.</value>
+  </data>
+  <data name="_32x32_Pesquisar_Tudo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32x32_Pesquisar_Tudo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_EdicaoNaoSalva" xml:space="preserve">
+    <value>A edição da tarefa não pode ser salva.</value>
+  </data>
+  <data name="Alerta_TarefaNaoSelecionadaParaExclusao" xml:space="preserve">
+    <value>Ao menos uma tarefa deve ser selecionada para exclusão.</value>
+  </data>
+  <data name="IpServidor" xml:space="preserve">
+    <value>10.0.0.28</value>
+  </data>
+  <data name="_32x32_Tarefas_Encerradas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32x32_Tarefas_Encerradas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_NaoExisteSituacaoPlanejamentoAtiva" xml:space="preserve">
+    <value>Não existe situação de planejamento ativa. 
+Não é possível acessar o cronograma.</value>
+  </data>
+  <data name="Alerta_ColaboradorInvalido" xml:space="preserve">
+    <value>Colaborador não existente, contate o administrador.</value>
+  </data>
+  <data name="Erro_ExcluirCronogramaQuePossuaTarefas" xml:space="preserve">
+    <value>Não é possível excluir um cronograma que contenha tarefas com esforço estimado.</value>
+  </data>
+  <data name="Alerta_NaoExisteSituacaoPlanejamento" xml:space="preserve">
+    <value>Você não pode criar cronogramas se não houver criado uma situação de planejamento padrão.</value>
+  </data>
+  <data name="Info_Desconectado" xml:space="preserve">
+    <value>Cronograma desconectado.</value>
+  </data>
+  <data name="Caption_ErroExclusaoCronograma" xml:space="preserve">
+    <value>Erro ao excluir o cronograma.</value>
+  </data>
+  <data name="Alerta_PossuiEsforcoRealizadoCadastrado" xml:space="preserve">
+    <value>A tarefa já possui esforço estimado.</value>
+  </data>
+  <data name="Erro_FalhaConexao" xml:space="preserve">
+    <value>Não foi possível efetuar conexão com o servidor, contate o administrador do sistema.</value>
+  </data>
+  <data name="Alerta_NaoExisteCronogramaParaExclusao" xml:space="preserve">
+    <value>Não existe um cronograma selecionado para exclusão.</value>
+  </data>
+  <data name="Caption_Atencao" xml:space="preserve">
+    <value>Atenção</value>
+  </data>
+  <data name="Caption_Fechar" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="WexCronograma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WexCronograma.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_Desconectado" xml:space="preserve">
+    <value>A conexão com servidor foi interrompida.</value>
+  </data>
+  <data name="seta_acima" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_acima.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alerta_EdicaoRecusadaTarefaEmExclusao" xml:space="preserve">
+    <value>Não foi possível editar a tarefa, pois se encontra em exclusão.</value>
+  </data>
+  <data name="32x32_Pesquisa_Personalizado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32x32_Pesquisa_Personalizado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

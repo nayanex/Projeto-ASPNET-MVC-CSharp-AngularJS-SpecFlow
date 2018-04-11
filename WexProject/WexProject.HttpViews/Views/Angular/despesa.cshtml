@@ -1,0 +1,75 @@
+﻿
+<span class="iconeCustoEquipe" ng-if="isRubricaMaoObraDireta()" title="Rúbrica referente a Custo/Equipe"></span>
+
+<thead>
+	<tr>
+		<td colspan="13"><button ng-class="{ false: 'iconeExpandir', true: 'iconeRecuar'}[rubrica.aberto]"  title="{{ { true: 'Recuar', false: 'Expandir' }[rubrica.aberto] }}" ng-click="toggleRubrica()"></button><span>{{rubrica.Nome}}</span> <div class="destaqueCorRubrica"></div></td>
+	</tr>
+</thead>
+<tbody ng-if="rubrica.aberto">
+	<tr>
+		<td colspan="3">Total Planejado <span ng-class="{negativo: TotalPlanejado(rubrica) < 0}">{{TotalPlanejado(rubrica) | monetario}}</span></td>
+		<td colspan="3">Total Realizado <span ng-class="{negativo: TotalGasto(rubrica) < 0}" class="totalGasto">{{TotalGasto(rubrica) | monetario}}</span></td>
+		<td colspan="3">Total Realizado + Previsão <span ng-class="{negativo: Previsao(rubrica) + TotalGasto(rubrica) < 0}">{{Previsao(rubrica) + TotalGasto(rubrica) | monetario}}</span></td>
+		<td colspan="4">Diferença <span ng-class="{negativo: TotalPlanejado(rubrica) - TotalGasto(rubrica) - Previsao(rubrica) < 0}">{{TotalPlanejado(rubrica) - TotalGasto(rubrica) - Previsao(rubrica) | monetario}}</span></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td ng-repeat="mes in meses">{{mes.curto}}</td>
+	</tr>
+</tbody>
+<tbody data-ano="{{ano.Ano}}" ng-if="ano.Ano === +aditivo.AnoAtual && rubrica.aberto" ng-repeat="ano in rubrica.Anos">
+	<tr>
+		<td>Planejado</td>
+		<td ng-repeat="rubricaMes in ano.Meses">{{rubricaMes.Planejado | monetario:true}}</td>
+	</tr>
+	<tr>
+		<td>Previsões</td>
+		<td ng-repeat="rubricaMes in ano.Meses">
+			<input type="text"
+                ng-class="{semFoco: rubricaMes.Replanejado === null, comFoco: rubricaMes.Replanejado !== null}"
+                data-valor="true"
+                salvar="RubricaMes"
+                ng-model="rubricaMes.Replanejado"
+                ng-readonly="rubricaMes.PossuiGastosRelacionados"
+                ng-click="rubricaMes.PossuiGastosRelacionados && confirmarEdicao(rubricaMes)"
+                wex-valor-mutex="rubricaMes.Gasto" />
+
+			<button class="icoRepetirValor iconeRepetirValor"
+                style="display: none;"
+                title="Repetir o valor para os próximos meses"
+                ng-if="!rubricaMes.PossuiGastosRelacionados"
+                ng-click="repetirValor({rubrica: rubrica, ano: ano.Ano, mes: rubricaMes.Mes, attr: 'Replanejado'})"></button>
+
+            <button class="icoRepetirValor2 iconeSetaParaBaixo"
+                style="display: none;"
+                title="Copiar o valor para o campo 'Real'"
+                ng-if="!rubricaMes.PossuiGastosRelacionados"
+                ng-click="copiarValor(rubricaMes)"></button>
+		</td>
+	</tr>
+	<tr>
+		<td>Real</td>
+		<td ng-repeat="rubricaMes in ano.Meses" ng-class="{possuiGastosRelacionados: rubricaMes.PossuiGastosRelacionados || isRubricaMaoObraDireta()}">
+
+			<input class="valorGasto" type="text" soma-total
+                salvar="RubricaMes"
+                data-valor="true"
+                data-id="{{rubricaMes.RubricaMesId}}"
+                data-mes="{{rubricaMes.Mes}}"
+                data-dirty="false"
+                ng-model="rubricaMes.Gasto"
+                ng-class="{semFoco: rubricaMes.Gasto === null, comFoco: rubricaMes.Gasto !== null}"
+                ng-readonly="rubricaMes.PossuiGastosRelacionados"
+                wex-valor-mutex="rubricaMes.Replanejado" />
+
+			<button class="icoRepetirValor iconeRepetirValor" style="display: none;"
+                ng-click="repetirValor({rubrica: rubrica, ano: ano.Ano, mes: rubricaMes.Mes, attr: 'Gasto'})"></button>
+
+            <button class="botaoModal" title="{{'Visualizar notas fiscais' | translate}}"
+                ng-if="rubricaMes.PossuiGastosRelacionados || isRubricaMaoObraDireta()"
+                ng-click="showNotasFiscais(rubricaMes)">{{'Visualizar notas fiscais' | translate}}</button>
+
+		</td>
+	</tr>
+</tbody>

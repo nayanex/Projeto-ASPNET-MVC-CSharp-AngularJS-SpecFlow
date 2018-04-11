@@ -1,0 +1,18 @@
+﻿<div ng-controller="ProjetoSelecaoCtrl">
+	<div class="modal-header">
+		<h2>Projeto</h2>
+		<button class="fecharModal" ng-show="modalSelecao.podeFechar" ng-click="$close()">Cancelar</button>
+	</div>
+	<div id="escolhaProjeto" class="modal-body">
+		<div class="campoInformacoes textInfo">
+			<label>Escolha um projeto:</label>
+			<div autocomplete="projetos" modelo="projeto" seleciona="exibirInformacoes()">
+				<input type="text" autofocus />
+				<button class="btnComIcone submit" autocomplete-seleciona>
+					<span class="btnAbrirProjeto"></span>
+					<span>Abrir Projeto</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

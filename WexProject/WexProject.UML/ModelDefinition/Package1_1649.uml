@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="4194da49-3f9c-4f6b-b862-dd51ae203a89"
+  name="BLL"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="5b20f6b3-b51b-4e78-8158-d4ce88e10f82"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7515334a-6adb-4ecb-b882-2aff73bea7f1"
+        LastKnownName="Models"
+        LastKnownLocation="Package2_1649.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7e041c47-937a-4fbb-9450-975190044973"
+        LastKnownName="Entities"
+        LastKnownLocation="Package7_1649.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="8edfaee4-2c1b-40f5-9350-0986af3fd58c"
+        LastKnownName="Shared"
+        LastKnownLocation="Package9_1649.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

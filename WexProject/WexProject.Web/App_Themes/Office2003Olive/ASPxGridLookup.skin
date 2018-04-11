@@ -1,0 +1,23 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxe" Namespace="DevExpress.Web.ASPxEditors" Assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxgv" Namespace="DevExpress.Web.ASPxGridLookup" Assembly="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+
+<dxgv:ASPxGridLookup runat="server" CssFilePath="~/App_Themes/Office2003Olive/{0}/styles.css" CssPostfix="Office2003Olive"
+	SpriteCssFilePath="~/App_Themes/Office2003Olive/{0}/sprite.css">
+    <GridViewImages SpriteCssFilePath="~/App_Themes/Office2003Olive/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/Office2003Olive/GridView/Loading.gif" />
+        <LoadingPanelOnStatusBar Url="~/App_Themes/Office2003Olive/GridView/gvLoadingOnStatusBar.gif" />
+	</GridViewImages>	
+    <GridViewImagesFilterControl>
+        <LoadingPanel Url="~/App_Themes/Office2003Olive/Editors/Loading.gif" />
+    </GridViewImagesFilterControl>
+    <GridViewStyles>
+        <Header SortingImageSpacing="5" />
+	    <LoadingPanel ImageSpacing="10px" />
+    </GridViewStyles>	
+    <GridViewStylesEditors>
+        <ProgressBar Height="25px" />
+    </GridViewStylesEditors>
+    <ButtonStyle Width="13px" />
+</dxgv:ASPxGridLookup>
+

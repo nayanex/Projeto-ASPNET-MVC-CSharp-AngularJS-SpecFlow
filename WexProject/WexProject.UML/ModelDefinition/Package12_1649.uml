@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0bd7a6f6-faac-4348-a702-62ffda776d9d"
+  name="Custos"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="802685c0-31aa-4860-bd2c-4246c64c566e"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Shared.Domains.Custos"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="aa774a4b-f6e3-403a-bb2b-83fe9a0930ff">
+      <profileInstance
+        Id="695167b4-aceb-4d59-a935-da4302e47246"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="1cff096c-5828-4982-9e03-0c8b78c4fd9a"
+        name="CsClasseRubrica"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="5a7b7a0c-168b-4ee6-bef2-20154585aaa7"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL.Shared%2Fbin%2FDebug%2FWexProject.BLL.Shared.dll&quot; Namespace%3DWexProject.BLL.Shared.Domains.Custos Type%3DCsClasseRubrica"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="cf835f3e-7f55-427d-a0b0-cdb1b0af621b"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7ee2acb6-8af7-4058-a1f1-a788ee8bfef4">
+                <propertyInstance
+                  Id="4ba9a1d6-4db6-40ab-853e-98506e8bddab"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29375d35-32b8-4d12-b563-b12a6e321678">
+                <propertyInstance
+                  Id="a39e3c80-8c57-420d-a7c0-5fd9051b0631"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fb240493-f47d-4a4c-aeea-08901cf778d5">
+                <propertyInstance
+                  Id="1ae052a6-a194-4ad1-b736-52ff38b727d8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

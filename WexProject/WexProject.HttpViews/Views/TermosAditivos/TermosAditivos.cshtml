@@ -1,0 +1,141 @@
+﻿@{
+	ViewBag.Title = "Termo Aditivo";
+	ViewBag.AngularModule = "wex.custos.termoAditivo";
+}
+
+<script type="text/ng-template" id="projetosExistentes">
+	<div class="modal-header">
+		<h2>Projetos Existentes</h2>
+		<button ng-click="$close()" class="fecharModal" title="Fechar Modal">Fechar</button>
+	</div>
+	<div class="modal-body">
+		<div id="{{'projeto ' + projeto.Nome | asciify | camelCase}}" class="projetos blocoInfoAreaSecundario" ng-class="{ 'selecionado': projeto.selecionado}" ng-repeat="projeto in projetos" ng-click="alternarProjeto(projeto)">
+			<div class="projetoTitulo">
+				<h2>{{projeto.Nome}}</h2>
+			</div>
+			<div class="projetoDados">
+				<div class="periodo">
+					<p>Início Planejado: <span>{{projeto.DataInicial | data}}</span></p>
+				</div>
+
+				<div class="periodo">
+					<p>Início Real: <span>no-info</span></p>
+				</div>
+
+				<div class="gerenteProjeto">
+					<p>Gerente do Projeto: <span>{{projeto.Gerente}}</span></p>
+				</div>
+
+				<div class="clientes">
+					<p>Clientes: <span>{{projeto.Clientes}}</span></p>
+				</div>
+
+				<div class="centroCusto">
+					<p>Centro de Custo: <span>{{projeto.CentroCusto}}</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btnComIcone btnSelecionado" ng-click="$close(projetosSelecionados())"><span class="btnAssociarProjeto"></span><span>Associar</span></button>
+	</div>
+</script>
+
+<section id="wexTermoAditivo" class="" ng-controller="TermoAditivoCtrl">
+
+	<header>
+		<h1>Termo Aditivo</h1>
+	</header>
+
+	<div id="areaTermoAditivo" class="blocoInfoAreaPrimario">
+		<header>
+			<button class="btnComIcone btnSelecionado btNovoTermoAditivo" ng-click="adicionarTermoAditivo()"><span class="btnAdicionarNovo"></span><span>Termo Aditivo</span></button>
+		</header>
+
+		<div ng-show="novoTermoAditivo.aberto" class="novoTermoAditivo blocoInfoAreaSecundario">
+			<header>
+				<h2>Novo Termo Aditivo</h2>
+			</header>
+			<form name="novoTermoAditivoForm">
+				<div class="campoInformacoes textInfo nome">
+					<label>Nome:</label>
+					<input type="text" readonly="readonly" valida="novoTermoAditivo" valida-campo="Nome" ng-model="novoTermoAditivo.Nome" />
+				</div>
+
+				<div class="campoInformacoes textInfo periodo">
+					<label>Período:</label>
+					<input type="text" data-datepicker-popup="dd/MM/yyyy" valida="novoTermoAditivo" valida-campo="DataInicio" ng-model="novoTermoAditivo.DataInicio" />
+					<input type="text" data-datepicker-popup="dd/MM/yyyy" valida="novoTermoAditivo" valida-campo="DataTermino" ng-model="novoTermoAditivo.DataTermino" />
+				</div>
+
+				<div class="campoInformacoes textInfo patrocinador">
+					<label>Patrocinador:</label>
+					<select type="text" valida="novoTermoAditivo" valida-campo="Patrocinador" ng-model="novoTermoAditivo.Patrocinador" ng-options="patrocinador.Nome for patrocinador in patrocinadores">
+					</select>
+				</div>
+				<div class="campoInformacoes textareaInfo descricao">
+					<label>Descrição:</label>
+					<textarea valida="novoTermoAditivo" valida-campo="Descricao" ng-model="novoTermoAditivo.Descricao"></textarea>
+				</div>
+
+				<div class="campoInformacoes buttonArea">
+					<button class="btnComIcone btnSelecionado btNovoTermoAditivo" ng-click="criarTermoAditivo()"><span class="btnAdicionarNovo"></span><span>Criar</span></button>
+				</div>
+
+			</form>
+		</div>
+
+		<!-- TERMOS ADITIVOS (TA) -->
+		<div class="termoAditivo blocoInfoAreaSecundario" ng-class="{true: 'termoAditivoAberto'}[termoAditivo.aberto]" termo-aditivo ng-repeat-start="termoAditivo in termosAditivos">
+			<div class="buttonArea">
+				<button title="Excluir Termo Aditivo" ng-class="{true: 'iconeExcluirContraste', false: 'iconeExcluir'}[termoAditivo.aberto]" ng-click="excluirTermoAditivo(termoAditivo)"></button>
+				<button title="{{ {true: 'Recuar Termo Aditivo', false: 'Expandir Termo Aditivo'}[termoAditivo.aberto] }}" ng-class="{true: 'iconeRecuar', false: 'iconeExpandir2'}[termoAditivo.aberto]" ng-click="alternarTermoAditivo(termoAditivo)"></button>
+				<button title="Associar Projeto ao Termo Aditivo" ng-class="{true: 'iconeAssociarProjetoContraste', false: 'iconeAssociarProjeto'}[termoAditivo.aberto]" ng-click="associarProjetos(termoAditivo)"></button>
+			</div>
+			<div class="termoAditivoTitulo">
+				<p>{{termoAditivo.Nome}} - <span>{{projetos(termoAditivo)}}</span></p>
+			</div>
+			<div class="termoAditivoInput">
+				<input type="text" data-valor readonly="readonly" ng-model="termoAditivo.AporteTotal" />
+			</div>
+		</div>
+
+		<!-- Detalhes do TA -->
+
+		<div class="termoAditivoDetalhes blocoInfoAreaSecundario" ng-repeat-end ng-show="termoAditivo.aberto">
+			<div class="termoAditivoDetalhesPrincipal">
+				<div class="taPatrocinador">
+					<p>Patrocinador: <span>{{termoAditivo.Patrocinador.Nome}}</span></p>
+				</div>
+				<div class="taDescricao">
+					<p>{{termoAditivo.Descricao}}</p>
+				</div>
+
+				<div class="taPeriodo">
+					<div class="campoInformacoes textInfo">
+						<label>Periodo:</label>
+						<input type="text" data-datepicker-popup="dd/MM/yyyy" ng-model="termoAditivo.DataInicio" />
+						<input type="text" data-datepicker-popup="dd/MM/yyyy" ng-model="termoAditivo.DataTermino" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Projetos Macros -->
+
+			<div class="projetosMacrosGeral">
+				<div class="projetoMacro blocoInfoAreaSecundario" ng-repeat="projeto in termoAditivo.Projetos">
+					<div class="buttonArea">
+						<button title="Disassociar Projeto" class="iconeExcluir" ng-click="disassociarProjeto(termoAditivo, projeto)"></button>
+					</div>
+					<div class="termoAditivoTitulo">
+						<p>{{projeto.Nome}}</p>
+					</div>
+					<div class="termoAditivoInput">
+						<input type="text" data-valor ng-model="projeto.Valor" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>

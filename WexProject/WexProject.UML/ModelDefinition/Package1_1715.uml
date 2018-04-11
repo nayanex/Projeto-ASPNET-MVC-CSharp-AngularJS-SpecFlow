@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ef0cfdf7-cc3c-46e5-af70-cc4453f4c13b"
+  name="DevExpress"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="628fcc99-062f-4791-be7b-77095fa0defb"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDevExpress"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="bedfcaf9-33fd-445f-b73e-b13440538722"
+        LastKnownName="Xpo"
+        LastKnownLocation="Package2_1715.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="484eabd9-a25c-4c6c-aa93-e0fec428c047"
+        LastKnownName="Persistent"
+        LastKnownLocation="Package5_1715.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

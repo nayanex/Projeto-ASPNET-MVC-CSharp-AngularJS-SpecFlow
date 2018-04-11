@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "Análise Crítica";
+	ViewBag.AngularModule = "wex.analise.custos";
+}
+
+<section id="wexAnaliseCritica" ng-controller="ProjetosCtrl">
+	<header>
+		<h1>Análise Crítica dos Projetos</h1>
+        <div class="campoInformacoes textInfo">
+			<label>Projeto:</label>
+			<input type="text" placeholder="Nome do Projeto" ng-model="selecao.Nome"/>
+		</div>
+        
+		<div class="campoInformacoes selectInfo">
+			<label>Situação:</label>
+			<select ng-model="selecao.SituacaoFinanceira">
+				<option value="">Todos</option>
+				<option value="Positivo">Positivo</option>
+				<option value="Atencao">Negativo</option>
+				<option value="Critico">Situação Crítica</option>
+			</select>
+		</div>
+
+        <div class="campoInformacoes checkboxInfo" style="display:none;">
+			<label>Aspecto:</label>
+			<input type="checkbox" checked="checked" disabled /><span>Desenvolvimento</span>
+            <input type="checkbox" checked="checked" disabled /><span>Administrativo</span>
+
+		</div>
+	</header>
+
+	<div class="progressaoGeralArea blocoInfoAreaPrimario">
+		<div ng-cloak id="projeto_{{projeto.Oid}}" ng-repeat="projeto in projetos | filter:selecao" ng-controller="AnaliseCtrl" class="blocoInfoAreaSecundario">
+			<header ng-click="abreProjeto(projeto)">
+				<h3 class="seta" ng-class="{iconeRecuar2: projeto.aberto, iconeExpandir2: !projeto.aberto}">{{projeto.Nome}} | Previsão de saldo do projeto: <span ng-class="{negativo: projeto.Projecao < 0, positivo: projeto.Projecao > 0}">{{projeto.Projecao | monetario}}</span> | Previsão de saldo financeiro: <span ng-class="{negativo: projeto.FluxoCaixa < 0, positivo: projeto.FluxoCaixa > 0}">{{projeto.FluxoCaixa | monetario}}</span></h3>
+			</header>
+            
+			<div class="progressaoArea">
+				<div class="statusArea">
+					<div class="statusProjeto" ng-class="'status' + projeto.SituacaoFinanceira"></div>
+				</div>
+
+				<div class="barrasArea">
+				    <div class="barraProgressao barraTempoOcorrido" ng-class="hintTempo" 
+				         wex-progresso="projeto.Porcentagem"
+				         wex-progresso-titulo="Tempo ocorrido"
+				         data-hint="{{exibirMenssagemDeTempoOcorrido(projeto)}}">
+                    </div>
+				    <div class="barraProgressao barraOrcamentoConsumido" ng-class="hintOrcamento"
+				         wex-progresso="projeto.OrcamentoConsumido * 100 / projeto.OrcamentoPrevisto"
+				         wex-progresso-titulo="Orçamento"
+				         data-hint="Previsto: R$ {{projeto.OrcamentoPrevisto | monetario}} / Consumido: R$ {{projeto.OrcamentoConsumido | monetario}}">
+				    </div>
+                    <span></span>
+				</div>
+			</div>
+			<div class="detalhesProjetoGeral" ng-show="projeto.aberto">
+				<div id="detalhamentoProjeto" class="detalhamentoProjetoAnalise" aba="Extrato do Projeto">
+					<header>
+						<p>Custo total do Projeto: <span>{{projeto.CustoTotal | monetario}}</span></p>
+					</header>
+					<table>
+						<thead>
+                            <tr>
+                                <td rowspan="2">Mes</td>
+								<td colspan="2" class="tabelaAnaliseProjetoDesenvolvimento">Desenvolvimento</td>
+								<td colspan="2" class="tabelaAnaliseProjetoAdministrativo">Administrativo</td>
+								<td colspan="2">Saldo do Projeto</td>
+							</tr>
+							<tr>
+								<td class="tabelaAnaliseProjetoOrcamentoAprovado">Orçamento Aprovado</td>
+                                <td class="tabelaAnaliseProjetoDespesaReal">Despesa Real / Previsão</td>
+								<td class="tabelaAnaliseProjetoOrcamentoAprovado">Orçamento Aprovado</td>
+                                <td class="tabelaAnaliseProjetoDespesaReal">Despesa Real / Previsão</td>
+								<td>Mensal</td>
+								<td>Acumulado</td>
+							</tr>
+						</thead>
+						<tbody ng-repeat="(ano, meses) in projeto.ExtratoDoProjeto.Anos">
+							<tr ng-repeat="mes in meses" ng-show="isMesExtratoProjetoVisivel(mes)">
+								<td>{{mesesNome[$index].longo}} / {{ano}}</td>
+                                <td class="orcApr">{{mes.OrcamentoAprovadoDesenvolvimento | monetario}}</td>
+                                <td class="despReal" ng-class="{previsao: mes.DespesasDesenvolvimento.Previsao}">{{mes.DespesasDesenvolvimento.Valor | monetario}}</td>
+								<td class="orcApr">{{mes.OrcamentoAprovadoAdministracao | monetario}}</td>
+								<td class="despReal" ng-class="{previsao: mes.DespesasAdministrativas.Previsao}">{{mes.DespesasAdministrativas.Valor | monetario}}</td>
+								<td class="acum" ng-class="{negativo: mes.ResultadoMensal.Valor < 0, previsao:  mes.ResultadoMensal.Previsao}">{{mes.ResultadoMensal.Valor | monetario}}</td>
+								<td class="acum" ng-class="{negativo: mes.Acumulado.Valor < 0, previsao: mes.Acumulado.Previsao}">{{mes.Acumulado.Valor | monetario}}</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>Total</td>
+                                <td>{{projeto.ExtratoDoProjeto.Total.OrcamentoAprovadoDesenvolvimento | monetario}}</td>
+                                <td ng-class="{previsao: projeto.ExtratoDoProjeto.Total.DespesasDesenvolvimento.Previsao}">{{projeto.ExtratoDoProjeto.Total.DespesasDesenvolvimento.Valor | monetario}}</td>
+                                <td>{{projeto.ExtratoDoProjeto.Total.OrcamentoAprovadoAdministracao | monetario}}</td>
+                                <td ng-class="{previsao: projeto.ExtratoDoProjeto.Total.DespesasAdministrativas.Previsao}">{{projeto.ExtratoDoProjeto.Total.DespesasAdministrativas.Valor | monetario}}</td>
+								<td ng-class="{negativo: projeto.ExtratoDoProjeto.Total.ResultadoMensal.Valor < 0, previsao: projeto.ExtratoDoProjeto.Total.ResultadoMensal.Previsao}">{{projeto.ExtratoDoProjeto.Total.ResultadoMensal.Valor | monetario}}</td>
+								<td ng-class="{negativo: projeto.ExtratoDoProjeto.Total.Acumulado.Valor < 0,  previsao: projeto.ExtratoDoProjeto.Total.Acumulado.Previsao}">{{projeto.ExtratoDoProjeto.Total.Acumulado.Valor | monetario}}</td>
+							</tr>
+						</tbody>
+					</table>
+                    <!-- Legenda -->
+                    <div class="legendaArea">
+                        <span>Legenda:</span>
+                        <ul>
+                            <li>
+                                <div class="bgLegendas valoresPlanejadosGeral legendaUnica"></div>
+                                <span>Valor Real Previsto</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Legenda -->
+				</div>
+
+				<div id="fluxoCaixa" class="detalhamentoProjetoAnalise" aba="Extrato Financeiro">
+					<header>
+						<p>Custo total do Projeto: <span>{{projeto.CustoTotal | monetario}}</span></p>
+					</header>
+					<table>
+						<thead>
+                                
+                            <tr>
+                                <td rowspan="2">Mes</td>
+                                <td colspan="2" class="tabelaAnaliseProjetoDesenvolvimento">Aporte</td>
+                                <td colspan="2" class="tabelaAnaliseProjetoAdministrativo">Despesa Real / Previsão</td>
+                                <td rowspan="2">Saldo Financeiro Acumulado</td>
+                            </tr>
+							<tr>
+								
+								<td class="tabelaAnaliseProjetoOrcamentoAprovado">Planejado</td>
+								<td class="tabelaAnaliseProjetoDespesaReal">Realizado / Previsão</td>
+                                <td class="tabelaAnaliseProjetoOrcamentoAprovado">Desenvolvimento</td>
+                                <td class="tabelaAnaliseProjetoDespesaReal">Administrativo</td>
+								
+							</tr>
+						</thead>
+						<tbody ng-repeat="(ano, meses) in projeto.ExtratoFinanceiro.Anos">
+							<tr ng-repeat="mes in meses" ng-if="isMesExtratoFinanceiroVisivel(mes)">
+								<td>{{mesesNome[$index].longo}} / {{ano}}</td>
+								<td class="aportes">{{mes.AportePlanejado | monetario}}</td>
+								<td class="aportes" ng-class="{previsao: mes.AporteRealizado.Previsao }">{{mes.AporteRealizado.Valor | monetario}}</td>
+                                <td class="despReal" ng-class="{negativo: mes.DespesasReaisDesenvolvimento.Valor < 0, previsao: mes.DespesasReaisDesenvolvimento.Previsao}">{{mes.DespesasReaisDesenvolvimento.Valor | monetario}}</td>
+                                <td class="despReal" ng-class="{negativo: mes.DespesasReaisAdministrativas.Valor < 0, previsao: mes.DespesasReaisAdministrativas.Previsao}">{{mes.DespesasReaisAdministrativas.Valor | monetario}}</td>
+								<td class="acum"
+                                    ng-class="{negativo: mes.Acumulado.Valor < 0, previsao: mes.Acumulado.Previsao }">
+                                    {{mes.Acumulado.Valor | monetario}}
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td>Total</td>
+								<td>{{projeto.ExtratoFinanceiro.Total.AportePlanejado | monetario}}</td>
+								<td ng-class="{previsao: projeto.ExtratoFinanceiro.Total.AporteRealizado.Previsao}">{{projeto.ExtratoFinanceiro.Total.AporteRealizado.Valor | monetario}}</td>
+                                <td ng-class="{previsao: projeto.ExtratoFinanceiro.Total.DespesasReaisDesenvolvimento.Previsao, negativo: projeto.ExtratoFinanceiro.Total.DespesasReaisDesenvolvimento.Valor < 0}">{{projeto.ExtratoFinanceiro.Total.DespesasReaisDesenvolvimento.Valor | monetario}}</td>
+                                <td ng-class="{previsao: projeto.ExtratoFinanceiro.Total.DespesasReaisAdministrativas.Previsao, negativo: projeto.ExtratoFinanceiro.Total.DespesasReaisAdministrativas.Valor < 0}">{{projeto.ExtratoFinanceiro.Total.DespesasReaisAdministrativas.Valor | monetario}}</td>
+								<td ng-class="{previsao: projeto.ExtratoFinanceiro.Total.Acumulado.Previsao, negativo: projeto.ExtratoFinanceiro.Total.Acumulado.Valor < 0}">{{projeto.ExtratoFinanceiro.Total.Acumulado.Valor | monetario}}</td>
+							</tr>
+						</tbody>
+					</table>
+                    <!-- Legenda -->
+                    <div class="legendaArea">
+                        <span>Legenda:</span>
+                        <ul>
+                            <li>
+                                <div class="bgLegendas valoresPlanejadosGeral legendaUnica"></div>
+                                <span>Valor Real Previsto</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Legenda -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>

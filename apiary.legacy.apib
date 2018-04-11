@@ -1,0 +1,951 @@
+HOST: http://api.fpf.br/
+
+--- WexAPI ---
+
+---
+Bem vindo a documentação da API do Wex.
+Os estados de implementação da blueprint são os seguintes:
+
+- Note (Nota que pode se tornar um serviço);
+
+- Working Draft (Trabalhando na especificação);
+
+- Draft (Especificação pronta);
+
+- Proposed (Sendo implementada);
+
+- Recommended (Recomendada para uso); 
+---
+
+--
+Orçamentos Resources (Working Draft)
+A seguinte sessão de recursos é relacionada à feature "Solicitação de Orçamento"
+--
+
+Listar orçamentos
+GET /orcamentos
+< 200
+{
+    "orcamentos":
+        [
+            {
+                "OrcamentoID":1,
+                "Titulo": "Titulo 1",
+                "Situacao":"Negada",
+                "ResponsavelID": 5,
+                "ClienteID": 3,
+                "Valor": 100.00,
+                "TipoSolicitacaoID": 2,
+                "Prioridade": "Alta",
+                "Prazo": "/Date(1376280000000)/",
+                "Emissao": "/Date(1376280000000)/",
+                "DataEntrega": "/Date(1376280000000)/",
+                "Comentario": "Blablabla"
+            },
+            
+            {
+                "OrcamentoID":2,
+                "Titulo": "Titulo 2",
+                "Situacao":"Negada",
+                "ResponsavelID": 6,
+                "ClienteID": 4,
+                "Valor": 200.00,
+                "TipoSolicitacaoID": 3,
+                "Prioridade": "Alta",
+                "Prazo": "/Date(1376280000000)/",
+                "Emissao": "/Date(1376280000000)/",
+                "DataEntrega": "/Date(1376280000000)/",
+                "Comentario": "Blablabla"
+            }
+            
+            
+        ]
+}
+
+Listar 1 orçamento em especial
+GET /orcamentos/1
+< 200
+{
+  "orcamento": 
+        {
+            "OrcamentoID":1,
+            "Titulo": "Titulo 1",
+            "Situacao":"Negada",
+            "ResponsavelID": 5,
+            "ClienteID": 3,
+            "Valor": 100.00,
+            "TipoSolicitacaoID": 2,
+            "Prioridade": "Alta",
+            "Prazo": "/Date(1376280000000)/",
+            "Emissao": "/Date(1376280000000)/",
+            "DataEntrega": "/Date(1376280000000)/",
+            "Comentario": "Blablabla"
+            
+        }  
+}
+
+Adicionar uma nova solicitação de orçamento
+POST /orcamentos
+{ 
+    "orcamento":
+  {
+      "SolicitanteID":1,
+      "ResponsavelID":1,
+      "Repositorio":"Ciclo 01",
+      "SituacaoID":1,
+      "TipoSolicitacaoID":1,
+      "Prioridade":"Baixa",
+      "OrcamentoID":1,
+      "Titulo":"Titulo 01",
+      "Prazo":"/Date(1376280000000)/",
+      "DataEntrega":"/Date(1376280000000)/",
+      "Valor":100.00,
+      "ClienteID":1,
+      "Sigla":"FPF",
+      "Contato":"21234567",
+      "Email":"balaba@gmail.com",
+      "Telefone":"89674674",      
+      "EmailCC":["braga@fpf.br", "alexandre@fpf.br"],
+      "EmailCCO":["ayrton@fpf.br", "joao@fpf.br"],
+      "Comentario":"blabablala"
+    }
+}
+< 200
+{
+    success: "Orçamento inserido com sucesso."
+}
+
+Atualizar uma solicitação de orçamento existente
+PUT /orcamentos/1
+{
+  "orcamento":
+    {
+      "SolicitanteID":1,
+      "ResponsavelID":1,
+      "Repositorio":"Ciclo 01",
+      "SituacaoID":1,
+      "TipoSolicitacaoID":1,
+      "Prioridade":"Baixa",
+      "Titulo":"Titulo 01",
+      "Prazo":"/Date(1376280000000)/",
+      "DataEntrega":"/Date(1376280000000)/",
+      "Valor":100.00,
+      "ClienteID":1,
+      "Sigla":"FPF",
+      "Contato":"21234567",
+      "Email":"balaba@gmail.com",
+      "Telefone":"89674674",      
+      "EmailCC":["braga@fpf.br", "alexandre@fpf.br"],
+      "EmailCCO":["ayrton@fpf.br", "joao@fpf.br"],
+      "Comentario":"blabablala"
+     }
+}
+< 200
+{
+    success: "Orçamento atualizado com sucesso."
+}
+
+--
+Custos Resources (Working Draft)
+A seguinte sessão de recursos é relacionada à feature custos
+--
+
+Listar despesas planejadas e aprovadas de uma dada classe de rubrica de um aditivo
+GET /custos/aditivo/2/rubricas?classe=1
+< 200
+< Content-Type: application/json
+{
+    "rubricas": 
+    [
+        {
+            "RubricaId":39,
+            "AditivoId":2,
+            "Tipo":16,
+            "Nome":"Custo Fixo FPF (Rateio)",
+            "TotalPlanejado":2000.00,
+            "Anos":[
+                {
+                    "Ano":2013,
+                    "Meses":[
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":1,
+                            "Planejado":500.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":2,
+                            "Planejado":500.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":3,
+                            "Planejado":500.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":4,
+                            "Planejado":500.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":5,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":6,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":7,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":8,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":9,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":10,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":11,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        },
+                        {
+                            "RubricaMesId":34,
+                            "RubricaId":39
+                            "Ano":2013,
+                            "Mes":12,
+                            "Planejado":0.00,
+                            "Replanejdao":0.00
+                            "Gasto":0.00
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "RubricaId":40,
+            "AditivoId":2,
+            "Tipo":17,
+            "Nome":"Depreciação de Equipamentos",
+            "TotalPlanejado":0.00,
+            "Anos":[]
+        },
+        {
+            "RubricaId":41,
+            "AditivoId":2,
+            "Tipo":18,
+            "Nome":"Terceiros",
+            "TotalPlanejado":0.00,
+            "Anos":[]
+        },
+        {
+            "RubricaId":42,
+            "AditivoId":2,
+            "Tipo":19,
+            "Nome":"Taxa de Administração",
+            "TotalPlanejado":0.00,
+            "Anos":[]
+        },
+        {
+            "RubricaId":43,
+            "AditivoId":2,
+            "Tipo":20,
+            "Nome":"Impostos e Encargos",
+            "TotalPlanejado":0.00,
+            "Anos":[]
+        },
+        {
+            "RubricaId":44,
+            "AditivoId":2,
+            "Tipo":21,
+            "Nome":"Apoio a Clientes",
+            "TotalPlanejado":0.00,
+            "Anos":[]
+        },
+        {
+            "RubricaId":45,
+            "AditivoId":2,
+            "Tipo":22,
+            "Nome":"FACN",
+            "TotalPlanejado":0.00,
+            "Anos":[]
+        }
+    ]
+}
+
+--
+Analise Critica Resources (Recommended)
+A seguinte sessão de recursos é relacionada à entidade projeto
+ 
+ - Vai listar projetos
+ 
+ - Vai poder persistir lista de arquivos de um projeto a um PBI
+ 
+--
+
+Listar tipos de análise.
+GET /analise
+< 200
+< Content-Type: application/json
+{
+tipo: [1]
+0:  {
+Nome: "Custos"
+}-
+-
+}
+
+Análise Crítica Geral
+GET /analise/geral
+< 200
+< Content-Type: application/json
+{ "geral": {
+        "planejado": {
+            "Total": 100000.00,
+            "Anos": {
+                "2013": [
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    10000.00,
+                    0.00,
+                    0.00
+                ]
+            }
+        },
+        "real": {
+            "Total": 80000.00,
+            "Anos": {
+                "2013": [
+                    9500.00,
+                    8500.00,
+                    9000.00,
+                    9500.00,
+                    8000.00,
+                    8900.00,
+                    9100.00,
+                    9000.00,
+                    8500.00,
+                    0.00,
+                    0.00,
+                    0.00
+                ]
+            }
+        },
+        "resultado": {
+            "Total": 20000.00,
+            "Anos": {
+                "2013": [
+                    500.00,
+                    1500.00,
+                    1000.00,
+                    500.00,
+                    2000.00,
+                    1100.00,
+                    900.00,
+                    1000.00,
+                    1500.00,
+                    10000.00,
+                    0.00,
+                    0.00
+                ]
+            }
+        },
+        "acumulado": {
+            "Total": 20000.00,
+            "Anos": {
+                "2013": [
+                    500.00,
+                    2000.00,
+                    3000.00,
+                    3500.00,
+                    5500.00,
+                    6600.00,
+                    7500.00,
+                    8500.00,
+                    10000.00,
+                    20000.00,
+                    0.00,
+                    0.00
+                ]
+            }
+        }
+    }
+}
+
+Análise Crítica Geral
+Valores planejados dos Projetos
+GET /analise/geral/planejado
+< 200
+< Content-Type: application/json
+{ "projetos": [
+    {
+        "Nome": "Projeto 1",
+        "Oid": "7ed0ce47-1b5c-4bb5-bef8-652f0e831012",
+        "Total": 50000.00,
+        "Anos": {
+            "2013": [
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                0.00,
+                0.00
+            ]
+        }
+    },
+    {
+        "Nome": "Projeto 2",
+        "Oid": "d0d2a7cf-e739-417e-bbba-42eb4f6b65a5",
+        "Total": 50000.00,
+        "Anos": {
+            "2013": [
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                5000.00,
+                0.00,
+                0.00
+            ]
+        }
+    }]
+}
+
+Análise Crítica Geral
+Valores planejados das Rúbricas de um Projeto
+GET /analise/geral/planejado/7ed0ce47-1b5c-4bb5-bef8-652f0e831012
+< 200
+< Content-Type: application/json
+{
+    "rubricas": {
+        "desenvolvimento": [
+            {
+                "Nome": "Rúbrica 1",
+                "Total": 10000.00,
+                "Anos": {
+                    "2013": [
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        1000.00,
+                        0.00,
+                        0.00
+                    ]
+                }
+            },
+            {
+                "Nome": "Rúbrica 2",
+                "Total": 20000.00,
+                "Anos": {
+                    "2013": [
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        0.00,
+                        0.00
+                    ]
+                }
+            }
+        ],
+        "administrativa": [
+            {
+                "Nome": "Rúbrica 3",
+                "Total": 20000.00,
+                "Anos": {
+                    "2013": [
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        2000.00,
+                        0.00,
+                        0.00
+                    ]
+                }
+            }
+        ]
+    }
+}
+
+Listar projetos da análise de custos.
+
+SituacaoFinanceira pode ser "Positivo", "Atencao" ou "Critico".
+GET /analise/custos
+< 200
+< Content-Type: application/json
+{
+projetos: [2]
+-0:  {
+Oid: "7ed0ce47-1b5c-4bb5-bef8-652f0e831012"
+Nome: "WexProject"
+Projecao: "80000"
+FluxoCaixa: "50000"
+TempoOcorrido: "72"
+OrcamentoConsumido: "57"
+TempoOcorridoInfo: "15 de 22 meses realizados."
+OrcamentoConsumidoInfo: "Orçamento previsto: R$ 3.000.000,00 / Orçamento Consumido: R$ 1.710.000,00"
+SituacaoFinanceira: "Positivo"
+Status: "EmAndamento"
+}
+-1:  {
+Oid: "d0d2a7cf-e739-417e-bbba-42eb4f6b65a5"
+Nome: "WexIntranet"
+Projecao: "20000"
+FluxoCaixa: "-10000"
+TempoOcorrido: "100"
+OrcamentoConsumido: "98"
+TempoOcorridoInfo: "12 de 12 meses realizados."
+OrcamentoConsumidoInfo: "Orçamento previsto: R$ 1.000.000,00 / Orçamento Consumido: R$ 980.000,00"
+SituacaoFinanceira: "Atencao"
+Status: "EmAndamento"
+}
+}
+
+
+Detalhamento e fluxo de caixa de um projeto específico
+GET /analise/custos/7ed0ce47-1b5c-4bb5-bef8-652f0e831012
+< 200
+< Content-Type: application/json
+{
+    "projeto" : {
+        "Nome": "WexProject",
+        "CustoTotal": "1000000",
+        "Detalhamento": {
+            "Anos": {
+                "2013": [
+                    {}, 
+                    {
+                        "OrcamentoAprovado": "100",
+                        "DespesasReais": "90",
+                        "ResultadoMensal": "10",
+                        "Acumulado": "10"
+                    },
+                    {
+                        "OrcamentoAprovado": "100",
+                        "DespesasReais": "80",
+                        "ResultadoMensal": "20",
+                        "Acumulado": "30"
+                    }, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}
+                ]
+            },
+            "Total": {
+                "OrcamentoAprovado": "1000000",
+                "DespesasReais": "1000000",
+                "ResultadoMensal": "0",
+                "Acumulado": "0"
+            }
+        },
+        "FluxoDeCaixa": {
+            "Anos": {
+                "2013": [
+                    {},
+                    {
+                        "AportePlanejeado": "100",
+                        "AporteRealizado": "100",
+                        "DespesasReais": "90",
+                        "Acumulado": "10"
+                    },
+                    {
+                        "AportePlanejeado": "100",
+                        "AporteRealizado": "100",
+                        "DespesasReais": "80",
+                        "Acumulado": "30"
+                    }, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}, 
+                    {}
+                ]
+            },
+            "Total": {
+                "AportePlanejeado": "1000000",
+                "AporteRealizado": "1000000",
+                "DespesasReais": "900000",
+                "Acumulado": "100000"
+            }        
+        }
+    }
+}
+
+--
+Projeto Resources (Proposed)
+A seguinte sessão de recursos é relacionada à entidade projeto
+ 
+ - Vai listar projetos
+ 
+ - Vai poder persistir lista de arquivos de um projeto a um PBI
+ 
+--
+
+Criar um novo projeto
+POST /projetos
+{
+    "Nome": "WexProject",
+    "InicioPlanejado": "/Date(1376280000000)/",
+    "InicioReal": "/Date(1381896000000)/",
+    "GerenteProjeto": "8uy9hij7-1b5c-4bb5-bef8-56ertfgy1014",
+    "Clientes": ["7ed0ce47-1b5c-4bb5-bef8-652f0e831012", "7ed0ce47-1b5c-4bb5-bef8-652f0e831012", "7ed0ce47-1b5c-4bb5-bef8-652f0e831012"],
+    "ProjetoMacro": "7ed0ce47-1b5c-4bb5-bef8-652f0e831012",
+    "CentroCusto": "56rfte47-124c-qwb5-bef8-652f0e831012"
+}
+< 200
+< Content-Type: application/json
+{
+    "Oid": "67tgyuh7-1b5c-4bb5-bef8-567rtfgyuh12"
+}
++++++
+< 400
+< Content-Type: application/json
+{
+    "validations":
+    [
+        {
+            "field": "CentroCusto",
+            "validation": "Centro de Custo é obrigatório"
+        },
+        {
+            "field": "ProjetoMacro",
+            "validation": "Projeto Macro não pode ser associado a outro Projeto Macro"
+        },
+        {
+            "field": "GerenteProjeto",
+            "validation": "Gerente de Projeto é obrigatório"
+        },
+        {
+            "field": "GerenteProjeto",
+            "validation": "Usuário selecionado não possui o perfil de Gerente de Projeto"
+        },
+        {
+            "field": "Clientes",
+            "validation": "Nenhum cliente informado"
+        },
+        {
+            "field": "InicioPlanejado",
+            "validation": "Data Início Planejado é invalida"
+        },
+        {
+            "field": "InicioReal",
+            "validation": "Data Início Real é invalida"
+        }
+    ]
+}
+
+Atualizar um projeto existente
+PUT /projetos/67tgyuh7-1b5c-4bb5-bef8-567rtfgyuh12
+{
+    "Nome": "WexProject",
+    "InicioPlanejado": "/Date(1376280000000)/",
+    "InicioReal": "/Date(1381896000000)/",
+    "GerenteProjeto": "7ed0ce47-1b5c-4bb5-bef8-652f0e831014",
+    "Clientes": ["7ed0ce47-1b5c-4bb5-bef8-652f0e831012", "7ed0ce47-1b5c-4bb5-bef8-652f0e831012", "7ed0ce47-1b5c-4bb5-bef8-652f0e831012"]
+}
+< 200
++++++
+< 400
+< Content-Type: application/json
+{
+    "validations":
+    [
+        {
+            "field": "CentroCusto",
+            "validation": "Centro de Custo é obrigatório"
+        },
+        {
+            "field": "ProjetoMacro",
+            "validation": "Projeto Macro não pode ser associado a outro Projeto Macro"
+        },
+        {
+            "field": "GerenteProjeto",
+            "validation": "Gerente de Projeto é obrigatório"
+        },
+        {
+            "field": "GerenteProjeto",
+            "validation": "Usuário selecionado não possui o perfil de Gerente de Projeto"
+        },
+        {
+            "field": "Clientes",
+            "validation": "Nenhum cliente informado"
+        },
+        {
+            "field": "InicioPlanejado",
+            "validation": "Data Início Planejado é invalida"
+        },
+        {
+            "field": "InicioReal",
+            "validation": "Data Início Real é invalida"
+        }
+    ]
+}
+
+Listar projetos ativos.
+GET /projetos
+< 200
+< Content-Type: application/json
+{
+projetos: [1]
+0:  {
+Oid: "7ed0ce47-1b5c-4bb5-bef8-652f0e831012"
+Nome: "WexProject"
+DataInicial: "/Date(1376280000000)/"
+DataFinal: "/Date(1381896000000)/"
+Valor: 10000
+Duracao: 3
+Cliente: "FPF"
+Status: "EmAndamento"
+}-
+-
+}
+
+Checar de um PBI existe num dado projeto
+GET /projetos/estorias?pbi=PBI_02.01&projeto=wexcustos
+< 200
+{
+    "message": "PBI existe"
+}
++++++
+< 404
+{
+    "message": "PBI não existe no projeto ou nome de projeto incorreto"
+}
+
+Persistir revisões para rastreabilidade nas estórias 
+POST /projetos/estorias/revisoes
+{
+    "commit": {
+        "Revision": "4068", 
+        "Author": "diogo.riker",
+        "Date": "quarta-feira, 18 de setembro de 2013 17:59:57",
+        "Message": "Melhorias solicitadas pelo cliente",
+        "Repo": "http://svn.fpf.br/svn/fpf-wex2.project",
+        "Projeto": "fpf-wex2.project",
+        "Estoria": "PBI_02.01",
+        "Arquivos": {
+            "Arquivo": "Added /trunk/Desenvolvimento/ProjetoDetalhado/UX/custos/custo/Versao_resumida_files",
+            "Arquivo": "Modified /trunk/Desenvolvimento/ProjetoDetalhado/UX/custos/custo/data/sitemap.js"
+        }
+    }
+}
+< 202
+{
+    "message": "Revisão evidenciada com sucesso no PBI selecionado"
+}
++++++
+< 404
+{
+    "message": "PBI não existe no projeto ou nome de projeto incorreto"
+}
+
+--
+Roles Resources (Recommended)
+Controle de acessos
+--
+
+Retornando lista de papés existentes
+GET /roles
+< 200
+{
+roles: [4]
+0:  "Administrativo"
+1:  "Aportes"
+2:  "Desenvolvimento"
+3:  "Sudo"
+-
+}
+
+Adicionando um novo papel
+POST /roles
+{ "role": "teste" }
+< 200
+{
+success: "Papel criado com sucesso."
+}
+
+Removendo um papel existente
+DELETE /roles
+< 200
+{
+success: "Papel removido com sucesso."
+}
+
+Retornando lista de papés do usuário atual
+GET /roles/currentuser
+< 200
+{
+roles: [1]
+0:  "Desenvolvimento"
+-
+}
+
+Retornando lista de papés do usuário atual
+GET /roles/user?name=DOM\lbraga
+< 200
+{
+roles: [1]
+0:  "FatalityPermissions"
+-
+}
+
+Retornando lista de usuários num dado papel
+GET /roles/usersin?role=Sudo
+< 200
+{
+roles: [2]
+0:  "DOM\kratos"
+1:  "DOM\zeus"
+-
+}
+
+Adicionando um usuário num dado papel
+POST /roles/paper
+{ "role": "teste", "username": "DOM\\master" }
+< 200
+{
+success: "Usuário 'DOM\\master' adicionado com sucesso ao papel 'teste'."
+}
+
+Removendo um usuário de um dado papel
+DELETE /roles/paper
+{ "role": "teste", "username": "DOM\\master" }
+< 200
+{
+success: "Usuário 'DOM\\master' removido com sucesso do papel 'teste'."
+}
+
+--
+Colaborador Resources (Note)
+A seguinte sessão de recursos é relacionada à entidade colaborador
+--
+
+Listar colaboradores adicionados na entidade.
+GET /colaboradores
+< 200
+< Content-Type: application/json
+{ "colaboradores": [
+{ "url": "/colaboradores/1", "nome":"Carlos Pereira Batista" }
+] }
+
+Salvar novos colaboradores na sua entidade
+POST /colaboradores
+> Content-Type: application/json
+{ "nome":"Bobo da Corte" }
+< 201
+< Content-Type: application/json
+{ "status": "created", "url": "/colaboradores/2" }
+
+--
+Skill Resources (Note)
+Para ter a lista de skills da fundação e colaboradores de uma skill
+--
+
+Esse recurso permite você persistir e consultar skills (Draft)
+POST /skills
+{ "skill": "C#" }
+< 200
+{ "receipt": "/skills/csharp" }

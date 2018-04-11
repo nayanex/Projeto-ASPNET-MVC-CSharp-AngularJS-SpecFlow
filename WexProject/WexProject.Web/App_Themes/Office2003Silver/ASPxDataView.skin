@@ -1,0 +1,8 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxdv" Namespace="DevExpress.Web.ASPxDataView" Assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxdv:ASPxDataView runat="server" SpriteCssFilePath="~/App_Themes/Office2003Silver/{0}/sprite.css"
+    CssFilePath="~/App_Themes/Office2003Silver/{0}/styles.css" CssPostfix="Office2003Silver" PagerPanelSpacing="0px">
+    <LoadingPanelImage Url="~/App_Themes/Office2003Silver/Web/Loading.gif"></LoadingPanelImage>    
+</dxdv:ASPxDataView>
+

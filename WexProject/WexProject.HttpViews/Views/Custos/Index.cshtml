@@ -1,0 +1,111 @@
+﻿@model WexProject.BLL.Shared.DTOs.Custos.ProjetoDto
+
+@{
+	ViewBag.Title = "Custos";
+	ViewBag.AngularModule = "custos";
+}
+
+<section id="wexCusto" ng-controller="ProjetoCtrl">
+	<header class="infoGeralCusto">
+		<h1 ng-cloak>Custos: {{projeto.Nome}}</h1>
+		<button class="btnComIcone" ng-click="mudarProjeto()">
+			<span class="btnMudarProjeto"></span>
+			<span>Mudar projeto</span>
+		</button>
+		<div class="infoGeralCusto">
+			<div class="campoInformacoes textInfo">
+				<label>Cliente:</label>
+				<input type="text" readonly="readonly" ng-model="projeto.Cliente" />
+			</div>
+
+			<div class="campoInformacoes textInfo">
+				<label>Valor:</label>
+				<input type="text" readonly="readonly" data-valor ng-model="projeto.Valor" />
+			</div>
+
+			<div class="campoInformacoes textInfo">
+				<label>Gerente:</label>
+				<input type="text" readonly="readonly" ng-model="projeto.Gerente" />
+			</div>
+
+			<div class="campoInformacoes selectInfo">
+				<label>Situação:</label>
+				<select ng-model="projeto.Status" ng-options="situacao.Valor as situacao.Desc for situacao in situacoes"></select>
+			</div>
+		</div>
+	</header>
+
+
+	<div class="detalhamentoProjeto blocoInfoAreaPrimario">
+		<header>
+			<h2>Detalhamento do Projeto</h2>
+		</header>
+
+		<input id="idProjeto" type="hidden" form="alteraAditivo" name="ProjetoOid" ng-model="projeto.Oid">
+
+		<div class="aditivosProjeto">
+			<table id="listaAditivos">
+				<thead>
+					<tr>
+						<td></td>
+						<td>Descrição do Aditivo</td>
+						<td>Início do Projeto</td>
+						<td>Término do Projeto</td>
+						<td>Qtde de Meses</td>
+						<td>Orçamento Aprovado</td>
+						<td>Despesas Reais</td>
+						<td>Saldo</td>
+					</tr>
+				</thead>
+				<tbody ng-repeat="aditivo in aditivos">
+					<tr data-id="{{aditivo.AditivoId}}" ng-class="{selecionado: aditivo.selecionado}" ng-hide="aditivo.editando" ng-click="selecionaAditivo($index)" ng-dblclick="editaAditivo($index)">
+						<td ng-cloak>
+							<button title="Excluir Aditivo" class="excluiAditivo iconeExcluir" ng-click="excluiAditivo($event, $index)"></button>
+						</td>
+						<td ng-cloak><span valida="aditivo" valida-campo="Nome">{{aditivo.Nome}}</span></td>
+						<td ng-cloak><span valida="aditivo" valida-campo="DataInicio">{{aditivo.DataInicio | data}}</span></td>
+						<td ng-cloak><span valida="aditivo" valida-campo="DataTermino">{{aditivo.DataTermino | data}}</span></td>
+						<td ng-cloak><span valida="aditivo" valida-campo="Duracao">{{aditivo.Duracao}}</span></td>
+						<td ng-cloak><span valida="aditivo" valida-campo="Orcamento">{{aditivo.Orcamento | monetario}}</span></td>
+						<td ng-cloak><span>{{aditivo.DespesasReais}}</span></td>
+						<td ng-cloak><span>{{aditivo.NbOrcamento - aditivo.DespesasReais}}</span></td>
+					</tr>
+					<tr data-id="{{aditivo.AditivoId}}" ng-class="{selecionado: aditivo.selecionado}" ng-show="aditivo.editando" ng-click="stopPropagation($event)">
+						<td ng-cloak>
+							<button title="Excluir Aditivo" class="excluiAditivo iconeExcluir" ng-click="excluiAditivo($event, $index)"></button>
+						</td>
+						<td ng-cloak>
+							<input type="text" ng-model="aditivo.Nome" maxlength="180" key-enter="congelaAditivo(aditivo)">
+						</td>
+						<td ng-cloak>
+							<input type="text" datepicker-popup="dd/MM/yyyy" data ng-model="aditivo.DataInicio" key-enter="congelaAditivo(aditivo)">
+						</td>
+						<td ng-cloak>
+							<input type="text" datepicker-popup="dd/MM/yyyy" data ng-model="aditivo.DataTermino" key-enter="congelaAditivo(aditivo)">
+						</td>
+						<td ng-cloak>
+							<input type="number" ng-model="aditivo.Duracao" key-enter="congelaAditivo(aditivo)">
+						</td>
+						<td ng-cloak>
+							<input type="text" data-valor ng-model="aditivo.Orcamento" key-enter="congelaAditivo(aditivo)">
+						</td>
+						<td ng-cloak>
+							<input type="text" readonly="readonly" value="0,00">
+						</td>
+						<td ng-cloak>
+							<input type="text" readonly="readonly">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="buttonArea">
+				<button id="novoAditivo" class="btnComIcone" ng-click="adicionaAditivo($event)">
+					<span class="btnNovoAditivo"></span>
+					<span>Aditivo</span></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="detalhamentoAditivo blocoInfoAreaPrimario" ng-show="aberto" ng-controller="AditivoCtrl" ng-cloak ng-include="'/Angular/aditivo'">
+	</div>
+</section>

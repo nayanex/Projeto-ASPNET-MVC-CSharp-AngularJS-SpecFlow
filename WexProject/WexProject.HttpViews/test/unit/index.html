@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Unit Tests</title>
+
+    <!-- Carregando dependências de testes a partir do bower -->
+    <link rel="stylesheet" href="../bower_components/jasmine/lib/jasmine-core/jasmine.css" />
+    <script src="../bower_components/jasmine/lib/jasmine-core/json2.js"></script>
+    <script src="../bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script src="../bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/blanket/dist/jasmine/blanket_jasmine.js"></script>
+    <!-- Fallback de carregamento de dependências de testes para CDNs caso o bower não esteja instalado -->
+    <script>
+        if (typeof jasmine === "undefined") {
+            document.write("<link rel='stylesheet' href='//cdn.jsdelivr.net/jasmine/1.3.1/jasmine.css' \/>");
+            document.write("<script src='//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js'><\/script>");
+            document.write("<script src='//cdn.jsdelivr.net/jasmine/1.3.1/jasmine.js'><\/script>");
+            document.write("<script src='//cdn.jsdelivr.net/jasmine/1.3.1/jasmine-html.js'><\/script>");
+            document.write("<script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'><\/script>");
+            document.write("<script src='//code.angularjs.org/1.2.2/angular.js'><\/script>");
+            document.write("<script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js'><\/script>");
+            document.write("<script src='//code.angularjs.org/1.2.2/angular-mocks.js'><\/script>");
+            document.write("<script src='//code.angularjs.org/1.2.2/angular-resource.min.js'><\/script>");
+            document.write("<script src='//rawgithub.com/alex-seville/blanket/master/dist/jasmine/blanket_jasmine.min.js'><\/script>");
+        };
+    </script>
+
+    <!-- Módulos que serão testados -->
+    <script src="../../Scripts/wex.main.js" data-cover></script>
+    <script src="../../Scripts/wex.common.js" data-cover></script>
+    <script src="../../Scripts/wex.service.js" data-cover></script>
+
+    <script src="../../Scripts/wex.analise.config.js" data-cover></script>
+    <script src="../../Scripts/wex.analise.custos.js" data-cover></script>
+    <script src="../../Scripts/wex.analise.geral.js" data-cover></script>
+
+    <script src="../../Scripts/wex.centrocusto.resource.js" data-cover></script>
+    <script src="../../Scripts/wex.colaborador.resource.js" data-cover></script>
+
+    <script src="../../Scripts/wex.custos.config.js" data-cover></script>
+    <script src="../../Scripts/wex.custos.app.js" data-cover></script>
+    <script src="../../Scripts/wex.custos.populaRubrica.js" data-cover></script>
+    <script src="../../Scripts/wex.custos.rubricas.js" data-cover></script>
+
+    <script src="../../Scripts/wex.projeto.config.js" data-cover></script>
+    <script src="../../Scripts/wex.projeto.view.js" data-cover></script>
+    <script src="../../Scripts/wex.projeto.resource.js" data-cover></script>
+    <script src="../../Scripts/wex.projetos.config.js" data-cover></script>
+    <script src="../../Scripts/wex.projetos.js" data-cover></script>
+
+    <script src="../../Scripts/wex.situacao.resource.js" data-cover></script>
+
+    <!-- Testes dos módulos -->
+    <script src="spec/wex.main.js"></script>
+    <script src="spec/wex.analise.config.js"></script>
+    <script src="spec/wex.analise.custos.js"></script>
+    <script src="spec/wex.analise.geral.js"></script>
+    <script src="spec/wex.common.js"></script>
+    <script src="spec/wex.custos.config.js"></script>
+    <script src="spec/wex.custos.app.js"></script>
+    <script src="spec/wex.custos.populaRubrica.js"></script>
+    <script src="spec/wex.custos.rubricas.js"></script>
+    <script src="spec/wex.projeto.config.js"></script>
+    <script src="spec/wex.projeto.view.js"></script>
+    <script src="spec/wex.projetos.config.js"></script>
+    <script src="spec/wex.projetos.js"></script>
+
+    <!-- Bootstrap do test runner -->
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../jasmineBootstrap.js"></script>
+</head>
+
+<body>
+    <div id="HTMLReporter" class="jasmine_reporter"></div>
+</body>
+
+</html>

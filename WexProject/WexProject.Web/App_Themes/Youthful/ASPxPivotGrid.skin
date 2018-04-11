@@ -1,0 +1,18 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dxwpg" %>
+<%@ Register Assembly="DevExpress.PivotGrid.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraPivotGrid" TagPrefix="temp" %>
+<dxwpg:ASPxPivotGrid runat="server" >
+	<Images SpriteCssFilePath="~/App_Themes/Youthful/{0}/sprite.css">
+	    <CustomizationFieldsBackground Url="~/App_Themes/Youthful/PivotGrid/pcHeaderBack.gif" />
+        <LoadingPanel Url="~/App_Themes/Youthful/PivotGrid/Loading.gif" />
+        <TreeViewNodeLoadingPanel Url="~/App_Themes/Youthful/PivotGrid/tvNodeLoading.gif" />
+	</Images>
+	<Styles CssFilePath="~/App_Themes/Youthful/{0}/styles.css" CssPostfix="Youthful">
+        <MenuStyle GutterWidth="0px" />   
+        <CustomizationFieldsStyle>
+            <Border BorderColor="#758D5E" BorderStyle="Solid" BorderWidth="1px" />
+            <Paddings Padding="0px" />
+        </CustomizationFieldsStyle>
+    </Styles>
+    <OptionsLoadingPanel Text="" />
+</dxwpg:ASPxPivotGrid>

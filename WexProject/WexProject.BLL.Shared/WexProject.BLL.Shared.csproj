@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F89450B3-825B-400E-A83C-DA21A6391867}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.BLL.Shared</RootNamespace>
+    <AssemblyName>WexProject.BLL.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Xpo.v11.2">
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Xpo.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domains\Analise\CsSituacaoFinanceira.cs" />
+    <Compile Include="Domains\Custos\CsClasseRubrica.cs" />
+    <Compile Include="Domains\Execucao\CsSituacaoCicloDomain.cs" />
+    <Compile Include="Domains\Execucao\CsSituacaoEstoriaCicloDomain.cs" />
+    <Compile Include="Domains\Execucao\CsStatusMotivoCancelamento.cs" />
+    <Compile Include="Domains\Geral\CsCalendarioDomain.cs" />
+    <Compile Include="Domains\Escopo\CsEstoriaDomain.cs" />
+    <Compile Include="Domains\Escopo\CsTipoEstoriaDomain.cs" />
+    <Compile Include="Domains\Escopo\CsValorNegocioDomain.cs" />
+    <Compile Include="Domains\Geral\CsColorDomain.cs" />
+    <Compile Include="Domains\Geral\CsDiaSemana.cs" />
+    <Compile Include="Domains\Geral\CsMesDomain.cs" />
+    <Compile Include="Domains\Geral\CsProjetoSituacaoDomain.cs" />
+    <Compile Include="Domains\Geral\CsSituacaoDomain.cs" />
+    <Compile Include="Domains\Geral\CsTipoDocumento.cs" />
+    <Compile Include="Domains\Geral\CsVigenciaDomain.cs" />
+    <Compile Include="Domains\NovosNegocios\CsPrioridade.cs" />
+    <Compile Include="Domains\Planejamento\CsAtalhosSituacao.cs" />
+    <Compile Include="Domains\Planejamento\CsMotivoReordenacaoGeral.cs" />
+    <Compile Include="Domains\Planejamento\CsMotivoReordenacaoEspecifico.cs" />
+    <Compile Include="Domains\Planejamento\CsPadraoSistema.cs" />
+    <Compile Include="Domains\Planejamento\CsReordenarAturoziacao.cs" />
+    <Compile Include="Domains\Planejamento\CsSituacaoCapacidadePlan.cs" />
+    <Compile Include="Domains\Planejamento\CsTipoBurndown.cs" />
+    <Compile Include="Domains\Planejamento\CsTipoPlanejamento.cs" />
+    <Compile Include="Domains\Planejamento\CsTipoSituacaoPlanejamento.cs" />
+    <Compile Include="Domains\Projeto\CsClasseProjeto.cs" />
+    <Compile Include="Domains\Qualidade\CsCasoTesteDomain.cs" />
+    <Compile Include="Domains\Qualidade\CsTiposResultadosDomain.cs" />
+    <Compile Include="Domains\Rh\CsHabilitarCamposMeusDados.cs" />
+    <Compile Include="Domains\Geral\CsSimNao.cs" />
+    <Compile Include="Domains\Geral\CsSituacao.cs" />
+    <Compile Include="Domains\Rh\CsSituacaoFerias.cs" />
+    <Compile Include="Domains\Rh\CsSituacaoFeriasPlanejamento.cs" />
+    <Compile Include="Domains\Web\CsCategoriasWidget.cs" />
+    <Compile Include="Domains\Web\CsTiposDeFiltro.cs" />
+    <Compile Include="Domains\Web\CsTipoWidget.cs" />
+    <Compile Include="DTOs\Analise\Custos\AnaliseDetalhamentoProjeto.cs" />
+    <Compile Include="DTOs\Analise\Custos\AnaliseCriticaSimplesDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\CustoRubricaDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\DetalhamentoDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\DetalhamentoProjetoDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\DetalhamentoRubricaDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\GeralDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\RubricasDto.cs" />
+    <Compile Include="DTOs\Analise\Custos\Geral\ValoresDto.cs" />
+    <Compile Include="DTOs\Custos\AditivoDto.cs" />
+    <Compile Include="DTOs\Custos\ClasseProjetoDto.cs" />
+    <Compile Include="DTOs\Custos\CustoProjetoDto.cs" />
+    <Compile Include="DTOs\Custos\CustosRubricasDto.cs" />
+    <Compile Include="DTOs\Custos\CustoValoresDto.cs" />
+    <Compile Include="DTOs\Custos\DespesaRealDto.cs" />
+    <Compile Include="DTOs\Custos\LoteMaoDeObraDto.cs" />
+    <Compile Include="DTOs\Custos\MaoDeObraDto.cs" />
+    <Compile Include="DTOs\Custos\ProjetoCustosDto.cs" />
+    <Compile Include="DTOs\Custos\ProjetoDto.cs" />
+    <Compile Include="DTOs\Custos\CustoTipoRubricaDto.cs" />
+    <Compile Include="DTOs\Custos\RubricaDto.cs" />
+    <Compile Include="DTOs\Custos\RubricaMesDto.cs" />
+    <Compile Include="DTOs\Custos\TermoAditivoDto.cs" />
+    <Compile Include="DTOs\Custos\TipoRubricaDto.cs" />
+    <Compile Include="DTOs\Escopo\GraficoEscopoCompletudeDTO.cs" />
+    <Compile Include="DTOs\Escopo\GraficoEstimadoRealizadoDTO.cs" />
+    <Compile Include="DTOs\Execucao\GraficoRitmoTimeDto.cs" />
+    <Compile Include="DTOs\Geral\EmpresaInstituicaoDto.cs" />
+    <Compile Include="DTOs\Geral\ProjetoDto.cs" />
+    <Compile Include="DTOs\Geral\CronogramaColaboradorConfigDto.cs" />
+    <Compile Include="DTOs\Planejamento\CriarHistoricoTarefaDto.cs" />
+    <Compile Include="DTOs\Planejamento\BurndownGraficoDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTOs\Planejamento\InicializadorEstimativaDto.cs" />
+    <Compile Include="DTOs\Planejamento\NovaTarefaDto.cs" />
+    <Compile Include="DTOs\Planejamento\BurndownDadosDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaCriacaoDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaExclusaoDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaNovaDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefasExcluidasDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefasMovidasDto.cs" />
+    <Compile Include="DTOs\Projeto\CentroCustoDto.cs" />
+    <Compile Include="DTOs\Projeto\ClienteDto.cs" />
+    <Compile Include="DTOs\Projeto\DadosBasicoProjetoDto.cs" />
+    <Compile Include="DTOs\Rh\ColaboradorDto.cs" />
+    <Compile Include="DTOs\Geral\DiaTrabalhoDto.cs" />
+    <Compile Include="DTOs\Geral\PeriodoTrabalhoDto.cs" />
+    <Compile Include="DTOs\Geral\ProjetoColaboradorConfigDto.cs" />
+    <Compile Include="DTOs\Geral\SemanaTrabalhoDto.cs" />
+    <Compile Include="DTOs\Planejamento\CronogramaDto.cs" />
+    <Compile Include="DTOs\Planejamento\CronogramaTarefaDto.cs" />
+    <Compile Include="DTOs\Planejamento\SituacaoPlanejamentoDTO.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaEdicaoDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaHistoricoTrabalhoDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaLogAlteracaoDto.cs" />
+    <Compile Include="DTOs\Planejamento\TarefaCriadaDto.cs" />
+    <Compile Include="DTOs\TotvsWex\GastoDto.cs" />
+    <Compile Include="Externo\Custos\IMaosDeObraExterno.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

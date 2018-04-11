@@ -1,0 +1,215 @@
+﻿<header>
+	<h2>{{aditivo.Nome}}</h2>
+	<button title="{{ 'Fechar Aditivo' | translate }}" class="fechaAditivo iconeFecharAditivo" ng-click="fechaAditivo()">{{ 'Fechar Aditivo' | translate }}</button>
+</header>
+
+<input id="idAditivo" type="hidden" ng-model="aditivo.AditivoId"> @* Remover quando possível *@
+
+<div id="detalhamentoAbas">
+	<div id="orcamentoAprovado" aba="{{ 'Orçamento Aprovado' | translate }}" ng-controller="OrcamentoCtrl">
+        <div class="topoOrcamentos" scroll-top="infoVisivel">
+            <div class="aditivoInfoValorAno">
+                <p>
+                    {{ 'Orçamento do aditivo:' | translate }} <span class="valorRestante">{{valorTotal() | monetario}}</span> |
+			        {{ 'Orçamento restante p/ planejar rubrica:' | translate }} <span class="valorRestante" ng-class="{'negativo': valorRestante() < 0}">{{valorRestante() | monetario}}</span>
+                </p>
+
+                <div class="anosAditivo">
+					    <ul>
+						    <li ng-repeat="ano in aditivo.Anos">
+                                <button ng-class="{'selecionado': ano == aditivo.AnoAtual}" ng-click="aditivo.AnoAtual=ano">{{ano}}</button>
+						    </li>
+					    </ul>
+				</div><!-- .visualizacaoAnoArea -->
+            </div><!-- .aditivoInfoValorAno -->
+			
+		</div>
+
+		<div id="{{'rubrica' + classe}}" data-collapse ng-repeat="classe in tipos.classes">
+			<header>
+				<h2 data-collapse-cabecalho>{{classe}}</h2>
+				<button class="adicionaRubrica btnComIcone" ng-if="classe != 'Aportes'" ng-click="novaRubrica(classe)">
+					<span class="btnAdicionarRubrica"></span>
+					<span>Rubrica</span>
+				</button>
+			</header>
+
+			<div data-rubricas data-collapse-conteudo data-aditivo="aditivo" data-aditivo-id="aditivo.AditivoId" data-classe="classe"></div>
+		</div>
+	</div>
+
+	<div id="despesasReais" aba="{{ 'Despesas Reais' | translate }}" ng-controller="DespesasCtrl">
+
+		<div class="topoOrcamentos" scroll-top="infoVisivel">
+             <div class="opcoesArea">
+                <div class="buttonsRubricaGastosPendente">
+                    <button class="btnComIcone btnRubricas" ng-class="{btnSelecionado: model.view=='rubricas'}" ng-click="changeView('rubricas')"><span class="btnDespesaRealRubricas"></span><span>{{ 'Rubricas' | translate }}</span></button>
+                    <button class="btnComIcone btnNotasFiscais" ng-class="{btnSelecionado: model.view=='notasFiscais'}" ng-click="changeView('notasFiscais')"><span class="btnDespesaRealAssociacaoNotasFiscais"></span><span>{{ 'Associar notas fiscais do mes' | translate}}</span></button>
+                </div>
+            </div>
+            <div class="aditivoInfoValorAno">
+                <div class="anosAditivo">
+					    <ul>
+						    <li ng-repeat="ano in aditivo.Anos">
+                                <button ng-class="{'selecionado': ano == aditivo.AnoAtual}" ng-click="aditivo.AnoAtual=ano">{{ano}}</button>
+						    </li>
+					    </ul>
+				</div><!-- .visualizacaoAnoArea -->
+            </div><!-- .aditivoInfoValorAno -->
+        </div><!--/topoOrcamentos-->
+		<div ng-if="model.view=='rubricas'" id="{{'despesasReais' + classe}}" data-collapse ng-repeat="classe in tipos.classes">
+			<header>
+				<h2 data-collapse-cabecalho>{{classe}}</h2>
+			</header>
+			<div data-despesas data-collapse-conteudo data-aditivo="aditivo" data-aditivo-id="aditivo.AditivoId" data-classe="classe" data-repetir-valor="repetirValor(rubrica, ano, mes, attr)"></div>
+		</div>
+
+		<div ng-if="model.view=='rubricas'" class="totalizacaoDespesas" data-collapse data-aberto="totalizacaoAberto" data-fechado="totalizacaoFechado">
+			<button data-collapse-cabecalho>{{ 'Fluxo de Caixa' | translate }}</button>
+			<div class="tableArea" data-collapse-conteudo>
+				<table ng-controller="TotalizacaoCtrl">
+					<thead>
+						<tr>
+							<td colspan="14">{{ 'Total' | translate}}: {{totais.Total | monetario}}</td>
+						</tr>
+					</thead>
+					<tbody ng-repeat="ano in aditivo.Anos">
+						<tr ng-click="mostrarAno(ano)">
+							<td colspan="14">{{ano}}: {{totais[ano].Total | monetario}}</td>
+						</tr>
+						<tr ng-show="ano === +anoAtual">
+							<td>&nbsp;</td>
+							<td ng-repeat="mes in meses">{{mes.curto}}</td>
+							<td>Total</td>
+						</tr>
+						<tr ng-show="ano === +anoAtual" ng-repeat="classe in tipos.classes">
+							<td>{{classe}}</td>
+							<td ng-repeat="mes in totais[ano][classe].meses track by $index">{{mes | monetario}}</td>
+							<td>{{totais[ano][classe].Total | monetario}}</td>
+						</tr>
+						<tr ng-show="ano === +anoAtual">
+							<td>Total Geral</td>
+							<td ng-repeat="mes in totais[ano].totalGeral track by $index">{{mes | monetario}}</td>
+							<td>{{totais[ano].Total | monetario}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+        <div ng-if="model.view=='notasFiscais'" id="notasFiscais">
+
+            <div class="AssociacaoNotasFicaisContent divisorHorizontal">
+
+                <div class="aditivoInfoValorAno" scroll-top="fixo">
+                    <div class="mesesNotasFiscais">
+					    <div ng-repeat="mes in meses"><button ng-class="{selecionado: model.mesSelecionado == mes}" ng-click="model.mesSelecionado=mes">{{mes.curto}}</button></div>
+                    </div>
+                </div>
+
+				<div class="tabelasAccordionArea">
+					<div class="tabelaRubricas">
+						<table ng-if="getNotasFiscais().length > 0">
+							<thead>
+								<tr>
+									<th><input type="checkbox" title="{{ 'Clique aqui para marcar todos' | translate }}"  ng-click="marcarNotasFiscais()" ng-checked="verificarTodasNotasFiscaisMarcadas()"/>
+                                    </th>
+                                    <th>{{ 'Nota Fiscal' | translate }}</th>
+                                    <th>{{ 'Valor' | translate }}</th>
+                                    <th>{{ 'Justificativa' | translate }}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="notaFiscal in getNotasFiscais() | orderBy:'Descricao'" ng-class="{linhaSelecionada: notaFiscal.checked}">
+									<td><input type="checkbox" ng-model="notaFiscal.checked" /></td>
+                                    <td><p>{{notaFiscal.HistoricoLancamento}}<span>- {{notaFiscal.Descricao}}</span></p></td>
+									<td><span>{{notaFiscal.Valor | monetario}}</span></td>
+									<td><textarea ng-model="notaFiscal.Justificativa" ng-blur="salvarNotaFiscal(notaFiscal)"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+                        <p class="mensagem" ng-if="getNotasFiscais().length == 0">{{ 'Nenhuma nota fiscal encontrada para o mes selecionado.' | translate }}</p>
+					</div><!--/tabelaRubricas-->
+
+					<div class="botoesAcoes" scroll-top="fixo">
+
+						<button class="iconeSetas icoSetasTransferir"
+                            ng-disabled="!podeAssociarNotasFiscais()"
+                            ng-click="associarNotasFiscais()"
+                            ng-class="{desativado: !podeAssociarNotasFiscais()}">{{ 'Associar Notas Fiscais' | translate }}</button>
+
+						<button class="iconeSetas icoSetasRegredir"
+                            ng-disabled="!podeDesassociarNotasFiscais()"
+                            ng-click="desassociarNotasFiscais()"
+                            ng-class="{desativado: !podeDesassociarNotasFiscais()}">{{ 'Desassociar Notas Fiscais' | translate }}</button>
+
+					</div><!--/botoesAcoes-->
+
+					<div class="accordionRubricas" scroll-top="{{estilo}}">
+
+						<div class="rubricasAccordion"
+                            ng-repeat="rubrica in model.rubricas"
+                            ng-class="{rubricaExpandida: (rubrica.model.mostrarNotasFiscais)}">
+
+                            <div class="rubricaAccordionTitle">
+
+							    <button title="{{ 'Fechar Rubrica' | translate }}"
+                                    ng-click="toggleNotasFiscaisRubrica(rubrica)"
+                                    ng-class="{iconeRecuar: rubrica.model.mostrarNotasFiscais, iconeExpandir: !rubrica.model.mostrarNotasFiscais}">Seta</button>
+
+							    <span>{{rubrica.Nome}}
+                                    <span class="selecionadosLabel" ng-if="(notasFiscaisSelecionadas = (getNotasFiscais(rubrica) | filter: {checked: true})).length > 0">
+                                        [{{notasFiscaisSelecionadas.length}} {{ (notasFiscaisSelecionadas.length > 1)? 'selecionados' : 'selecionado' }}]                                      
+                                    </span>                                
+							    </span>
+
+                                <span class="totalLabel" ng-if="getNotasFiscais(rubrica).length > 0">
+                                    [{{exibirQuantidadeNotasFiscais(rubrica)}} - R$ {{calcularTotalNotasFiscais(rubrica) | monetario}}]
+                                </span>
+                                <span class="totalLabel" ng-if="getNotasFiscais(rubrica).length == 0">
+                                    {{'Nenhuma nota fiscal associada' | translate}}
+                                </span>
+
+                            </div>
+
+							<div class="rubricaAccordionContent"
+                                ng-if="rubrica.model.mostrarNotasFiscais && getNotasFiscais(rubrica).length > 0">
+                                <table>
+								    <thead>
+									    <tr>
+										    <th><input type="checkbox" title="{{ 'Clique aqui para marcar todos' | translate }}"  ng-click="checkTodasRubricas(rubrica)" ng-checked="todosMarcadosRubricas(rubrica)"/></th>
+                                            <th>{{ 'Nota Fiscal' | translate }}</th>
+                                            <th>{{ 'Valor' | translate }}</th>
+                                            <th>{{ 'Justificativa' | translate }}</th>
+									    </tr>
+								    </thead>
+								    <tbody>
+									    <tr ng-repeat="notaFiscal in getNotasFiscais(rubrica) | orderBy:'Descricao'"
+                                            ng-class="{linhaSelecionada: notaFiscal.checked}">
+                                            <td><input type="checkbox" ng-model="notaFiscal.checked" /></td>
+										    <td><p>{{notaFiscal.HistoricoLancamento}}<span>- {{notaFiscal.Descricao}}</span></p></td>
+										    <td><span>{{notaFiscal.Valor | monetario}}</span></td>
+										    <td><textarea ng-model="notaFiscal.Justificativa" ng-blur="salvarNotaFiscal(notaFiscal)"></textarea></td>
+									    </tr>
+								    </tbody>
+							    </table>
+							</div>
+
+                            <div class="rubricaAccordionContent"
+                                ng-if="rubrica.model.mostrarNotasFiscais && getNotasFiscais(rubrica).length == 0">
+                                <p class="mensagem">{{ 'Nenhuma nota fiscal associada' | translate }}</p>
+                            </div>
+
+						</div>
+
+					</div><!--/accordionRubricas-->
+
+				</div><!--/tabelasAccordionArea-->
+
+			</div><!--/AssociacaoNotasFicaisContent-->
+
+		</div><!--/notasFiscais-->
+
+	</div><!--/#despesasReais-->
+
+</div>

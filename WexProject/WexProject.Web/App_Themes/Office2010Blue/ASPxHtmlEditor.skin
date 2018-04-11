@@ -1,0 +1,22 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dxhe" %>
+
+<dxhe:ASPxHtmlEditor runat="server" Width="740px">
+    <Images SpriteCssFilePath="~/App_Themes/Office2010Blue/{0}/sprite.css">
+	    <LoadingPanel Url="~/App_Themes/Office2010Blue/HtmlEditor/Loading.gif" />
+	</Images>
+    <ImagesFileManager>
+        <LoadingPanel Url="~/App_Themes/Office2010Blue/Web/Loading.gif" />
+        <FolderContainerNodeLoadingPanel Url="~/App_Themes/Office2010Blue/Web/tvNodeLoading.gif" />
+    </ImagesFileManager>
+	<Styles CssPostfix="Office2010Blue" CssFilePath="~/App_Themes/Office2010Blue/{0}/styles.css">
+        <ViewArea Border-BorderColor="#859ebf" />
+    </Styles>
+	<StylesEditors ButtonEditCellSpacing="0" />
+	<StylesStatusBar>
+        <StatusBar TabSpacing="0">
+            <Paddings Padding="0" />
+        </StatusBar>    
+    </StylesStatusBar>
+</dxhe:ASPxHtmlEditor>
+

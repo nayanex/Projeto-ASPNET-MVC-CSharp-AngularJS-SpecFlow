@@ -1,0 +1,22 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwschs" Namespace="DevExpress.Web.ASPxScheduler" Assembly="DevExpress.Web.ASPxScheduler.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.XtraScheduler.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraScheduler" TagPrefix="temp" %>
+
+<dxwschs:ASPxScheduler runat="server">
+	<Styles CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass" 
+		SelectionColor="#BDCAD5">
+		<ResourceNavigator ButtonSpacing="3px" />
+		<ViewSelector ButtonSpacing="3px" />
+		<ViewNavigator ButtonSpacing="3px" />
+		<FormEditors>
+			<CalendarFooter Spacing="4px" />
+			<CalendarHeader Spacing="1px" />
+			<CalendarFastNavFooter Spacing="4px" />
+			<CalendarFastNav MonthYearSpacing="4px" />                
+		</FormEditors>
+	</Styles>
+	<Images SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+	    <LoadingPanel Url="~/App_Themes/BlackGlass/Scheduler/Loading.gif"></LoadingPanel>
+	</Images>
+</dxwschs:ASPxScheduler>
+

@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F5DB605-38C2-4F11-8FFA-5B6BAB1F309C}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.HttpViews</RootNamespace>
+    <AssemblyName>WexProject.HttpViews</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AnaliseController.cs" />
+    <Compile Include="Controllers\AngularController.cs" />
+    <Compile Include="Controllers\CentrosCustoController.cs" />
+    <Compile Include="Controllers\ColaboradoresController.cs" />
+    <Compile Include="Controllers\CronogramasController.cs" />
+    <Compile Include="Controllers\CustosController.cs" />
+    <Compile Include="Controllers\GraficoEscopoCompletudeController.cs" />
+    <Compile Include="Controllers\GraficoEstimadoRealizadoController.cs" />
+    <Compile Include="Controllers\GraficoRitmoTimeController.cs" />
+    <Compile Include="Controllers\MaosDeObraController.cs" />
+    <Compile Include="Controllers\CustosRubricasAdministrativasController.cs" />
+    <Compile Include="Controllers\RubricasController.cs" />
+    <Compile Include="Controllers\NotasFiscaisController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PatrocinadoresController.cs" />
+    <Compile Include="Controllers\ProjetosController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SemanaTrabalhoController.cs" />
+    <Compile Include="Controllers\SituacoesPlanejamentoController.cs" />
+    <Compile Include="Controllers\TarefasHistoricosTrabalhoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Libs\ActionResults\JsonNetResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="Content\themes\temaPadrao\backgroundAzulDark2.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundMesSelecionado.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundMesSelecionadoAzul.png" />
+    <Content Include="Content\themes\temaPadrao\icoReproduzirBranco.png" />
+    <Content Include="Logger.config" />
+    <Content Include="languages\pt_BR.json" />
+    <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
+    <None Include="ScriptsSpecs\wex.analise.config.js" />
+    <None Include="ScriptsSpecs\wex.analise.custos.js" />
+    <None Include="ScriptsSpecs\wex.analise.geral.js" />
+    <None Include="ScriptsSpecs\wex.common.js" />
+    <None Include="ScriptsSpecs\wex.custos.app.js" />
+    <None Include="ScriptsSpecs\wex.custos.config.js" />
+    <None Include="ScriptsSpecs\wex.custos.populaRubrica.js" />
+    <None Include="ScriptsSpecs\wex.custos.rubricas.js" />
+    <None Include="ScriptsSpecs\wex.main.js" />
+    <None Include="ScriptsSpecs\wex.projeto.config.js" />
+    <None Include="ScriptsSpecs\wex.projeto.view.js" />
+    <None Include="ScriptsSpecs\wex.projetos.config.js" />
+    <None Include="ScriptsSpecs\wex.projetos.js" />
+    <None Include="ScriptsSpecs\wex.custos.administrativos.js" />
+    <Content Include="Content\themes\temaPadrao\loading_fpf_azul.gif" />
+    <Content Include="Content\themes\temaPadrao\loading_fpf_azulEscuro.gif" />
+    <Content Include="Scripts\angular\angular-animate.js" />
+    <Content Include="Scripts\angular\angular-animate.min.js" />
+    <Content Include="Scripts\angular\angular-cookies.js" />
+    <Content Include="Scripts\angular\angular-cookies.min.js" />
+    <Content Include="Scripts\angular\angular-csp.css" />
+    <Content Include="Scripts\angular\angular-loader.js" />
+    <Content Include="Scripts\angular\angular-loader.min.js" />
+    <Content Include="Scripts\angular\angular-messages.js" />
+    <Content Include="Scripts\angular\angular-messages.min.js" />
+    <Content Include="Scripts\angular\angular-mocks.js" />
+    <Content Include="Scripts\angular\angular-resource.js" />
+    <Content Include="Scripts\angular\angular-resource.min.js" />
+    <Content Include="Scripts\angular\angular-route.js" />
+    <Content Include="Scripts\angular\angular-route.min.js" />
+    <Content Include="Scripts\angular\angular-sanitize.js" />
+    <Content Include="Scripts\angular\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular\angular-scenario.js" />
+    <Content Include="Scripts\angular\angular-touch.js" />
+    <Content Include="Scripts\angular\angular-touch.min.js" />
+    <Content Include="Scripts\angular\angular-translate-loader-static-files.js" />
+    <Content Include="Scripts\angular\angular-translate-loader-static-files.min.js" />
+    <Content Include="Scripts\angular\angular-translate.js" />
+    <Content Include="Scripts\angular\angular-translate.min.js" />
+    <Content Include="Scripts\angular\angular.js" />
+    <Content Include="Scripts\angular\angular.min.js" />
+    <Content Include="Scripts\angular\i18n\angular-locale_en-iso.js" />
+    <Content Include="Scripts\angular\i18n\angular-locale_en.js" />
+    <Content Include="Scripts\angular\i18n\angular-locale_pt-br.js" />
+    <Content Include="Scripts\angular\ngStorage.js" />
+    <Content Include="Scripts\angular\ngStorage.min.js" />
+    <Content Include="Scripts\angular\version.txt" />
+    <Content Include="Scripts\wex\custos\administrativos\command.js" />
+    <Content Include="Scripts\wex\custos\administrativos\view.model.js" />
+    <Content Include="Scripts\wex\eventos\aditivos.js" />
+    <Content Include="Scripts\wex\eventos\config.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\angular\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular\angular-cookies.min.js.map" />
+    <Content Include="Scripts\angular\angular-loader.min.js.map" />
+    <Content Include="Scripts\angular\angular-messages.min.js.map" />
+    <Content Include="Scripts\angular\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular\angular-route.min.js.map" />
+    <Content Include="Scripts\angular\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular\angular-touch.min.js.map" />
+    <Content Include="Scripts\angular\angular.min.js.map" />
+    <Content Include="Scripts\angular\errors.json" />
+    <Content Include="Scripts\angular\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\bold\Frutiger CE 75 Black.svg" />
+    <Content Include="Content\fonts\lightItalic\Frutiger CE 46 Light Italic.svg" />
+    <Content Include="Content\fonts\light\Frutiger CE 45 Light.svg" />
+    <Content Include="Content\fonts\normal\Frutiger CE 55 Roman.svg" />
+    <Content Include="Content\hint.css" />
+    <Content Include="Content\hint.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\ng-grid.css" />
+    <Content Include="Content\ng-grid.min.css" />
+    <Content Include="Content\resolucaoAjuste.css" />
+    <Content Include="Content\Reset.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\fonts.css" />
+    <Content Include="Content\themes\temaPadrao.css" />
+    <Content Include="Content\themes\temaPadrao\backgroundAzul.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundAzulBranco.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundAzulCinzento.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundAzulDark.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundBlackDark.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundButtons.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundCinza.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundDark.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundDarkGray.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundDarkGray2.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundFoto1.jpg" />
+    <Content Include="Content\themes\temaPadrao\backgroundFoto2.jpg" />
+    <Content Include="Content\themes\temaPadrao\backgroundFoto3.jpg" />
+    <Content Include="Content\themes\temaPadrao\backgroundGeral.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundGradientLogin.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundLaranja.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundOrcamentoConsumido.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundProjecaoBar.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundTexturaLoginl.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundVerdeBranco.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundVerdeBranco2.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundVerdeBranco3.png" />
+    <Content Include="Content\themes\temaPadrao\backgroundVermelho.png" />
+    <Content Include="Content\themes\temaPadrao\bgGradient.png" />
+    <Content Include="Content\themes\temaPadrao\bgSetaDestaque.png" />
+    <Content Include="Content\themes\temaPadrao\bgSetaMenu.png" />
+    <Content Include="Content\themes\temaPadrao\bgSetaMenu2.png" />
+    <Content Include="Content\themes\temaPadrao\bgShadow.png" />
+    <Content Include="Content\themes\temaPadrao\bgShadow2.png" />
+    <Content Include="Content\themes\temaPadrao\borderMenuDireita.png" />
+    <Content Include="Content\themes\temaPadrao\borderMenuEsquerda.png" />
+    <Content Include="Content\themes\temaPadrao\btnSetaCalendario.png" />
+    <Content Include="Content\themes\temaPadrao\divisorHorizontal.png" />
+    <Content Include="Content\themes\temaPadrao\divisorHorizontalDark.png" />
+    <Content Include="Content\themes\temaPadrao\divisorVertical.png" />
+    <Content Include="Content\themes\temaPadrao\divisorVerticalDark.png" />
+    <Content Include="Content\themes\temaPadrao\divisorVerticalVermelho.png" />
+    <Content Include="Content\themes\temaPadrao\icoAberto.png" />
+    <Content Include="Content\themes\temaPadrao\icoAbertoBranco.png" />
+    <Content Include="Content\themes\temaPadrao\icoAbrirProjeto.png" />
+    <Content Include="Content\themes\temaPadrao\icoAbrirRubrica.png" />
+    <Content Include="Content\themes\temaPadrao\icoAcessar.png" />
+    <Content Include="Content\themes\temaPadrao\icoAdicionar.png" />
+    <Content Include="Content\themes\temaPadrao\icoAdicionar24x24.png" />
+    <Content Include="Content\themes\temaPadrao\icoAdicionarBlack.png" />
+    <Content Include="Content\themes\temaPadrao\icoAplicar.png" />
+    <Content Include="Content\themes\temaPadrao\icoAssociarProjeto.png" />
+    <Content Include="Content\themes\temaPadrao\icoAssociarProjeto2.png" />
+    <Content Include="Content\themes\temaPadrao\icoAssociarProjetoContraste.png" />
+    <Content Include="Content\themes\temaPadrao\icoAtualizar.png" />
+    <Content Include="Content\themes\temaPadrao\icoAvancar.png" />
+    <Content Include="Content\themes\temaPadrao\icoAvancarUnidade.png" />
+    <Content Include="Content\themes\temaPadrao\icoBgLupa.png" />
+    <Content Include="Content\themes\temaPadrao\icoBorracha.png" />
+    <Content Include="Content\themes\temaPadrao\icoBorrachaContraste.png" />
+    <Content Include="Content\themes\temaPadrao\icoConfiguracoes.png" />
+    <Content Include="Content\themes\temaPadrao\icoCustoEquipe.png" />
+    <Content Include="Content\themes\temaPadrao\icoDashboard.png" />
+    <Content Include="Content\themes\temaPadrao\icoDashboardBranco.png" />
+    <Content Include="Content\themes\temaPadrao\icoDashboardEdicao.png" />
+    <Content Include="Content\themes\temaPadrao\icoDashboardGrande.png" />
+    <Content Include="Content\themes\temaPadrao\icoDashboardPadrao.png" />
+    <Content Include="Content\themes\temaPadrao\icoEquipe.png" />
+    <Content Include="Content\themes\temaPadrao\icoExcluir.png" />
+    <Content Include="Content\themes\temaPadrao\icoExcluirContraste.png" />
+    <Content Include="Content\themes\temaPadrao\icoExpandir.png" />
+    <Content Include="Content\themes\temaPadrao\icoFavoritos.png" />
+    <Content Include="Content\themes\temaPadrao\icoFechado.png" />
+    <Content Include="Content\themes\temaPadrao\icoFechadoBranco.png" />
+    <Content Include="Content\themes\temaPadrao\icoFecharAditivo.png" />
+    <Content Include="Content\themes\temaPadrao\icoFecharDashes.png" />
+    <Content Include="Content\themes\temaPadrao\icoFecharModal.png" />
+    <Content Include="Content\themes\temaPadrao\icoFecharRubrica.png" />
+    <Content Include="Content\themes\temaPadrao\icoDinheiro.png" />
+    <Content Include="Content\themes\temaPadrao\icoDinheiroSelecionado.png" />
+    <Content Include="Content\themes\temaPadrao\icoGastosRelacionados.gif" />
+    <Content Include="Content\themes\temaPadrao\icoMenuDefault.png" />
+    <Content Include="Content\themes\temaPadrao\icoNovoDashboard.png" />
+    <Content Include="Content\themes\temaPadrao\icoProjeto.png" />
+    <Content Include="Content\themes\temaPadrao\icoRecuar.png" />
+    <Content Include="Content\themes\temaPadrao\icoRedistribuir.png" />
+    <Content Include="Content\themes\temaPadrao\icoRedistribuirContraste.png" />
+    <Content Include="Content\themes\temaPadrao\icoReproduzir.png" />
+    <Content Include="Content\themes\temaPadrao\icoRetornar.png" />
+    <Content Include="Content\themes\temaPadrao\icoRetornarUnidade.png" />
+    <Content Include="Content\themes\temaPadrao\icoRubricas.png" />
+    <Content Include="Content\themes\temaPadrao\icoRubricasSelecionado.png" />
+    <Content Include="Content\themes\temaPadrao\icoSalvar.png" />
+    <Content Include="Content\themes\temaPadrao\icoSetaDown.png" />
+    <Content Include="Content\themes\temaPadrao\icoSetaParaBaixo.png" />
+    <Content Include="Content\themes\temaPadrao\icoSetas.png" />
+    <Content Include="Content\themes\temaPadrao\icoTrofeus.png" />
+    <Content Include="Content\themes\temaPadrao\icoUsuario.png" />
+    <Content Include="Content\themes\temaPadrao\loading_fpf.gif" />
+    <Content Include="Content\themes\temaPadrao\logoFPF.png" />
+    <Content Include="Content\themes\temaPadrao\logoWEX.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\a_bolinha_verde.png" />
+    <Content Include="Images\a_bolinha_vermelha.png" />
+    <Content Include="Images\bgVisualizacaoMeses.png" />
+    <Content Include="Images\icoConfig16x16.png" />
+    <Content Include="Images\icoExcluir.png" />
+    <Content Include="Content\fonts\bold\Frutiger CE 75 Black.eot" />
+    <Content Include="Content\fonts\bold\Frutiger CE 75 Black.otf" />
+    <Content Include="Content\fonts\bold\Frutiger CE 75 Black.ttf" />
+    <Content Include="Content\fonts\bold\Frutiger CE 75 Black.woff" />
+    <Content Include="Content\fonts\light\Frutiger CE 45 Light.eot" />
+    <Content Include="Content\fonts\light\Frutiger CE 45 Light.otf" />
+    <Content Include="Content\fonts\light\Frutiger CE 45 Light.ttf" />
+    <Content Include="Content\fonts\light\Frutiger CE 45 Light.woff" />
+    <Content Include="Content\fonts\lightItalic\Frutiger CE 46 Light Italic.eot" />
+    <Content Include="Content\fonts\lightItalic\Frutiger CE 46 Light Italic.otf" />
+    <Content Include="Content\fonts\lightItalic\Frutiger CE 46 Light Italic.ttf" />
+    <Content Include="Content\fonts\lightItalic\Frutiger CE 46 Light Italic.woff" />
+    <Content Include="Content\fonts\normal\Frutiger CE 55 Roman.eot" />
+    <Content Include="Content\fonts\normal\Frutiger CE 55 Roman.otf" />
+    <Content Include="Content\fonts\normal\Frutiger CE 55 Roman.ttf" />
+    <Content Include="Content\fonts\normal\Frutiger CE 55 Roman.woff" />
+    <Content Include="Images\icoStatusProjeto.png" />
+    <Content Include="Images\logoWex.png" />
+    <Content Include="Scripts\wex\maodeobra\config.js" />
+    <Content Include="Scripts\wex\maodeobra\resource.js" />
+    <Content Include="Scripts\wex\rubrica\config.js" />
+    <Content Include="Scripts\jquery\jquery-stickytableheaders.js" />
+    <Content Include="Scripts\wex\notasfiscais\config.js" />
+    <Content Include="Scripts\wex\notasfiscais\resource.js" />
+    <None Include="chutzpah.json" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ui-bootstrap\ui-bootstrap-0.9.0.js" />
+    <Content Include="Scripts\ui-bootstrap\ui-bootstrap-0.9.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap\ui-bootstrap-tpls-0.9.0.js" />
+    <Content Include="Scripts\ui-bootstrap\ui-bootstrap-tpls-0.9.0.min.js" />
+    <Content Include="Scripts\wex\analise\config.js" />
+    <Content Include="Scripts\wex\analise\custos.js" />
+    <Content Include="Scripts\wex\analise\geral.js" />
+    <Content Include="Scripts\wex\centrocusto\resource.js" />
+    <Content Include="Scripts\wex\colaborador\resource.js" />
+    <Content Include="Scripts\wex\common.js" />
+    <Content Include="Scripts\wex\custos\app.js" />
+    <Content Include="Scripts\wex\custos\config.js" />
+    <Content Include="Scripts\wex\custos\termoAditivo.js" />
+    <Content Include="Scripts\wex\main.js" />
+    <Content Include="Scripts\wex\projeto\config.js" />
+    <Content Include="Scripts\wex\projeto\resource.js" />
+    <Content Include="Scripts\wex\projeto\view.js" />
+    <Content Include="Scripts\wex\projetos\config.js" />
+    <Content Include="Scripts\wex\projetos\selecao.js" />
+    <Content Include="Scripts\wex\custos\populaRubrica.js" />
+    <Content Include="Scripts\wex\service.js" />
+    <Content Include="Scripts\wex\situacao\resource.js" />
+    <Content Include="Scripts\wex\custos\administrativos.js" />
+    <Content Include="Scripts\wex\custos\administrativos\config.js" />
+    <Content Include="Views\Angular\centrosCusto.cshtml" />
+    <Content Include="Views\Analise\Custos.cshtml" />
+    <Content Include="Views\Angular\despesa.cshtml" />
+    <Content Include="Views\Angular\despesas.cshtml" />
+    <Content Include="Views\Analise\Geral.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Custos\Index.cshtml" />
+    <Content Include="Views\Shared\_ListaProjetos.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Custos\Selecao.cshtml" />
+    <Content Include="Scripts\wex\custos\rubricas.js" />
+    <Content Include="Views\Angular\rubricas.cshtml" />
+    <Content Include="Views\Angular\patrocinadores.cshtml" />
+    <Content Include="Views\Angular\aditivo.cshtml" />
+    <Content Include="Views\TermosAditivos\TermosAditivos.cshtml" />
+    <Content Include="Views\Angular\modalSelecao.cshtml" />
+    <Content Include="Views\Projeto\View.cshtml" />
+    <Content Include="Views\Projeto\DadosProjeto.cshtml" />
+    <Content Include="Views\Projeto\EditarDadosProjeto.cshtml" />
+    <Content Include="Views\Angular\WexProgresso.cshtml" />
+    <Content Include="Views\Custos\ModalNotasFiscais.cshtml" />
+    <Content Include="Views\Custos\ModalCustosMaoObra.cshtml" />
+    <Content Include="Scripts\wex\custos\administrativos\resource.js" />
+    <Content Include="Views\CustosRubricasAdministrativas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WexProject.BLL.Shared\WexProject.BLL.Shared.csproj">
+      <Project>{f89450b3-825b-400e-a83c-da21a6391867}</Project>
+      <Name>WexProject.BLL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.BLL\WexProject.BLL.csproj">
+      <Project>{5a81a9a4-af19-4479-805b-e33bc4de8c99}</Project>
+      <Name>WexProject.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Externo.Totvs\WexProject.Externo.Totvs.csproj">
+      <Project>{713c739c-e8c6-4a0f-be74-200b113beafa}</Project>
+      <Name>WexProject.Externo.Totvs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Library\WexProject.Library.csproj">
+      <Project>{1936c8e5-0aba-4b76-84d7-e7ffe24f3f79}</Project>
+      <Name>WexProject.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3889</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

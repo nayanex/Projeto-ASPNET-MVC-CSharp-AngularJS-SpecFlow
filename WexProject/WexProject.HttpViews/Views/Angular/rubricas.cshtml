@@ -1,0 +1,64 @@
+﻿<div class="tableArea">
+	<table>
+		<thead>
+			<tr>
+				<td></td>
+				<td>Rubrica</td>
+				<td>Planejamento</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>
+					<div>
+						<div><span>Orçamento da rubrica</span></div>
+						<div><span>Meses</span></div>
+					</div>
+				</td>
+			</tr>
+
+			<tr data-id="{{rubrica.RubricaId}}" data-tipo="{{rubrica.Tipo}}" rubrica ng-show="visivel" ng-switch="rubrica.Tipo" ng-repeat="rubrica in rubricas[classe]">
+				<td>
+                    <button title="Abrir Rubrica" ng-class="{ iconeAbrirRubricaPai:!aberto, iconeFecharRubricaPai:aberto }" ng-if="rubrica.pai" ng-click="mostrarFilhos()"></button>
+                    <button title="Excluir Rubrica" ng-class="{ iconeExcluir:!(rubrica.filho || rubrica.pai), iconeExcluirContraste: (rubrica.filho || rubrica.pai)}" ng-hide="classe == 'Aportes'" ng-click="excluiRubrica($index)"></button>
+				</td>
+				<td><span class="nomeRubrica">{{rubrica.Nome}}</span></td>
+				<td ng-switch-when="0">
+					<label>Selecione o tipo da Rubrica:</label>
+					<select ng-model="novoTipo" ng-options="tipo.Nome group by tipo.Pai for tipo in tipos.tipos | classe:classe">
+					</select>
+					<button class="adicionaRubrica btnComIcone" ng-click="adicionarRubrica($index, novoTipo)">
+						<span class="btnAdicionarRubrica"></span>
+						<span>Adicionar</span>
+					</button>
+				</td>
+				<td ng-switch-default>
+					<div class="campoInformacoes textInfo totalPlanejado" ng-if="!rubrica.pai">
+						<input class="valorTotal" type="text" data-valor data-salvar="Rubrica" ng-model="rubrica.TotalPlanejado" />
+                        <button title="Apagar Valores da Rúbrica" class="icoApagarValoresRubrica" ng-class="{ iconeBorrachaContraste:rubrica.filho, iconeBorracha: !rubrica.filho }" ng-click="limparRubrica(rubrica)"></button>
+                        <button title="Distribuir Valor Total" ng-class="{ iconeRedistribuirContraste:rubrica.filho, iconeRedistribuir: !rubrica.filho}" ng-click="distribuirTotal($index)"></button>
+                        <div class="atencaoRubrica" ng-if="dinheiro.parse(rubrica.ValorRestante) > 0"><p>Diferença:<span class="ng-binding"> {{rubrica.ValorRestante | monetario}}</span></p><div class="setaDireita"></div></div>
+                        <div class="atencaoRubrica" ng-if="dinheiro.parse(rubrica.ValorRestante) < 0"><p>Diferença:<span class="ng-binding"> {{-dinheiro.parse(rubrica.ValorRestante) | monetario}}</span></p><div class="setaDireita"></div></div>						
+					</div>
+					<div class="mesesPlanejado" data-ano="{{ano.Ano}}" ng-show="ano.Ano === +aditivo.AnoAtual" ng-repeat="ano in rubrica.Anos">
+						<div class="campoInformacoes textInfo" ng-repeat="rubricaMes in ano.Meses">
+							<label>{{meses[rubricaMes.Mes - 1].curto}}</label>
+							<input class="valorMes" ng-class="{semFoco: !rubricaMes.Planejado, comFoco: rubricaMes.Planejado}" type="text" data-valor="true" data-salvar="RubricaMes" ng-model="rubricaMes.Planejado" />
+						</div>
+					</div>
+					<div class="campoInformacoes textInfo totalPlanejado" ng-show-start="rubrica.pai">
+						<input class="valorTotal" type="text" data-valor data-salvar="Rubrica" ng-model="rubrica.TotalPlanejado" readonly="readonly" />
+					</div>
+					<div class="rubricaFilhasGeral" ng-show-end="rubrica.pai">
+						<ul>
+							<li ng-repeat="filho in filhos"><span>{{filho}}</span></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

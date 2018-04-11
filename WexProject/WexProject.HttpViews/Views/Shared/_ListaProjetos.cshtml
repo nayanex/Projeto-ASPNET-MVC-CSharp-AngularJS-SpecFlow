@@ -1,0 +1,11 @@
+﻿@{
+	ViewBag.AngularModule = "wex.projetos";
+}
+
+<div class="configuracaoWidget" ng-controller="ProjetosCtrl">
+	<label>Escolha um projeto:</label>
+	<div name="id" autocomplete="projetos" modelo="projeto" seleciona="exibirInformacoes()">
+		<input type="text" />
+		<button class="submit" ng-click="seleciona()">Exibir informações</button>
+	</div>
+</div>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ceec2a0a-b83c-44d3-a752-ef1f9eb981a1"
+  name="Execucao"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="483a92b7-a8bb-4abd-b16b-8c6fedd45058"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Entities.Execucao"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="ca8c2daa-e315-4392-a9ea-f4e70f22f488"
+        name="CicloDesenv"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="19b8f912-b786-4233-988c-4654af1cec1f"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL%2Fbin%2FDebug%2FWexProject.BLL.dll&quot; Namespace%3DWexProject.BLL.Entities.Execucao Type%3DCicloDesenv"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f1722b68-4b57-4527-ba14-8bca4c2e5a23"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f76c5c4-ef22-4269-ae2e-6c488f0a4edf">
+                <propertyInstance
+                  Id="40435030-5a79-44f2-8628-84a9750cd6a5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f5eafcca-37a8-4f96-af80-7382be80927b">
+                <propertyInstance
+                  Id="e2973a8b-49b7-4da8-97ab-b095e31504b3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8ad151d3-f947-4ecc-a8e7-a953ffdff465">
+                <propertyInstance
+                  Id="b5a9f921-e577-4eae-beb9-901a241f7b48"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="092c1a12-63d9-4f3b-8764-9cc707e2414c">
+                <propertyInstance
+                  Id="f3f6a741-8024-411b-a2e7-7841bcc6dc6a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4cb63bc0-9e57-4800-a573-be8d0ef0f9c4">
+                <propertyInstance
+                  Id="89a6e332-d144-4d07-8398-aee3adbcb572"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

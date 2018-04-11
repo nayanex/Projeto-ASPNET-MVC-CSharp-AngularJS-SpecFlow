@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application VersionFormat="" WebSite="">
+  <SchemaModules>
+    <SchemaModule Name="SchedulerModuleBase" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="11.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="11.2.8.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="CasoTeste_Passos_ListView" IsFooterVisible="False" />
+    <ListView Id="CasoTeste_PreCondicoes_ListView" IsFooterVisible="False" />
+    <DetailView Id="EmpresaInstituicao_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" TextAlignMode="UseParentOptions">
+          <LayoutItem Id="TxNome" ViewItem="TxNome" CaptionHorizontalAlignment="Default" Index="1" RelativeSize="3" IsNewNode="True" />
+          <LayoutItem Id="TxEmail" Index="2" ViewItem="TxEmail" />
+          <LayoutItem Id="Pais" Index="3" ViewItem="Pais" />
+          <LayoutItem Id="TxFoneFax" Index="4" RelativeSize="80" ViewItem="TxFoneFax" />
+          <LayoutGroup Id="SizeableEditors" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Modulo_DetailView">
+      <Items>
+        <PropertyEditor Id="_NbPercDesvio" Index="-1" />
+        <PropertyEditor Id="_NbPercEmAnalise" Index="-1" />
+        <PropertyEditor Id="_NbPercEmDesenv" Index="-1" />
+        <PropertyEditor Id="_NbPercNaoIniciado" Index="-1" />
+        <PropertyEditor Id="_NbPercPronto" Index="-1" />
+        <PropertyEditor Id="_TxNomeCompleto" Index="-1" />
+        <PropertyEditor Id="_TxSituacao" Index="-1" />
+        <PropertyEditor Id="NbPontosDesvio" Index="-1" />
+        <PropertyEditor Id="NbPontosEmAnalise" Index="-1" />
+        <PropertyEditor Id="NbPontosEmDesenv" Index="-1" />
+        <PropertyEditor Id="NbPontosNaoIniciado" Index="-1" />
+        <PropertyEditor Id="NbPontosPronto" Index="-1" />
+        <PropertyEditor Id="NbPontosTotal" Index="-1" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1" RelativeSize="43">
+              <LayoutItem Id="TxID" RelativeSize="18" ViewItem="TxID" />
+              <LayoutItem Id="TxNome" RelativeSize="13" ViewItem="TxNome" />
+              <LayoutItem Id="ModuloPai" ShowCaption="True" TextAlignMode="UseParentOptions" ViewItem="ModuloPai" CaptionLocation="Default" CaptionWordWrap="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" SizeConstraintsType="Default" Index="2" RelativeSize="13" IsNewNode="True" Removed="True" />
+              <LayoutGroup Id="JuncaoNbEsforco%" Direction="Vertical" Index="4" RelativeSize="21" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Modulo_ListView" Criteria="">
+      <Columns>
+        <ColumnInfo Id="Projeto" Index="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Projeto_ListView">
+      <Columns>
+        <ColumnInfo Id="EmpresaInstituicao" GroupIndex="-1" Caption="Empresa/Instituição" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SolicitacaoOrcamento_DetailView">
+      <Items>
+        <PropertyEditor Id="TxFone" MaxLength="13" />
+      </Items>
+    </DetailView>
+    <ListView Id="SolicitacaoOrcamento_ListView">
+      <Columns>
+        <ColumnInfo Id="TxFone" MaxLength="13" />
+        <ColumnInfo Id="TxCodigo" SortIndex="-1" SortOrder="None" />
+      </Columns>
+    </ListView>
+    <ListView Id="SolicitacaoOrcamento_LookupListView">
+      <Columns>
+        <ColumnInfo Id="TxFone" MaxLength="13" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

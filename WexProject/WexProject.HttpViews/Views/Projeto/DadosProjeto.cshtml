@@ -1,0 +1,51 @@
+﻿<!-- ==================================== -->
+<!-- DADOS DO PROJETO =================== -->
+
+<div id="{{ projeto.IdProjeto }}"
+    title="Projeto {{ projeto.Nome }}: Duplo clique para editar"
+    class="projetos blocoInfoAreaSecundario {{styleClass}} {{(model.modoEdicao) ? 'modoEdicao' : ''}} {{(model.showProjetosMicros && model.projetosMicros.length > 0) ? 'expandido' : ''}}"
+    ng-dblclick="toggleModoEdicao()">
+
+    <div class="projetoButton">
+        <button title="Expandir Projeto" class="{{(model.showProjetosMicros && model.projetosMicros.length > 0)?'iconeRecuar':'iconeExpandir2'}}"
+            ng-if="projeto.HasProjetosMicros"
+            ng-click="toggleProjetosMicros()"></button>
+    </div>
+
+    <div class="projetoTitulo">
+        <h2>{{ projeto.Nome }}</h2>
+    </div>
+
+    <div class="projetoDados">
+        <div class="periodo">
+            <p>Início Planejado: <span>&nbsp;{{ projeto.InicioPlanejado | data }}</span></p>
+        </div>
+        <div class="periodo">
+            <p>Início Real: <span>&nbsp;{{ projeto.InicioReal | data }}</span></p>
+        </div>
+
+        <div class="periodo">
+            <p>Término Real: <span>&nbsp;{{ projeto.TerminoReal | data }}</span></p>
+        </div>
+
+        <div class="gerenteProjeto">
+            <p>Gerente do Projeto: <span>&nbsp;{{ projeto.Gerente.TxNomeCompletoColaborador }}</span></p>
+        </div>
+        <div class="clientes">
+            <p>Clientes: <span ng-repeat="cliente in projeto.Clientes">&nbsp;{{ cliente.Nome }}{{ $last ? '' : ', ' }}</span></p>
+        </div>
+        <div class="centroCusto">
+            <p>Centro de Custo: <span>&nbsp;{{ projeto.CentroCusto.Nome }}</span></p>
+        </div>
+    </div><!--/projetoDados-->
+
+</div><!--/projetos blocoInfoAreaSecundario projetoMacro-->
+
+<editar-dados-projeto projeto="projeto" ng-if="model.modoEdicao"></editar-dados-projeto>
+
+<!-- ==================================== -->
+<!-- LISTAGEM DE PROJETOS MICROS ======== -->
+
+<div dados-projeto ng-repeat="projetoMicro in model.projetosMicros" projeto="projetoMicro" style-class="projetoMicro"></div>
+
+<!-- ==================================== -->

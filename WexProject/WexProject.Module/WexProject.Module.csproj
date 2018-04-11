@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{371113D6-9B54-40D8-A363-4F360DF6968F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WexProject.Module</RootNamespace>
+    <AssemblyName>WexProject.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Data.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Chart.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Chart.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Chart.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Chart.Web.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Chart.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Chart.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.ConditionalAppearance.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalEditorState.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.ConditionalEditorState.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.HtmlPropertyEditor.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.HtmlPropertyEditor.Web.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Objects.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Objects.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Scheduler.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Scheduler.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Scheduler.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Scheduler.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Security.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Validation.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Web.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Win.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.ExpressApp.Win.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.Base.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Persistent.BaseImpl.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Printing.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.RichEdit.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Tutorials.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Tutorials.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Utils.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Web.ASPxEditors.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Web.ASPxGridView.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Web.ASPxHtmlEditor.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Web.ASPxSpellChecker.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Web.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.Xpo.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraBars.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraEditors.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraGrid.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Design, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Extensions, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Printing, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraRichEdit.v11.2.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraScheduler.v11.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.2.Core, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WexProject.Library\DevExpress\DevExpress.XtraScheduler.v11.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Profile\Client\System.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamentoDetailViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamentoDetailViewController.Designer.cs">
+      <DependentUpon>SolicitacaoOrcamentoDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Planejamento\EmpresaInstituicao\EmpresaInstituicaoViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Planejamento\EmpresaInstituicao\EmpresaInstituicaoViewController.Designer.cs">
+      <DependentUpon>EmpresaInstituicaoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Planejamento\Pais\PaisViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Planejamento\Pais\PaisViewController.Designer.cs">
+      <DependentUpon>PaisViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Geral\WexProjectViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Geral\WexProjectViewController.Designer.cs">
+      <DependentUpon>WexProjectViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RH\FeriasPlanejamento\ControleFeriasViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\RH\FeriasPlanejamento\ControleFeriasViewController.designer.cs">
+      <DependentUpon>ControleFeriasViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ControleAcesso\MeusDados\ControllerNavigationMeusDados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\FilterUsuarioViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\FilterUsuarioViewController.designer.cs">
+      <DependentUpon>FilterUsuarioViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamentoViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamentoViewController.designer.cs">
+      <DependentUpon>SolicitacaoOrcamentoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Updater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\beneficiado.png" />
+    <EmbeddedResource Include="Images\beneficiado16.png" />
+    <EmbeddedResource Include="Images\busca.png" />
+    <EmbeddedResource Include="Images\calendario16.png" />
+    <EmbeddedResource Include="Images\calendario32.png" />
+    <EmbeddedResource Include="Images\cargosx16.png" />
+    <EmbeddedResource Include="Images\cargosx32.png" />
+    <EmbeddedResource Include="Images\caso_de_testex16.png" />
+    <EmbeddedResource Include="Images\caso_de_testex32.png" />
+    <EmbeddedResource Include="Images\ciclos.png" />
+    <EmbeddedResource Include="Images\ciclos16.png" />
+    <EmbeddedResource Include="Images\config_documentos16.png" />
+    <EmbeddedResource Include="Images\config_documentos32.png" />
+    <EmbeddedResource Include="Images\cronograma.png" />
+    <EmbeddedResource Include="Images\cronograma16.png" />
+    <EmbeddedResource Include="Images\cronograma32.png" />
+    <EmbeddedResource Include="Images\dashboardx16.png" />
+    <EmbeddedResource Include="Images\dashboardx32.png" />
+    <EmbeddedResource Include="Images\descricoes.png" />
+    <EmbeddedResource Include="Images\empresax16.png" />
+    <EmbeddedResource Include="Images\empresax32.png" />
+    <EmbeddedResource Include="Images\escopox16.png" />
+    <EmbeddedResource Include="Images\escopox32.png" />
+    <EmbeddedResource Include="Images\escopo_de_licoes16.png" />
+    <EmbeddedResource Include="Images\escopo_de_licoes32.png" />
+    <EmbeddedResource Include="Images\escopo_de_lições.png" />
+    <EmbeddedResource Include="Images\escopo_de_lições16.png" />
+    <EmbeddedResource Include="Images\estimativa.png" />
+    <EmbeddedResource Include="Images\estimativa16.png" />
+    <EmbeddedResource Include="Images\estoriax16.png" />
+    <EmbeddedResource Include="Images\estoriax32.png" />
+    <EmbeddedResource Include="Images\excluir_entrega16.png" />
+    <EmbeddedResource Include="Images\excluir_entrega32.png" />
+    <EmbeddedResource Include="Images\excluir_tarefa.png" />
+    <EmbeddedResource Include="Images\ferias16.png" />
+    <EmbeddedResource Include="Images\ferias32.png" />
+    <EmbeddedResource Include="Images\licoes16.png" />
+    <EmbeddedResource Include="Images\licoes32.png" />
+    <EmbeddedResource Include="Images\licoes_aprendidas16.png" />
+    <EmbeddedResource Include="Images\licoes_aprendidas32.png" />
+    <EmbeddedResource Include="Images\liçoes.png" />
+    <EmbeddedResource Include="Images\liçoes16.png" />
+    <EmbeddedResource Include="Images\modalidade_de_ferias16.png" />
+    <EmbeddedResource Include="Images\modalidade_de_ferias32.png" />
+    <EmbeddedResource Include="Images\modulox16.png" />
+    <EmbeddedResource Include="Images\modulox32.png" />
+    <EmbeddedResource Include="Images\nova_entrega16.png" />
+    <EmbeddedResource Include="Images\nova_entrega32.png" />
+    <EmbeddedResource Include="Images\nova_tarefa.png" />
+    <EmbeddedResource Include="Images\observacoes.png" />
+    <EmbeddedResource Include="Images\papeis16.png" />
+    <EmbeddedResource Include="Images\papeis32.png" />
+    <EmbeddedResource Include="Images\parte_interessadax16.png" />
+    <EmbeddedResource Include="Images\parte_interessadax32.png" />
+    <EmbeddedResource Include="Images\planejamentox16.png" />
+    <EmbeddedResource Include="Images\planejamentox32.png" />
+    <EmbeddedResource Include="Images\prioridadex16.png" />
+    <EmbeddedResource Include="Images\prioridadex32.png" />
+    <EmbeddedResource Include="Images\projetox16.png" />
+    <EmbeddedResource Include="Images\projetox32.png" />
+    <EmbeddedResource Include="Images\qualidadex16.png" />
+    <EmbeddedResource Include="Images\qualidadex32.png" />
+    <EmbeddedResource Include="Images\requisitosx16.png" />
+    <EmbeddedResource Include="Images\requisitosx32.png" />
+    <EmbeddedResource Include="Images\situacao_do_planejamento.png" />
+    <EmbeddedResource Include="Images\Solicitar-Orçamento16.png" />
+    <EmbeddedResource Include="Images\Solicitar-Orçamento32.png" />
+    <EmbeddedResource Include="Images\TipodeOrçamento16.png" />
+    <EmbeddedResource Include="Images\TipodeOrçamento32.png" />
+    <EmbeddedResource Include="Images\todas_ferramentasx16.png" />
+    <EmbeddedResource Include="Images\todas_ferramentasx32.png" />
+    <EmbeddedResource Include="Images\visao_geralx16.png" />
+    <EmbeddedResource Include="Images\visao_geralx32.png" />
+    <EmbeddedResource Include="Images\wex-logo.png" />
+    <EmbeddedResource Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamentoDetailViewController.resx">
+      <DependentUpon>SolicitacaoOrcamentoDetailViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Planejamento\EmpresaInstituicao\EmpresaInstituicaoViewController.resx">
+      <DependentUpon>EmpresaInstituicaoViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Planejamento\Pais\PaisViewController.resx">
+      <DependentUpon>PaisViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Geral\WexProjectViewController.resx">
+      <DependentUpon>WexProjectViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\RH\FeriasPlanejamento\ControleFeriasViewController.resx">
+      <DependentUpon>ControleFeriasViewController.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ControleAcesso\MeusDados\ControllerNavigationMeusDados.resx">
+      <DependentUpon>ControllerNavigationMeusDados.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\NovosNegocios\SolicitacaoOrcamento\FilterUsuarioViewController.resx">
+      <DependentUpon>FilterUsuarioViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\NovosNegocios\SolicitacaoOrcamento\SolicitacaoOrcamentoViewController.resx">
+      <DependentUpon>SolicitacaoOrcamentoViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Module.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\bandeiras-sitplan\amarelo.png" />
+    <Content Include="Images\bandeiras-sitplan\cinza.png" />
+    <Content Include="Images\historico.png" />
+    <Content Include="Images\right.png" />
+    <Content Include="Images\up.png" />
+    <EmbeddedResource Include="Images\orçamentox16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\orçamentox32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\tipox16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\tipox32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Images\allleft.png" />
+    <Content Include="Images\allright.png" />
+    <Content Include="Images\down.png" />
+    <Content Include="Images\ferias_andamento.png" />
+    <Content Include="Images\ferias_atraso.png" />
+    <Content Include="Images\ferias_planejadas.png" />
+    <Content Include="Images\ferias_realizadas.png" />
+    <Content Include="Images\ferias_vendidas.png" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\outras_licencas.png" />
+    <EmbeddedResource Include="Images\no_image.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RichEditAbout.rtf" />
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WexProject.BLL.Shared\WexProject.BLL.Shared.csproj">
+      <Project>{F89450B3-825B-400E-A83C-DA21A6391867}</Project>
+      <Name>WexProject.BLL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.BLL\WexProject.BLL.csproj">
+      <Project>{5A81A9A4-AF19-4479-805B-E33BC4DE8C99}</Project>
+      <Name>WexProject.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WexProject.Library\WexProject.Library.csproj">
+      <Project>{1936C8E5-0ABA-4B76-84D7-E7FFE24F3F79}</Project>
+      <Name>WexProject.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

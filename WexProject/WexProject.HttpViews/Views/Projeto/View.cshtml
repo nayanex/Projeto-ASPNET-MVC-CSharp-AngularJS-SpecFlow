@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Projetos";
+    ViewBag.AngularModule = "projeto.view";
+}
+
+<section id="wexProjetos" ng-controller="ProjetoCtrl">
+    
+    <header>
+        <h1>Projetos</h1>
+    </header>
+
+    <div id="projetosArea" class="blocoInfoAreaPrimario">
+
+        <header>
+
+            <button class="btnComIcone btAdicionarProjeto" ng-click="toggleNovoProjeto()"><span class="btnAdicionarNovo"></span><span>Projetos</span></button>
+
+            <div class="novoProjeto blocoInfoAreaSecundario" ng-if="model.cadastrandoNovoProjeto">
+                <header>
+                    <h2>Novo Projeto {{ (model.novoProjeto.IsMacro) ? "Macro" : "Micro" }}</h2>
+                </header>
+
+                <div class="campoInformacoes textInfo nomeProjeto">
+                    <label>Nome do Projeto:</label>
+                    <input type="text" ng-model="model.novoProjeto.Nome" />
+                </div>
+
+                <div class="campoInformacoes selectInfo">
+                    <label>Projeto Macro:</label>
+                    <select
+                        ng-model="model.novoProjeto.ProjetoMacro"
+                        ng-options="pmacro as pmacro.Nome for pmacro in model.projetosMacros"
+                        ng-change="alterarTipoProjeto(model.novoProjeto)">
+                        <option value="">-- Informe o projeto macro onde os custos serão monitorados --</option>
+                    </select>
+                </div>
+
+                <div class="campoInformacoes textInfo inicioPlanejado tresColunas">
+                    <label>Inicio Planejado:</label>
+                    <input type="text" datepicker-popup="dd/MM/yyyy" readonly="readonly" ng-model="model.novoProjeto.InicioPlanejado" title="Clique para selecionar a data..." />
+                </div>
+
+                <div class="campoInformacoes textInfo inicioReal tresColunas">
+                    <label>Inicio Real:</label>
+                    <input type="text" datepicker-popup="dd/MM/yyyy" readonly="readonly" ng-model="model.novoProjeto.InicioReal" title="Clique para selecionar a data..." />
+                </div>
+
+                 <div class="campoInformacoes textInfo terminoReal tresColunas">
+                    <label>Término Real:</label>
+                    <input type="text" datepicker-popup="dd/MM/yyyy" readonly="readonly" ng-model="model.novoProjeto.TerminoReal" title="Clique para selecionar a data..." />
+                </div>
+
+                <div class="campoInformacoes selectInfo situacaoProjeto">
+                    <label>Situação:</label>
+                    <select ng-model="model.novoProjeto.Situacao" ng-options="s.Valor as s.Desc for s in model.situacoes">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+
+                <div class="campoInformacoes textInfo clientesProjeto">
+                    <label class="obrigatorio">Clientes:</label>
+                    <input clientes-autocomplete to-model="model.novoProjeto.Clientes" />
+                </div>
+
+                <div class="campoInformacoes selectInfo gerenteProjeto">
+                    <label>Gerente de Projeto:</label>
+                    <select
+                        ng-model="model.novoProjeto.Gerente.OidColaborador"
+                        ng-options="gerente.OidColaborador as gerente.TxNomeCompletoColaborador for gerente in model.gerentesProjetos"
+                        ng-disabled="!model.novoProjeto.IsMacro">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+
+                <div class="campoInformacoes selectInfo centroCusto">
+                    <label>Centro de Custo:</label>
+                    <select
+                        ng-model="model.novoProjeto.CentroCusto.IdCentroCusto"
+                        ng-options="c.IdCentroCusto as c.Codigo + ' - ' + c.Nome for c in model.centrosCustos | orderBy:['Codigo']"
+                        ng-disabled="!model.novoProjeto.IsMacro">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+
+                <div class="campoInformacoes buttonInfo">
+                    <button class="btnComIcone btAdicionarProjeto" ng-click="salvarProjeto()"><span class="btnAdicionarNovo"></span><span>Criar</span></button>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ==================================== -->
+        <!-- LISTAGEM DE PROJETOS MACROS ======== -->
+
+        <div dados-projeto ng-repeat="projeto in model.projetosMacros" projeto="projeto" style-class="projetoMacro"></div>
+
+        <!-- ==================================== -->
+
+    </div>
+
+</section>

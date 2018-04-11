@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="81c4148b-71ba-4e05-a779-660fef39297c"
+  name="Execucao"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="30920be3-242d-448c-9557-b568c5a086bd"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Shared.Domains.Execucao"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="7f10be02-7938-4270-bc73-4652e40edb45"
+        name="CsSituacaoCicloDomain"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d10856bc-0f0e-4f65-8380-af3518b3d0d1"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL.Shared%2Fbin%2FDebug%2FWexProject.BLL.Shared.dll&quot; Namespace%3DWexProject.BLL.Shared.Domains.Execucao Type%3DCsSituacaoCicloDomain"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="854cb485-fbd7-4c2b-972d-81652e6a868d"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5025b7b7-0fe6-4f0f-861c-a42015a2aedf">
+                <propertyInstance
+                  Id="84ee9011-405d-4028-8f5c-640bbad63d80"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bd4a00f4-9ced-41ac-b9f4-5c3e1afcc670">
+                <propertyInstance
+                  Id="ac7b90c4-e1da-45ac-8975-25dc5afb1559"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0748e61f-57d9-4ebc-a7fa-4d2700ca430f">
+                <propertyInstance
+                  Id="b2c5919f-c29f-4e9c-b7c0-f1040a273daa"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

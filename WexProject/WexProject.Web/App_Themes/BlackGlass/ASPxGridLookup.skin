@@ -1,0 +1,32 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxe" Namespace="DevExpress.Web.ASPxEditors" Assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxgv" Namespace="DevExpress.Web.ASPxGridLookup" Assembly="DevExpress.Web.ASPxGridView.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %> 
+
+<dxgv:ASPxGridLookup runat="server" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" 
+    SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css" CssPostfix="BlackGlass">
+    <GridViewImages SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/BlackGlass/GridView/Loading.gif"></LoadingPanel>
+        <LoadingPanelOnStatusBar Url="~/App_Themes/BlackGlass/GridView/gvLoadingOnStatusBar.gif"></LoadingPanelOnStatusBar>
+    </GridViewImages>
+    <GridViewImagesFilterControl>
+        <LoadingPanel Url="~/App_Themes/BlackGlass/Editors/Loading.gif"></LoadingPanel>
+    </GridViewImagesFilterControl>
+    <GridViewStyles CssPostfix="BlackGlass" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css">
+        <Header SortingImageSpacing="5px" ImageSpacing="5px"></Header>
+    </GridViewStyles>
+    <GridViewProperties>
+        <SettingsPager CurrentPageNumberFormat="{0}">
+            <FirstPageButton Visible="True"></FirstPageButton>
+            <LastPageButton Visible="True"></LastPageButton>
+        </SettingsPager>
+    </GridViewProperties>
+    <GridViewStylesEditors>
+        <ProgressBar Height="25px">
+        </ProgressBar>
+        <CalendarHeader Spacing="1px">
+        </CalendarHeader>
+    </GridViewStylesEditors> 
+    <ValidationSettings ErrorText="Error has occurred">
+    </ValidationSettings>
+</dxgv:ASPxGridLookup>
+

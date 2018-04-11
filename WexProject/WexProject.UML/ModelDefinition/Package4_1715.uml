@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c7078301-d414-4045-9f5f-49b461e0298a"
+  name="Execucao"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="ab8e5586-3398-4592-969e-da1b589773e8"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWexProject.BLL.Models.Execucao"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="ee2e36c6-d65f-4e35-abf4-61c17ded8797"
+        name="CicloDesenv"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8b1aa78e-aa8f-4999-a521-49357b32459d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fkasem.junior%2FDocuments%2FVisual Studio 2012%2FProjects%2Fwex-cs%2FWexProject%2FWexProject.BLL%2Fbin%2FDebug%2FWexProject.BLL.dll&quot; Namespace%3DWexProject.BLL.Models.Execucao Type%3DCicloDesenv"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="96b6386f-57ce-4e64-b6d6-869407f2a09d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="db8df0be-7234-4993-b68a-7590061aba72">
+                <propertyInstance
+                  Id="050fd5e1-1216-466a-8949-6796fd8e8d79"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2609835d-1480-4745-af80-fa08ba65b182">
+                <propertyInstance
+                  Id="946faf92-5f00-41a0-a52a-dcf4c9527b8d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ec08febc-b141-4c98-a318-e1d554e5085f">
+                <propertyInstance
+                  Id="06222e1a-0442-4c07-8c58-e5636df28dca"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ee324965-1edd-4c25-b073-9bdf0242e69d">
+                <propertyInstance
+                  Id="2159e210-3407-42b3-9507-835f15427431"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b838e38-4fc3-4949-b3f1-36b1db2078d7">
+                <propertyInstance
+                  Id="f7367648-9f27-4ff4-bab8-f75f1ed48f32"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="c15eef7c-904b-4747-a7b8-79f41bc05666"
+            isSubstitutable="false">
+            <classMoniker
+              Id="64a26cd8-5240-4530-b483-6b543ab5463d"
+              LastKnownName="BaseObject"
+              LastKnownLocation="Package6_1715.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

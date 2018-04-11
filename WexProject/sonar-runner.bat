@@ -1,0 +1,1 @@
+d:\opt\sonar-runner-2.2.1\bin\sonar-runner > sonar.log

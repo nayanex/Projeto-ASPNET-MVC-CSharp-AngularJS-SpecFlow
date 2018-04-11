@@ -1,0 +1,110 @@
+FORMAT: 1A
+HOST: http://api.fpf.br
+
+# WexAPI 
+A API do workflow extreme, por FPF tech.
+
+# Group GastosRelacionados
+Rercursos de **Gastos Relacionados**
+
+## Lista de Custos Relacionados [/gastosrelacionados?cc=653&ano=2013&mes=12]
+### Retorna lista de gastos por centro de custos [GET]
++ Response 200 (application/json)
+
+        {
+          "gastos": [
+            {
+              "GastoId":1,
+              "CentroDeCustoId":653,
+              "CentroDeCustoCodigo": 2406, 
+              "CentroDeCustoDesc":"B2B EDUCATION",
+              "RubricaId":null,
+              "Descricao":"CURSOS E TREINAMENTOS",
+              "HistoricoLancamento":"VLR. REF. NF 000000123 GOTO LOLCAT",
+              "Justificativa":"",
+              "Data": "/Date(1386043200000)/",
+              "Valor":50
+            },
+            {
+              "GastoId":2,
+              "CentroDeCustoId":653,
+              "CentroDeCustoCodigo": 2406, 
+              "CentroDeCustoDesc":"B2B EDUCATION",
+              "RubricaId":2242,
+              "Descricao":"CURSOS E TREINAMENTOS",
+              "HistoricoLancamento":"VLR. REF. NF 00000321 UPTO LOLCAT",
+              "Justificativa":"D00000rgas manolo",
+              "Data": "/Date(1386043200000)/",
+              "Valor":100
+            }    
+          ]
+        }
+
+## Lista de Gastos Relacionados por Rubricas [/gastosrelacionados?rubricaid=2242&ano=2013]
+### Retorna lista de gastos relacionados a uma determinada rubrica [GET]
++ Response 200 (application/json)
+
+        {
+          "gastos": [
+            {
+              "GastoId":2,
+              "CentroDeCustoId":653,
+              "CentroDeCustoCodigo": 2406, 
+              "CentroDeCustoDesc":"B2B EDUCATION",
+              "RubricaId":2242,
+              "Descricao":"CURSOS E TREINAMENTOS",
+              "HistoricoLancamento":"VLR. REF. NF 00000321 UPTO LOLCAT",
+              "Justificativa":"D00000rgas manolo",              
+              "Data": "/Date(1386043200000)/",
+              "Valor":100
+            }    
+          ]
+        }
+
+## Relacionar Gastos a Rubricas [/gastosrelacionados?gastoid=2]
+### Relaciona um gasto a uma rubrica [PUT]
+### Para remover relacionamento basta mandar **null** como parâmetro do campo **RubricaId**
++ Request (application/json)
+
+        {
+          "RubricaId": 2242,
+          "Justificativa": "D00000rgas manolo"
+        }
+
++ Response 200 
+
+# Group Analise
+Recursos relacionados a **Análise Crítica**
+
+## Análise Custos [/analise/custos]
+### Retorna projetos para análise [GET]
++ Response 200 (application/json)
+
+        {
+          "projetos": [
+            {
+              "Oid": "2f649df7-41d7-4e6d-adb1-9049ffb0b6d9",
+              "Nome": "#Diogo teste",
+              "Projecao": -15000,
+              "FluxoCaixa": -14400,
+              "TempoOcorrido": 0,
+              "TempoOcorridoInfo": "0 de 1 meses realizados.",
+              "OrcamentoConsumido": 10,
+              "OrcamentoConsumidoInfo": "Orçamento Previsto: R$ 150.000,00 / Orçamento Consumido: R$ 14.400,00",
+              "SituacaoFinanceira": "Critico",
+              "Status": "EmAndamento"
+            },
+            {
+              "Oid": "df294274-8a79-4061-9ed0-0260b9a2519a",
+              "Nome": "Aa",
+              "Projecao": 228128,
+              "FluxoCaixa": 0,
+              "TempoOcorrido": 100,
+              "TempoOcorridoInfo": "3 de 3 meses realizados.",
+              "OrcamentoConsumido": 0,
+              "OrcamentoConsumidoInfo": "Orçamento Previsto: R$ 228.128,00 / Orçamento Consumido: R$ 0,00",
+              "SituacaoFinanceira": "Positivo",
+              "Status": "EmAndamento"
+            }
+          ]
+        }

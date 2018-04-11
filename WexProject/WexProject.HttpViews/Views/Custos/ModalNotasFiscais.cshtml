@@ -1,0 +1,35 @@
+﻿<div>
+	<div class="modal-header">
+		<h2>{{ rubrica.Nome }} | {{ data | date : 'MMMM yyyy'}}</h2>
+		<button class="fecharModal" ng-click="$close()">{{ 'Cancelar' | translate }}</button>
+	</div>
+	<div class="modal-body">
+        <table ng-if="notasFiscais.length > 0" class="tableDesassociarModal">
+            <thead>
+                <tr>
+                    <td colspan="2">{{ 'Nota Fiscal' | translate }}</td>
+                    <td>{{ 'Valor' | translate }}</td>
+                    <td>{{ 'Justificativa' | translate }}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="notaFiscal in notasFiscais">
+                    <td><button class="iconeExcluir btnDesassociarModal" ng-click="desassociar(notaFiscal)" title="{{ 'Desassociar Nota Fiscal' | translate }}">{{ 'Desassociar' | translate }}</button></td>
+                    <td><p>{{notaFiscal.HistoricoLancamento}}<span>- {{notaFiscal.Descricao}}</span></p></td>
+                    <td>{{ notaFiscal.Valor | monetario }}</td>
+                    <td>{{ notaFiscal.Justificativa }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">{{ 'Total' | translate }}</td>
+                    <td>{{calcularTotalNotasFiscais() | monetario}}</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>  
+        <div class="modal-body-mensagem" ng-if="notasFiscais.length == 0">
+            {{ 'Nenhuma nota fiscal encontrada' | translate }}
+        </div>
+	</div>
+</div>

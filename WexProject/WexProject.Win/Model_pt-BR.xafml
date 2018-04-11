@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Localization>
+    <LocalizationGroup Name="Confirmations">
+      <LocalizationItem Name="Cancel" Value="Você deseja cancelar as alterações?" />
+      <LocalizationItem Name="Save" Value="Você deseja salvar as alterações?" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="DialogButtons">
+      <LocalizationItem Name="Apply" Value="Aplicar" />
+      <LocalizationItem Name="Retry" Value="&amp;Repetir" />
+    </LocalizationGroup>
+  </Localization>
+</Application>
